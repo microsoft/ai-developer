@@ -1,0 +1,59 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = BlazorAI
+build_property.RootNamespace = BlazorAI
+build_property.ProjectDir = C:\HandsOn\clean\ai-developer\src\BlazorAI\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\HandsOn\clean\ai-developer\src\BlazorAI
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/HandsOn/clean/ai-developer/src/BlazorAI/Components/App.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/HandsOn/clean/ai-developer/src/BlazorAI/Components/Pages/Chat.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDaGF0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/HandsOn/clean/ai-developer/src/BlazorAI/Components/Pages/Error.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/HandsOn/clean/ai-developer/src/BlazorAI/Components/Pages/Theme.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUaGVtZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/HandsOn/clean/ai-developer/src/BlazorAI/Components/Routes.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/HandsOn/clean/ai-developer/src/BlazorAI/Components/Shared/FluentUIRequiredFeatures.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTaGFyZWRcRmx1ZW50VUlSZXF1aXJlZEZlYXR1cmVzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/HandsOn/clean/ai-developer/src/BlazorAI/Components/Shared/LoginDisplay.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTaGFyZWRcTG9naW5EaXNwbGF5LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/HandsOn/clean/ai-developer/src/BlazorAI/Components/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/HandsOn/clean/ai-developer/src/BlazorAI/Components/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-b4kcmq8i1k
+
+[C:/HandsOn/clean/ai-developer/src/BlazorAI/Components/Shared/FooterComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTaGFyZWRcRm9vdGVyQ29tcG9uZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-8w0molife2

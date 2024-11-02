@@ -24,13 +24,14 @@ namespace BlazorAI.Extensions
 			var tenantId = _options.TenantId;
 			var authority = $"https://login.microsoftonline.com/{tenantId}";
 			var clientSecret = _options.ClientSecret;
+			var apiScope = _options.ApiScope;
 
 			var app = ConfidentialClientApplicationBuilder.Create(clientId)
 				.WithClientSecret(clientSecret)
 				.WithAuthority(new Uri(authority))
 				.Build();
 
-			var scopes = new string[] { $"api://{clientId}/.default" };
+			var scopes = new string[] { $"{apiScope}/.default"};
 			var result = await app.AcquireTokenForClient(scopes).ExecuteAsync();
 
 			return new AuthenticationHeaderValue("Bearer", result.AccessToken);
