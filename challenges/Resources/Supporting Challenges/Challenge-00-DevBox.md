@@ -44,3 +44,5 @@ Azure DevBox is a cloud-based workstation that gives you a complete developer en
 
 ![install recommended extensions](../images/recommendextensions.png)
 
+> [!NOTE]
+> If you don't see the popup, then just install the recommended extensions.
