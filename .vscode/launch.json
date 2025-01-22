@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "C#: Aspire.AppHost [https]",
+            "name": "Aspire.AppHost",
             "type": "dotnet",
             "request": "launch",
             "projectPath": "${workspaceFolder}\\src\\Aspire\\Aspire.AppHost\\Aspire.AppHost.csproj",
