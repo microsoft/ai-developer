@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aspire.ServiceDefaults", "s
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aspire", "Aspire", "{902AC2ED-059D-49C9-AD62-E14BE6D6976C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkItems", "src\WorkItems\WorkItems.csproj", "{8DEBEDF9-D232-4693-8A07-B6F39E9A6D4A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{A6363E5B-3D3B-4055-A3C7-0A66CA612D20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6363E5B-3D3B-4055-A3C7-0A66CA612D20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6363E5B-3D3B-4055-A3C7-0A66CA612D20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DEBEDF9-D232-4693-8A07-B6F39E9A6D4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DEBEDF9-D232-4693-8A07-B6F39E9A6D4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DEBEDF9-D232-4693-8A07-B6F39E9A6D4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DEBEDF9-D232-4693-8A07-B6F39E9A6D4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
