@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "ms-dotnettools.csdevkit",
-        "github.copilot"
+        "github.copilot",
+        "bierner.github-markdown-preview"
     ]
 }
