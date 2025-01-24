@@ -201,6 +201,14 @@ In this challenge, you will create a Semantic Search Plugin that utilizes an Azu
 
     :bulb: Note that the vector field to search is named ```contentVector``` but the sample code from the documentation uses ```vector```, **you will need to update the code to use the correct field name.**
 
+    :bulb: Also remember that our index name is different than the sample code. Update the searchClient like this code. 
+
+    ```CSharp
+    SearchClient searchClient = _indexClient.GetSearchClient("employeehandbook");
+    ```
+
+1. Update the KernelFunction attribute to better help Semantic Kernel know when to call your function.
+
 1. Add the plugin to Semantic Kernel using the ```AddPlugins``` method.
 
     Below is the workflow handled by Semantic Kernel and your plugin:

@@ -56,7 +56,9 @@ Participants will learn how to:
 - [Challenge 08](./challenges/Challenge-08.md): Multi-Agent Systems
   - Create a multi-agent conversation using Semantic Kernel
   - Implement a multi-agent conversation using Azure OpenAI
-  
+
+### Here is the [Slides](./challenges/Resources/Lectures.pdf) used during our workshop
+
 ## Contributors
 
 - [Chris McKee](https://github.com/ChrisMcKee1)
