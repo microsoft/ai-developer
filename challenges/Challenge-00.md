@@ -20,13 +20,15 @@ You will need an Azure subscription to complete this workshop. If you don't have
 
 ### Development Environment
 
-You will need a development environment to complete the challenges. You need to set up a local development environment on your workstation.
+You will need a development environment to complete the challenges. You need to set up a local development environment on your workstation or if you are using an environment provided by Microsoft then you can use a Azure Dev Box. Ask your instructor if you have access to an Azure DevBox.
+
+Our recommmendation is to use your local machine. However if your IT will block the abilty to create a Developer Certificate (aka https on localhost) then it may be best for you to use a Azure DevBox. See the setup instructions [here](./Resources/Supporting%20Challenges/Challenge-00-DevBox.md).
 
 #### Use Local Workstation
 
 Using your local workstation is another option to complete the challenges. You will need to set up the necessary tools and resources on your local workstation to complete the challenges and will need to clone the Student Resources Git Repository to your local workstation.
 
-##### Install the following tools on your Local Workstation:
+##### Install the following tools on your Local Workstation
 
 - IDE
   - We recommend [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/)
@@ -39,7 +41,7 @@ Using your local workstation is another option to complete the challenges. You w
 :bulb: **Note:** GitHub Copilot is a great tool to help you write code faster. You can install the [GitHub Copilot Extension](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) in Visual Studio Code. We highly recommend you install this extension to help you complete the challenges.
 
 If you do not have GitHub Copilot, you can still complete the challenges. However you can start a free trial of GitHub Copilot by following the instructions [here](https://github.com/features/copilot?ef_id=_k_fdbe5318644f1533620435c241c3e251_k_&OCID=AIDcmmb150vbv1_SEM__k_fdbe5318644f1533620435c241c3e251_k_&msclkid=fdbe5318644f1533620435c241c3e251).
- 
+
 ##### Clone the Student Resources to your Local Workstation
 
 From a directory where you want to store the resources, clone the [repository](https://github.com/microsoft/ai-developer). You can do this by running the following command in your terminal or command prompt:
