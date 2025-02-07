@@ -1,8 +1,8 @@
-# AI Developer - Azure Open AI and Semantic Kernel Fundamentals
+# AI Developer - Azure AI Foundry and Semantic Kernel Fundamentals
 
 ## Introduction
 
-The Azure OpenAI and Semantic Kernel Fundamentals is an introduction to understanding the conceptual foundations of infusing your application with AI using the Semantic Kernel development kit. Materials from this workshop can serve as a foundation for building your own AI infused solutions with Semantic Kernel.
+The Azure AI Foundry and Semantic Kernel Fundamentals is an introduction to understanding the conceptual foundations of infusing your application with AI using the Semantic Kernel development kit. Materials from this workshop can serve as a foundation for building your own AI infused solutions with Semantic Kernel.
 
 This workshop consists of eight challenges and is designed to encourage learning and research. If you want a deeper understanding of how to implement an AI solution but have little or no experience with OpenAI or Semantic Kernel then this workshop is for you.
 
@@ -10,7 +10,7 @@ We recommend to host this as a team based activity where students work in groups
 
 ## Learning Objectives
 
-This workshop is designed for individuals who want to gain practical experience in working with Azure OpenAI and Semantic Kernel. By applying this knowledge, you will be able to integrate AI into your own applications.
+This workshop is designed for individuals who want to gain practical experience in working with Azure AI Foundry and Semantic Kernel. By applying this knowledge, you will be able to integrate AI into your own applications.
 
 Participants will learn how to:
 
@@ -27,8 +27,8 @@ Participants will learn how to:
 
 - [Challenge 00](./challenges/Challenge-00.md): Prerequisites
   - Prepare your workstation to work with Azure.
-- [Challenge 01](./challenges/Challenge-01.md): Azure OpenAI Fundamentals
-  - Deploy an Azure OpenAI Model
+- [Challenge 01](./challenges/Challenge-01.md): Azure AI Foundry Fundamentals
+  - Deploy an Azure AI Foundry Model
   - Prompt Engineering
   - What's possible through prompt engineering
   - Best practices when using OpenAI text and chat models
@@ -46,8 +46,8 @@ Participants will learn how to:
 - [Challenge 05](./challenges/Challenge-05.md): Retrieval-Augmented Generation (RAG)
   - Document Chunking & Embedding
   - Enhance AI responses by searching external sources
-- [Challenge 06](./challenges/Challenge-06.md): Responsible AI: Exploring Content Filters in Azure OpenAI
-  - Configuring content filters in Azure OpenAI Studio.
+- [Challenge 06](./challenges/Challenge-06.md): Responsible AI: Exploring Content Filters in Azure AI Foundry
+  - Configuring content filters in Azure AI Foundry Studio.
   - Testing content filters.
   - Creating custom filters to block specific words or phrases.
 - [Challenge 07](./challenges/Challenge-07.md): Image Generation using DALL-E
@@ -55,7 +55,7 @@ Participants will learn how to:
   - Creating an Image Generating Plugin
 - [Challenge 08](./challenges/Challenge-08.md): Multi-Agent Systems
   - Create a multi-agent conversation using Semantic Kernel
-  - Implement a multi-agent conversation using Azure OpenAI
+  - Implement a multi-agent conversation using Azure AI Foundry
   
 ## Contributors
 

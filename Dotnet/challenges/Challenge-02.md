@@ -8,7 +8,7 @@ The first step in understanding Semantic Kernel is to become familiar with the b
 
 ## Description
 
-In this challenge, you will be provided with a starter application that will require you to complete the implementation of the chat feature using Semantic Kernel and the Azure OpenAI GPT-4o model. The application is a simple Blazor chat window that allows users to interact with the AI model by typing a question or prompt and pressing the **CTRL + Enter** key. The AI model will then respond with an answer or completion to the prompt. The application uses the Semantic Kernel framework to interact with the AI model. You will need to complete the implementation of the chat API to send the user's prompt to the AI model and return the response to the user.
+In this challenge, you will be provided with a starter application that will require you to complete the implementation of the chat feature using Semantic Kernel and the Azure AI Foundry GPT-4o model. The application is a simple Blazor chat window that allows users to interact with the AI model by typing a question or prompt and pressing the **CTRL + Enter** key. The AI model will then respond with an answer or completion to the prompt. The application uses the Semantic Kernel framework to interact with the AI model. You will need to complete the implementation of the chat API to send the user's prompt to the AI model and return the response to the user.
 
 ## Prerequisites
 
@@ -18,9 +18,9 @@ In this challenge, you will be provided with a starter application that will req
 
 ### Implementation Steps
 
-1. Deploy a GTP-4o model using  [Azure Open AI Studio](https://oai.azure.com) `https://oai.azure.com`. The **Deployment name** should be something similar to ``` gpt-4o ```. This name will be needed next when configuring Semantic Kernel. :exclamation: Deployment type should be **Standard**. :exclamation:
+1. Deploy a GTP-4o model using  [Azure AI Foundry Studio](https://ai.azure.com) `https://ai.azure.com`. The **Deployment name** should be something similar to ``` gpt-4o ```. This name will be needed next when configuring Semantic Kernel. :exclamation: Deployment type should be **Standard**. :exclamation:
 
-1. Update the *appsettings.json* file with the Azure OpenAI *Deployment name*, *Endpoint URL* and the *API Key*. These values can be found in the Azure OpenAI Studio.
+1. Update the *appsettings.json* file with the Azure AI Foundry *Deployment name*, *Endpoint URL* and the *API Key*. These values can be found in the Azure AI Foundry Studio.
 
     :bulb: **The endpoint URL should be in the format** ```https://<deployment-name>.openai.azure.com```
 
@@ -32,10 +32,10 @@ In this challenge, you will be provided with a starter application that will req
     "AOI_API_KEY": "Replace with your AOI API key",
     ```
 
-1. Navigate to the `Chat.razor.cs` and Implement the following code to add the Azure OpenAI Chat Completion service to the Kernel object.
+1. Navigate to the `Chat.razor.cs` and Implement the following code to add the Azure AI Foundry Chat Completion service to the Kernel object.
 
     ```CSharp
-    //Add Azure OpenAI Chat Completion
+    //Add Azure AI Foundry Chat Completion
     kernelBuilder.AddAzureOpenAIChatCompletion(
         Configuration["AOI_DEPLOYMODEL"],
         Configuration["AOI_ENDPOINT"]!,
@@ -75,7 +75,7 @@ In this challenge, you will be provided with a starter application that will req
 
        :bulb: For a detailed explanation of Chat History, please refer to the documentation [here](https://learn.microsoft.com/en-us/semantic-kernel/concepts/ai-services/chat-completion/chat-history?pivots=programming-language-csharp).
 
-    1. Use the Chat Completion service to complete the implementation of the `SendMessage` method by sending the entire chat history, including the latest prompt, to the Azure OpenAI chat service. Once the service processes this and generates a response, wait until the full response is received before sending it back to the client.
+    1. Use the Chat Completion service to complete the implementation of the `SendMessage` method by sending the entire chat history, including the latest prompt, to the Azure AI Foundry chat service. Once the service processes this and generates a response, wait until the full response is received before sending it back to the client.
 
        :bulb: Refer to the Semantic Kernel documentation [here](https://learn.microsoft.com/en-us/semantic-kernel/concepts/ai-services/chat-completion/?tabs=csharp-AzureOpenAI%2Cpython-AzureOpenAI%2Cjava-AzureOpenAI&pivots=programming-language-csharp#using-chat-completion-services) for an example of how to call the chat completion service.
 
@@ -120,7 +120,7 @@ In this challenge, you will be provided with a starter application that will req
 ## Success Criteria
 
 - Configuration
-  - [ ] Deployed GPT model in Azure OpenAI Studio
+  - [ ] Deployed GPT model in Azure AI Foundry Studio
   - [ ] Added deployment name, endpoint URL, and API key to appsettings.json
 - Kernel Setup
   - [ ] Registered chat completion service with kernel builder

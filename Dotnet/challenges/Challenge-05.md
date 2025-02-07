@@ -16,12 +16,12 @@ Your prompts (inputs), completions (outputs), embeddings, and training data are:
 * NOT available to OpenAI.
 * NOT used to improve OpenAI models.
 * NOT used to improve any Microsoft or 3rd party products or services.
-* NOT used for automatically improving Azure OpenAI models for your use in your resource (The models are stateless, unless you explicitly fine-tune models with your training data).
+* NOT used for automatically improving Azure AI Foundry models for your use in your resource (The models are stateless, unless you explicitly fine-tune models with your training data).
 
-> Your fine-tuned Azure OpenAI models are available exclusively for your use.
-The Azure OpenAI Service is fully controlled by Microsoft; Microsoft hosts the OpenAI models in Microsoft’s Azure environment and the Service does NOT interact with any services operated by OpenAI (e.g. ChatGPT, or the OpenAI API).
+> Your fine-tuned Azure AI Foundry models are available exclusively for your use.
+The Azure AI Foundry Service is fully controlled by Microsoft; Microsoft hosts the OpenAI models in Microsoft’s Azure environment and the Service does NOT interact with any services operated by OpenAI (e.g. ChatGPT, or the OpenAI API).
 
-For more information on Data, privacy, and security for Azure OpenAI Service visit this [Link](https://learn.microsoft.com/en-us/legal/cognitive-services/openai/data-privacy)
+For more information on Data, privacy, and security for Azure AI Foundry Service visit this [Link](https://learn.microsoft.com/en-us/legal/cognitive-services/openai/data-privacy)
 
 ### Embeddings in AI
 
@@ -95,13 +95,13 @@ In this challenge, you will create a Semantic Search Plugin that utilizes an Azu
             * Exposed headers: ```*```
             * Max age: ```120```
         1. Row 2:
-            * Allowed origins: ```https://oai.azure.com```
+            * Allowed origins: ```https://ai.azure.com```
             * Allowed methods: ```GET, POST, OPTIONS, and PUT```
             * Allowed headers: ```*```
             * Exposed headers: ```*```
             * Max age: ```120```
 
-            :bulb: If you are using AI Studio instead of Azure Open AI Studio, you will need to change the origin to ```https://ai.azure.com```.
+            :bulb: If you are using AI Studio instead of Azure AI Foundry Studio, you will need to change the origin to ```https://ai.azure.com```.
 
     1. Click **Save**.
 
@@ -123,7 +123,7 @@ In this challenge, you will create a Semantic Search Plugin that utilizes an Azu
 
 ### Import documents
 
-1. In Azure OpenAI Studio click on Chat -> Add Your Data -> Add Data Source
+1. In Azure AI Foundry Studio click on Chat -> Add Your Data -> Add Data Source
 
     ![Add Data Sournce](./Resources/images/ch05i01.png)
 
@@ -164,7 +164,7 @@ In this challenge, you will create a Semantic Search Plugin that utilizes an Azu
 
 ### Create a Semantic Search Plugin to query the AI Search Index
 
-1. Navigate back to the reference application and open the **Chat.Razor.cs** file. Register the service for Azure OpenAI Text Embedding Generation with the Kernel Builder.
+1. Navigate back to the reference application and open the **Chat.Razor.cs** file. Register the service for Azure AI Foundry Text Embedding Generation with the Kernel Builder.
 
     :bulb: As an example, look at how you registered the AzureOpenAIChatCompletion service. Also note the 3 App Settings you added to the appsettings.json file: EMBEDDINGS_DEPLOYMODEL, AOI_ENDPOINT, AOI_API_KEY.
 
@@ -259,14 +259,14 @@ In this challenge, you will create a Semantic Search Plugin that utilizes an Azu
 
 ## Success Criteria
 
-1. Verify that you deployed the text-embedding-ada-002 Text Embedding model in Azure OpenAI Studio
+1. Verify that you deployed the text-embedding-ada-002 Text Embedding model in Azure AI Foundry Studio
 1. Verify that you deployed an AI Search Index and imported the Contoso Handbook PDF
 1. Verify that the Chatbot is able to answer questions about the Contoso Handbook by querying the AI Search Index using the Semantic Search Plugin
 
 ## Additional Learning Resources
 
 * [Semantic Kernel Blog](https://devblogs.microsoft.com/semantic-kernel/)
-* [ChatGPT + Enterprise data with Azure OpenAI and Cognitive Search](https://github.com/Azure-Samples/azure-search-openai-demo)
+* [ChatGPT + Enterprise data with Azure AI Foundry and Cognitive Search](https://github.com/Azure-Samples/azure-search-openai-demo)
 * [Build Industry-Specific LLMs Using Retrieval Augmented Generation](https://towardsdatascience.com/build-industry-specific-llms-using-retrieval-augmented-generation-af9e98bb6f68)
 
 ## Advanced Challenges (Optional)

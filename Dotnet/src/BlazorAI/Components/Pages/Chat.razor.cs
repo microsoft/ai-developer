@@ -38,13 +38,13 @@ public partial class Chat
         // Challenge 03 and 04 - Services Required
         kernelBuilder.Services.AddHttpClient();
 
-        // Challenge 05 - Register Azure OpenAI Text Embeddings Generation
+        // Challenge 05 - Register Azure AI Foundry Text Embeddings Generation
 
 
         // Challenge 05 - Register Search Index
 
 
-        // Challenge 07 - Add Azure OpenAI Text To Image
+        // Challenge 07 - Add Azure AI Foundry Text To Image
 
 
         // Challenge 02 - Finalize Kernel Builder

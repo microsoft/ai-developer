@@ -1,19 +1,19 @@
 ### [< Previous Challenge](./Challenge-05.md) - **[Home](./README.md)** - [Next Challenge >](./Challenge-07.md)
 
-# Challenge 06 - Responsible AI: Exploring Content Filters in Azure OpenAI
+# Challenge 06 - Responsible AI: Exploring Content Filters in Azure AI Foundry
 
 ## Introduction
 
-In this challenge, you will learn how to enhance the safety and reliability of your AI-powered applications by leveraging content filters and protection mechanisms available in Azure OpenAI. Azure AI provides powerful tools to help developers create ethical AI solutions by filtering out harmful or inappropriate content from model outputs. You will explore how to work with these filters in the Azure OpenAI Studio, adjust settings, and even create custom filters to block specific words or phrases.
+In this challenge, you will learn how to enhance the safety and reliability of your AI-powered applications by leveraging content filters and protection mechanisms available in Azure AI Foundry. Azure AI provides powerful tools to help developers create ethical AI solutions by filtering out harmful or inappropriate content from model outputs. You will explore how to work with these filters in the Azure AI Foundry Studio, adjust settings, and even create custom filters to block specific words or phrases.
 
 Content filters are essential in ensuring that your AI models meet your organization's ethical guidelines and regulatory requirements. By the end of this challenge, you will be able to configure filters that align with your application's needs and ensure safer interactions.
 
 ## Pre-requisites
 
 1. [Access to Azure AI Foundry](https://ai.azure.com) (See step 1 below).
-2. An Azure OpenAI resource created in an earlier challenge.
+2. An Azure AI Foundry resource created in an earlier challenge.
 
-> NOTE: Make sure you have access to the Azure AI Foundry and an existing Azure OpenAI resource, as these are required to complete this challenge.
+> NOTE: Make sure you have access to the Azure AI Foundry and an existing Azure AI Foundry resource, as these are required to complete this challenge.
 
 ## Challenges
 
@@ -22,7 +22,7 @@ This challenge will guide you through configuring and testing content filters us
 ### Navigate to Azure AI Foundry
 
 - **Azure Portal**
-  - Navigate to your already-created Open AI resource in the Azure Portal.
+  - Navigate to your already-created AI Foundry resource in the Azure Portal.
   
 - **Direct link:** https://ai.azure.com/
 
@@ -50,7 +50,7 @@ This challenge will guide you through configuring and testing content filters us
 
 :bulb: **Blocklists** can be used to create a custom filter to block a specific word or phrase that you believe should be filtered in your application.
 
-1. Return to the **Content filters** tab, then on the resulting screen, click the Blocklists (Preview) tab.
+1. Return to the **Safety + security** tab, then on the resulting screen, click the Blocklists (Preview) tab.
 
     <img src="./Resources/image/ch06img4.png" alt="aoai-filter-deployment-list" width="60%"/>
 
@@ -79,8 +79,8 @@ This challenge will guide you through configuring and testing content filters us
 ## Learning Resources
 
 - [How to configure content filters with Azure AI Foundry](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/content-filters) - Detailed steps for configuring filtering in AOAI
-- [Use a blocklist in Azure OpenAI](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/use-blocklists) - Help with explicitly filterering additional predefined terms, are specific to one's use case
-- [Data, privacy, and security for Azure OpenAI Service#Preventing abuse & harmful content generation](https://learn.microsoft.com/en-us/legal/cognitive-services/openai/data-privacy?tabs=azure-portal#preventing-abuse-and-harmful-content-generation) - General outline of content safety & abuse monitoring functionality 
+- [Use a blocklist in Azure AI Foundry](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/use-blocklists) - Help with explicitly filterering additional predefined terms, are specific to one's use case
+- [Data, privacy, and security for Azure AI Foundry Service#Preventing abuse & harmful content generation](https://learn.microsoft.com/en-us/legal/cognitive-services/openai/data-privacy?tabs=azure-portal#preventing-abuse-and-harmful-content-generation) - General outline of content safety & abuse monitoring functionality 
 - [Using Filters in Semantic Kernel](https://devblogs.microsoft.com/semantic-kernel/filters-in-semantic-kernel) - Semantic Kernel itself has filtering capability. While it isn't explicitly covered in this workshop, you can find a summary and example below.
 
 ## Bonus: Semantic Kernel Filters (in code)

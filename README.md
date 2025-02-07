@@ -1,8 +1,8 @@
-# AI Developer - Azure Open AI and Semantic Kernel Fundamentals
+# AI Developer - Azure AI Foundry and Semantic Kernel Fundamentals
 
 ## Introduction
 
-The Azure OpenAI and Semantic Kernel Fundamentals is an introduction to understanding the conceptual foundations of infusing your application with AI using the Semantic Kernel development kit. Materials from this workshop can serve as a foundation for building your own AI infused solutions with Semantic Kernel.
+The Azure AI Foundry and Semantic Kernel Fundamentals is an introduction to understanding the conceptual foundations of infusing your application with AI using the Semantic Kernel development kit. Materials from this workshop can serve as a foundation for building your own AI infused solutions with Semantic Kernel.
 
 This workshop consists of eight challenges and is designed to encourage learning and research. If you want a deeper understanding of how to implement an AI solution but have little or no experience with OpenAI or Semantic Kernel then this workshop is for you.
 
@@ -10,7 +10,7 @@ We recommend to host this as a team based activity where students work in groups
 
 ## Learning Objectives
 
-This workshop is designed for individuals who want to gain practical experience in working with Azure OpenAI and Semantic Kernel. By applying this knowledge, you will be able to integrate AI into your own applications.
+This workshop is designed for individuals who want to gain practical experience in working with Azure AI Foundry and Semantic Kernel. By applying this knowledge, you will be able to integrate AI into your own applications.
 
 Participants will learn how to:
 
@@ -29,7 +29,7 @@ Participants will learn how to:
   - [C#](./Dotnet/challenges/Challenge-00.md)
   - [Python](./Python/challenges/Challenge-00.md)
 
-- Challenge 01: Azure OpenAI Fundamentals - Deploy an Azure OpenAI Model, practice prompt engineering.
+- Challenge 01: Azure AI Foundry Fundamentals - Deploy an Azure AI Foundry Model, practice prompt engineering.
   - [C#](./Dotnet/challenges/Challenge-01.md)
   - [Python](./Python/challenges/Challenge-01.md)
 
@@ -49,7 +49,7 @@ Participants will learn how to:
   - [C#](./Dotnet/challenges/Challenge-05.md)
   - [Python](./Python/challenges/Challenge-05.md)
 
-- Challenge 06: Responsible AI: Exploring Content Filters in Azure OpenAI - Configure, test, and customize content filters.
+- Challenge 06: Responsible AI: Exploring Content Filters in Azure AI Foundry - Configure, test, and customize content filters.
   - [C#](./Dotnet/challenges/Challenge-06.md)
   - [Python](./Python/challenges/Challenge-06.md)
 

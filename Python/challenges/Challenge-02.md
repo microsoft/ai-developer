@@ -8,7 +8,7 @@ The first step in understanding Semantic Kernel is to become familiar with the b
 
 ## Description
 
-In this challenge, you will be provided with a starter application that will require you to complete the implementation of the chat feature using Semantic Kernel and the Azure OpenAI GPT-4o model. The AI model will then respond with an answer or completion to the prompt. The application uses the Semantic Kernel framework to interact with the AI model. You will need to complete the implementation of the chat API to send the user's prompt to the AI model and return the response to the user.
+In this challenge, you will be provided with a starter application that will require you to complete the implementation of the chat feature using Semantic Kernel and the Azure AI Foundry GPT-4o model. The AI model will then respond with an answer or completion to the prompt. The application uses the Semantic Kernel framework to interact with the AI model. You will need to complete the implementation of the chat API to send the user's prompt to the AI model and return the response to the user.
 
 ## Prerequisites
 
@@ -20,7 +20,7 @@ In this challenge, you will be provided with a starter application that will req
 
 1. Deploy a GTP-4o model using  [Azure AI Foundry](https://ai.azure.com) `https://ai.azure.com`. The **Deployment name** should be something similar to ``` gpt-4o ```. This name will be needed next when configuring Semantic Kernel. :exclamation: Deployment type should be **Standard**. :exclamation:
 
-1. Update the *.env* file with the Azure OpenAI *Deployment name*, *Endpoint URL* and the *API Key*. These values can be found in the Azure AI Foundry.
+1. Update the *.env* file with the Azure AI Foundry *Deployment name*, *Endpoint URL* and the *API Key*. These values can be found in the Azure AI Foundry.
 
     :bulb: **The endpoint URL should be in the format** ```https://<deployment-name>.openai.azure.com```
 
@@ -32,10 +32,10 @@ In this challenge, you will be provided with a starter application that will req
     "AZURE_OPENAI_API_KEY": "Replace with your AOI API key",
     ```
 
-1. Navigate to the `chat.py` and Implement the following code to add the Azure OpenAI Chat Completion service to the Kernel object inside `initialize_kernel()`.
+1. Navigate to the `chat.py` and Implement the following code to add the Azure AI Foundry Chat Completion service to the Kernel object inside `initialize_kernel()`.
 
     ```python
-    //Add Azure OpenAI Chat Completion
+    //Add Azure AI Foundry Chat Completion
     chat_completion_service = AzureChatCompletion(
         deployment_name="my-deployment",  
         api_key="my-api-key",
@@ -63,7 +63,7 @@ In this challenge, you will be provided with a starter application that will req
 
     :bulb: For a detailed explanation of Chat History, please refer to the documentation [here](https://learn.microsoft.com/en-us/semantic-kernel/concepts/ai-services/chat-completion/chat-history?pivots=programming-language-python).
 
-1. Use the Chat Completion service to send the entire chat history, including the latest prompt, to the Azure OpenAI chat service. Once the service processes this and generates a response, wait until the full response is received before sending it back to the client.
+1. Use the Chat Completion service to send the entire chat history, including the latest prompt, to the Azure AI Foundry chat service. Once the service processes this and generates a response, wait until the full response is received before sending it back to the client.
 
     :bulb: Refer to the Semantic Kernel documentation [here](https://learn.microsoft.com/en-us/semantic-kernel/concepts/ai-services/chat-completion/?tabs=python-AzureOpenAI%2Cpython-AzureOpenAI%2Cjava-AzureOpenAI&pivots=programming-language-python#using-chat-completion-services) for an example of how to call the chat completion service.
 

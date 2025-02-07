@@ -2,7 +2,7 @@
 
 # Getting Familiar With the Reference Application
 
-This application was created as a sample application that allows you to focus on learning Semantic Kernel and Azure OpenAI. It is a simple chat application that uses the Semantic Kernel framework to interact with an Azure OpenAI chat model.The application is hosted using Streamlit, a beginner-friendly Python web framework. It features a simple chat window where users can interact with the AI model by typing a question or prompt and pressing the **Send** button or  **Enter** key. The AI model will then respond with an answer or completion to the prompt. You will need to complete the implementation of the chat API to send the user's prompt to the AI model and return the response to the user.
+This application was created as a sample application that allows you to focus on learning Semantic Kernel and Azure AI Foundry. It is a simple chat application that uses the Semantic Kernel framework to interact with an Azure AI Foundry chat model.The application is hosted using Streamlit, a beginner-friendly Python web framework. It features a simple chat window where users can interact with the AI model by typing a question or prompt and pressing the **Send** button or  **Enter** key. The AI model will then respond with an answer or completion to the prompt. You will need to complete the implementation of the chat API to send the user's prompt to the AI model and return the response to the user.
 
 1. Navigate to the folder `Python/src` and open `app.py`(Streamlit application) file in Visual Studio Code. To run the application locally, execute the command in the terminal from the root of your repository.
 
@@ -31,7 +31,7 @@ This application was created as a sample application that allows you to focus on
 
     At the heart of the Semantic Kernel framework is the **Kernel** object. Here is where you register the AI Models you will be working with and any Plugins you will be using in your application. You will learn about Plugins in later challenges.
 
-    The Kernel object is being configured to use an Azure OpenAI chat model by calling the ```AzureChatCompletion``` method of the Kernel class.  
+    The Kernel object is being configured to use an Azure AI Foundry chat model by calling the ```AzureChatCompletion``` method of the Kernel class.  
 
     Locate the following code in the ```chat.py``` inside `initialize_kernel()` method:
 
