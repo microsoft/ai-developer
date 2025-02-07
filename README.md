@@ -25,41 +25,41 @@ Participants will learn how to:
 
 ## Challenges
 
-- Challenge 00: Prerequisites
-  - [C#](./Dotnet/challenges/Challenge-00.md): Prepare your workstation to work with Azure.
-  - [Python](./Python/challenges/Challenge-00.md): Prepare your workstation to work with Azure.
+- Challenge 00: Prerequisites - Prepare your workstation to work with Azure.
+  - [C#](./Dotnet/challenges/Challenge-00.md)
+  - [Python](./Python/challenges/Challenge-00.md)
 
-- Challenge 01: Azure OpenAI Fundamentals
-  - [C#](./Dotnet/challenges/Challenge-01.md): Deploy an Azure OpenAI Model, practice prompt engineering.
-  - [Python](./Python/challenges/Challenge-01.md): Deploy an Azure OpenAI Model, practice prompt engineering.
+- Challenge 01: Azure OpenAI Fundamentals - Deploy an Azure OpenAI Model, practice prompt engineering.
+  - [C#](./Dotnet/challenges/Challenge-01.md)
+  - [Python](./Python/challenges/Challenge-01.md)
 
-- Challenge 02: Semantic Kernel Fundamentals
-  - [C#](./Dotnet/challenges/Challenge-02.md): Connect your OpenAI model, test your application.
-  - [Python](./Python/challenges/Challenge-02.md): Connect your OpenAI model, test your application.
+- Challenge 02: Semantic Kernel Fundamentals - Connect your OpenAI model, test your application.
+  - [C#](./Dotnet/challenges/Challenge-02.md)
+  - [Python](./Python/challenges/Challenge-02.md)
 
-- Challenge 03: Plugins
-  - [C#](./Dotnet/challenges/Challenge-03.md): Create Semantic Kernel plugins, enable auto function calling, explore planners.
-  - [Python](./Python/challenges/Challenge-03.md): Create Semantic Kernel plugins, enable auto function calling, explore planners.
+- Challenge 03: Plugins - Create Semantic Kernel plugins, enable auto function calling, explore planners.
+  - [C#](./Dotnet/challenges/Challenge-03.md)
+  - [Python](./Python/challenges/Challenge-03.md)
 
-- Challenge 04: Import Plugin using OpenAPI
-  - [C#](./Dotnet/challenges/Challenge-04.md): Import API using OpenAPI Specification.
-  - [Python](./Python/challenges/Challenge-04.md): Import API using OpenAPI Specification.
+- Challenge 04: Import Plugin using OpenAPI - Import an API using an OpenAPI specification.
+  - [C#](./Dotnet/challenges/Challenge-04.md)
+  - [Python](./Python/challenges/Challenge-04.md)
 
-- Challenge 05: Retrieval-Augmented Generation (RAG)
-  - [C#](./Dotnet/challenges/Challenge-05.md): Implement document chunking & embedding, enhance AI responses with external sources.
-  - [Python](./Python/challenges/Challenge-05.md): Implement document chunking & embedding, enhance AI responses with external sources.
+- Challenge 05: Retrieval-Augmented Generation (RAG) - Implement document chunking & embedding, enhance AI responses with external sources.
+  - [C#](./Dotnet/challenges/Challenge-05.md)
+  - [Python](./Python/challenges/Challenge-05.md)
 
-- Challenge 06: Responsible AI: Exploring Content Filters in Azure OpenAI
-  - [C#](./Dotnet/challenges/Challenge-06.md): Configure, test, and customize content filters.
-  - [Python](./Python/challenges/Challenge-06.md): Configure, test, and customize content filters.
+- Challenge 06: Responsible AI: Exploring Content Filters in Azure OpenAI - Configure, test, and customize content filters.
+  - [C#](./Dotnet/challenges/Challenge-06.md)
+  - [Python](./Python/challenges/Challenge-06.md)
 
-- Challenge 07: Image Generation using DALL-E
-  - [C#](./Dotnet/challenges/Challenge-07.md): Work with text-to-image models, build an image generating plugin.
-  - [Python](./Python/challenges/Challenge-07.md): Work with text-to-image models, build an image generating plugin.
+- Challenge 07: Image Generation using DALL-E - Work with text-to-image models, build an image generating plugin.
+  - [C#](./Dotnet/challenges/Challenge-07.md)
+  - [Python](./Python/challenges/Challenge-07.md)
 
-- Challenge 08: Multi-Agent Systems
-  - [C#](./Dotnet/challenges/Challenge-08.md): Create a multi-agent conversation, implement in Semantic Kernel.
-  - [Python](./Python/challenges/Challenge-08.md): Create a multi-agent conversation, implement in Semantic Kernel.
+- Challenge 08: Multi-Agent Systems - Create a multi-agent conversation, implement in Semantic Kernel.
+  - [C#](./Dotnet/challenges/Challenge-08.md)
+  - [Python](./Python/challenges/Challenge-08.md)
 
 ### Here is the [Slides](./challenges/Resources/Lectures.pdf) used during our workshop
 
