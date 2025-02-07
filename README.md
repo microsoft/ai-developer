@@ -61,7 +61,7 @@ Participants will learn how to:
   - [C#](./Dotnet/challenges/Challenge-08.md)
   - [Python](./Python/challenges/Challenge-08.md)
 
-### Here is the [Slides](./challenges/Resources/Lectures.pdf) used during our workshop
+### Here are the [Slides](./challenges/Resources/Lectures.pdf) used during our workshop
 
 ## Contributors
 
