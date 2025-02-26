@@ -14,7 +14,7 @@ This workshop is designed for individuals who want to gain practical experience 
 
 Participants will learn how to:
 
-- Build a simple chat using Semantic Kernel and C#
+- Build a simple chat using Semantic Kernel and C# or Python
 - Add plugins and enable auto calling to create Planners
 - Import existing APIs using OpenAPI
 - Implement Retrieval Augmented Generation (RAG)
