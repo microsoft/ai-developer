@@ -23,17 +23,17 @@
     <None Remove="Services\**" />
   </ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Markdig" Version="0.39.1" />
-		<PackageReference Include="Markdown.ColorCode" Version="2.3.0" />
+		<PackageReference Include="Markdig" Version="0.40.0" />
+		<PackageReference Include="Markdown.ColorCode" Version="3.0.0" />
 		<PackageReference Include="Microsoft.FeatureManagement.AspNetCore" Version="4.0.0" />
-		<PackageReference Include="Microsoft.FluentUI.AspNetCore.Components" Version="4.11.0" />
-		<PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Emoji" Version="4.11.0" />
-		<PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Icons" Version="4.11.0" />
-		<PackageReference Include="Microsoft.SemanticKernel" Version="1.32.0" />
+		<PackageReference Include="Microsoft.FluentUI.AspNetCore.Components" Version="4.11.5" />
+		<PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Emoji" Version="4.11.5" />
+		<PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Icons" Version="4.11.5" />
+		<PackageReference Include="Microsoft.SemanticKernel" Version="1.40.1" />
 		<PackageReference Include="Microsoft.SemanticKernel.Agents.Core" Version="1.27.0-alpha" />
 		<PackageReference Include="Microsoft.SemanticKernel.Connectors.AzureAISearch" Version="1.27.0-preview" />
-		<PackageReference Include="Microsoft.SemanticKernel.Connectors.OpenAI" Version="1.32.0" />
-		<PackageReference Include="Microsoft.SemanticKernel.Plugins.OpenApi" Version="1.27.0-alpha" />
+		<PackageReference Include="Microsoft.SemanticKernel.Connectors.OpenAI" Version="1.40.1" />
+		<PackageReference Include="Microsoft.SemanticKernel.Plugins.OpenApi" Version="1.40.1" />
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\Aspire\Aspire.ServiceDefaults\Aspire.ServiceDefaults.csproj" />
