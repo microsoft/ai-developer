@@ -13,16 +13,32 @@
         "Order": 2
       },
       {
-        "RawFilePath": "",
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/prod/Labs/lab-02.md",
         "Order": 3
       },
       {
-        "RawFilePath": "",
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/prod/Labs/lab-03.md",
         "Order": 4
       },
       {
-        "RawFilePath": "",
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/prod/Labs/lab-04.md",
         "Order": 5
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/prod/Labs/lab-05.md",
+        "Order": 6
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/prod/Labs/lab-06.md",
+        "Order": 7
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/prod/Labs/lab-07.md",
+        "Order": 8
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/prod/Labs/lab-08.md",
+        "Order": 9
       }
     ]
   }
