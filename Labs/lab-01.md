@@ -2,8 +2,10 @@
 
 ### Estimated Duration: 60 minutes
 
-Introduction
 The first step in understanding Azure AI Foundry is to get familiar with the basics. In this challenge, you will learn about the core concepts of Azure AI Foundry and how it can be used to build powerful AI infused applications. You will deploy a GPT-3.5 model and use the Azure AI Foundry Studio to interact with the model.
+
+## Objectives
+In this exercise, you will be performing the following tasks:
 
 ## Task 1: Setup Azure AI Foundry
 
