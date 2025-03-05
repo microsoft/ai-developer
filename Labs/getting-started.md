@@ -54,7 +54,7 @@ Feel free to start, stop, or restart your virtual machine as needed from the **R
 
    ![Lab Validation](../images/lab-validation.png)
 
-1. If you need any assistance, please contact us at **cloudlabs-support@spektrasystems.com**
+1. If you need any assistance, please contact us at **cloudlabs-support@spektrasystems.com**.
 
 ## Lab Duration Extension
 
