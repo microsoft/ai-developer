@@ -9,4 +9,4 @@
     - Username : <inject key="AzureAdUserEmail"></inject>
     - Password : <inject key="AzureAdUserPassword"></inject>
 1. Click on **Create Project**.
-1. Provide **my-ai-foundry-project-<inject key="Deployment ID" enableCopy="false"></inject>** as the name and click on **Create**.
+1. Provide **ai-foundry-project-<inject key="Deployment ID" enableCopy="false"></inject>** as the name and click on **Customize**.
