@@ -1,6 +1,6 @@
 # Azure AI Foundry and Semantic Kernel Fundamentals
 
-### Overall Estimated Duration: 2 Hours
+### Overall Estimated Duration: Hours
 
 ## Overview
 
@@ -13,7 +13,6 @@
 ## Architecture Diagram
 
 ## Explanation of Components
-
 
 ## Getting Started with the Lab
  
