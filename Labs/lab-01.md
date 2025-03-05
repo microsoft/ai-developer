@@ -15,3 +15,21 @@
 1.  Click on **+ Deploy model**, and then select **Deploy Base model**.
 1. Search for **gpt-4o**, select the model and click on **Confirm**.
 1. Click on **Deploy**.
+1. Once the model is deployed, click on **Open in playground**.
+
+Extract the United States Postal Service (USPS) formatted address from the following email.
+
+
+    Subject: Elevate Your Brand with Our Comprehensive Marketing Solutions! 
+    From: BrightEdge Marketing
+    To: John Doe
+
+    Dear John,
+    At BrightEdge Marketing, we believe in the power of innovative marketing strategies to elevate brands and drive business success. Our team of experts is dedicated to helping you achieve your marketing goals through a comprehensive suite of services tailored to your unique needs.
+
+    Please send letters to 123 Marketing Lane, Suite 400 in area 90210 located in Innovation City California.
+
+    Thank you for considering BrightEdge Marketing.
+    Best regards,
+    Sarah Thompson 
+    Marketing Director BrightEdge Marketing
