@@ -1,1 +1,1 @@
-# Exercise 6:
+# **Exercise 6:** Responsible AI: Exploring Content Filters in Azure AI Foundry

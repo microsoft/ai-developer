@@ -1,1 +1,1 @@
-# Exercise 5:
+# **Exercise 5:** Retrieval-Augmented Generation (RAG)
