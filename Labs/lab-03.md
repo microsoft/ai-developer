@@ -120,4 +120,15 @@ In this exercise, you will be performing the following tasks:
     ```
     http://localhost:8501
     ```
+1. Submit the following prompt:
+    ```
+    What time is it?
+    ```
+2. Since the AI have the **Time Plugin**, it will be able to provide real-time information, you will get a response similar to the following:
+    ```
+    The current time is 3:43 PM on January 23, 2025.
+    ```
 </details>
+
+## Task 3: Create and import the Geocoding Plugin
+1. Navigate to [Geocoding API](https://geocode.maps.co/) portal and :
