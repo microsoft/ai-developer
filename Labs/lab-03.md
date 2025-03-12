@@ -106,6 +106,11 @@ In this exercise, you will be performing the following tasks:
     kernel.add_plugin(time_plugin, plugin_name="TimePlugin")
     logger.info("Time plugin loaded")
     ```
+1. Search (using Ctrl+F) and remove the following piece of code from the file as we will enable automatic function calling and this is no longer required:
+    ```
+    execution_settings = kernel.get_prompt_execution_settings_from_service_id("chat-service")
+    ```
+    >**Note**: You need to remove it from two code blocks, one will be inside **def initialize_kernel():** function and another will be in **global chat_history** code block.
 1. Right click on `Python>src` in the left pane and select **Open in Integrated Terminal**.
 1. Use the following command to run the app:
     ```
