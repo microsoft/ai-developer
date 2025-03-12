@@ -504,6 +504,8 @@ The AI will perform the following plan to answer the question but may do so in a
 3️⃣ Finally, the AI should ask Semantic Kernel to call the GetWeatherForecast function on the Weather Plugin passing in the current date/time and Lat/Long to get the weather forecast for Next Thursday (expressed as the number of days in the future) at the coordinates for San Francisco
 
 A simplified sequence diagram between Semantic Kernel and AI is shown below:
+
+```mermaid
 sequenceDiagram
     participant C as Client
     participant S as Semantic Kernel
@@ -522,6 +524,27 @@ sequenceDiagram
     A-->>-S: The weather in San Francisco next Tuesday is...
     S->>C: Here is the weather for San Francisco next Tuesday
     deactivate C
-
+```
 
 </details>
+
+```mermaid
+sequenceDiagram
+    participant C as Client
+    participant S as Semantic Kernel
+    participant A as AI
+    C->>S: What is the weather in San Francisco next Tuesday?
+    activate C
+    S->>+A: What is the weather in San Francisco next Tuesday?
+    A-->>-S: Call get_date function
+    S->>+A: Results of get_date
+    A-->>-S: Call day_of_week function
+    S->>+A: Results of day_of_week
+    A-->>-S: Call geocode_address function
+    S->>+A: Results of geocode_address
+    A-->>-S: Call get_weather with lat/long and days in future
+    S->>+A: Results of get_weather
+    A-->>-S: The weather in San Francisco next Tuesday is...
+    S->>C: Here is the weather for San Francisco next Tuesday
+    deactivate C
+```
