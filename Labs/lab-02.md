@@ -81,7 +81,6 @@ In this exercise, you will be performing the following tasks:
     return response
     ```
 1. In case you encounter any indentation error, use the below code:
-
     ```
     import asyncio
     import logging
@@ -95,8 +94,7 @@ In this exercise, you will be performing the following tasks:
     from semantic_kernel.connectors.ai.chat_completion_client_base import ChatCompletionClientBase
     from semantic_kernel.connectors.ai.open_ai import OpenAIChatPromptExecutionSettings
     import os
-
-    # Add Logger
+    #Add Logger
     logger = logging.getLogger(__name__)
 
     load_dotenv(override=True)
