@@ -36,16 +36,12 @@ In this exercise, you will be performing the following tasks:
 
 
     class TimePlugin:
-        """Plugin that provides time-related functions."""
-
         @kernel_function()
         def current_time(self) -> str:
-            """Get the current date and time."""
             return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
         @kernel_function()
         def get_year(self, date_str: Annotated[str, "The date string in format YYYY-MM-DD"] = None) -> str:
-            """Extract the year from a date string."""
             if date_str is None:
                 return str(datetime.now().year)
             
@@ -57,7 +53,6 @@ In this exercise, you will be performing the following tasks:
 
         @kernel_function()
         def get_month(self, date_str: Annotated[str, "The date string in format YYYY-MM-DD"] = None) -> str:
-            """Extract the month from a date string."""
             if date_str is None:
                 return datetime.now().strftime("%B")
             
@@ -69,7 +64,6 @@ In this exercise, you will be performing the following tasks:
 
         @kernel_function()
         def get_day_of_week(self, date_str: Annotated[str, "The date string in format YYYY-MM-DD"] = None) -> str:
-            """Get the day of week for a date."""
             if date_str is None:
                 return datetime.now().strftime("%A")
             
@@ -382,14 +376,11 @@ In this exercise, you will be performing the following tasks:
     from datetime import datetime, timedelta
 
     class WeatherPlugin:
-        """Plugin for getting weather information from Open Meteo API."""
-
         @kernel_function(description="Get weather forecast for a location up to 16 days in the future")
         def get_forecast_weather(self, 
                                 latitude: Annotated[float, "Latitude of the location"],
                                 longitude: Annotated[float, "Longitude of the location"],
                                 days: Annotated[int, "Number of days to forecast (up to 16)"] = 16):
-            """Get the forecast weather at the specified latitude/longitude location for up to 16 days."""
             
             # Ensure days is within valid range (API supports up to 16 days)
             if days > 16:
@@ -407,7 +398,6 @@ In this exercise, you will be performing the following tasks:
                 response.raise_for_status()
                 data = response.json()
                 
-                # Extract daily forecast data
                 daily = data.get('daily', {})
                 times = daily.get('time', [])
                 max_temps = daily.get('temperature_2m_max', [])
@@ -416,7 +406,6 @@ In this exercise, you will be performing the following tasks:
                 precip_probs = daily.get('precipitation_probability_max', [])
                 weather_codes = daily.get('weather_code', [])
                 
-                # Build a readable forecast for each day
                 forecasts = []
                 for i in range(len(times)):
                     # Convert date string to datetime object for day name
@@ -448,7 +437,6 @@ In this exercise, you will be performing the following tasks:
                 return f"Error fetching forecast weather: {str(e)}"
         
         def _get_weather_description(self, code):
-            """Convert WMO weather code to human-readable description."""
             weather_codes = {
                 0: "Clear sky",
                 1: "Mainly clear", 2: "Partly cloudy", 3: "Overcast",
