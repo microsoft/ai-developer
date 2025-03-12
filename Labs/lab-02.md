@@ -82,70 +82,70 @@ In this exercise, you will be performing the following tasks:
     ```
 1. In case you encounter any indentation error, use the below code:
     ```
-    import asyncio
-    import logging
-    from dotenv import load_dotenv
-    from semantic_kernel import Kernel
-    from semantic_kernel.connectors.ai.open_ai import AzureChatCompletion, OpenAITextToImage
-    from semantic_kernel.connectors.ai.function_choice_behavior import FunctionChoiceBehavior
-    from semantic_kernel.connectors.openapi_plugin import OpenAPIFunctionExecutionParameters
-    from semantic_kernel.contents.chat_history import ChatHistory
-    from semantic_kernel.functions import KernelArguments
-    from semantic_kernel.connectors.ai.chat_completion_client_base import ChatCompletionClientBase
-    from semantic_kernel.connectors.ai.open_ai import OpenAIChatPromptExecutionSettings
-    import os
-    #Add Logger
-    logger = logging.getLogger(__name__)
+        import asyncio
+        import logging
+        from dotenv import load_dotenv
+        from semantic_kernel import Kernel
+        from semantic_kernel.connectors.ai.open_ai import AzureChatCompletion, OpenAITextToImage
+        from semantic_kernel.connectors.ai.function_choice_behavior import FunctionChoiceBehavior
+        from semantic_kernel.connectors.openapi_plugin import OpenAPIFunctionExecutionParameters
+        from semantic_kernel.contents.chat_history import ChatHistory
+        from semantic_kernel.functions import KernelArguments
+        from semantic_kernel.connectors.ai.chat_completion_client_base import ChatCompletionClientBase
+        from semantic_kernel.connectors.ai.open_ai import OpenAIChatPromptExecutionSettings
+        import os
+        #Add Logger
+        logger = logging.getLogger(__name__)
 
-    load_dotenv(override=True)
+        load_dotenv(override=True)
 
-    chat_history = ChatHistory()
-
-    def initialize_kernel():
-    #Challene 02 - Add Kernel
-    kernel = Kernel()
-    #Challenge 02 - Chat Completion Service
-    chat_completion_service = AzureChatCompletion(
-        deployment_name=os.getenv("AZURE_OPENAI_CHAT_DEPLOYMENT_NAME"),
-        api_key=os.getenv("AZURE_OPENAI_API_KEY"),
-        endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
-        service_id="chat-service",
-    )
-    kernel.add_service(chat_completion_service)
-    chat_completion_service = kernel.get_service(type=ChatCompletionClientBase)
-    execution_settings = kernel.get_prompt_execution_settings_from_service_id("chat-service")
-    return kernel
-
-    async def process_message(user_input):
-        kernel = initialize_kernel()
-
-        #Challenge 03 and 04 - Services Required
-        #Challenge 03 - Create Prompt Execution Settings
-
-
-
-        # Challenge 03 - Add Time Plugin
-        # Placeholder for Time plugin
-
-        # Challenge 04 - Import OpenAPI Spec
-        # Placeholder for OpenAPI plugin
-
-
-        # Challenge 05 - Add Search Plugin
-
-
-        # Challenge 06- Semantic kernel filters
-
-        # Challenge 07 - Text To Image Plugin
-        # Placeholder for Text To Image plugin
-
-        # Start Challenge 02 - Sending a message to the chat completion service by invoking kernel
-
-        #return result
-
-    def reset_chat_history():
-        global chat_history
         chat_history = ChatHistory()
+
+        def initialize_kernel():
+        #Challene 02 - Add Kernel
+        kernel = Kernel()
+        #Challenge 02 - Chat Completion Service
+        chat_completion_service = AzureChatCompletion(
+            deployment_name=os.getenv("AZURE_OPENAI_CHAT_DEPLOYMENT_NAME"),
+            api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+            endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
+            service_id="chat-service",
+        )
+        kernel.add_service(chat_completion_service)
+        chat_completion_service = kernel.get_service(type=ChatCompletionClientBase)
+        execution_settings = kernel.get_prompt_execution_settings_from_service_id("chat-service")
+        return kernel
+
+        async def process_message(user_input):
+            kernel = initialize_kernel()
+
+            #Challenge 03 and 04 - Services Required
+            #Challenge 03 - Create Prompt Execution Settings
+
+
+
+            # Challenge 03 - Add Time Plugin
+            # Placeholder for Time plugin
+
+            # Challenge 04 - Import OpenAPI Spec
+            # Placeholder for OpenAPI plugin
+
+
+            # Challenge 05 - Add Search Plugin
+
+
+            # Challenge 06- Semantic kernel filters
+
+            # Challenge 07 - Text To Image Plugin
+            # Placeholder for Text To Image plugin
+
+            # Start Challenge 02 - Sending a message to the chat completion service by invoking kernel
+
+            #return result
+
+        def reset_chat_history():
+            global chat_history
+            chat_history = ChatHistory()
     ```
 1. Right click on `Python>src` in the left pane and select **Open in Integrated Terminal**.
 1. Use the following command to run the app:
