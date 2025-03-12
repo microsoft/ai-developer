@@ -88,4 +88,16 @@ In this exercise, you will be performing the following tasks:
     )
     from plugins.time_plugin import TimePlugin
     ```
+1. Add the following code in the `#Challenge 03 - Create Prompt Execution Settings` section of the file.
+    ```
+    execution_settings = AzureChatPromptExecutionSettings()
+    execution_settings.function_choice_behavior = FunctionChoiceBehavior.Auto()
+    logger.info("Automatic function calling enabled")
+    ```
+1. Add the following code in the `# Placeholder for Time plugin` section of the file.
+    ```
+    time_plugin = TimePlugin()
+    kernel.add_plugin(time_plugin, plugin_name="TimePlugin")
+    logger.info("Time plugin loaded")
+    ```
 </details>

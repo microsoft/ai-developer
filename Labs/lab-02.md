@@ -71,7 +71,7 @@ In this exercise, you will be performing the following tasks:
     response = await chat_completion.get_chat_message_content(
         chat_history=chat_history,
         settings=execution_settings,
-        kernel=kernel  # Pass the kernel with the registered plugin
+        kernel=kernel
     )
     chat_history.add_assistant_message(str(response))
     ```
@@ -150,7 +150,7 @@ In this exercise, you will be performing the following tasks:
         response = await chat_completion.get_chat_message_content(
             chat_history=chat_history,
             settings=execution_settings,
-            kernel=kernel  # Pass the kernel with the registered plugin
+            kernel=kernel
         )
         chat_history.add_assistant_message(str(response))
 
