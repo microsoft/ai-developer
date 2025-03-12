@@ -367,3 +367,5 @@ In this exercise, you will be performing the following tasks:
     ```
 
 </details>
+
+## Task 4: Create and import the Weather Plugin
