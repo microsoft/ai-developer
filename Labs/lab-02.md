@@ -192,5 +192,13 @@ In this exercise, you will be performing the following tasks:
         kernel: kernel);
     chatHistory.AddAssistantMessage(assistantResponse.Content);
     ```
+1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` in the left pane and select **Open in Integrated Terminal**.
+1. Use the following command to run the app:
+    ```
+    dotnet run
+    ```
+1. Navigate to the link that is in the output section of the terminal:
+    > **Note**: The link can be found besides **Login to the dashboard at** in the terminal.
+
 
 </details>
