@@ -1,1 +1,1 @@
-# **Exercise 4:** Import Plugin using OpenAPI
+# **Exercise 4**: Import Plugin using OpenAPI

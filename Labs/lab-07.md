@@ -1,1 +1,1 @@
-# **Exercise 7:** Image Generation using DALL-E
+# **Exercise 7**: Image Generation using DALL-E

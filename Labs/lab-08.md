@@ -1,1 +1,1 @@
-# **Exercise 8:** Multi-Agent Systems
+# **Exercise 8**: Multi-Agent Systems

@@ -1,4 +1,4 @@
-# **Exercise 1:** Azure AI Foundry Fundamentals
+# **Exercise 1**: Azure AI Foundry Fundamentals
 
 ### Estimated Duration: 60 minutes
 
@@ -15,11 +15,11 @@ In this exercise, you will be performing the following tasks:
     - Password : <inject key="AzureAdUserPassword"></inject>
 1. Click on **Create Project**.
 1. Provide **ai-foundry-project-<inject key="Deployment ID" enableCopy="false"></inject>** as Project name and click on **Customize**.
-1. On the Create Project blade, specify the following configuration options and click on Next.
+1. On the **Create a Project** blade, specify the following configuration options and click on **Next**:
     - **Resource group**: ai-foundry-<inject key="Deployment ID" enableCopy="false"></inject>
     - **Location**: East Us
-    - **Connect Azure AI Search**: click on **Create new AI Search** and enter **ai-search-<inject key="Deployment ID" enableCopy="false"></inject>**
-1.  and click on **Next**, and then **Create**.
+    - **Connect Azure AI Search**: click on **Create new AI Search** and enter **ai-search-<inject key="Deployment ID" enableCopy="false"></inject>** and click on **Next**
+1.  Click on **Create**.
 1.  Click on **Models + endpoints** under **My assets** in the left pane.
 1.  Click on **+ Deploy model**, and then select **Deploy Base model**.
 1. Search for **gpt-4o**, select the model and click on **Confirm**.

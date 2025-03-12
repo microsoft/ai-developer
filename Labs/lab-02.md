@@ -1,4 +1,4 @@
-# **Exercise 2:** Semantic Kernel Fundamentals
+# **Exercise 2**: Semantic Kernel Fundamentals
 
 ### Estimated Duration: 60 minutes
 

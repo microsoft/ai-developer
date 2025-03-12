@@ -1,1 +1,1 @@
-# **Exercise 3:** Semantic Kernel Plugins
+# **Exercise 3**: Semantic Kernel Plugins
