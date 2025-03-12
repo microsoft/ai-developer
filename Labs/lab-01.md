@@ -9,7 +9,7 @@ In this exercise, you will be performing the following tasks:
 
 ## Task 1: Setup Azure AI Foundry
 
-1. Navigate to [Azure AI Foundry](https://ai.azure.com/) and login using the below Azure credentials:
+1. Navigate to [Azure AI Foundry](https://ai.azure.com/) portal and login using the below Azure credentials:
 
     - Username : <inject key="AzureAdUserEmail"></inject>
     - Password : <inject key="AzureAdUserPassword"></inject>
