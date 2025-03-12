@@ -14,20 +14,38 @@ In this exercise, you will be performing the following tasks:
 1. Navigate to `C:\LabFiles` and select **ai-developer** folder and click on **Select Folder**.
 1. If you recieve `Do you trust the authors of the files in folder` warning, select the checkbox and click on **Yes, I trust the authors**.
 
-## Python
-
+## Task 2: Setup environment variables
 <details>
-  <summary>Click to expand</summary>
-
-  - Bullet point 1
-  - Bullet point 2
-  - Bullet point 3
-
-</details>
-
+<summary>Python</summary>
 
 1. Navigate to `Python>src` directory and open **.env** file.
 1. Navigate to AI Foundry Portal and on Overview page select Azure OpenAI Sercie and copy the endpoint.
 1. Paste it besides `AZURE_OPENAI_ENDPOINT`.
     >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
 1. Copy the API key from AI Foundry Portal and paste it besides `AZURE_OPENAI_API_KEY`.
+
+</details>
+
+<details>
+<summary>C Sharp(C#)</summary>
+
+1. Navigate to `Dotnet>src>BlazorAI` directory and open **appsettings.json** file.
+1. Navigate to AI Foundry Portal and on Overview page select Azure OpenAI Sercie and copy the endpoint.
+1. Paste it besides `AOI_ENDPOINT`.
+    >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
+    >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
+1. Copy the API key from AI Foundry Portal and paste it besides `AOI_API_KEY`.
+
+</details>
+
+## Task 3: Update the code files and run the app
+
+<details>
+<summary>Python</summary>
+
+</details>
+
+<details>
+<summary>C Sharp(C#)</summary>
+
+</details>
