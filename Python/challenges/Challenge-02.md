@@ -22,14 +22,13 @@ In this challenge, you will be provided with a starter application that will req
 
 1. Update the *.env* file with the Azure AI Foundry *Deployment name*, *Endpoint URL* and the *API Key*. These values can be found in the Azure AI Foundry.
 
-    :bulb: **The endpoint URL should be in the format** ```https://<deployment-name>.openai.azure.com```
-
     **.env*
 
     ```json
     "AZURE_OPENAI_CHAT_DEPLOYMENT_NAME": "Replace with your AOI deployment name",
     "AZURE_OPENAI_ENDPOINT": "Replace with your AOI endpoint",
     "AZURE_OPENAI_API_KEY": "Replace with your AOI API key",
+    "AZURE_OPENAI_API_VERSION": "Replace with your AIO API version"
     ```
 
 1. Navigate to the `chat.py` and Implement the following code to add the Azure AI Foundry Chat Completion service to the Kernel object inside `initialize_kernel()`.

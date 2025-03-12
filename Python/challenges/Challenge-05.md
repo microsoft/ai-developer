@@ -147,7 +147,7 @@ In this challenge, you will create a Semantic Search Plugin that utilizes an Azu
 
     ![Vector Search](./Resources/image/ch05img5.png)
 
-1. Upload the ```employee_handbook.pdf``` from the **..\data** directory and **click Next**
+1. Upload the ```employee_handbook.pdf``` from the **.\data** directory and **click Next**
 1. Set the Search type to **Vector** and the Chunk Size to **1024** then **click Next**
 
   > :bulb: Chunk size refers to how much text is grouped together into a single segment or "chunk" before creating an embedding. When processing large documents, the text is often divided into smaller chunks to create embeddings for each segment. The chunk size determines how much text is included in each embedding.
@@ -178,7 +178,6 @@ In this challenge, you will create a Semantic Search Plugin that utilizes an Azu
 
 1. Create a new class in the **plugins** folder called **ContosoSearchPlugin.py**. This is the Semantic Search Plugin to query the AI Search Index created earlier. This Plugin should take the users query and generate an embedding using the Text Embedding model. The embedding should then be used to query the AI Search Index containing the Contoso Handbook PDF and return the most relevant information.
 
-    :bulb: Review the Semantic Kernel documentation on [Creating a Retrieval Augmented Generation (RAG) plugin](https://learn.microsoft.com/en-us/semantic-kernel/concepts/plugins/using-data-retrieval-functions-for-rag) for more information on how to create a ***Semantic Search*** Plugin.
 
 1. The Sample RAG Plugin in the documentation maps the incoming data from AI Search to a class named ```EmployeeHandbookModel```.
 

@@ -25,6 +25,24 @@ This application was created as a sample application that allows you to focus on
 
     **Note**: Currently, the application will respond with an error message because the AI Model has not been configured.
 
+2. To integrate **OpenTelemetry** into your projects, use the Aspire Dashboard to monitor structured logs, traces, and metrics.
+
+    For reference, a sample code snippet is available [here](https://learn.microsoft.com/en-us/dotnet/aspire/fundamentals/dashboard/standalone-for-python?tabs=fastapi%2Cwindows#adding-opentelemetry). Update your `.py` files to include the necessary imports and call the `configure_oltp_grpc_tracing()` function where required.
+
+    Before starting the Aspire Dashboard, ensure that Docker is running. Then, execute the following Docker command:
+
+    ```
+    docker run --rm -it -p 18888:18888 -p 4317:18889 --name aspire-dashboard mcr.microsoft.com/dotnet/aspire-dashboard:9.0
+    ```
+
+    Once the container is running, check the Docker logs for the endpoint and url needed to access the dashboard.You must add this endpoint in your code.
+
+    ![DockerLogs](../image/ch02img4.png)
+
+    Alternatively, copy the key from the Docker logs and navigate to `http://localhost:18888` in a web browser. Enter the key log in to Aspire Dashboard.
+
+    Now, you can monitor logs, traces, and metrics using the Aspire Dashboard.
+
 1. Note the only files you will be working with for the next few challenges(till Challenge 7) are seen in this screenshot. The `chat.py` file is where you will be making changes to complete the challenges.
 
 1. Open the `chat.py` file
