@@ -43,8 +43,31 @@ In this exercise, you will be performing the following tasks:
 <details>
 <summary><strong>Python</strong></summary>
 
-1. Navigate to `Python>src` directory and open **.env** file.
-
+1. Navigate to `Python>src` directory and open **chat.py** file.
+1. Add the following code in the `# Import Modules` section of the file.
+    ```
+    from semantic_kernel.connectors.ai.chat_completion_client_base import ChatCompletionClientBase
+    from semantic_kernel.connectors.ai.open_ai import OpenAIChatPromptExecutionSettings
+    import os
+    ```
+1. Add the following code in the `# Challenge 02 - Chat Completion Service` section of the file.
+    ```
+    chat_completion_service = AzureChatCompletion(
+         deployment_name=os.getenv("AZURE_OPENAI_CHAT_DEPLOYMENT_NAME"),
+         api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+         endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),  # Used to point to your service
+         service_id="chat-service",
+     )
+ 
+     # Add the chat completion service to the kernel
+     kernel.add_service(chat_completion_service)
+ 
+     # Retrieve the chat completion service by type
+     chat_completion_service = kernel.get_service(type=ChatCompletionClientBase)
+ 
+     # Retrieve the default inference settings
+     execution_settings = kernel.get_prompt_execution_settings_from_service_id("chat-service")
+    ```
 
 </details>
 
