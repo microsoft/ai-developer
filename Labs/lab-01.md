@@ -22,7 +22,7 @@ In this exercise, you will be performing the following tasks:
 1.  Click on **Create**.
 1.  Click on **Models + endpoints** under **My assets** in the left pane.
 1.  Click on **+ Deploy model**, and then select **Deploy Base model**.
-1. Search for **gpt-4o**, select the model and click on **Confirm**.
+1. Search for **gpt-35-turbo**, select the model and click on **Confirm**.
 1. Click on **Deploy**.
 1. Once the model is deployed, click on **Open in playground**.
 

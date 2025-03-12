@@ -16,4 +16,18 @@ In this exercise, you will be performing the following tasks:
 
 ## Python
 
-1. 
+<details>
+  <summary>Click to expand</summary>
+
+  - Bullet point 1
+  - Bullet point 2
+  - Bullet point 3
+
+</details>
+
+
+1. Navigate to `Python>src` directory and open **.env** file.
+1. Navigate to AI Foundry Portal and on Overview page select Azure OpenAI Sercie and copy the endpoint.
+1. Paste it besides `AZURE_OPENAI_ENDPOINT`.
+    >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
+1. Copy the API key from AI Foundry Portal and paste it besides `AZURE_OPENAI_API_KEY`.
