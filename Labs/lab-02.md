@@ -116,7 +116,6 @@ In this exercise, you will be performing the following tasks:
     execution_settings = kernel.get_prompt_execution_settings_from_service_id("chat-service")
     return kernel
 
-
     async def process_message(user_input):
         kernel = initialize_kernel()
 
