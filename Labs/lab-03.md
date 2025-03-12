@@ -369,3 +369,159 @@ In this exercise, you will be performing the following tasks:
 </details>
 
 ## Task 4: Create and import the Weather Plugin
+<details>
+<summary><strong>Python</strong></summary>
+
+1. Navigate to `Python>src>plugins` directory and create a new file named **weather_plugin.py**.
+1. Add the following code in the file:
+    ```
+    from typing import Annotated
+    import requests
+    from semantic_kernel.functions import kernel_function
+    import json
+    from datetime import datetime, timedelta
+
+    class WeatherPlugin:
+        """Plugin for getting weather information from Open Meteo API."""
+
+        @kernel_function(description="Get weather forecast for a location up to 16 days in the future")
+        def get_forecast_weather(self, 
+                                latitude: Annotated[float, "Latitude of the location"],
+                                longitude: Annotated[float, "Longitude of the location"],
+                                days: Annotated[int, "Number of days to forecast (up to 16)"] = 16):
+            """Get the forecast weather at the specified latitude/longitude location for up to 16 days."""
+            
+            # Ensure days is within valid range (API supports up to 16 days)
+            if days > 16:
+                days = 16
+            
+            url = (f"https://api.open-meteo.com/v1/forecast"
+                f"?latitude={latitude}&longitude={longitude}"
+                f"&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,weather_code"
+                f"&current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m"
+                f"&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch"
+                f"&forecast_days={days}&timezone=auto")
+            
+            try:
+                response = requests.get(url)
+                response.raise_for_status()
+                data = response.json()
+                
+                # Extract daily forecast data
+                daily = data.get('daily', {})
+                times = daily.get('time', [])
+                max_temps = daily.get('temperature_2m_max', [])
+                min_temps = daily.get('temperature_2m_min', [])
+                precip_sums = daily.get('precipitation_sum', [])
+                precip_probs = daily.get('precipitation_probability_max', [])
+                weather_codes = daily.get('weather_code', [])
+                
+                # Build a readable forecast for each day
+                forecasts = []
+                for i in range(len(times)):
+                    # Convert date string to datetime object for day name
+                    date_obj = datetime.strptime(times[i], "%Y-%m-%d")
+                    day_name = date_obj.strftime("%A, %B %d")
+                    
+                    weather_desc = self._get_weather_description(weather_codes[i])
+                    
+                    forecast = {
+                        "date": times[i],
+                        "day": day_name,
+                        "high_temp": f"{max_temps[i]}°F",
+                        "low_temp": f"{min_temps[i]}°F",
+                        "precipitation": f"{precip_sums[i]} inches",
+                        "precipitation_probability": f"{precip_probs[i]}%",
+                        "conditions": weather_desc
+                    }
+                    forecasts.append(forecast)
+                
+                result = {
+                    "location_coords": f"{latitude}, {longitude}",
+                    "forecast_days": len(forecasts),
+                    "forecasts": forecasts
+                }
+                
+                # For more concise output in chat
+                return json.dumps(result, indent=2)
+            except Exception as e:
+                return f"Error fetching forecast weather: {str(e)}"
+        
+        def _get_weather_description(self, code):
+            """Convert WMO weather code to human-readable description."""
+            weather_codes = {
+                0: "Clear sky",
+                1: "Mainly clear", 2: "Partly cloudy", 3: "Overcast",
+                45: "Fog", 48: "Depositing rime fog",
+                51: "Light drizzle", 53: "Moderate drizzle", 55: "Dense drizzle",
+                56: "Light freezing drizzle", 57: "Dense freezing drizzle",
+                61: "Slight rain", 63: "Moderate rain", 65: "Heavy rain",
+                66: "Light freezing rain", 67: "Heavy freezing rain",
+                71: "Slight snow fall", 73: "Moderate snow fall", 75: "Heavy snow fall",
+                77: "Snow grains",
+                80: "Slight rain showers", 81: "Moderate rain showers", 82: "Violent rain showers",
+                85: "Slight snow showers", 86: "Heavy snow showers",
+                95: "Thunderstorm", 96: "Thunderstorm with slight hail", 99: "Thunderstorm with heavy hail"
+            }
+            return weather_codes.get(code, "Unknown")
+    ```
+1. Save the file.
+1. Navigate to `Python>src` directory and open **chat.py** file.
+1. Add the following code in the `#Import Modules` section of the file.
+    ```
+    from plugins.weather_plugin import WeatherPlugin
+    ```
+1. Add the following code in the `# Placeholder for Time plugin` section, after the **Geocoding plugin** in the file.
+    ```
+    kernel.add_plugin(
+        WeatherPlugin(),
+        plugin_name="Weather",
+    )
+    logger.info("Weather plugin loaded")
+    ```
+1. In case you encounter any indentation error, use the below code:
+    ```
+    ```
+1. Save the file.
+1. Right click on `Python>src` in the left pane and select **Open in Integrated Terminal**.
+1. Use the following command to run the app:
+    ```
+    streamlit run app.py
+    ```
+1. If the app does not open automatically in the browser, you can access it using the following **URL**:
+    ```
+    http://localhost:8501
+    ```
+1. Submit the following prompt:
+    ```
+    What is the weather in San Francisco next Tuesday?
+    ```
+The AI will perform the following plan to answer the question but may do so in a different order or different set of functions:
+1️⃣ The AI should ask Semantic Kernel to call the GetDate function on the Time Plugin to get today's date in order to calculate the number of days until next Thursday
+
+2️⃣ Because the Weather Forecast requires a Latitude and Longitude, the AI should instruct Semantic Kernel to call the GetLocation function on the Geocoding Plugin to get the coordinates for San Francisco
+
+3️⃣ Finally, the AI should ask Semantic Kernel to call the GetWeatherForecast function on the Weather Plugin passing in the current date/time and Lat/Long to get the weather forecast for Next Thursday (expressed as the number of days in the future) at the coordinates for San Francisco
+
+A simplified sequence diagram between Semantic Kernel and AI is shown below:
+sequenceDiagram
+    participant C as Client
+    participant S as Semantic Kernel
+    participant A as AI
+    C->>S: What is the weather in San Francisco next Tuesday?
+    activate C
+    S->>+A: What is the weather in San Francisco next Tuesday?
+    A-->>-S: Call get_date function
+    S->>+A: Results of get_date
+    A-->>-S: Call day_of_week function
+    S->>+A: Results of day_of_week
+    A-->>-S: Call geocode_address function
+    S->>+A: Results of geocode_address
+    A-->>-S: Call get_weather with lat/long and days in future
+    S->>+A: Results of get_weather
+    A-->>-S: The weather in San Francisco next Tuesday is...
+    S->>C: Here is the weather for San Francisco next Tuesday
+    deactivate C
+
+
+</details>
