@@ -100,4 +100,19 @@ In this exercise, you will be performing the following tasks:
     kernel.add_plugin(time_plugin, plugin_name="TimePlugin")
     logger.info("Time plugin loaded")
     ```
+1. Add the following code in the `# Placeholder for Time plugin` section of the file.
+    ```
+    time_plugin = TimePlugin()
+    kernel.add_plugin(time_plugin, plugin_name="TimePlugin")
+    logger.info("Time plugin loaded")
+    ```
+1. Right click on `Python>src` in the left pane and select **Open in Integrated Terminal**.
+1. Use the following command to run the app:
+    ```
+    streamlit run app.py
+    ```
+1. If the app does not open automatically in the browser, you can access it using the following **URL**:
+    ```
+    http://localhost:8501
+    ```
 </details>
