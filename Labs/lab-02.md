@@ -16,7 +16,7 @@ In this exercise, you will be performing the following tasks:
 
 ## Task 2: Setup environment variables
 <details>
-<summary>Python</summary>
+<summary><strong>Python</strong></summary>
 
 1. Navigate to `Python>src` directory and open **.env** file.
 1. Navigate to AI Foundry Portal and on Overview page select Azure OpenAI Sercie and copy the endpoint.
@@ -27,7 +27,7 @@ In this exercise, you will be performing the following tasks:
 </details>
 
 <details>
-<summary>C Sharp(C#)</summary>
+<summary><strong>C Sharp(C#)</strong></summary>
 
 1. Navigate to `Dotnet>src>BlazorAI` directory and open **appsettings.json** file.
 1. Navigate to AI Foundry Portal and on Overview page select Azure OpenAI Sercie and copy the endpoint.
@@ -41,11 +41,14 @@ In this exercise, you will be performing the following tasks:
 ## Task 3: Update the code files and run the app
 
 <details>
-<summary>Python</summary>
+<summary><strong>Python</strong></summary>
+
+1. Navigate to `Python>src` directory and open **.env** file.
+
 
 </details>
 
 <details>
-<summary>C Sharp(C#)</summary>
+<summary><strong>C Sharp(C#)</strong></summary>
 
 </details>
