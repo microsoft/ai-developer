@@ -23,6 +23,7 @@ In this exercise, you will be performing the following tasks:
 1. Paste it besides `AZURE_OPENAI_ENDPOINT`.
     >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
 1. Copy the API key from AI Foundry Portal and paste it besides `AZURE_OPENAI_API_KEY`.
+1. Save the file.
 
 </details>
 
@@ -35,6 +36,7 @@ In this exercise, you will be performing the following tasks:
     >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
     >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
 1. Copy the API key from AI Foundry Portal and paste it besides `AOI_API_KEY`.
+1. Save the file.
 
 </details>
 
@@ -162,6 +164,7 @@ In this exercise, you will be performing the following tasks:
         global chat_history
         chat_history = ChatHistory()
     ```
+1. Save the file.
 1. Right click on `Python>src` in the left pane and select **Open in Integrated Terminal**.
 1. Use the following command to run the app:
     ```
