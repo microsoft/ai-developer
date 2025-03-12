@@ -67,6 +67,7 @@ In this exercise, you will be performing the following tasks:
     global chat_history
     chat_history.add_user_message(user_input)
     chat_completion = kernel.get_service(type=ChatCompletionClientBase)
+    execution_settings = kernel.get_prompt_execution_settings_from_service_id("chat-service")
     response = await chat_completion.get_chat_message_content(
         chat_history=chat_history,
         settings=execution_settings,
@@ -108,7 +109,7 @@ In this exercise, you will be performing the following tasks:
     chat_completion_service = AzureChatCompletion(
         deployment_name=os.getenv("AZURE_OPENAI_CHAT_DEPLOYMENT_NAME"),
         api_key=os.getenv("AZURE_OPENAI_API_KEY"),
-        endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),  # Used to point to your service
+        endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
         service_id="chat-service",
     )
     kernel.add_service(chat_completion_service)
@@ -166,5 +167,7 @@ In this exercise, you will be performing the following tasks:
 
 <details>
 <summary><strong>C Sharp(C#)</strong></summary>
+
+1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs** file.
 
 </details>
