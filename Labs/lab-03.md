@@ -233,6 +233,41 @@ In this exercise, you will be performing the following tasks:
 1. Navigate to `Python>src` directory and open **.env** file.
 1. Paste the geocoding API key you recieved just now via e-mail besides `GEOCODING_API_KEY`.
     >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
+1. Save the file.
+1. Navigate to `Python>src` directory and open **chat.py** file.
+1. Add the following code in the `#Import Modules` section of the file.
+    ```
+    from plugins.geo_coding_plugin import GeoPlugin  # Add this import statement
+    ```
+1. Add the following code in the `# Placeholder for Time plugin` section, after the time plugin in the file.
+    ```
+    kernel.add_plugin(
+          GeoPlugin(),
+          plugin_name="GeoLocation",
+    )
+    logger.info("GeoLocation plugin loaded")
+    ```
+1. Save the file.
+1. Save the file.
+1. Right click on `Python>src` in the left pane and select **Open in Integrated Terminal**.
+1. Use the following command to run the app:
+    ```
+    streamlit run app.py
+    ```
+1. If the app does not open automatically in the browser, you can access it using the following **URL**:
+    ```
+    http://localhost:8501
+    ```
+1. Submit the following prompt:
+    ```
+    What are the geo-coordinates for Tampa, FL
+    ```
+2. Since the AI have the **Geocoding Plugin**, it will be able to provide real-time information, you will get a response similar to the following:
+    ```
+    The geo-coordinates for Tampa, FL are:
 
+    Latitude: 27.9477595
+    Longitude: -82.458444 
+    ```
 
 </details>
