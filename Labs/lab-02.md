@@ -182,6 +182,15 @@ In this exercise, you will be performing the following tasks:
 <summary><strong>C Sharp(C#)</strong></summary>
 
 1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs** file.
-1. 
+1. Add the following code in the `// Your code goes here(Line no. 91)` section of the file.
+    ```
+    chatHistory.AddUserMessage(userMessage);
+    var chatCompletionService = kernel.GetRequiredService<IChatCompletionService>();
+    var assistantResponse = await chatCompletionService.GetChatMessageContentAsync(
+        chatHistory: chatHistory,
+        executionSettings: promptSettings,
+        kernel: kernel);
+    chatHistory.AddAssistantMessage(assistantResponse.Content);
+    ```
 
 </details>
