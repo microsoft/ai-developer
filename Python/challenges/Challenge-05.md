@@ -168,23 +168,17 @@ In this challenge, you will create a Semantic Search Plugin that utilizes an Azu
 
     :bulb: As an example, look at how you registered the AzureOpenAIChatCompletion service. Also note the 3 variables you added to the .env file: EMBEDDINGS_DEPLOYMODEL, AOI_ENDPOINT, AOI_API_KEY.
 
-1. Register the AI Search and the *Azure AI Search Vector Store connector* with the Kernel Builder. The connector is configured with the URL and API key of the Azure AI Search service.
+1. We will be using the *Azure AI Search Vector Store connector*. The plugin has already been provided for you in your plugins folder.
 
-    :bulb: There are several ways to add the AI Search Connector to Semantic Kernel. Follow the instructions using the **kernelBuilder**.
-  
-    * Refer to the [documentation](https://learn.microsoft.com/en-us/semantic-kernel/concepts/vector-store-connectors/out-of-the-box-connectors/azure-ai-search-connector?pivots=programming-language-python#getting-started) for more information on how to configure the connector.
-    * Be sure to use the code sample where the ```SearchIndexClient``` is registered separately, you will need this class in your plugin
-    * Also note the 2 environment variables you added to the .env file: AZURE_AI_SEARCH_ENDPOINT, AZURE_AI_SEARCH_KEY.
+     >This is the Semantic Search Plugin to query the AI Search Index created earlier. This Plugin should take the users query and generate an embedding using the Text Embedding model. The embedding should then be used to query the AI Search Index containing the Contoso Handbook PDF and return the most relevant information.
 
-1. Create a new class in the **plugins** folder called **ContosoSearchPlugin.py**. This is the Semantic Search Plugin to query the AI Search Index created earlier. This Plugin should take the users query and generate an embedding using the Text Embedding model. The embedding should then be used to query the AI Search Index containing the Contoso Handbook PDF and return the most relevant information.
-
+    :bulb: Note the 2 environment variables you added to the .env file: AZURE_AI_SEARCH_ENDPOINT, AZURE_AI_SEARCH_KEY.
 
 1. The Sample RAG Plugin in the documentation maps the incoming data from AI Search to a class named ```EmployeeHandbookModel```.
 
     The properties on this class map to fields in the AI Search Index we created earlier. In the portal, you can navigate to the AI Search Index and see the fields that are available.
-    ![AI Search](./Resources/image/ch05img8.png)
 
-    :bulb: Note that the vector field to search is named ```contentVector``` but the sample code from the documentation uses ```vector```, **you will need to update the code to use the correct field name.**
+    ![AI Search](./Resources/image/ch05img8.png)
 
 1. Add the plugin to Semantic Kernel in chat.py
 
