@@ -53,9 +53,6 @@ public partial class Chat
         // Challenge 03, 04, 05, & 07 - Add Plugins
         await AddPlugins();
 
-        // Challenge 02 - Chat Completion Service
-
-
         // Challenge 03 - Create OpenAIPromptExecutionSettings
 
 
@@ -86,11 +83,14 @@ public partial class Chat
             newMessage = string.Empty;
             StateHasChanged();
 
-            // Start Challenge 02 - Sending a message to the chat completion service
+            // Challenge 02 - Retrieve the chat completion service
 
-            // Your code goes here
+            // Challenge 02 - Update Chat History
 
-            // End Challenge 02 - Sending a message to the chat completion service
+            // Challenge 02 - Send a message to the chat completion service
+
+            // Challenge 02 - Add Response to the Chat History object
+
 
             loading = false;
         }
