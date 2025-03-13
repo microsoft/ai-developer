@@ -72,13 +72,13 @@ In this challenge, you will be provided with a starter application that will req
 
     Add the `userMessage` to the chat history collection.
 
-    In the `Chat.razor.cs` file, find the `SendMessage` method. Below the comment `// Start Challenge 02 - Sending a message to the chat completion service`, add the variable ***userMessage***  to the chat history collection using the `AddUserMessage` method.
+    In the `Chat.razor.cs` file, find the `SendMessage` method. Below the comment `// Challenge 02 - Update Chat History`, add the variable ***userMessage***  to the chat history collection using the `AddUserMessage` method.
 
     :pushpin: The chat history maintains a record of the conversation between user and AI. By adding each message to this history, we give the AI context about the ongoing conversation, allowing it to provide more relevant and coherent responses.
 
     :bulb: For a detailed explanation of Chat History, please refer to the documentation [here](https://learn.microsoft.com/en-us/semantic-kernel/concepts/ai-services/chat-completion/chat-history?pivots=programming-language-csharp).
 
-1. Use the Chat Completion service to complete the implementation of the `SendMessage` method by sending the entire chat history, including the latest prompt, to the Azure AI Foundry chat service. Once the service processes this and generates a response, wait until the full response is received before sending it back to the client.
+1. Use the Chat Completion service to send the entire chat history, including the latest prompt, to the Azure AI Foundry chat service. Once the service processes this and generates a response, wait until the full response is received before sending it back to the client.
 
     Add you code below the comment `// Challenge 02 - Send a message to the chat completion service`
 
