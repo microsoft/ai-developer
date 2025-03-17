@@ -63,7 +63,7 @@ Participants will learn how to:
 
 ### Here are the [Slides](./Dotnet/challenges/Resources/Lectures.pdf) used during our workshop
 
-### Here is the code for Python and C# - Download the [Zip](./misc/finalresult.zip)
+### Here is the code for Python and C# - Download the [Zip](https://github.com/microsoft/ai-developer/raw/refs/heads/main/misc/finalresult.zip)
 
 ## Contributors
 
