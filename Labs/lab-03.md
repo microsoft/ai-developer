@@ -319,11 +319,36 @@ In this exercise, you will be performing the following tasks:
     ```
 1. Save the file.
 1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs** file.
-1. Add the following code in the `// Your code goes here(Line no. 91)` section of the file.
+1. Add the following code in the `// Import Models` section of the file.
     ```
-
-
-    
+    using Microsoft.SemanticKernel.Connectors.OpenAI;
+    using BlazorAI.Plugins;
+    using System;
+    ```
+1. Search **private Kernel? kernel;** (using Ctrl+F)  and add the following piece of code below it:
+    ```
+    private OpenAIPromptExecutionSettings? promptSettings;
+    ```
+1. Search **chatHistory = [];** (using Ctrl+F)  and add update the line with the following piece of code:
+    ```
+    chatHistory = new ChatHistory();
+    ```
+1. Add the following code in the `// Challenge 03 - Create OpenAIPromptExecutionSettings` section of the file.
+    ```
+    promptSettings = new OpenAIPromptExecutionSettings
+    {
+        ToolCallBehavior = ToolCallBehavior.AutoInvokeKernelFunctions,
+        Temperature = 0.7,
+        TopP = 0.95,
+        MaxTokens = 800
+    };
+    ```
+1. Add the following code in the `// Challenge 03 - Add Time Plugin` section of the file.
+    ```
+    var timePlugin = new BlazorAI.Plugins.TimePlugin();
+    kernel.ImportPluginFromObject(timePlugin, "TimePlugin");
+    ```
+     
 1. Save the file.
 1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` in the left pane and select **Open in Integrated Terminal**.
 1. Run the following line of code to trust the dev-certificates neccessary to run the app locally, and then select on **Yes**:
