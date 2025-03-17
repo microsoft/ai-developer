@@ -19,7 +19,8 @@ def initialize_kernel():
    #Challene 02 - Add Kernel
    kernel = Kernel()
    #Challenge 02 - Chat Completion Service
-   #Challenge 02- Add kernel to the chat completion service
+   #Challenge 05 - Add Text Embedding service for semantic search
+   #Challenge 07 - Add DALL-E image generation service
    return kernel
 
 
