@@ -199,6 +199,7 @@ In this exercise, you will be performing the following tasks:
 1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` in the left pane and select **Open in Integrated Terminal**.
 1. Use the following command to run the app:
     ```
+    dotnet dev-certs https --trust
     dotnet run
     ```
 1. Navigate to the link that is in the output section of the terminal:
