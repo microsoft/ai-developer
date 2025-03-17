@@ -325,5 +325,12 @@ In this exercise, you will be performing the following tasks:
 
     >**Note**: If you recieve security warnings in the browser, close the browser and follow the link again.
 1. Navigate to the link pointing towards **blazor-aichat** i.e **https://localhost:7118/**
+1. Submit the following prompt and see how the AI responds:
+    ```
+    Why is the sky blue?
+    ```
+    ```
+    Why is it red?
+    ```
 
 </details>

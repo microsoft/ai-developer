@@ -8,11 +8,7 @@ Semantic Kernel truly shines in LLM development when you incorporate plugins. Th
 In this exercise, you will be performing the following tasks:
 
 ## Task 1: Try the app without the Time Plugin
-
-<details>
-<summary><strong>Python</strong></summary>
-
-1. Launch your AI Chat app, and submit the following prompt:
+1. Launch your AI Chat app in any of the languange, and submit the following prompt:
     ```
     What time is it?
     ```
@@ -20,9 +16,6 @@ In this exercise, you will be performing the following tasks:
     ```
     I can't provide real-time information, including the current time. You can check the time on your device or through various online sources.
     ```
-
-</details>
-
 ## Task 2: Create and import the Time Plugin
 <details>
 <summary><strong>Python</strong></summary>
@@ -214,6 +207,144 @@ In this exercise, you will be performing the following tasks:
 2. Since the AI have the **Time Plugin**, it will be able to provide real-time information, you will get a response similar to the following:
     ```
     The current time is 3:43 PM on January 23, 2025.
+    ```
+</details>
+
+<details>
+<summary><strong>C Sharp(C#)</strong></summary>
+
+1. Navigate to `Dotnet>src>BlazorAI>Plugins` directory and create a new file named **TimePlugin.cs**.
+1. Add the following code in the file:
+    ```
+    using System;
+    using System.ComponentModel;
+    using System.Globalization;
+    using Microsoft.SemanticKernel;
+
+    namespace BlazorAI.Plugins
+    {
+        public class TimePlugin
+        {        
+            [KernelFunction("current_time")]
+            [Description("Gets the current date and time from the server. Use this directly when the user asks what time it is or wants to know the current date.")]
+            public string CurrentTime()
+            {
+                return DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            }
+
+            [KernelFunction("get_current_time")]
+            [Description("Gets the current date and time from the server's system clock. Use this directly without asking the user for their location.")]
+            public string GetCurrentTime()
+            {
+                return DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            }
+            
+            [KernelFunction("get_year")]
+            [Description("Extract the year from a date string or get the current year from the system clock. Examples: 'What year is it now?' or 'What year is 2023-05-15?'")]
+            public string GetYear(
+                [Description("The date string. Accepts formats like YYYY-MM-DD, MM/DD/YYYY, etc. If not provided, uses the server's current date.")] 
+                string? dateStr = null)
+            {
+                if (string.IsNullOrEmpty(dateStr))
+                {
+                    return DateTime.Now.Year.ToString();
+                }
+
+                DateTime date;
+                if (TryParseDate(dateStr, out date))
+                {
+                    return date.Year.ToString();
+                }
+                
+                return $"Could not parse '{dateStr}' as a valid date. Please provide a date in a standard format like YYYY-MM-DD or MM/DD/YYYY.";
+            }
+            
+            [KernelFunction("get_month")]
+            [Description("Extract the month name from a date string or get the current month from the system clock. Examples: 'What month is it now?' or 'What month is 2023-05-15?'")]
+            public string GetMonth(
+                [Description("The date string. Accepts formats like YYYY-MM-DD, MM/DD/YYYY, etc. If not provided, uses the server's current date.")] 
+                string? dateStr = null)
+            {
+                if (string.IsNullOrEmpty(dateStr))
+                {
+                    return DateTime.Now.ToString("MMMM");
+                }
+                
+                DateTime date;
+                if (TryParseDate(dateStr, out date))
+                {
+                    return date.ToString("MMMM"); // Full month name
+                }
+                
+                return $"Could not parse '{dateStr}' as a valid date. Please provide a date in a standard format like YYYY-MM-DD or MM/DD/YYYY.";
+            }
+            
+            [KernelFunction("get_day_of_week")]
+            [Description("Get the day of week from the server's system clock or for a specific date. Examples: 'What day is it today?' or 'What day of the week is 2023-05-15?'")]
+            public string GetDayOfWeek(
+                [Description("The date string. Accepts formats like YYYY-MM-DD, MM/DD/YYYY, etc. If not provided, uses the server's current date.")] 
+                string? dateStr = null)
+            {
+                if (string.IsNullOrEmpty(dateStr))
+                {
+                    return DateTime.Now.ToString("dddd");
+                }
+                
+                DateTime date;
+                if (TryParseDate(dateStr, out date))
+                {
+                    return date.ToString("dddd"); // Full day name
+                }
+                
+                return $"Could not parse '{dateStr}' as a valid date. Please provide a date in a standard format like YYYY-MM-DD or MM/DD/YYYY.";
+            }
+
+            private bool TryParseDate(string dateStr, out DateTime result)
+            {
+                string[] formats = { 
+                    "yyyy-MM-dd", "MM/dd/yyyy", "dd/MM/yyyy", 
+                    "M/d/yyyy", "d/M/yyyy", "MMM d, yyyy", 
+                    "MMMM d, yyyy", "yyyy/MM/dd", "dd-MMM-yyyy"
+                };
+                
+                return DateTime.TryParseExact(
+                    dateStr, 
+                    formats, 
+                    CultureInfo.InvariantCulture,
+                    DateTimeStyles.None, 
+                    out result) || DateTime.TryParse(dateStr, out result);
+            }
+        }
+    }
+    ```
+1. Save the file.
+1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs** file.
+1. Add the following code in the `// Your code goes here(Line no. 91)` section of the file.
+    ```
+
+
+    
+1. Save the file.
+1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` in the left pane and select **Open in Integrated Terminal**.
+1. Run the following line of code to trust the dev-certificates neccessary to run the app locally, and then select on **Yes**:
+    ```
+    dotnet dev-certs https --trust
+    ```
+1. Use the following command to run the app:
+    ```
+    dotnet run
+    ```
+1. Navigate to the link that is in the output section of the terminal:
+    >**Note**: The link can be found besides **Login to the dashboard at** in the terminal.
+
+    >**Note**: If you recieve security warnings in the browser, close the browser and follow the link again.
+1. Navigate to the link pointing towards **blazor-aichat** i.e **https://localhost:7118/**
+1. Submit the following prompt and see how the AI responds:
+    ```
+    Why is the sky blue?
+    ```
+    ```
+    Why is it red?
     ```
 </details>
 
