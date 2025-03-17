@@ -204,7 +204,7 @@ In this exercise, you will be performing the following tasks:
     ```
     What time is it?
     ```
-2. Since the AI have the **Time Plugin**, it will be able to provide real-time information, you will get a response similar to the following:
+1. Since the AI have the **Time Plugin**, it will be able to provide real-time information, you will get a response similar to the following:
     ```
     The current time is 3:43 PM on January 23, 2025.
     ```
@@ -345,7 +345,7 @@ In this exercise, you will be performing the following tasks:
     ```
 1. Add the following code in the `// Challenge 03 - Add Time Plugin` section of the file.
     ```
-    var timePlugin = new BlazorAI.Plugins.TimePlugin();
+    var timePlugin = new Plugins.TimePlugin();
     kernel.ImportPluginFromObject(timePlugin, "TimePlugin");
     ```
 1. Search **var assistantResponse = await chatCompletionService.GetChatMessageContentAsync** (using Ctrl+F)  and add the following line of code between chatHistory and kernel:
@@ -356,10 +356,131 @@ In this exercise, you will be performing the following tasks:
     ```
     var assistantResponse = await chatCompletionService.GetChatMessageContentAsync(
         chatHistory: chatHistory,
+        executionSettings: promptSettings,
         kernel: kernel);
     ```
-    
-         
+1. In case you encounter any indentation error, use the below code:
+    ```
+    using Microsoft.AspNetCore.Components;
+    using Microsoft.SemanticKernel;
+    using Microsoft.SemanticKernel.ChatCompletion;
+    // Import Models
+    using Microsoft.SemanticKernel.Connectors.OpenAI;
+    using BlazorAI.Plugins;
+    using System;
+    #pragma warning disable SKEXP0040 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+    #pragma warning disable SKEXP0020 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+    #pragma warning disable SKEXP0010 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+    #pragma warning disable SKEXP0001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+
+    namespace BlazorAI.Components.Pages;
+
+    public partial class Chat
+    {
+        private ChatHistory? chatHistory;
+        private Kernel? kernel;
+        private OpenAIPromptExecutionSettings? promptSettings;
+
+        [Inject]
+        public required IConfiguration Configuration { get; set; }
+        [Inject]
+        private ILoggerFactory LoggerFactory { get; set; } = null!;
+
+        protected async Task InitializeSemanticKernel()
+        {
+            chatHistory = [];
+            chatHistory = new ChatHistory();
+
+            // Challenge 02 - Configure Semantic Kernel
+            var kernelBuilder = Kernel.CreateBuilder();
+
+            // Challenge 02 - Add OpenAI Chat Completion
+            kernelBuilder.AddAzureOpenAIChatCompletion(
+                Configuration["AOI_DEPLOYMODEL"]!,
+                Configuration["AOI_ENDPOINT"]!,
+                Configuration["AOI_API_KEY"]!);
+
+            // Add Logger for Kernel
+            kernelBuilder.Services.AddSingleton(LoggerFactory);
+
+            // Challenge 03 and 04 - Services Required
+            kernelBuilder.Services.AddHttpClient();
+
+            // Challenge 05 - Register Azure AI Foundry Text Embeddings Generation
+
+
+            // Challenge 05 - Register Search Index
+
+
+            // Challenge 07 - Add Azure AI Foundry Text To Image
+
+
+            // Challenge 02 - Finalize Kernel Builder
+            kernel = kernelBuilder.Build();
+
+            // Challenge 03, 04, 05, & 07 - Add Plugins
+            await AddPlugins();
+
+            // Challenge 02 - Chat Completion Service
+
+
+            // Challenge 03 - Create OpenAIPromptExecutionSettings
+            promptSettings = new OpenAIPromptExecutionSettings
+            {
+                ToolCallBehavior = ToolCallBehavior.AutoInvokeKernelFunctions,
+                Temperature = 0.7,
+                TopP = 0.95,
+                MaxTokens = 800
+            };
+
+
+        }
+
+
+        private async Task AddPlugins()
+        {
+            // Challenge 03 - Add Time Plugin
+            var timePlugin = new Plugins.TimePlugin();
+            kernel.ImportPluginFromObject(timePlugin, "TimePlugin");
+
+            // Challenge 04 - Import OpenAPI Spec
+
+            // Challenge 05 - Add Search Plugin
+
+            // Challenge 07 - Text To Image Plugin
+
+        }
+
+        private async Task SendMessage()
+        {
+            if (!string.IsNullOrWhiteSpace(newMessage) && chatHistory != null)
+            {
+                // This tells Blazor the UI is going to be updated.
+                StateHasChanged();
+                loading = true;
+                // Copy the user message to a local variable and clear the newMessage field in the UI
+                var userMessage = newMessage;
+                newMessage = string.Empty;
+                StateHasChanged();
+
+                // Start Challenge 02 - Sending a message to the chat completion service
+
+                chatHistory.AddUserMessage(userMessage);
+                var chatCompletionService = kernel.GetRequiredService<IChatCompletionService>();
+                var assistantResponse = await chatCompletionService.GetChatMessageContentAsync(
+                    chatHistory: chatHistory,
+                    executionSettings: promptSettings,
+                    kernel: kernel);
+                chatHistory.AddAssistantMessage(assistantResponse.Content);
+
+                // End Challenge 02 - Sending a message to the chat completion service
+
+                loading = false;
+            }
+        }
+    }
+
+    ```
 1. Save the file.
 1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` in the left pane and select **Open in Integrated Terminal**.
 1. Run the following line of code to trust the dev-certificates neccessary to run the app locally, and then select on **Yes**:
@@ -375,12 +496,13 @@ In this exercise, you will be performing the following tasks:
 
     >**Note**: If you recieve security warnings in the browser, close the browser and follow the link again.
 1. Navigate to the link pointing towards **blazor-aichat** i.e **https://localhost:7118/**
-1. Submit the following prompt and see how the AI responds:
+1. Submit the following prompt:
     ```
-    Why is the sky blue?
+    What time is it?
     ```
+1. Since the AI have the **Time Plugin**, it will be able to provide real-time information, you will get a response similar to the following:
     ```
-    Why is it red?
+    The current time is 3:43 PM on January 23, 2025.
     ```
 </details>
 
@@ -405,8 +527,8 @@ In this exercise, you will be performing the following tasks:
 1. Add the following code in the `# Placeholder for Time plugin` section, after the **time plugin** in the file.
     ```
     kernel.add_plugin(
-          GeoPlugin(),
-          plugin_name="GeoLocation",
+        GeoPlugin(),
+        plugin_name="GeoLocation",
     )
     logger.info("GeoLocation plugin loaded")
     ```
@@ -523,7 +645,53 @@ In this exercise, you will be performing the following tasks:
     ```
     What are the geo-coordinates for Tampa, FL
     ```
-2. Since the AI have the **Geocoding Plugin**, it will be able to provide real-time information, you will get a response similar to the following:
+1. Since the AI have the **Geocoding Plugin**, it will be able to provide real-time information, you will get a response similar to the following:
+    ```
+    The geo-coordinates for Tampa, FL are:
+
+    Latitude: 27.9477595
+    Longitude: -82.458444 
+    ```
+</details>
+
+<details>
+<summary><strong>C Sharp(C#)</strong></summary>
+
+1. Navigate to `Dotnet>src>BlazorAI` directory and open **appsettings.json** file.
+1. Paste the geocoding API key you recieved just now via e-mail besides `GEOCODING_API_KEY`.
+    >Note:- Ensure that every value in the **appsettings.json** file is enclosed in **double quotes (")**.
+1. Save the file.
+1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs** file.
+1. Add the following code in the `// Challenge 03 - Add Time Plugin` section, after the **time plugin** in the file.
+    ```
+    var geocodingPlugin = new GeocodingPlugin(
+        kernel.Services.GetRequiredService<IHttpClientFactory>(), 
+        Configuration);
+    kernel.ImportPluginFromObject(geocodingPlugin, "GeocodingPlugin");
+    ```
+1. In case you encounter any indentation error, use the below code:
+    ```
+    ```
+1. Save the file.
+1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` in the left pane and select **Open in Integrated Terminal**.
+1. Run the following line of code to trust the dev-certificates neccessary to run the app locally, and then select on **Yes**:
+    ```
+    dotnet dev-certs https --trust
+    ```
+1. Use the following command to run the app:
+    ```
+    dotnet run
+    ```
+1. Navigate to the link that is in the output section of the terminal:
+    >**Note**: The link can be found besides **Login to the dashboard at** in the terminal.
+
+    >**Note**: If you recieve security warnings in the browser, close the browser and follow the link again.
+1. Navigate to the link pointing towards **blazor-aichat** i.e **https://localhost:7118/**
+1. Submit the following prompt:
+    ```
+    What are the geo-coordinates for Tampa, FL
+    ```
+1. Since the AI have the **Geocoding Plugin**, it will be able to provide real-time information, you will get a response similar to the following:
     ```
     The geo-coordinates for Tampa, FL are:
 
