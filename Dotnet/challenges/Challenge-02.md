@@ -18,7 +18,7 @@ In this challenge, you will be provided with a starter application that will req
 
 ### Implementation Steps
 
-1. Deploy a GTP-4o model using  [Azure AI Foundry Studio](https://ai.azure.com) `https://ai.azure.com`. The **Deployment name** should be something similar to ``` gpt-4o ```. This name will be needed next when configuring Semantic Kernel. Deployment type should be **Global Standard** or **Standard**:exclamation:
+1. Deploy a GPT-4o model using  [Azure AI Foundry Studio](https://ai.azure.com) `https://ai.azure.com`. The **Deployment name** should be something similar to ``` gpt-4o ```. This name will be needed next when configuring Semantic Kernel. Deployment type should be **Global Standard** or **Standard**:exclamation:
 
 1. Update the *appsettings.json* file with the Azure OpenAI *Deployment name*, *Endpoint URL* and the *API Key* created in the previous step. These values can be found in the [Azure AI Foundry Studio](https://ai.azure.com).
 
