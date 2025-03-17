@@ -20,7 +20,7 @@ In this exercise, you will be performing the following tasks:
 1.  Click on **+ Deploy model**, and then select **Deploy Base model**.
 1. Search for **text-embedding-ada-002**, select the model and click on **Confirm**.
 1. Click on **Deploy**.
-1. Navigate back and select **gpt-35-turbo**, and click on **Open in playground**.
+1. Navigate back and select **gpt-4o**, and click on **Open in playground**.
 1. Click on **Add you data** and select **+ Add a new data source**.
 1. On **Add your data** blade, select **Upload files** as the `Data source`.
 1. Click on **Upload**, and select **Upload files**.
@@ -36,6 +36,14 @@ In this exercise, you will be performing the following tasks:
 <details>
 <summary><strong>Python</strong></summary>
 
+1. Navigate to `Python>src` directory and open **.env** file.
+1. Navigate to Azure Portal and search **Ai Search** and Click on it, open the **AI Search** resource located there.
+1. On Overview page copy the URL.
+1. Paste it besides `AI_SEARCH_URL` in **.env** file..
+    >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
+1. Navigate to **Keys** under Settings in the left pane.
+1. Copy the Primary admin key from Azure Portal and paste it besides `AI_SEARCH_KEY`.
+1. Save the file.
 1. Navigate to `Python>src>plugins` directory and create a new file named **ContosoSearchPlugin.py**.
 1. Add the following code in the file:
     ```
@@ -147,6 +155,32 @@ In this exercise, you will be performing the following tasks:
         query = "What is Contoso's vacation policy?"
         result = search_plugin.query_handbook(query)
         print(result)
+    ```
+1. Save the file.
+1. Navigate to `Python>src` directory and open **chat.py** file.
+1. Add the following code in the `#Import Modules` section of the file.
+    ```
+    from semantic_kernel.connectors.ai.open_ai import AzureTextEmbedding
+    from plugins.ContosoSearchPlugin import ContosoSearchPlugin
+    ```
+1. Add the following code in the `#Challenge 05 - Add Text Embedding service for semantic search` section of the file.
+    ```
+    text_embedding_service = AzureTextEmbedding(
+        deployment_name=os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT", "text-embedding-ada-002"),
+        api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+        endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
+        service_id="embedding-service"
+    )
+    kernel.add_service(text_embedding_service)
+    logger.info("Text Embedding service added")
+    ```
+1. Add the following code in the `# Challenge 05 - Add Search Plugin` section of the file.
+    ```
+    kernel.add_plugin(
+         ContosoSearchPlugin(),
+         plugin_name="ContosoSearch",
+    )
+    logger.info("Contoso Handbook Search plugin loaded")
     ```
 
 </details>
