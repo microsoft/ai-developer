@@ -50,7 +50,6 @@ In this exercise, you will be performing the following tasks:
     from dotenv import load_dotenv
 
     class ContosoSearchPlugin:
-        
         def __init__(self):
             load_dotenv()
             
@@ -143,8 +142,6 @@ In this exercise, you will be performing the following tasks:
                 
             except Exception as e:
                 return f"Error querying the Contoso Handbook: {str(e)}"
-
-
     if __name__ == "__main__":
         search_plugin = ContosoSearchPlugin()
         query = "What is Contoso's vacation policy?"
