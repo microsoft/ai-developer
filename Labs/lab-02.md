@@ -33,8 +33,9 @@ In this exercise, you will be performing the following tasks:
 1. Navigate to `Dotnet>src>BlazorAI` directory and open **appsettings.json** file.
 1. Navigate to AI Foundry Portal and on Overview page select Azure OpenAI Sercie and copy the endpoint.
 1. Paste it besides `AOI_ENDPOINT`.
-    >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
-    >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
+    >**Note**:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
+
+    >**Note**:- Make sure to remove the "/" from the endpoint.
 1. Copy the API key from AI Foundry Portal and paste it besides `AOI_API_KEY`.
 1. Save the file.
 
