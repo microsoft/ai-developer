@@ -61,7 +61,6 @@ In this exercise, you will be performing the following tasks:
         service_id="chat-service",
     )
     kernel.add_service(chat_completion_service)
-    chat_completion_service = kernel.get_service(type=ChatCompletionClientBase)
     execution_settings = kernel.get_prompt_execution_settings_from_service_id("chat-service")
     ```
 1. Add the following code in the `# Start Challenge 02 - Sending a message to the chat completion service by invoking kernel` section of the file.
@@ -116,8 +115,10 @@ In this exercise, you will be performing the following tasks:
             service_id="chat-service",
         )
         kernel.add_service(chat_completion_service)
-        chat_completion_service = kernel.get_service(type=ChatCompletionClientBase)
         execution_settings = kernel.get_prompt_execution_settings_from_service_id("chat-service")
+        #Challenge 05 - Add Text Embedding service for semantic search
+        #Challenge 07 - Add DALL-E image generation service
+        chat_completion_service = kernel.get_service(type=ChatCompletionClientBase)
         return kernel
 
 
