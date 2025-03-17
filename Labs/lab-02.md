@@ -198,9 +198,12 @@ In this exercise, you will be performing the following tasks:
     chatHistory.AddAssistantMessage(assistantResponse.Content);
     ```
 1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` in the left pane and select **Open in Integrated Terminal**.
-1. Use the following command to run the app:
+1. Run the following line of code to trust the dev-certificates neccessary to run the app locally, and then select on **Yes**:
     ```
     dotnet dev-certs https --trust
+    ```
+1. Use the following command to run the app:
+    ```
     dotnet run
     ```
 1. Navigate to the link that is in the output section of the terminal:
