@@ -329,7 +329,7 @@ In this exercise, you will be performing the following tasks:
     ```
     private OpenAIPromptExecutionSettings? promptSettings;
     ```
-1. Search **chatHistory = [];** (using Ctrl+F)  and add update the line with the following piece of code:
+1. Search **chatHistory = [];** (using Ctrl+F)  and update the line with the following piece of code:
     ```
     chatHistory = new ChatHistory();
     ```
@@ -348,7 +348,18 @@ In this exercise, you will be performing the following tasks:
     var timePlugin = new BlazorAI.Plugins.TimePlugin();
     kernel.ImportPluginFromObject(timePlugin, "TimePlugin");
     ```
-     
+1. Search **var assistantResponse = await chatCompletionService.GetChatMessageContentAsync** (using Ctrl+F)  and add the following line of code between chatHistory and kernel:
+    ```
+    executionSettings: promptSettings,
+    ```
+    >**Note**: The final piece of code will be similar to the code below:
+    ```
+    var assistantResponse = await chatCompletionService.GetChatMessageContentAsync(
+        chatHistory: chatHistory,
+        kernel: kernel);
+    ```
+    
+         
 1. Save the file.
 1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` in the left pane and select **Open in Integrated Terminal**.
 1. Run the following line of code to trust the dev-certificates neccessary to run the app locally, and then select on **Yes**:
