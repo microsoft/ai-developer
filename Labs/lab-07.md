@@ -286,3 +286,315 @@ In this exercise, you will be performing the following tasks:
     Create a picture of a cute kitten wearing a hat.
     ```
 </details>
+
+<details>
+<summary><strong>C Sharp(C#)</strong></summary>
+
+1. Navigate to `Dotnet>src>BlazorAI>Plugins` directory and create a new file named **ImageGenerationPlugin.cs**.
+1. Add the following code in the file:
+    ```
+    using System;
+    using System.ComponentModel;
+    using System.IO;
+    using System.Threading.Tasks;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.SemanticKernel;
+    using Microsoft.SemanticKernel.TextToImage;
+    using Microsoft.Extensions.Logging;
+    using System.Text.Json;
+    using System.Net.Http;
+    using System.Text.RegularExpressions;
+
+    namespace BlazorAI.Plugins
+    {
+        public class ImageGenerationPlugin
+        {
+            private readonly IConfiguration _configuration;
+            private ILogger<ImageGenerationPlugin> _logger;
+            private readonly HttpClient _httpClient;
+
+            public ImageGenerationPlugin(IConfiguration configuration)
+            {
+                _configuration = configuration;
+                _httpClient = new HttpClient();
+            }
+
+            [KernelFunction("GenerateImage")]
+            [Description("Generates an image based on a text description. Use this when the user wants to create, draw, or visualize an image.")]
+            public async Task<string> GenerateImage(
+                [Description("Detailed description of the image to generate")] string prompt,
+                [Description("Size of the image (e.g., '1024x1024', '512x512')")] string size = "1024x1024",
+                Kernel kernel = null)
+            {
+                try
+                {
+                    _logger = kernel?.GetRequiredService<ILoggerFactory>()?.CreateLogger<ImageGenerationPlugin>();
+                    _logger?.LogInformation($"Generating image with prompt: {prompt}, size: {size}");
+
+                    var imageService = kernel.GetRequiredService<ITextToImageService>();
+                    
+                    int width = 1024;
+                    int height = 1024;
+                    
+                    if (size != null && size.Contains("x"))
+                    {
+                        var dimensions = size.Split('x');
+                        if (dimensions.Length == 2 && 
+                            int.TryParse(dimensions[0], out int parsedWidth) && 
+                            int.TryParse(dimensions[1], out int parsedHeight))
+                        {
+                            width = parsedWidth;
+                            height = parsedHeight;
+                        }
+                        else
+                        {
+                            _logger?.LogWarning($"Invalid size format: {size}. Using default 1024x1024.");
+                        }
+                    }
+
+                    string resultString = await imageService.GenerateImageAsync(prompt, width, height, kernel);
+                    
+                    string fileName = $"generated_{Guid.NewGuid()}.png";
+                    string directoryPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
+                    
+                    if (!Directory.Exists(directoryPath))
+                    {
+                        Directory.CreateDirectory(directoryPath);
+                    }
+                    
+                    string filePath = Path.Combine(directoryPath, fileName);
+                    
+                    byte[] imageBytes;
+                    
+                    if (Uri.IsWellFormedUriString(resultString, UriKind.Absolute))
+                    {
+                        return $"![Generated image based on prompt: '{prompt}']({resultString})";
+                    }
+                    else if (resultString.StartsWith("data:image"))
+                    {
+                        var base64Data = resultString.Substring(resultString.IndexOf(',') + 1);
+                        imageBytes = Convert.FromBase64String(base64Data);
+                    }
+                    else if (Regex.IsMatch(resultString, @"^[A-Za-z0-9+/]*={0,2}$"))
+                    {
+                        imageBytes = Convert.FromBase64String(resultString);
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException($"Unexpected string format returned from image generation: {resultString.Substring(0, Math.Min(100, resultString.Length))}...");
+                    }
+                    
+                    await File.WriteAllBytesAsync(filePath, imageBytes);
+                    
+                    return $"![Generated image based on prompt: '{prompt}'](/images/{fileName})";
+                }
+                catch (Exception ex)
+                {
+                    _logger?.LogError(ex, $"Error generating image: {ex.Message}");
+                    return $"Error generating image: {ex.Message}";
+                }
+            }
+        }
+    }
+    ```
+1. Save the file.
+1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs** file.
+1. Add the following code in the `// Challenge 07 - Add Azure AI Foundry Text To Image` section of the file.
+    ```
+    kernelBuilder.AddAzureOpenAITextToImage(
+        Configuration["DALLE_DEPLOYMODEL"]!,
+        Configuration["AOI_ENDPOINT"]!,
+        Configuration["AOI_API_KEY"]!);
+    ```
+1. Add the following code in the `// Challenge 07 - Text To Image Plugin` section of the file.
+    ```
+    var imageGenerationPlugin = new ImageGenerationPlugin(Configuration);
+    kernel.ImportPluginFromObject(imageGenerationPlugin, "ImagePlugin");
+    ```
+1. In case you encounter any indentation error, use the below code:
+    ```
+    using Microsoft.AspNetCore.Components;
+    using Microsoft.SemanticKernel;
+    using Microsoft.SemanticKernel.ChatCompletion;
+    // Import Models
+    using Microsoft.SemanticKernel.Connectors.OpenAI;
+    using BlazorAI.Plugins;
+    using System;
+    using Microsoft.SemanticKernel.Plugins.OpenApi;
+    using Microsoft.SemanticKernel.Connectors.AzureAISearch;
+    using Azure;
+    using Azure.Search.Documents.Indexes;
+    using Microsoft.Extensions.DependencyInjection;
+    #pragma warning disable SKEXP0040 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+    #pragma warning disable SKEXP0020 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+    #pragma warning disable SKEXP0010 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+    #pragma warning disable SKEXP0001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+
+    namespace BlazorAI.Components.Pages;
+
+    public partial class Chat
+    {
+        private ChatHistory? chatHistory;
+        private Kernel? kernel;
+        private OpenAIPromptExecutionSettings? promptSettings;
+
+        [Inject]
+        public required IConfiguration Configuration { get; set; }
+        [Inject]
+        private ILoggerFactory LoggerFactory { get; set; } = null!;
+
+        protected async Task InitializeSemanticKernel()
+        {
+            chatHistory = [];
+            chatHistory = new ChatHistory();
+
+            // Challenge 02 - Configure Semantic Kernel
+            var kernelBuilder = Kernel.CreateBuilder();
+
+            // Challenge 02 - Add OpenAI Chat Completion
+            kernelBuilder.AddAzureOpenAIChatCompletion(
+                Configuration["AOI_DEPLOYMODEL"]!,
+                Configuration["AOI_ENDPOINT"]!,
+                Configuration["AOI_API_KEY"]!);
+
+            // Add Logger for Kernel
+            kernelBuilder.Services.AddSingleton(LoggerFactory);
+
+            // Challenge 03 and 04 - Services Required
+            kernelBuilder.Services.AddHttpClient();
+
+            // Challenge 05 - Register Azure AI Foundry Text Embeddings Generation
+            kernelBuilder.AddAzureOpenAITextEmbeddingGeneration(
+                Configuration["EMBEDDINGS_DEPLOYMODEL"]!,
+                Configuration["AOI_ENDPOINT"]!,
+                Configuration["AOI_API_KEY"]!);
+
+
+            // Challenge 05 - Register Search Index
+            kernelBuilder.Services.AddSingleton<SearchIndexClient>(sp => 
+                new SearchIndexClient(
+                    new Uri(Configuration["AI_SEARCH_URL"]!), 
+                    new AzureKeyCredential(Configuration["AI_SEARCH_KEY"]!)
+                )
+            );
+
+            kernelBuilder.Services.AddSingleton<AzureAISearchVectorStoreRecordCollection<Dictionary<string, object>>>(sp =>
+            {
+                var searchIndexClient = sp.GetRequiredService<SearchIndexClient>();
+                return new AzureAISearchVectorStoreRecordCollection<Dictionary<string, object>>(
+                    searchIndexClient,
+                    "employeehandbook"
+                );
+            });
+
+            kernelBuilder.AddAzureAISearchVectorStore();
+
+
+            // Challenge 07 - Add Azure AI Foundry Text To Image
+            kernelBuilder.AddAzureOpenAITextToImage(
+                Configuration["DALLE_DEPLOYMODEL"]!,
+                Configuration["AOI_ENDPOINT"]!,
+                Configuration["AOI_API_KEY"]!);
+
+            // Challenge 02 - Finalize Kernel Builder
+            kernel = kernelBuilder.Build();
+
+            // Challenge 03, 04, 05, & 07 - Add Plugins
+            await AddPlugins();
+
+            // Challenge 02 - Chat Completion Service
+
+
+            // Challenge 03 - Create OpenAIPromptExecutionSettings
+            promptSettings = new OpenAIPromptExecutionSettings
+            {
+                ToolCallBehavior = ToolCallBehavior.AutoInvokeKernelFunctions,
+                Temperature = 0.7,
+                TopP = 0.95,
+                MaxTokens = 800
+            };
+
+
+        }
+
+
+        private async Task AddPlugins()
+        {
+            // Challenge 03 - Add Time Plugin
+            var timePlugin = new Plugins.TimePlugin();
+            kernel.ImportPluginFromObject(timePlugin, "TimePlugin");
+            
+            var geocodingPlugin = new GeocodingPlugin(
+                kernel.Services.GetRequiredService<IHttpClientFactory>(), 
+                Configuration);
+            kernel.ImportPluginFromObject(geocodingPlugin, "GeocodingPlugin");
+
+            var weatherPlugin = new WeatherPlugin(
+                kernel.Services.GetRequiredService<IHttpClientFactory>());
+                kernel.ImportPluginFromObject(weatherPlugin, "WeatherPlugin");
+
+            // Challenge 04 - Import OpenAPI Spec
+            await kernel.ImportPluginFromOpenApiAsync(
+                pluginName: "todo",
+                uri: new Uri("http://localhost:5115/swagger/v1/swagger.json"),
+                executionParameters: new OpenApiFunctionExecutionParameters()
+                {
+                    EnablePayloadNamespacing = true
+                }
+            );
+
+            // Challenge 05 - Add Search Plugin
+            var searchPlugin = new ContosoSearchPlugin(Configuration);
+            kernel.ImportPluginFromObject(searchPlugin, "HandbookPlugin");
+
+            // Challenge 07 - Text To Image Plugin
+            var imageGenerationPlugin = new ImageGenerationPlugin(Configuration);
+            kernel.ImportPluginFromObject(imageGenerationPlugin, "ImagePlugin");
+
+        }
+
+        private async Task SendMessage()
+        {
+            if (!string.IsNullOrWhiteSpace(newMessage) && chatHistory != null)
+            {
+                // This tells Blazor the UI is going to be updated.
+                StateHasChanged();
+                loading = true;
+                // Copy the user message to a local variable and clear the newMessage field in the UI
+                var userMessage = newMessage;
+                newMessage = string.Empty;
+                StateHasChanged();
+
+                // Start Challenge 02 - Sending a message to the chat completion service
+
+                chatHistory.AddUserMessage(userMessage);
+                var chatCompletionService = kernel.GetRequiredService<IChatCompletionService>();
+                var assistantResponse = await chatCompletionService.GetChatMessageContentAsync(
+                    chatHistory: chatHistory,
+                    executionSettings: promptSettings,
+                    kernel: kernel);
+                chatHistory.AddAssistantMessage(assistantResponse.Content);
+
+                // End Challenge 02 - Sending a message to the chat completion service
+
+                loading = false;
+            }
+        }
+    }
+    ```
+1. Save the file.
+1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` in the left pane and select **Open in Integrated Terminal**.
+1. Use the following command to run the app:
+    ```
+    dotnet run
+    ```
+1. Navigate to the link that is in the output section of the terminal:
+    >**Note**: The link can be found besides **Login to the dashboard at** in the terminal.
+
+    >**Note**: If you recieve security warnings in the browser, close the browser and follow the link again.
+1. Navigate to the link pointing towards **blazor-aichat** i.e **https://localhost:7118/**
+1. Submit the following prompt and see how the AI responds:
+    ```
+    Create a picture of a cute kitten wearing a hat.
+    ```
+</details>
