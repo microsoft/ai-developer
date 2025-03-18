@@ -329,5 +329,153 @@ In this exercise, you will be performing the following tasks:
     ```
     Who do I contact at Contoso for questions regarding workplace safety?
     ```
+</details>
 
+<details>
+<summary><strong>C Sharp(C#)</strong></summary>
+
+1. Navigate to `Dotnet>src>BlazorAI` directory and open **appsettings.json** file.
+1. Navigate to Azure Portal and search **Ai Search** and Click on it, open the **AI Search** resource located there.
+1. On Overview page copy the URL.
+1. Paste it besides `AI_SEARCH_URL` in **appsettings.json** file..
+    >Note:- Ensure that every value in the **appsettings.json** file is enclosed in **double quotes (")**.
+1. Navigate to **Keys** under Settings in the left pane.
+1. Copy the Primary admin key from Azure Portal and paste it besides `AI_SEARCH_KEY`.
+1. Save the file.
+1. Navigate to `Dotnet>src>BlazorAI>Plugins` directory and create a new file named **ContosoSearchPlugin.cs**.
+1. Add the following code in the file:
+    ```
+    using System.ComponentModel;
+    using System.Text.Json.Serialization;
+    using Azure;
+    using Azure.Search.Documents;
+    using Azure.Search.Documents.Indexes;
+    using Azure.Search.Documents.Models;
+    using Microsoft.SemanticKernel;
+    using Microsoft.SemanticKernel.Embeddings;
+    using System.Text;
+
+    namespace BlazorAI.Plugins
+    {
+        public class ContosoSearchPlugin
+        {
+            private readonly ITextEmbeddingGenerationService _textEmbeddingGenerationService;
+            private readonly SearchIndexClient _indexClient;
+
+            public ContosoSearchPlugin(IConfiguration configuration)
+            {
+                // Create the search index client
+                _indexClient = new SearchIndexClient(
+                    new Uri(configuration["AI_SEARCH_URL"]),
+                    new AzureKeyCredential(configuration["AI_SEARCH_KEY"]));
+
+                // Get the embedding service from the kernel
+                var kernelBuilder = Kernel.CreateBuilder();
+                kernelBuilder.AddAzureOpenAITextEmbeddingGeneration(
+                    configuration["EMBEDDINGS_DEPLOYMODEL"],
+                    configuration["AOI_ENDPOINT"],
+                    configuration["AOI_API_KEY"]);
+                var kernel = kernelBuilder.Build();
+                _textEmbeddingGenerationService = kernel.GetRequiredService<ITextEmbeddingGenerationService>();
+            }
+
+            [KernelFunction("SearchHandbook")]
+            [Description("Searches the Contoso employee handbook for information about company policies, benefits, procedures or other employee-related questions. Use this when the user asks about company policies, employee benefits, work procedures, or any information that might be in an employee handbook.")]
+            public async Task<string> Search(
+                [Description("The user's question about company policies, benefits, procedures or other handbook-related information")] string query)
+            {
+                try
+                {
+                    // Convert string query to vector embedding
+                    ReadOnlyMemory<float> embedding = await _textEmbeddingGenerationService.GenerateEmbeddingAsync(query);
+
+                    // Get client for search operations
+                    SearchClient searchClient = _indexClient.GetSearchClient("employeehandbook");
+
+                    // Configure request parameters
+                    VectorizedQuery vectorQuery = new(embedding);
+                    vectorQuery.Fields.Add("contentVector");  // The vector field in your index
+                    vectorQuery.KNearestNeighborsCount = 3;   // Get top 3 matches
+
+                    SearchOptions searchOptions = new()
+                    {
+                        VectorSearch = new() { Queries = { vectorQuery } },
+                        Size = 3  // Return top 3 results
+                    };
+
+                    // Perform search request
+                    Response<SearchResults<IndexSchema>> response = await searchClient.SearchAsync<IndexSchema>(searchOptions);
+
+                    // Collect search results
+                    StringBuilder results = new StringBuilder();
+                    await foreach (SearchResult<IndexSchema> result in response.Value.GetResultsAsync())
+                    {
+                        if (!string.IsNullOrEmpty(result.Document.Content))
+                        {
+                            results.AppendLine($"Title: {result.Document.Title}");
+                            results.AppendLine($"Content: {result.Document.Content}");
+                            results.AppendLine();
+                        }
+                    }
+
+                    return results.Length > 0 
+                        ? results.ToString()
+                        : "No relevant information found in the employee handbook.";
+                }
+                catch (Exception ex)
+                {
+                    return $"Search error: {ex.Message}";
+                }
+            }
+
+            private sealed class IndexSchema
+            {
+                [JsonPropertyName("content")]
+                public string Content { get; set; }
+
+                [JsonPropertyName("title")]
+                public string Title { get; set; }
+
+                [JsonPropertyName("url")]
+                public string Url { get; set; }
+            }
+        }
+    }
+    ```
+1. Save the file.
+1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs** file.
+1. Add the following code in the `// Import Models` section of the file.
+    ```
+    using Microsoft.SemanticKernel.Connectors.AzureAISearch;
+    using Azure;
+    using Azure.Search.Documents.Indexes;
+    using Microsoft.Extensions.DependencyInjection;
+    ```
+1. Add the following code in the `// Challenge 05 - Register Azure AI Foundry Text Embeddings Generation` section of the file.
+    ```
+    kernelBuilder.AddAzureOpenAITextEmbeddingGeneration(
+        Configuration["EMBEDDINGS_DEPLOYMODEL"]!,
+        Configuration["AOI_ENDPOINT"]!,
+        Configuration["AOI_API_KEY"]!);
+    ```
+1. Add the following code in the `// Challenge 05 - Register Search Index` section of the file.
+    ```
+    kernelBuilder.Services.AddSingleton<SearchIndexClient>(sp => 
+        new SearchIndexClient(
+            new Uri(Configuration["AI_SEARCH_URL"]!), 
+            new AzureKeyCredential(Configuration["AI_SEARCH_KEY"]!)
+        )
+    );
+
+    kernelBuilder.Services.AddSingleton<AzureAISearchVectorStoreRecordCollection<Dictionary<string, object>>>(sp =>
+    {
+        var searchIndexClient = sp.GetRequiredService<SearchIndexClient>();
+        return new AzureAISearchVectorStoreRecordCollection<Dictionary<string, object>>(
+            searchIndexClient,
+            "employeehandbook"
+        );
+    });
+
+    kernelBuilder.AddAzureAISearchVectorStore();
+    ```
 </details>
