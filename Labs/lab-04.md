@@ -11,14 +11,10 @@ In this exercise, you will be performing the following tasks:
 
 ## Task 1: Try the app without the Time Plugin
 
-<details>
-<summary><strong>Python</strong></summary>
-
-1. Launch your AI Chat app, and submit the following prompt, and see how it responds:
+1. Launch your AI Chat app in any of the languange, and submit the following prompt, and see how it responds:
     ```
     What are my work items?
     ```
-</details>
 
 ## Task 2: Create and import the OpenAPI Plugin
 
@@ -170,5 +166,26 @@ In this exercise, you will be performing the following tasks:
 1. Submit the following prompt and see how the AI responds:
     ```
     What are my work items?
+    ```
+</details>
+
+<details>
+<summary><strong>C Sharp(C#)</strong></summary>
+
+1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs** file.
+1. Add the following code in the `// Import Models` section of the file.
+    ```
+    using Microsoft.SemanticKernel.Plugins.OpenApi;
+    ```
+1. Add the following code in the `// Import Models` section of the file.
+    ```
+    await kernel.ImportPluginFromOpenApiAsync(
+        pluginName: "todo",
+        uri: new Uri("http://localhost:5115/swagger/v1/swagger.json"),
+        executionParameters: new OpenApiFunctionExecutionParameters()
+        {
+            EnablePayloadNamespacing = true
+        }
+    );
     ```
 </details>

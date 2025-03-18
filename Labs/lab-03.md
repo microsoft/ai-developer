@@ -1264,6 +1264,8 @@ sequenceDiagram
         }
     }
     ```
+1. Save the file.
+1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs** file.
 1. Add the following code in the `// Challenge 03 - Add Time Plugin` section, after the **geocoding plugin** in the file.
     ```
     var weatherPlugin = new WeatherPlugin(
