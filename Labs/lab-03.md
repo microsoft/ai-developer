@@ -1149,5 +1149,11 @@ sequenceDiagram
         }
     }
     ```
+1. Add the following code in the `// Challenge 03 - Add Time Plugin` section, after the **geocoding plugin** in the file.
+    ```
+    var weatherPlugin = new WeatherPlugin(
+        kernel.Services.GetRequiredService<IHttpClientFactory>());
+        kernel.ImportPluginFromObject(weatherPlugin, "WeatherPlugin");
+    ```
 
 </details>
