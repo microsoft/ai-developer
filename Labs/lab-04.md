@@ -172,15 +172,14 @@ In this exercise, you will be performing the following tasks:
 <details>
 <summary><strong>C Sharp(C#)</strong></summary>
 
-1. Right click on `Python>src>workitems` in the left pane and select **Open in Integrated Terminal**.
+1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` in the left pane and select **Open in Integrated Terminal**.
 1. Use the following command to run the app:
     ```
-    python api.py
+    dotnet run
     ```
     >**Note**:- Please don,t close the `terminal`.
-1. You can find the OpenAPI spec in following path `http://127.0.0.1:8000/openapi.json`.
-1. Swagger page can be found in `http://127.0.0.1:8000/docs`.
-1. Navigate to `Python>src` directory and open **chat.py** file.
+1. You can find the OpenAPI spec in following path `http://localhost:5115/swagger/v1/swagger.json`.
+1. Swagger page can be found in `http://localhost:5115/swagger/index.html`.
 1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs** file.
 1. Add the following code in the `// Import Models` section of the file.
     ```
