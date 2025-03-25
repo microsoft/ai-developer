@@ -25,6 +25,7 @@ In this exercise, you will be performing the following tasks:
    - **Resource group**: ai-foundry-<inject key="Deployment ID" enableCopy="false"></inject> (1)
    - **Location**: East Us (2)
    - **Connect Azure AI Search**: click on **Create new AI Search (3)** and enter **ai-search-<inject key="Deployment ID" enableCopy="false"></inject> (1)** and click on **Next (2)**
+   
     ![](./media/image_003.png)
 
     ![](./media/image_004.png)
