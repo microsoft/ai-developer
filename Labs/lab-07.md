@@ -2,7 +2,7 @@
 
 ### Estimated Duration: 60 minutes
 
-Now it's time to introduce Image generation to the reference application using DALL-E. DALL-E is an artificial intelligence (AI) model that generates images from textual descriptions. DALL-E can create images of objects, scenes, and even abstract concepts based on the descriptive text provided to it. This capability allows for a wide range of creative possibilities, from illustrating ideas to creating entirely new visual concepts that might not exist in the real world.
+This hands-on lab introduces image generation capabilities to your reference application using DALL·E, an advanced AI model that transforms text into visuals. Designed for those new to AI-powered creativity, the lab guides you step-by-step in integrating DALL·E to generate images from descriptive text prompts. You will explore how DALL·E can create visuals ranging from realistic objects and scenes to imaginative, abstract concepts—unlocking new possibilities for creative expression and user interaction. Complete all prerequisites before starting, as the cloud-based environment enables you to complete the lab remotely.
 
 ## Objectives
 In this exercise, you will be performing the following tasks:

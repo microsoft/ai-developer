@@ -2,7 +2,9 @@
 
 ### Estimated Duration: 60 minutes
 
-The first step in understanding Azure AI Foundry is to get familiar with the basics. In this challenge, you will learn about the core concepts of Azure AI Foundry and how it can be used to build powerful AI infused applications. You will deploy a GPT-3.5 model and use the Azure AI Foundry Studio to interact with the model.
+This hands-on lab provides experience with Azure AI Foundry and its core capabilities, including AI model deployment and integration with Azure AI Search. Designed for those new to the platform, the lab guides you step-by-step to set up an AI project, deploy a GPT-4o model, and configure essential AI services.
+
+You will explore Azure AI Foundry to create and manage AI projects, use Models + Endpoints to deploy base models, and leverage Azure AI Search for scalable, efficient data retrieval. Ensure all prerequisites are met before starting, as the cloud-based Azure AI Foundry platform allows you to complete the lab remotely.
 
 ## Objectives
 
@@ -25,7 +27,7 @@ In this exercise, you will be performing the following tasks:
    - **Resource group**: ai-foundry-<inject key="Deployment ID" enableCopy="false"></inject> (1)
    - **Location**: East Us (2)
    - **Connect Azure AI Search**: click on **Create new AI Search (3)** and enter **ai-search-<inject key="Deployment ID" enableCopy="false"></inject> (1)** and click on **Next (2)**
-   
+
     ![](./media/image_003.png)
 
     ![](./media/image_004.png)

@@ -2,14 +2,7 @@
 
 ### Estimated Duration: 60 minutes
 
-Retrieval-Augmented Generation (RAG)
-The RAG (Retrieval-Augmented Generation) pattern is an AI model architecture that enhances the generation of text by integrating external, relevant information retrieved from a knowledge base or database, improving accuracy and context. It combines retrieval mechanisms with generative models to produce more informed and contextually relevant responses.
-Your prompts (inputs), completions (outputs), embeddings, and training data are:
-- NOT available to other customers.
-- NOT available to OpenAI.
-- NOT used to improve OpenAI models.
-- NOT used to improve any Microsoft or 3rd party products or services.
-- NOT used for automatically improving Azure AI Foundry models for your use in your resource (The models are stateless, unless you explicitly fine-tune models with your training data).
+This hands-on lab introduces you to the Retrieval-Augmented Generation (RAG) pattern—an AI architecture that enhances response quality by integrating relevant external knowledge into the generative process. Designed for those new to RAG, the lab guides you through how retrieval mechanisms work alongside generative models to deliver more accurate, informed, and context-aware outputs. You will also gain a clear understanding of data privacy and security: your prompts, completions, embeddings, and training data remain fully isolated—they are not shared with other customers, OpenAI, Microsoft, or third parties, nor are they used to improve models automatically. Complete all prerequisites before starting, as the lab is designed to be completed remotely in a secure, cloud-based environment.
 
 ## Objectives
 In this exercise, you will be performing the following tasks:
