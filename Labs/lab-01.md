@@ -50,9 +50,8 @@ In this exercise, you will be performing the following tasks:
 
         ![](./media/image_009.png)
 1. Once the model is deployed, click on **Open in playground**.
-
-Extract the United States Postal Service (USPS) formatted address from the following email.
-
+1. You can try the capabilities of Azure OpenAI using the prompt `Extract the United States Postal Service (USPS) formatted address from the following email` to extract the Postal service address from the following email:-
+    ```
     Subject: Elevate Your Brand with Our Comprehensive Marketing Solutions!
     From: BrightEdge Marketing
     To: John Doe
@@ -66,3 +65,4 @@ Extract the United States Postal Service (USPS) formatted address from the follo
     Best regards,
     Sarah Thompson
     Marketing Director BrightEdge Marketing
+    ```
