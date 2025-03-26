@@ -50,7 +50,7 @@ In this exercise, you will be performing the following tasks:
 
         ![](./media/image_009.png)
 1. Once the model is deployed, click on **Open in playground**.
-1. You can try the capabilities of Azure OpenAI using the prompt `Extract the United States Postal Service (USPS) formatted address from the following email` to extract the Postal service address from the following email:-
+1. You can explore the capabilities of Azure OpenAI by using the prompt: `Extract the United States Postal Service (USPS) formatted address from the following email` to identify and extract the postal address from the following email:
     ```
     Subject: Elevate Your Brand with Our Comprehensive Marketing Solutions!
     From: BrightEdge Marketing
