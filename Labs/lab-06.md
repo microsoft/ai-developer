@@ -16,7 +16,8 @@ In this exercise, you will be performing the following tasks:
 1. Click on **Safety + security (1)** under **Assess and improve** in the left pane.
 
     ![](./media/image_010.png)
-1. Click on **Content filters (1)** and then followed by **+ Create content filter (2)**
+1. Click on **Content filters (1)** and then followed by **+ Create content filter (2)**.
+
     ![](./media/image_011.png)
 1. On the **Create filters to allow or block specific types of content** blade, specify the following configuration options and click on **Next (3)**:
    - **Name**:  **AggressiveContentFilter (1)**
@@ -36,3 +37,11 @@ In this exercise, you will be performing the following tasks:
 
 
 ## Task 1: Filter specific words or patterns
+
+1. Navigate to [Azure AI Foundry](https://ai.azure.com/) portal.
+1. Click on **Safety + security (1)** under **Assess and improve** in the left pane.
+
+    ![](./media/image_010.png)
+1. Click on **Blocklists (Preview) (1)** and then followed by **+ Create blocklist (2)**.
+
+    ![](./media/image_016.png)
