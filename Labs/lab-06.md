@@ -45,3 +45,25 @@ In this exercise, you will be performing the following tasks:
 1. Click on **Blocklists (Preview) (1)** and then followed by **+ Create blocklist (2)**.
 
     ![](./media/image_016.png)
+1. On the **Create a blocklist** blade, specify the following configuration options and click on **Create blocklist (4)**:
+   - **Name**:  **CustomBlocklist<inject key="Deployment ID" enableCopy="false"></inject> (1)**
+   - **Connection**: select the available **Azure OpenAI (2)** resource
+   - **Description**: This is a custom blocklist. (3)
+
+        ![](./media/image_017.png)
+1. Click on the **CustomBlocklist<inject key="Deployment ID" enableCopy="false"></inject>** you created just now.
+1. Enter words likethe following and select the type as required (**Exact Match** or **Regex**) :-
+    - password
+    - credentials
+    - exploit
+    - hack
+    - keylogger
+    - phishing
+    - SSN
+    - credit card
+    - bank account
+    - CVV
+    - casino
+    - poker
+    - betting
+1. Click on **Add term**.
