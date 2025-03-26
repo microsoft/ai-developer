@@ -66,3 +66,9 @@ In this exercise, you will be performing the following tasks:
     Sarah Thompson
     Marketing Director BrightEdge Marketing
     ```
+
+    ![](./media/image_018.png)
+1. You will receive a response similar to the one shown below:
+
+    ![](./media/image_019.png)
+
