@@ -159,7 +159,7 @@ In this exercise, you will be performing the following tasks:
     )
     logger.info("Image Generation plugin loaded")
     ```
-1. In case you encounter any indentation error, use the below code:
+1. In case you encounter any indentation error, use the code from the following URL:
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-07.py
     ```
@@ -303,7 +303,7 @@ In this exercise, you will be performing the following tasks:
     var imageGenerationPlugin = new ImageGenerationPlugin(Configuration);
     kernel.ImportPluginFromObject(imageGenerationPlugin, "ImagePlugin");
     ```
-1. In case you encounter any indentation error, use the below code:
+1. In case you encounter any indentation error, use the code from the following URL:
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-07.cs
     ```

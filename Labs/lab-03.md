@@ -99,7 +99,7 @@ In this exercise, you will be performing the following tasks:
     execution_settings = kernel.get_prompt_execution_settings_from_service_id("chat-service")
     ```
     >**Note**: You need to remove it from two code blocks, one will be inside **def initialize_kernel():** function and another will be in **global chat_history** code block.
-1. In case you encounter any indentation error, use the below code:
+1. In case you encounter any indentation error, use the code from the following URL:
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-03_time_plugin.py
     ```
@@ -272,7 +272,7 @@ In this exercise, you will be performing the following tasks:
         executionSettings: promptSettings,
         kernel: kernel);
     ```
-1. In case you encounter any indentation error, use the below code:
+1. In case you encounter any indentation error, use the code from the following URL:
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-03_time_plugin.cs
     ```
@@ -323,7 +323,7 @@ In this exercise, you will be performing the following tasks:
     )
     logger.info("GeoLocation plugin loaded")
     ```
-1. In case you encounter any indentation error, use the below code:
+1. In case you encounter any indentation error, use the code from the following URL:
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-03_geo_coding.py
     ```
@@ -365,7 +365,7 @@ In this exercise, you will be performing the following tasks:
         Configuration);
     kernel.ImportPluginFromObject(geocodingPlugin, "GeocodingPlugin");
     ```
-1. In case you encounter any indentation error, use the below code:
+1. In case you encounter any indentation error, use the code from the following URL:
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-03_geo_coding.cs
     ```
@@ -499,7 +499,7 @@ In this exercise, you will be performing the following tasks:
     )
     logger.info("Weather plugin loaded")
     ```
-1. In case you encounter any indentation error, use the below code:
+1. In case you encounter any indentation error, use the code from the following URL:
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-03_weather.py
     ```
@@ -748,7 +748,7 @@ sequenceDiagram
         kernel.Services.GetRequiredService<IHttpClientFactory>());
         kernel.ImportPluginFromObject(weatherPlugin, "WeatherPlugin");
     ```
-1. In case you encounter any indentation error, use the below code:
+1. In case you encounter any indentation error, use the code from the following URL:
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-03_weather.cs
     ```

@@ -175,7 +175,7 @@ In this exercise, you will be performing the following tasks:
     )
     logger.info("Contoso Handbook Search plugin loaded")
     ```
-1. In case you encounter any indentation error, use the below code:
+1. In case you encounter any indentation error, use the code from the following URL:
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-05.py
     ```
@@ -353,7 +353,7 @@ In this exercise, you will be performing the following tasks:
     var searchPlugin = new ContosoSearchPlugin(Configuration);
     kernel.ImportPluginFromObject(searchPlugin, "HandbookPlugin");
     ```
-1. In case you encounter any indentation error, use the below code:
+1. In case you encounter any indentation error, use the code from the following URL:
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-05.cs
     ```

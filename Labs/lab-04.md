@@ -38,7 +38,7 @@ In this exercise, you will be performing the following tasks:
         )
     )
     ```
-1. In case you encounter any indentation error, use the below code:
+1. In case you encounter any indentation error, use the code from the following URL:
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-04.py
     ```
@@ -85,7 +85,7 @@ In this exercise, you will be performing the following tasks:
         }
     );
     ```
-1. In case you encounter any indentation error, use the below code:
+1. In case you encounter any indentation error, use the code from the following URL:
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-04.cs
     ```
