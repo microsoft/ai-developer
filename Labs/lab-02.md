@@ -179,6 +179,7 @@ In this exercise, you will be performing the following tasks:
     test@gmail.com
     ```
 1. If the app does not open automatically in the browser, you can access it using the following **URL**:
+
     ```
     http://localhost:8501
     ```
@@ -314,7 +315,7 @@ In this exercise, you will be performing the following tasks:
     }
 
     ```
-    
+
 1. Save the file.
 1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` in the left pane and select **Open in Integrated Terminal**.
 1. Run the following line of code to trust the dev-certificates neccessary to run the app locally, and then select on **Yes**:
