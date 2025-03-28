@@ -7,8 +7,24 @@
 In this hands-on lab series, participants will explore the core capabilities of **Azure AI Foundry** and the **Semantic Kernel** framework to build intelligent, extensible AI applications. Designed for beginners in AI development, the labs guide participants through setting up AI projects in Azure AI Foundry, deploying the **GPT-4o** model, and connecting it seamlessly with Semantic Kernel to enable dynamic, prompt-based interactions. Participants will learn how to integrate **plugins**—such as time and weather utilities—to extend chatbot functionality, implement **Retrieval-Augmented Generation (RAG)** for more informed responses, and leverage **OpenAPI** to connect external services with minimal code. The labs also highlight responsible AI practices with **content filtering tools** in Foundry Studio and creative AI integration through **DALL·E** for image generation. Delivered in a secure, cloud-based environment, this series provides foundational, hands-on experience with Semantic Kernel and Azure AI Foundry to help participants build scalable, AI-powered applications.
 
 ## Objective
+- **Azure AI Foundry Fundamentals**: *Learn how to create, manage, and deploy AI projects using Azure AI Foundry and GPT-4o.*
+- **Semantic Kernel Fundamentals**: *Build an intelligent chat experience by connecting Semantic Kernel with GPT-4o through a simple starter app.*
+- **Semantic Kernel Plugins**: *Extend your chatbot’s capabilities by building and integrating custom Semantic Kernel plugins.*
+- **Import Plugin using OpenAPI**: *Seamlessly integrate external APIs into Semantic Kernel using OpenAPI specifications.*
+- **Retrieval-Augmented Generation (RAG)**: *Enhance AI responses by combining external knowledge retrieval with generative models using the RAG pattern.*
+- **Responsible AI: Exploring Content Filters in Azure AI Foundry**: *Apply content filtering tools to build safer, more responsible AI applications within Azure AI Foundry.*
+- **Image Generation using DALL·E**: *Generate creative visuals from text prompts by integrating DALL·E into your reference application.*
+- **Multi-Agent Systems**: *Coordinate multiple AI agents within Semantic Kernel to solve complex tasks through collaboration.*
 
 ## Pre-requisites
+
+- Basic knowledge of Azure
+- Familiarity with AI concepts, such as language models and embeddings
+- Basic understanding of REST APIs and JSON data formats
+- Familiarity with Semantic Kernel concepts such as plugins, planners, and AI skills
+- Basic experience using for resource management
+- (Optional) Familiarity with OpenAPI specifications for plugin integration
+- (Optional) Understanding of Retrieval-Augmented Generation (RAG) patterns for AI applications
 
 ## Architecture
 
