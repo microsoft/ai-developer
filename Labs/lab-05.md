@@ -1,6 +1,6 @@
 # **Exercise 5**: Retrieval-Augmented Generation (RAG)
 
-### Estimated Duration: 60 minutes
+### Estimated Duration: 40 minutes
 
 This hands-on lab introduces you to the Retrieval-Augmented Generation (RAG) pattern—an AI architecture that enhances response quality by integrating relevant external knowledge into the generative process. Designed for those new to RAG, the lab guides you through how retrieval mechanisms work alongside generative models to deliver more accurate, informed, and context-aware outputs. You will also gain a clear understanding of data privacy and security: your prompts, completions, embeddings, and training data remain fully isolated—they are not shared with other customers, OpenAI, Microsoft, or third parties, nor are they used to improve models automatically. Complete all prerequisites before starting, as the lab is designed to be completed remotely in a secure, cloud-based environment.
 

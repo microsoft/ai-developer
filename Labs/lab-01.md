@@ -1,6 +1,6 @@
 # **Exercise 1**: Azure AI Foundry Fundamentals
 
-### Estimated Duration: 60 minutes
+### Estimated Duration: 20 minutes
 
 This hands-on lab provides experience with Azure AI Foundry and its core capabilities, including AI model deployment and integration with Azure AI Search. Designed for those new to the platform, the lab guides you step-by-step to set up an AI project, deploy a GPT-4o model, and configure essential AI services.
 

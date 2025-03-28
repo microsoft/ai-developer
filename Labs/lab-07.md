@@ -1,6 +1,6 @@
 # **Exercise 7**: Image Generation using DALL-E
 
-### Estimated Duration: 60 minutes
+### Estimated Duration: 25 minutes
 
 This hands-on lab introduces image generation capabilities to your reference application using DALL·E, an advanced AI model that transforms text into visuals. Designed for those new to AI-powered creativity, the lab guides you step-by-step in integrating DALL·E to generate images from descriptive text prompts. You will explore how DALL·E can create visuals ranging from realistic objects and scenes to imaginative, abstract concepts—unlocking new possibilities for creative expression and user interaction. Complete all prerequisites before starting, as the cloud-based environment enables you to complete the lab remotely.
 
