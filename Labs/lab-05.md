@@ -24,7 +24,7 @@ In this exercise, you will be performing the following tasks:
 1. CLick on **Next**, and select **Create vector index**.
     >**Note**: The data injection might take around 10-15 minutes.
 
-## Task 3: Create a Semantic Search Plugin to query the AI Search Index
+## Task 2: Create a Semantic Search Plugin to query the AI Search Index
 
 <details>
 <summary><strong>Python</strong></summary>

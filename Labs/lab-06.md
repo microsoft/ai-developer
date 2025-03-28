@@ -34,7 +34,7 @@ In this exercise, you will be performing the following tasks:
     ![](./media/image_015.png)
 
 
-## Task 1: Filter specific words or patterns
+## Task 2: Filter specific words or patterns
 
 1. Navigate to [Azure AI Foundry](https://ai.azure.com/) portal.
 1. Click on **Safety + security (1)** under **Assess and improve** in the left pane.
