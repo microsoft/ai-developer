@@ -17,6 +17,7 @@ In this exercise, you will be performing the following tasks:
     I can't provide real-time information, including the current time. You can check the time on your device or through various online sources.
     ```
 ## Task 2: Create and import the Time Plugin
+
 <details>
 <summary><strong>Python</strong></summary>
 
@@ -127,7 +128,6 @@ In this exercise, you will be performing the following tasks:
 
 1. Navigate to `Dotnet>src>BlazorAI>Plugins` directory and create a new file named **TimePlugin.cs**.
 1. Add the following code in the file:
-
     ```
     using System;
     using System.ComponentModel;
