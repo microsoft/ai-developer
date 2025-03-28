@@ -379,3 +379,5 @@ In this exercise, you will be performing the following tasks:
     Who do I contact at Contoso for questions regarding workplace safety?
     ```
 </details>
+
+## Summary

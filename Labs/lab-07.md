@@ -323,3 +323,5 @@ In this exercise, you will be performing the following tasks:
     Create a picture of a cute kitten wearing a hat.
     ```
 </details>
+
+## Summary

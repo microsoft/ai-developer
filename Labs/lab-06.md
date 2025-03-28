@@ -1,10 +1,8 @@
 # **Exercise 6**: Responsible AI: Exploring Content Filters in Azure AI Foundry
 ### Estimated Duration: 25 minutes
 
-In this challenge, you will learn how to enhance the safety and reliability of your AI-powered applications by leveraging content filters and protection mechanisms available in Azure AI Foundry. Azure AI provides powerful tools to help developers create ethical AI solutions by filtering out harmful or inappropriate content from model outputs. You will explore how to work with these filters in the Azure AI Foundry Studio, adjust settings, and even create custom filters to block specific words or phrases.
-
-Content filters are essential in ensuring that your AI models meet your organization's ethical guidelines and regulatory requirements. By the end of this challenge, you will be able to configure filters that align with your application's needs and ensure safer interactions.
-
+This hands-on lab introduces content filtering in Azure AI Foundry to help you build safer, more responsible AI applications.
+You'll learn to apply built-in filters, adjust settings, and create custom rules to block unwanted content—all within Azure AI Foundry Studio. Complete prerequisites before starting, as the lab runs in a cloud-based environment.
 
 ## Objectives
 In this exercise, you will be performing the following tasks:
@@ -67,3 +65,5 @@ In this exercise, you will be performing the following tasks:
     - poker
     - betting
 1. Click on **Add term**.
+
+## Summary

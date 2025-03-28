@@ -152,3 +152,5 @@ In this exercise, you will be performing the following tasks:
     ```
 
 </details>
+
+## Summary

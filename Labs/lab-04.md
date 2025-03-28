@@ -105,3 +105,5 @@ In this exercise, you will be performing the following tasks:
     What are my work items?
     ```
 </details>
+
+## Summary

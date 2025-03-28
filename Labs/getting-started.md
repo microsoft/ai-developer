@@ -4,6 +4,8 @@
 
 ## Overview
 
+In this hands-on lab series, participants will explore the core capabilities of **Azure AI Foundry** and the **Semantic Kernel** framework to build intelligent, extensible AI applications. Designed for beginners in AI development, the labs guide participants through setting up AI projects in Azure AI Foundry, deploying the **GPT-4o** model, and connecting it seamlessly with Semantic Kernel to enable dynamic, prompt-based interactions. Participants will learn how to integrate **plugins**—such as time and weather utilities—to extend chatbot functionality, implement **Retrieval-Augmented Generation (RAG)** for more informed responses, and leverage **OpenAPI** to connect external services with minimal code. The labs also highlight responsible AI practices with **content filtering tools** in Foundry Studio and creative AI integration through **DALL·E** for image generation. Delivered in a secure, cloud-based environment, this series provides foundational, hands-on experience with Semantic Kernel and Azure AI Foundry to help participants build scalable, AI-powered applications.
+
 ## Objective
 
 ## Pre-requisites

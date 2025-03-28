@@ -57,3 +57,5 @@ In this exercise, you will be performing the following tasks:
     Build a Calculator app.
     ```
 </details>
+
+## Summary

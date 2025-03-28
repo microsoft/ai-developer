@@ -72,3 +72,4 @@ In this exercise, you will be performing the following tasks:
 
     ![](./media/image_019.png)
 
+## Summary
