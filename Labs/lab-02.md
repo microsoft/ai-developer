@@ -82,7 +82,7 @@ In this exercise, you will be performing the following tasks:
     logger.info(f"Response: {response}")
     return response
     ```
-1. In case you encounter any indentation error, use the code from the following link:
+1. In case you encounter any indentation error, use the code from the following URL:
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-02.py
     ```
@@ -124,7 +124,7 @@ In this exercise, you will be performing the following tasks:
         kernel: kernel);
     chatHistory.AddAssistantMessage(assistantResponse.Content);
     ```
-1. In case you encounter any indentation error, use the code from the following link: 
+1. In case you encounter any indentation error, use the code from the following URL: 
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-02.cs
     ```
