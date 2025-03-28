@@ -67,3 +67,5 @@ In this exercise, you will be performing the following tasks:
 1. Click on **Add term**.
 
 ## Summary
+
+In this exercise, we explored **content filtering** in **Azure AI Foundry** to support the development of safer and more responsible AI applications. We applied built-in filters, adjusted content moderation settings, and created custom rules to block unwanted content within Azure AI Foundry Studio. This enhanced our proficiency in implementing ethical and secure AI solutions.

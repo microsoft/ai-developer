@@ -59,3 +59,5 @@ In this exercise, you will be performing the following tasks:
 </details>
 
 ## Summary
+
+In this exercise, we integrated **DALL·E** into a reference application to enable **text-to-image generation** using descriptive prompts. We explored how to visualize real-world objects, dynamic scenes, and abstract concepts through AI-generated imagery. This enhanced our proficiency in leveraging generative AI to create engaging and visually rich user experiences.

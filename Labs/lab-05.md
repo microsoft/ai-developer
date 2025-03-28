@@ -381,3 +381,5 @@ In this exercise, you will be performing the following tasks:
 </details>
 
 ## Summary
+
+In this exercise, we explored the **Retrieval-Augmented Generation (RAG) pattern** to enhance AI responses by integrating external knowledge into the generative process. We examined how retrieval mechanisms work alongside generative models to produce accurate, context-aware outputs. Additionally, we gained insights into **data privacy and security**, ensuring that prompts, completions, embeddings, and training data remain fully isolated. This enhanced our proficiency in building secure, knowledge-enriched AI solutions using the RAG architecture.
