@@ -83,7 +83,6 @@ In this exercise, you will be performing the following tasks:
     return response
     ```
 1. In case you encounter any indentation error, use the below code:
-
     ```
     import asyncio
     import logging
@@ -167,7 +166,6 @@ In this exercise, you will be performing the following tasks:
         global chat_history
         chat_history = ChatHistory()
     ```
-
 1. Save the file.
 1. Right click on `Python>src` in the left pane and select **Open in Integrated Terminal**.
 1. Use the following command to run the app:
@@ -207,7 +205,6 @@ In this exercise, you will be performing the following tasks:
     chatHistory.AddAssistantMessage(assistantResponse.Content);
     ```
 1. In case you encounter any indentation error, use the below code:
-
     ```
     using Microsoft.AspNetCore.Components;
     using Microsoft.SemanticKernel;
@@ -315,7 +312,6 @@ In this exercise, you will be performing the following tasks:
     }
 
     ```
-
 1. Save the file.
 1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` in the left pane and select **Open in Integrated Terminal**.
 1. Run the following line of code to trust the dev-certificates neccessary to run the app locally, and then select on **Yes**:
