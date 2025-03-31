@@ -16,6 +16,7 @@ In this exercise, you will be performing the following tasks:
     ```
     I can't provide real-time information, including the current time. You can check the time on your device or through various online sources.
     ```
+
 ## Task 2: Create and import the Time Plugin
 
 <details>
@@ -303,6 +304,7 @@ In this exercise, you will be performing the following tasks:
     >**Note**: Use your personal or work e-mail ID to register.
 1. You will recieve an e-mail, click on the link in the e-mail to verify your e-mail.
 1. You will recieve your free **geocoding API key**, save it for further use.
+
 <details>
 <summary><strong>Python</strong></summary>
 
