@@ -5,6 +5,7 @@ using Microsoft.SemanticKernel.ChatCompletion;
 using Microsoft.SemanticKernel.Connectors.OpenAI;
 using BlazorAI.Plugins;
 using System;
+
 #pragma warning disable SKEXP0040 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
 #pragma warning disable SKEXP0020 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
 #pragma warning disable SKEXP0010 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
@@ -102,6 +103,7 @@ public partial class Chat
 
             // Start Challenge 02 - Sending a message to the chat completion service
 
+            // Your code goes here
             chatHistory.AddUserMessage(userMessage);
             var chatCompletionService = kernel.GetRequiredService<IChatCompletionService>();
             var assistantResponse = await chatCompletionService.GetChatMessageContentAsync(

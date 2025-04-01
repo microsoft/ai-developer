@@ -139,6 +139,8 @@ In this exercise, you will be performing the following tasks:
 <summary><strong>C Sharp(C#)</strong></summary>
 
 1. Navigate to `Dotnet>src>BlazorAI>Plugins` directory and create a new file named **TimePlugin.cs**.
+
+    ![](./media/image_049.png)
 1. Add the following code in the file:
     ```
     using System;
@@ -244,21 +246,29 @@ In this exercise, you will be performing the following tasks:
     ```
 1. Save the file.
 1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs** file.
+
+    ![](./media/image_038.png)
 1. Add the following code in the `// Import Models` section of the file.
     ```
     using Microsoft.SemanticKernel.Connectors.OpenAI;
     using BlazorAI.Plugins;
     using System;
     ```
+
+    ![](./media/image_050.png)
 1. Search **private Kernel? kernel;** (using Ctrl+F)  and add the following piece of code below it:
     ```
     private OpenAIPromptExecutionSettings? promptSettings;
     ```
+
+    ![](./media/image_051.png)
 1. Search **chatHistory = [];** (using Ctrl+F)  and update the line with the following piece of code:
     ```
     chatHistory = new ChatHistory();
     ```
-1. Add the following code in the `// Challenge 03 - Create OpenAIPromptExecutionSettings` section of the file.
+
+    ![](./media/image_052.png)
+1. Add the following code in the `// Challenge 03 - Create OpenAIPromptExecutionSettings` (1) section of the file.
     ```
     promptSettings = new OpenAIPromptExecutionSettings
     {
@@ -268,11 +278,15 @@ In this exercise, you will be performing the following tasks:
         MaxTokens = 800
     };
     ```
+
+    ![](./media/image_053.png)
 1. Add the following code in the `// Challenge 03 - Add Time Plugin` section of the file.
     ```
     var timePlugin = new Plugins.TimePlugin();
     kernel.ImportPluginFromObject(timePlugin, "TimePlugin");
     ```
+
+    ![](./media/image_054.png)
 1. Search **var assistantResponse = await chatCompletionService.GetChatMessageContentAsync** (using Ctrl+F)  and add the following line of code between chatHistory and kernel:
     ```
     executionSettings: promptSettings,
@@ -284,21 +298,21 @@ In this exercise, you will be performing the following tasks:
         executionSettings: promptSettings,
         kernel: kernel);
     ```
+    
+    ![](./media/image_055.png)
 1. In case you encounter any indentation error, use the code from the following URL:
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-03_time_plugin.cs
     ```
 1. Save the file.
 1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` in the left pane and select **Open in Integrated Terminal**.
+
+    ![](./media/image_040.png)
 1. Use the following command to run the app:
     ```
     dotnet run
     ```
-1. Navigate to the link that is in the output section of the terminal:
-    >**Note**: The link can be found besides **Login to the dashboard at** in the terminal.
-
-    >**Note**: If you recieve security warnings in the browser, close the browser and follow the link again.
-1. Navigate to the link pointing towards **blazor-aichat** i.e **https://localhost:7118/**
+1. Open a new tab in browser and navigate to the link for **blazor-aichat** i.e **https://localhost:7118/**.
 1. Submit the following prompt:
     ```
     What time is it?
@@ -307,6 +321,8 @@ In this exercise, you will be performing the following tasks:
     ```
     The current time is 3:43 PM on January 23, 2025.
     ```
+
+    ![](./media/image_056.png)
 </details>
 
 ## Task 3: Create and import the Geocoding Plugin
