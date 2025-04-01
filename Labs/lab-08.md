@@ -19,6 +19,8 @@ In this exercise, you will be performing the following tasks:
     ```
 1. Save the file.
 1. Right click on `Python>src` in the left pane and select **Open in Integrated Terminal**.
+
+    ![](./media/image_035.png)
 1. Use the following command to run the app:
     ```
     streamlit run app.py
@@ -27,10 +29,16 @@ In this exercise, you will be performing the following tasks:
     ```
     http://localhost:8501
     ```
+1. Select **Multi-Agent** on the left hand side pane.
+
+    ![](./media/image_123.png)
 1. Submit the following prompt and see how the AI responds:
     ```
     Build a Calculator app.
     ```
+1. You will receive a response similar to the one shown below:
+
+    ![](./media/image_124.png)
 </details>
 
 <details>
