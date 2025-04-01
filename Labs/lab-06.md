@@ -50,7 +50,7 @@ In this exercise, you will be performing the following tasks:
 
         ![](./media/image_017.png)
 1. Click on the **CustomBlocklist<inject key="Deployment ID" enableCopy="false"></inject>** you created just now.
-1. Enter words likethe following and select the type as required (**Exact Match** or **Regex**) :-
+1. Enter words like the following and select the type as required (**Exact Match** or **Regex**) :-
     - password
     - credentials
     - exploit
