@@ -46,7 +46,9 @@ In this exercise, you will be performing the following tasks:
    - **Tokens per Minute Rate Limit**: **50K** (3)
 
         ![](./media/image_009.png)
-1. Once the model is deployed, click on **Open in playground**.
+1. Once the model is deployed, click on **Open in playground (1)**.
+
+    ![](./media/image_020.png)
 1. You can explore the capabilities of Azure OpenAI by using the prompt: `Extract the United States Postal Service (USPS) formatted address from the following email` to identify and extract the postal address from the following email:
     ```
     Subject: Elevate Your Brand with Our Comprehensive Marketing Solutions!
