@@ -113,7 +113,7 @@ Feel free to start, stop, or restart your virtual machine as needed from the **R
 
    ![Approved](./media/demo002.png)
 1. Click on **Done**.
-1. If prompted to stay signed in, you can click **"No"**.
+1. If prompted to stay signed in, you can click **"Yes"**.
 
 1. Tap on **Finish** in the Mobile Device.
 
