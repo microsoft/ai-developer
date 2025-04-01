@@ -234,11 +234,12 @@ In this exercise, you will be performing the following tasks:
     ```
     Who do I contact at Contoso for questions regarding workplace safety?
     ```
+1. You will receive a response similar to the one shown below:
 
     ![](./media/image_098.png)
 
     ![](./media/image_099.png)
-    
+
     ![](./media/image_100.png)
 </details>
 
@@ -246,11 +247,17 @@ In this exercise, you will be performing the following tasks:
 <summary><strong>C Sharp(C#)</strong></summary>
 
 1. Navigate to `Dotnet>src>BlazorAI` directory and open **appsettings.json** file.
+
+    ![](./media/image_028.png)
 1. Paste the **AI search URL** that you copied earlier in the exercise besides `AI_SEARCH_URL` in **appsettings.json** file..
     >Note:- Ensure that every value in the **appsettings.json** file is enclosed in **double quotes (")**.
 1. Paste the **Primary admin key** that you copied earlier in the exercise besides `AI_SEARCH_KEY`.
+
+    ![](./media/image_101.png)
 1. Save the file.
-1. Navigate to `Dotnet>src>BlazorAI>Plugins` directory and create a new file named **ContosoSearchPlugin.cs**.
+1. Navigate to `Dotnet>src>BlazorAI>Plugins` directory and create a new file named **ContosoSearchPlugin.cs (1)**.
+
+    ![](./media/image_102.png)
 1. Add the following code in the file:
     ```
     using System.ComponentModel;
@@ -352,6 +359,8 @@ In this exercise, you will be performing the following tasks:
     ```
 1. Save the file.
 1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs** file.
+
+    ![](./media/image_038.png)
 1. Add the following code in the `// Import Models` section of the file.
     ```
     using Microsoft.SemanticKernel.Connectors.AzureAISearch;
@@ -359,6 +368,8 @@ In this exercise, you will be performing the following tasks:
     using Azure.Search.Documents.Indexes;
     using Microsoft.Extensions.DependencyInjection;
     ```
+
+    ![](./media/image_103.png)
 1. Add the following code in the `// Challenge 05 - Register Azure AI Foundry Text Embeddings Generation` section of the file.
     ```
     kernelBuilder.AddAzureOpenAITextEmbeddingGeneration(
@@ -366,6 +377,8 @@ In this exercise, you will be performing the following tasks:
         Configuration["AOI_ENDPOINT"]!,
         Configuration["AOI_API_KEY"]!);
     ```
+
+    ![](./media/image_104.png)
 1. Add the following code in the `// Challenge 05 - Register Search Index` section of the file.
     ```
     kernelBuilder.Services.AddSingleton<SearchIndexClient>(sp => 
@@ -386,26 +399,28 @@ In this exercise, you will be performing the following tasks:
 
     kernelBuilder.AddAzureAISearchVectorStore();
     ```
+
+    ![](./media/image_105.png)
 1. Add the following code in the `// Challenge 05 - Add Search Plugin` section of the file.
     ```
     var searchPlugin = new ContosoSearchPlugin(Configuration);
     kernel.ImportPluginFromObject(searchPlugin, "HandbookPlugin");
     ```
+
+    ![](./media/image_106.png)
 1. In case you encounter any indentation error, use the code from the following URL:
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-05.cs
     ```
 1. Save the file.
 1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` in the left pane and select **Open in Integrated Terminal**.
+
+    ![](./media/image_040.png)
 1. Use the following command to run the app:
     ```
     dotnet run
     ```
-1. Navigate to the link that is in the output section of the terminal:
-    >**Note**: The link can be found besides **Login to the dashboard at** in the terminal.
-
-    >**Note**: If you recieve security warnings in the browser, close the browser and follow the link again.
-1. Navigate to the link pointing towards **blazor-aichat** i.e **https://localhost:7118/**
+1. Open a new tab in browser and navigate to the link for **blazor-aichat** i.e **https://localhost:7118/**.
 1. Submit the following prompt and see how the AI responds:
     ```
     What are the steps for the Contoso Performance Reviews?
@@ -416,6 +431,13 @@ In this exercise, you will be performing the following tasks:
     ```
     Who do I contact at Contoso for questions regarding workplace safety?
     ```
+1. You will receive a response similar to the one shown below:
+
+    ![](./media/image_098.png)
+
+    ![](./media/image_099.png)
+
+    ![](./media/image_100.png)
 </details>
 
 ## Summary

@@ -180,7 +180,7 @@ In this exercise, you will be performing the following tasks:
     ```
     dotnet run
     ```
-1. Open a new tab in browser and navigate to the link for **blazor-aichat** i.e **https://localhost:7118/**
+1. Open a new tab in browser and navigate to the link for **blazor-aichat** i.e **https://localhost:7118/**.
 
     >**Note**: If you receive security warnings in the browser, close the browser and follow the link again.
 1. Submit the following prompt and see how the AI responds:

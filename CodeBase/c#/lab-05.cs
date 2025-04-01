@@ -10,6 +10,7 @@ using Microsoft.SemanticKernel.Connectors.AzureAISearch;
 using Azure;
 using Azure.Search.Documents.Indexes;
 using Microsoft.Extensions.DependencyInjection;
+
 #pragma warning disable SKEXP0040 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
 #pragma warning disable SKEXP0020 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
 #pragma warning disable SKEXP0010 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
@@ -53,7 +54,6 @@ public partial class Chat
             Configuration["EMBEDDINGS_DEPLOYMODEL"]!,
             Configuration["AOI_ENDPOINT"]!,
             Configuration["AOI_API_KEY"]!);
-
 
         // Challenge 05 - Register Search Index
         kernelBuilder.Services.AddSingleton<SearchIndexClient>(sp =>
@@ -105,12 +105,10 @@ public partial class Chat
         // Challenge 03 - Add Time Plugin
         var timePlugin = new Plugins.TimePlugin();
         kernel.ImportPluginFromObject(timePlugin, "TimePlugin");
-
         var geocodingPlugin = new GeocodingPlugin(
             kernel.Services.GetRequiredService<IHttpClientFactory>(),
             Configuration);
         kernel.ImportPluginFromObject(geocodingPlugin, "GeocodingPlugin");
-
         var weatherPlugin = new WeatherPlugin(
             kernel.Services.GetRequiredService<IHttpClientFactory>());
         kernel.ImportPluginFromObject(weatherPlugin, "WeatherPlugin");
@@ -147,6 +145,7 @@ public partial class Chat
 
             // Start Challenge 02 - Sending a message to the chat completion service
 
+            // Your code goes here
             chatHistory.AddUserMessage(userMessage);
             var chatCompletionService = kernel.GetRequiredService<IChatCompletionService>();
             var assistantResponse = await chatCompletionService.GetChatMessageContentAsync(
