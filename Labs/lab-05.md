@@ -9,14 +9,22 @@ In this exercise, you will be performing the following tasks:
 
 ## Task 1: Deploy a Text Embedding model
 1. Navigate to [Azure AI Foundry](https://ai.azure.com/) portal.
-1.  Click on **Models + endpoints** under **My assets** in the left pane.
-1.  Click on **+ Deploy model**, and then select **Deploy Base model**.
+1. Click on **Models + endpoints (1)** under **My assets** in the left pane and then click on **+ Deploy model**, followed by **Deploy Base model (2)**.
+
+    ![](./media/image_007-1.png)
 1. Search for **text-embedding-ada-002**, select the model and click on **Confirm**.
+
+    ![](./media/image_084.png)
 1. Click on **Deploy**.
 1. Navigate back and select **gpt-4o**, and click on **Open in playground**.
-1. Click on **Add you data** and select **+ Add a new data source**.
-1. On **Add your data** blade, select **Upload files** as the `Data source`.
-1. Click on **Upload**, and select **Upload files**.
+
+    ![](./media/image_020.png)
+1. Click on **Add you data (1)** and select **+ Add a new data source (2)**.
+
+    ![](./media/image_085.png)
+1. On **Add your data** blade, select **Upload files (1)** as the `Data source` and click on **Upload (2)**, and select **Upload files (3)**.
+
+    ![](./media/image_086.png)
 1. Navigate to `C:\LabFiles\ai-developer\Dotnet\src\BlazorAI\data\` and select **employee_handbook.pdf**, and click on **Open**, followed by **Next**.
 1. On the **Index settings** blade, specify the following configuration options and click on **Next**:
     - **Select Azure AI Search Service**: select **AzureAISearch**
