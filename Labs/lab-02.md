@@ -9,10 +9,10 @@ In this exercise, you will be performing the following tasks:
 
 ## Task 1: Setup Azure AI Foundry
 
-1. Open **Visual Stuido code** from the desktop shortcut in the labvm.
+1. Open **Visual Studio code** from the desktop shortcut in the labvm.
 1. Click on **File** and select **Open Folder**.
 1. Navigate to `C:\LabFiles` and select **ai-developer** folder and click on **Select Folder**.
-1. If you recieve `Do you trust the authors of the files in folder` warning, select the checkbox and click on **Yes, I trust the authors**.
+1. If you receive `Do you trust the authors of the files in folder` warning, select the checkbox and click on **Yes, I trust the authors**.
 
 ## Task 2: Setup environment variables
 <details>
