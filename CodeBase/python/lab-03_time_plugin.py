@@ -16,7 +16,7 @@ from semantic_kernel.connectors.ai.open_ai.prompt_execution_settings.azure_chat_
 )
 from plugins.time_plugin import TimePlugin
 
-#Add Logger
+# Add Logger
 logger = logging.getLogger(__name__)
 
 load_dotenv(override=True)
@@ -24,7 +24,7 @@ load_dotenv(override=True)
 chat_history = ChatHistory()
 
 def initialize_kernel():
-#Challene 02 - Add Kernel
+    #Challene 02 - Add Kernel
     kernel = Kernel()
     #Challenge 02 - Chat Completion Service
     chat_completion_service = AzureChatCompletion(
@@ -79,7 +79,6 @@ async def process_message(user_input):
         kernel=kernel
     )
     chat_history.add_assistant_message(str(response))
-
     #return result
     logger.info(f"Response: {response}")
     return response

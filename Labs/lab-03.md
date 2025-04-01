@@ -8,7 +8,7 @@ This hands-on lab explores the power of plugins in enhancing LLM development wit
 In this exercise, you will be performing the following tasks:
 
 ## Task 1: Try the app without the Time Plugin
-1. Launch your AI Chat app in any of the languange, and submit the following prompt:
+1. Launch your AI Chat app in any of the language, and submit the following prompt:
     ```
     What time is it?
     ```
@@ -17,13 +17,18 @@ In this exercise, you will be performing the following tasks:
     I can't provide real-time information, including the current time. You can check the time on your device or through various online sources.
     ```
 
+    ![](./media/image_043.png)
+
 ## Task 2: Create and import the Time Plugin
 
 <details>
 <summary><strong>Python</strong></summary>
 
-1. Navigate to `Python>src>plugins` directory and create a new file named **time_plugin.py**.
+1. Navigate to `Python>src>plugins` directory and create a new file named **time_plugin.py (1)**.
+
+    ![](./media/image_044.png)
 1. Add the following code in the file:
+
     ```
     from datetime import datetime
     from typing import Annotated
@@ -70,6 +75,8 @@ In this exercise, you will be performing the following tasks:
     ```
 1. Save the file.
 1. Navigate to `Python>src` directory and open **chat.py** file.
+
+    ![](./media/image_030.png)
 1. Add the following code in the `#Import Modules` section of the file.
     ```
     from semantic_kernel.connectors.ai.open_ai.prompt_execution_settings.azure_chat_prompt_execution_settings import (
@@ -77,24 +84,24 @@ In this exercise, you will be performing the following tasks:
     )
     from plugins.time_plugin import TimePlugin
     ```
+    
+    ![](./media/image_045.png)
 1. Add the following code in the `#Challenge 03 - Create Prompt Execution Settings` section of the file.
     ```
     execution_settings = AzureChatPromptExecutionSettings()
     execution_settings.function_choice_behavior = FunctionChoiceBehavior.Auto()
     logger.info("Automatic function calling enabled")
     ```
+
+    ![](./media/image_046.png)
 1. Add the following code in the `# Placeholder for Time plugin` section of the file.
     ```
     time_plugin = TimePlugin()
     kernel.add_plugin(time_plugin, plugin_name="TimePlugin")
     logger.info("Time plugin loaded")
     ```
-1. Add the following code in the `# Placeholder for Time plugin` section of the file.
-    ```
-    time_plugin = TimePlugin()
-    kernel.add_plugin(time_plugin, plugin_name="TimePlugin")
-    logger.info("Time plugin loaded")
-    ```
+
+    ![](./media/image_046.png)
 1. Search (using Ctrl+F) and remove the following piece of code from the file as we will enable automatic function calling and this is no longer required:
     ```
     execution_settings = kernel.get_prompt_execution_settings_from_service_id("chat-service")
@@ -106,6 +113,8 @@ In this exercise, you will be performing the following tasks:
     ```
 1. Save the file.
 1. Right click on `Python>src` in the left pane and select **Open in Integrated Terminal**.
+
+    ![](./media/image_035.png)
 1. Use the following command to run the app:
     ```
     streamlit run app.py
@@ -122,6 +131,8 @@ In this exercise, you will be performing the following tasks:
     ```
     The current time is 3:43 PM on January 23, 2025.
     ```
+
+    ![](./media/image_048.png)
 </details>
 
 <details>
