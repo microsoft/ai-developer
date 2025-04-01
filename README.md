@@ -61,6 +61,12 @@ Participants will learn how to:
   - [C#](./Dotnet/challenges/Challenge-08.md)
   - [Python](./Python/challenges/Challenge-08.md)
 
+- Challenge 09: Infuse existing Apps with AI - Enhance the Product Search functionality using Semantic Kernel.
+  - [C#](./Dotnet/challenges/Challenge-09.md)
+
+- Challenge 10: Enrich user experience with Semantic Kernel - Enhance the Product Search page with a creative AI response.
+  - [C#](./Dotnet/challenges/Challenge-10.md)
+
 ### Here are the [Slides](./Dotnet/challenges/Resources/Lectures.pdf) used during our workshop
 
 ### Here is the code for Python and C# - Download the [Zip](https://github.com/microsoft/ai-developer/raw/refs/heads/main/misc/finalresult.zip)

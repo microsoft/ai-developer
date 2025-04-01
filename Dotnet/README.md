@@ -56,6 +56,12 @@ Participants will learn how to:
 - [Challenge 08](./challenges/Challenge-08.md): Multi-Agent Systems
   - Create a multi-agent conversation using Semantic Kernel
   - Implement a multi-agent conversation using Azure AI Foundry
+- [Challenge 09](./challenges/Challenge-09.md): Infuse existing Apps with AI
+  - Enhance the Product Search functionality by implementing AI-powered search capabilities using Semantic Kernel
+  - Transform traditional keyword-based search into an intelligent Semantic Search system leveraging Azure AI Search Service for more contextual and relevant results
+- [Challenge 10](./challenges/Challenge-10.md): Enrich the users search experience using AI
+  - Implement an AI-powered product description generator that creates compelling sales pitches based on user search queries
+  - Integrate Semantic Kernel to dynamically generate personalized, context-aware product descriptions that replace standard catalog text
 
 ### Here is the [Slides](./challenges/Resources/Lectures.pdf) used during our workshop
 
