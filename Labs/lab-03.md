@@ -445,7 +445,7 @@ In this exercise, you will be performing the following tasks:
     Longitude: -82.458444 
     ```
 
-        ![](./media/image_065.png)
+    ![](./media/image_065.png)
 
 </details>
 
@@ -454,6 +454,8 @@ In this exercise, you will be performing the following tasks:
 <summary><strong>Python</strong></summary>
 
 1. Navigate to `Python>src>plugins` directory and create a new file named **weather_plugin.py**.
+
+    ![](./media/image_066.png)
 1. Add the following code in the file:
     ```
     from typing import Annotated
@@ -542,10 +544,14 @@ In this exercise, you will be performing the following tasks:
     ```
 1. Save the file.
 1. Navigate to `Python>src` directory and open **chat.py** file.
+
+    ![](./media/image_030.png)
 1. Add the following code in the `#Import Modules` section of the file.
     ```
     from plugins.weather_plugin import WeatherPlugin
     ```
+
+    ![](./media/image_067.png)
 1. Add the following code in the `# Placeholder for Time plugin` section, after the **Geocoding plugin** in the file.
     ```
     kernel.add_plugin(
@@ -554,12 +560,16 @@ In this exercise, you will be performing the following tasks:
     )
     logger.info("Weather plugin loaded")
     ```
+
+    ![](./media/image_068.png)
 1. In case you encounter any indentation error, use the code from the following URL:
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-03_weather.py
     ```
 1. Save the file.
 1. Right click on `Python>src` in the left pane and select **Open in Integrated Terminal**.
+
+    ![](./media/image_035.png)
 1. Use the following command to run the app:
     ```
     streamlit run app.py
@@ -570,8 +580,11 @@ In this exercise, you will be performing the following tasks:
     ```
 1. Submit the following prompt:
     ```
-    What is the weather in San Francisco next Tuesday?
+    What is today's weather in San Francisco?
     ```
+1. You will receive a response similar to the one shown below:
+
+    ![](./media/image_069.png)
 The AI will perform the following plan to answer the question but may do so in a different order or different set of functions:
 
 1️⃣ The AI should ask Semantic Kernel to call the GetDate function on the Time Plugin to get today's date in order to calculate the number of days until next Thursday
@@ -608,6 +621,8 @@ sequenceDiagram
 <summary><strong>C Sharp(C#)</strong></summary>
 
 1. Navigate to `Dotnet>src>BlazorAI>Plugins` directory and create a new file named **WeatherPlugin.cs**.
+
+    ![](./media/image_070.png)
 1. Add the following code in the file:
     ```
     using System;
@@ -797,31 +812,36 @@ sequenceDiagram
     ```
 1. Save the file.
 1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs** file.
-1. Add the following code in the `// Challenge 03 - Add Time Plugin` section, after the **geocoding plugin** in the file.
+
+    ![](./media/image_038.png)
+1. Add the following code in the `// Challenge 03 - Add Time Plugin` section, after the **geocoding plugin** in the file.yeah
     ```
     var weatherPlugin = new WeatherPlugin(
         kernel.Services.GetRequiredService<IHttpClientFactory>());
         kernel.ImportPluginFromObject(weatherPlugin, "WeatherPlugin");
     ```
+
+    ![](./media/image_071.png)
 1. In case you encounter any indentation error, use the code from the following URL:
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-03_weather.cs
     ```
 1. Save the file.
 1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` in the left pane and select **Open in Integrated Terminal**.
+
+    ![](./media/image_040.png)
 1. Use the following command to run the app:
     ```
     dotnet run
     ```
-1. Navigate to the link that is in the output section of the terminal:
-    >**Note**: The link can be found besides **Login to the dashboard at** in the terminal.
-
-    >**Note**: If you recieve security warnings in the browser, close the browser and follow the link again.
-1. Navigate to the link pointing towards **blazor-aichat** i.e **https://localhost:7118/**
-1. Submit the following prompt and see how the AI responds:
+1. Open a new tab in browser and navigate to the link for **blazor-aichat** i.e **https://localhost:7118/**.
+1. Submit the following prompt:
     ```
     What is today's weather in San Francisco?
     ```
+1. You will receive a response similar to the one shown below:
+
+    ![](./media/image_072.png)
 
 The AI will perform the following plan to answer the question but may do so in a different order or different set of functions:
 
