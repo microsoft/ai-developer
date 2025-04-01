@@ -141,42 +141,47 @@ In this exercise, you will be performing the following tasks:
     Why is it red?
     ```
 1. You will receive a response similar to the one shown below:
-    ![](./media/image_036.png)
+    ![](./media/image_037.png)
 </details>
 
 <details>
 <summary><strong>C Sharp(C#)</strong></summary>
 
-1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs** file.
-1. Add the following code in the `// Your code goes here(Line no. 91)` section of the file.
+1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
+
+    ![](./media/image_038.png)
+1. Add the following code in the `// Your code goes here(Line no. 92)` (1) section of the file.
     ```
     chatHistory.AddUserMessage(userMessage);
     var chatCompletionService = kernel.GetRequiredService<IChatCompletionService>();
     var assistantResponse = await chatCompletionService.GetChatMessageContentAsync(
         chatHistory: chatHistory,
-        executionSettings: promptSettings,
         kernel: kernel);
     chatHistory.AddAssistantMessage(assistantResponse.Content);
     ```
+
+    ![](./media/image_039.png)
 1. In case you encounter any indentation error, use the code from the following URL: 
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-02.cs
     ```
 1. Save the file.
 1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` in the left pane and select **Open in Integrated Terminal**.
+
+    ![](./media/image_040.png)
 1. Run the following line of code to trust the dev-certificates neccessary to run the app locally, and then select on **Yes**:
     ```
     dotnet dev-certs https --trust
     ```
+
+    ![](./media/image_041.png)
 1. Use the following command to run the app:
     ```
     dotnet run
     ```
-1. Navigate to the link that is in the output section of the terminal:
-    >**Note**: The link can be found besides **Login to the dashboard at** in the terminal.
+1. Open a new tab in browser and navigate to the link for **blazor-aichat** i.e **https://localhost:7118/**
 
-    >**Note**: If you recieve security warnings in the browser, close the browser and follow the link again.
-1. Navigate to the link pointing towards **blazor-aichat** i.e **https://localhost:7118/**
+    >**Note**: If you receive security warnings in the browser, close the browser and follow the link again.
 1. Submit the following prompt and see how the AI responds:
     ```
     Why is the sky blue?
@@ -184,7 +189,8 @@ In this exercise, you will be performing the following tasks:
     ```
     Why is it red?
     ```
-
+1. You will receive a response similar to the one shown below:
+    ![](./media/image_042.png)
 </details>
 
 ## Summary
