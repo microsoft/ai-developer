@@ -340,14 +340,22 @@ In this exercise, you will be performing the following tasks:
 <summary><strong>Python</strong></summary>
 
 1. Navigate to `Python>src` directory and open **.env** file.
+
+    ![](./media/image_026.png)
 1. Paste the geocoding API key you received just now via e-mail besides `GEOCODING_API_KEY`.
+
+    ![](./media/image_059.png)
     >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
 1. Save the file.
 1. Navigate to `Python>src` directory and open **chat.py** file.
+
+    ![](./media/image_030.png)
 1. Add the following code in the `#Import Modules` section of the file.
     ```
     from plugins.geo_coding_plugin import GeoPlugin
     ```
+
+    ![](./media/image_030.png)
 1. Add the following code in the `# Placeholder for Time plugin` section, after the **time plugin** in the file.
     ```
     kernel.add_plugin(
@@ -356,12 +364,16 @@ In this exercise, you will be performing the following tasks:
     )
     logger.info("GeoLocation plugin loaded")
     ```
+
+    ![](./media/image_061.png)
 1. In case you encounter any indentation error, use the code from the following URL:
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-03_geo_coding.py
     ```
 1. Save the file.
 1. Right click on `Python>src` in the left pane and select **Open in Integrated Terminal**.
+
+    ![](./media/image_035.png)
 1. Use the following command to run the app:
     ```
     streamlit run app.py
@@ -381,16 +393,24 @@ In this exercise, you will be performing the following tasks:
     Latitude: 27.9477595
     Longitude: -82.458444 
     ```
+
+    ![](./media/image_062.png)
 </details>
 
 <details>
 <summary><strong>C Sharp(C#)</strong></summary>
 
 1. Navigate to `Dotnet>src>BlazorAI` directory and open **appsettings.json** file.
-1. Paste the geocoding API key you recieved just now via e-mail besides `GEOCODING_API_KEY`.
+
+    ![](./media/image_028.png)
+1. Paste the geocoding API key you received just now via e-mail besides `GEOCODING_API_KEY`.
+
+        ![](./media/image_063.png)
     >Note:- Ensure that every value in the **appsettings.json** file is enclosed in **double quotes (")**.
 1. Save the file.
 1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs** file.
+
+    ![](./media/image_038.png)
 1. Add the following code in the `// Challenge 03 - Add Time Plugin` section, after the **time plugin** in the file.
     ```
     var geocodingPlugin = new GeocodingPlugin(
@@ -398,21 +418,21 @@ In this exercise, you will be performing the following tasks:
         Configuration);
     kernel.ImportPluginFromObject(geocodingPlugin, "GeocodingPlugin");
     ```
+
+    ![](./media/image_064.png)
 1. In case you encounter any indentation error, use the code from the following URL:
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-03_geo_coding.cs
     ```
 1. Save the file.
 1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` in the left pane and select **Open in Integrated Terminal**.
+
+    ![](./media/image_040.png)
 1. Use the following command to run the app:
     ```
     dotnet run
     ```
-1. Navigate to the link that is in the output section of the terminal:
-    >**Note**: The link can be found besides **Login to the dashboard at** in the terminal.
-
-    >**Note**: If you recieve security warnings in the browser, close the browser and follow the link again.
-1. Navigate to the link pointing towards **blazor-aichat** i.e **https://localhost:7118/**
+1. Open a new tab in browser and navigate to the link for **blazor-aichat** i.e **https://localhost:7118/**
 1. Submit the following prompt:
     ```
     What are the geo-coordinates for Tampa, FL
@@ -424,6 +444,8 @@ In this exercise, you will be performing the following tasks:
     Latitude: 27.9477595
     Longitude: -82.458444 
     ```
+
+        ![](./media/image_065.png)
 
 </details>
 
