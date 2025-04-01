@@ -13,6 +13,12 @@ In this exercise, you will be performing the following tasks:
 1. Click on **File** and select **Open Folder**.
 1. Navigate to `C:\LabFiles` and select **ai-developer** folder and click on **Select Folder**.
 1. If you receive `Do you trust the authors of the files in folder` warning, select the checkbox and click on **Yes, I trust the authors**.
+1. Navigate to AI Foundry Portal and on **Overview (1)** page select **Azure OpenAI Service (2)** and **Copy (3)** the endpoint and paste it in **Notepad**, as it will be used in the upcoming exercises.
+
+    ![](./media/image_021.png)
+1. Copy the API key from AI Foundry Portal and paste it in **Notepad**, as it will be used in the upcoming exercises.
+
+    ![](./media/image_022.png)
 
 ## Task 2: Setup environment variables
 <details>
