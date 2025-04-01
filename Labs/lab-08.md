@@ -45,25 +45,33 @@ In this exercise, you will be performing the following tasks:
 <summary><strong>C Sharp(C#)</strong></summary>
 
 1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **MultiAgent.razor.cs** file.
+
+    ![](./media/image_125.png)
 1. Remove the existing code and add the code from the following URL in the file.
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-08.cs
     ```
 1. Save the file.
 1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` in the left pane and select **Open in Integrated Terminal**.
+
+    ![](./media/image_040.png)
 1. Use the following command to run the app:
     ```
     dotnet run
     ```
-1. Navigate to the link that is in the output section of the terminal:
-    >**Note**: The link can be found besides **Login to the dashboard at** in the terminal.
+1. Open a new tab in browser and navigate to the link for **blazor-aichat** i.e **https://localhost:7118/**.
 
-    >**Note**: If you recieve security warnings in the browser, close the browser and follow the link again.
-1. Navigate to the link pointing towards **blazor-aichat** i.e **https://localhost:7118/**
+    >**Note**: If you receive security warnings in the browser, close the browser and follow the link again.
+1. Select **Multi-Agent** on the left hand side pane.
+
+    ![](./media/image_126.png)
 1. Submit the following prompt and see how the AI responds:
     ```
     Build a Calculator app.
     ```
+1. You will receive a response similar to the one shown below:
+
+    ![](./media/image_127.png)
 </details>
 
 ## Summary
