@@ -13,6 +13,9 @@ In this exercise, you will be performing the following tasks:
     ```
     What are my work items?
     ```
+1. You will receive a response similar to the one shown below:
+
+    ![](./media/image_073.png)
 
 ## Task 2: Create and import the OpenAPI Plugin
 
@@ -20,14 +23,22 @@ In this exercise, you will be performing the following tasks:
 <summary><strong>Python</strong></summary>
 
 1. Right click on `Python>src>workitems` in the left pane and select **Open in Integrated Terminal**.
+
+    ![](./media/image_074.png)
 1. Use the following command to run the app:
     ```
     python api.py
     ```
-    >**Note**:- Please don,t close the `terminal`.
+    >**Note**:- Please don't close the `terminal`.
 1. You can find the OpenAPI spec in following path `http://127.0.0.1:8000/openapi.json`.
+
+    ![](./media/image_075.png)
 1. Swagger page can be found in `http://127.0.0.1:8000/docs`.
+
+    ![](./media/image_076.png)
 1. Navigate to `Python>src` directory and open **chat.py** file.
+
+    ![](./media/image_030.png)
 1. Add the following code in the `# Placeholder for OpenAPI plugin` section of the file.
     ```
     kernel.add_plugin_from_openapi(
@@ -38,12 +49,16 @@ In this exercise, you will be performing the following tasks:
         )
     )
     ```
+
+    ![](./media/image_077.png)
 1. In case you encounter any indentation error, use the code from the following URL:
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-04.py
     ```
 1. Save the file.
 1. Right click on `Python>src` in the left pane and select **Open in Integrated Terminal**.
+
+    ![](./media/image_035.png)
 1. Use the following command to run the app:
     ```
     streamlit run app.py
@@ -56,25 +71,38 @@ In this exercise, you will be performing the following tasks:
     ```
     What are my work items?
     ```
+1. You will receive a response similar to the one shown below:
+
+    ![](./media/image_078.png)
 </details>
 
 <details>
 <summary><strong>C Sharp(C#)</strong></summary>
 
 1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` in the left pane and select **Open in Integrated Terminal**.
+
+    ![](./media/image_040.png)
 1. Use the following command to run the app:
     ```
     dotnet run
     ```
     >**Note**:- Please don,t close the `terminal`.
 1. You can find the OpenAPI spec in following path `http://localhost:5115/swagger/v1/swagger.json`.
+
+    ![](./media/image_079.png)
 1. Swagger page can be found in `http://localhost:5115/swagger/index.html`.
+
+    ![](./media/image_080.png)
 1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs** file.
+
+    ![](./media/image_038.png)
 1. Add the following code in the `// Import Models` section of the file.
     ```
     using Microsoft.SemanticKernel.Plugins.OpenApi;
     ```
-1. Add the following code in the `// Challenge 04 - Import OpenAPI Spec` section of the file.
+
+    ![](./media/image_081.png)
+1. Add the following code in the `// Challenge 04 - Import OpenAPI Spec` (1) section of the file.
     ```
     await kernel.ImportPluginFromOpenApiAsync(
         pluginName: "todo",
@@ -85,25 +113,29 @@ In this exercise, you will be performing the following tasks:
         }
     );
     ```
+
+    ![](./media/image_082.png)
 1. In case you encounter any indentation error, use the code from the following URL:
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-04.cs
     ```
 1. Save the file.
 1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` in the left pane and select **Open in Integrated Terminal**.
+
+    ![](./media/image_040.png)
 1. Use the following command to run the app:
     ```
     dotnet run
     ```
-1. Navigate to the link that is in the output section of the terminal:
-    >**Note**: The link can be found besides **Login to the dashboard at** in the terminal.
-
-    >**Note**: If you recieve security warnings in the browser, close the browser and follow the link again.
-1. Navigate to the link pointing towards **blazor-aichat** i.e **https://localhost:7118/**
+1. Open a new tab in browser and navigate to the link for **blazor-aichat** i.e **https://localhost:7118/**.
+    >**Note**: If you receive security warnings in the browser, close the browser and follow the link again.
 1. Submit the following prompt an see how the AI responds:
     ```
     What are my work items?
     ```
+1. You will receive a response similar to the one shown below:
+
+    ![](./media/image_083.png)
 </details>
 
 ## Summary
