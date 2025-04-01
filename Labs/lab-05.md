@@ -17,12 +17,16 @@ In this exercise, you will be performing the following tasks:
 1. Click on **Add you data** and select **+ Add a new data source**.
 1. On **Add your data** blade, select **Upload files** as the `Data source`.
 1. Click on **Upload**, and select **Upload files**.
-1. Navigtate to `C:\LabFiles\ai-developer\Dotnet\src\BlazorAI\data\` and select **employee_handbook.pdf**, and click on **Open**, followed by **Next**.
+1. Navigate to `C:\LabFiles\ai-developer\Dotnet\src\BlazorAI\data\` and select **employee_handbook.pdf**, and click on **Open**, followed by **Next**.
 1. On the **Index settings** blade, specify the following configuration options and click on **Next**:
     - **Select Azure AI Search Service**: select **AzureAISearch**
     - **Vector index**: **employeehandbook**
 1. CLick on **Next**, and select **Create vector index**.
     >**Note**: The data injection might take around 10-15 minutes.
+1. Navigate to Azure Portal and search **Ai Search** and Click on it, open the **AI Search** resource located there.
+1. On Overview page copy the URL, and paste it in notepad.
+1. Navigate to **Keys** under Settings in the left pane.
+1. Copy the **Primary admin key** from Azure Portal , and paste it in notepad.
 
 ## Task 2: Create a Semantic Search Plugin to query the AI Search Index
 
@@ -30,12 +34,9 @@ In this exercise, you will be performing the following tasks:
 <summary><strong>Python</strong></summary>
 
 1. Navigate to `Python>src` directory and open **.env** file.
-1. Navigate to Azure Portal and search **Ai Search** and Click on it, open the **AI Search** resource located there.
-1. On Overview page copy the URL.
-1. Paste it besides `AI_SEARCH_URL` in **.env** file..
+1. Paste the **AI search URL** that you copied earlier in the exercise besides `AI_SEARCH_URL` in **.env** file..
     >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
-1. Navigate to **Keys** under Settings in the left pane.
-1. Copy the Primary admin key from Azure Portal and paste it besides `AI_SEARCH_KEY`.
+1. Paste the **Primary admin key** that you copied earlier in the exercise besides `AI_SEARCH_KEY`.
 1. Save the file.
 1. Navigate to `Python>src>plugins` directory and create a new file named **ContosoSearchPlugin.py**.
 1. Add the following code in the file:
@@ -205,12 +206,9 @@ In this exercise, you will be performing the following tasks:
 <summary><strong>C Sharp(C#)</strong></summary>
 
 1. Navigate to `Dotnet>src>BlazorAI` directory and open **appsettings.json** file.
-1. Navigate to Azure Portal and search **Ai Search** and Click on it, open the **AI Search** resource located there.
-1. On Overview page copy the URL.
-1. Paste it besides `AI_SEARCH_URL` in **appsettings.json** file..
+1. Paste the **AI search URL** that you copied earlier in the exercise besides `AI_SEARCH_URL` in **appsettings.json** file..
     >Note:- Ensure that every value in the **appsettings.json** file is enclosed in **double quotes (")**.
-1. Navigate to **Keys** under Settings in the left pane.
-1. Copy the Primary admin key from Azure Portal and paste it besides `AI_SEARCH_KEY`.
+1. Paste the **Primary admin key** that you copied earlier in the exercise besides `AI_SEARCH_KEY`.
 1. Save the file.
 1. Navigate to `Dotnet>src>BlazorAI>Plugins` directory and create a new file named **ContosoSearchPlugin.cs**.
 1. Add the following code in the file:
