@@ -16,15 +16,20 @@ In this exercise, you will be performing the following tasks:
 
     ![](./media/image_110.png)
 1. Click on **Deploy**.
+1. On **dall-e-3** page, copy the **Target URI (1)** and **Key (2)** and paste it in notepad.
 
+    ![](./media/image_111.png)
 <details>
 <summary><strong>Python</strong></summary>
 
 1. Navigate to `Python>src` directory and open **.env** file.
-1. Navigate to AI Foundry Portal and on **dall-e-3** page, copy the **Target URI**.
-1. Paste it besides `AZURE_TEXT_TO_IMAGE_ENDPOINT`.
+
+    ![](./media/image_026.png)
+1. Paste the **Target URI** that you copied earlier in the exercise besides `AZURE_TEXT_TO_IMAGE_ENDPOINT` (1).
     >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
-1. Copy the API key from AI Foundry Portal and paste it besides `AZURE_TEXT_TO_IMAGE_API_KEY`.
+1. Paste the **API key** that you copied earlier in the exercise besides `AZURE_TEXT_TO_IMAGE_API_KEY` (2).
+
+    ![](./media/image_112.png)
 1. Save the file.
 </details>
 
@@ -33,6 +38,8 @@ In this exercise, you will be performing the following tasks:
 <summary><strong>Python</strong></summary>
 
 1. Navigate to `Python>src>plugins` directory and create a new file named **ImageGenerationPlugin.py**.
+
+    ![](./media/image_113.png)
 1. Add the following code in the file:
 
     ```
@@ -136,12 +143,17 @@ In this exercise, you will be performing the following tasks:
                 print(f"Error generating image: {str(e)}\n{error_details}")
                 return f"Error generating image: {str(e)}"
     ```
+1. Save the file.
 1. Navigate to `Python>src` directory and open **chat.py** file.
+
+    ![](./media/image_030.png)
 1. Add the following code in the `#Import Modules` section of the file.
     ```
     from plugins.ImageGenerationPlugin import ImageGenerationPlugin
     from semantic_kernel.connectors.ai.open_ai import AzureTextToImage
     ```
+
+    ![](./media/image_114.png)
 1. Add the following code in the `#Challenge 07 - Add DALL-E image generation service` section of the file.
     ```
     image_generation_service = AzureTextToImage(
@@ -152,6 +164,8 @@ In this exercise, you will be performing the following tasks:
     )
     kernel.add_service(image_generation_service)
     ```
+
+    ![](./media/image_115.png)
 1. Add the following code in the `# Placeholder for Text To Image plugin` section of the file.
     ```
     image_plugin = ImageGenerationPlugin()
@@ -162,12 +176,16 @@ In this exercise, you will be performing the following tasks:
     )
     logger.info("Image Generation plugin loaded")
     ```
+
+    ![](./media/image_116.png)
 1. In case you encounter any indentation error, use the code from the following URL:
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-07.py
     ```
 1. Save the file.
 1. Right click on `Python>src` in the left pane and select **Open in Integrated Terminal**.
+
+    ![](./media/image_035.png)
 1. Use the following command to run the app:
     ```
     streamlit run app.py
@@ -180,12 +198,17 @@ In this exercise, you will be performing the following tasks:
     ```
     Create a picture of a cute kitten wearing a hat.
     ```
+1. You will receive a response similar to the one shown below:
+
+    ![](./media/image_117.png)
 </details>
 
 <details>
 <summary><strong>C Sharp(C#)</strong></summary>
 
 1. Navigate to `Dotnet>src>BlazorAI>Plugins` directory and create a new file named **ImageGenerationPlugin.cs**.
+
+    ![](./media/image_118.png)
 1. Add the following code in the file:
     ```
     using System;
@@ -294,6 +317,8 @@ In this exercise, you will be performing the following tasks:
     ```
 1. Save the file.
 1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs** file.
+
+    ![](./media/image_038.png)
 1. Add the following code in the `// Challenge 07 - Add Azure AI Foundry Text To Image` section of the file.
     ```
     kernelBuilder.AddAzureOpenAITextToImage(
@@ -301,11 +326,15 @@ In this exercise, you will be performing the following tasks:
         Configuration["AOI_ENDPOINT"]!,
         Configuration["AOI_API_KEY"]!);
     ```
+
+    ![](./media/image_119.png)
 1. Add the following code in the `// Challenge 07 - Text To Image Plugin` section of the file.
     ```
     var imageGenerationPlugin = new ImageGenerationPlugin(Configuration);
     kernel.ImportPluginFromObject(imageGenerationPlugin, "ImagePlugin");
     ```
+
+    ![](./media/image_120.png)
 1. In case you encounter any indentation error, use the code from the following URL:
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-07.cs
@@ -316,15 +345,16 @@ In this exercise, you will be performing the following tasks:
     ```
     dotnet run
     ```
-1. Navigate to the link that is in the output section of the terminal:
-    >**Note**: The link can be found besides **Login to the dashboard at** in the terminal.
+1. Open a new tab in browser and navigate to the link for **blazor-aichat** i.e **https://localhost:7118/**.
 
-    >**Note**: If you recieve security warnings in the browser, close the browser and follow the link again.
-1. Navigate to the link pointing towards **blazor-aichat** i.e **https://localhost:7118/**
+    >**Note**: If you receive security warnings in the browser, close the browser and follow the link again.
 1. Submit the following prompt and see how the AI responds:
     ```
     Create a picture of a cute kitten wearing a hat.
     ```
+1. You will receive a response similar to the one shown below:
+
+    ![](./media/image_121.png)
 </details>
 
 ## Summary

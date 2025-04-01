@@ -22,8 +22,7 @@ from plugins.ContosoSearchPlugin import ContosoSearchPlugin
 from plugins.ImageGenerationPlugin import ImageGenerationPlugin
 from semantic_kernel.connectors.ai.open_ai import AzureTextToImage
 
-
-#Add Logger
+# Add Logger
 logger = logging.getLogger(__name__)
 
 load_dotenv(override=True)
@@ -31,7 +30,7 @@ load_dotenv(override=True)
 chat_history = ChatHistory()
 
 def initialize_kernel():
-#Challene 02 - Add Kernel
+    #Challene 02 - Add Kernel
     kernel = Kernel()
     #Challenge 02 - Chat Completion Service
     chat_completion_service = AzureChatCompletion(
@@ -58,7 +57,6 @@ def initialize_kernel():
         service_id="image-service"
     )
     kernel.add_service(image_generation_service)
-    logger.info("DALL-E image generation service added")
     chat_completion_service = kernel.get_service(type=ChatCompletionClientBase)
     return kernel
 
@@ -85,7 +83,6 @@ async def process_message(user_input):
         plugin_name="GeoLocation",
     )
     logger.info("GeoLocation plugin loaded")
-
     kernel.add_plugin(
         WeatherPlugin(),
         plugin_name="Weather",
@@ -110,6 +107,7 @@ async def process_message(user_input):
     )
     logger.info("Contoso Handbook Search plugin loaded")
 
+
     # Challenge 06- Semantic kernel filters
 
     # Challenge 07 - Text To Image Plugin
@@ -132,8 +130,7 @@ async def process_message(user_input):
         kernel=kernel
     )
     chat_history.add_assistant_message(str(response))
-
-        #return result
+    #return result
     logger.info(f"Response: {response}")
     return response
 

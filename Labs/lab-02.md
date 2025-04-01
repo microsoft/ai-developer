@@ -191,6 +191,7 @@ In this exercise, you will be performing the following tasks:
     Why is it red?
     ```
 1. You will receive a response similar to the one shown below:
+
     ![](./media/image_042.png)
 </details>
 
