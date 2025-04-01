@@ -34,12 +34,9 @@ In this exercise, you will be performing the following tasks:
 1. Click on **Create (1)**.
 
     ![](./media/image_005.png)
-1. Click on **Models + endpoints (1)** under **My assets** in the left pane.
+1. Click on **Models + endpoints (1)** under **My assets** in the left pane and then click on **+ Deploy model**, followed by **Deploy Base model (2)**.
 
-    ![](./media/image_006.png)
-1. Click on **+ Deploy model**, and then select **Deploy Base model (1)**.
-
-    ![](./media/image_007.png)
+    ![](./media/image_007-1.png)
 1. Search for **gpt-4o (1)**, select the model (2) and click on **Confirm (3)**.
 
     ![](./media/image_008.png)
