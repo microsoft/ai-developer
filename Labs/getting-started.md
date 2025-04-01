@@ -29,12 +29,6 @@ In this hands-on lab series, participants will explore the core capabilities of 
 - (Optional) Familiarity with OpenAPI specifications for plugin integration
 - (Optional) Understanding of Retrieval-Augmented Generation (RAG) patterns for AI applications
 
-## Architecture
-
-## Architecture Diagram
-
-## Explanation of Components
-
 ## Getting Started with the Lab
  
 ## Accessing Your Lab Environment

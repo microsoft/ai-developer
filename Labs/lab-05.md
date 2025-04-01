@@ -25,16 +25,25 @@ In this exercise, you will be performing the following tasks:
 1. On **Add your data** blade, select **Upload files (1)** as the `Data source` and click on **Upload (2)**, and select **Upload files (3)**.
 
     ![](./media/image_086.png)
-1. Navigate to `C:\LabFiles\ai-developer\Dotnet\src\BlazorAI\data\` and select **employee_handbook.pdf**, and click on **Open**, followed by **Next**.
+1. Navigate to `C:\LabFiles\ai-developer\Dotnet\src\BlazorAI\data\` and select **employee_handbook.pdf (1)**, and click on **Open (2)**, followed by **Next**.
+
+    ![](./media/image_087.png)
 1. On the **Index settings** blade, specify the following configuration options and click on **Next**:
     - **Select Azure AI Search Service**: select **AzureAISearch**
     - **Vector index**: **employeehandbook**
+
+    ![](./media/image_088.png)
 1. CLick on **Next**, and select **Create vector index**.
     >**Note**: The data injection might take around 10-15 minutes.
 1. Navigate to Azure Portal and search **Ai Search** and Click on it, open the **AI Search** resource located there.
-1. On Overview page copy the URL, and paste it in notepad.
+
+    ![](./media/image_089.png)
+    ![](./media/image_090.png)
+1. On **Overview (1)** page copy the **URL (2)**, and paste it in notepad.
+
+    ![](./media/image_091.png)
 1. Navigate to **Keys** under Settings in the left pane.
-1. Copy the **Primary admin key** from Azure Portal , and paste it in notepad.
+1. Navigate to **Keys** underCopy the **Primary admin key** from Azure Portal , and paste it in notepad.
 
 ## Task 2: Create a Semantic Search Plugin to query the AI Search Index
 
