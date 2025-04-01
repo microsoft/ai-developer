@@ -28,9 +28,9 @@ In this exercise, you will be performing the following tasks:
    - **Location**: **East US** (2)
    - **Connect Azure AI Search**: click on **Create new AI Search (3)** and enter **ai-search-<inject key="Deployment ID" enableCopy="false"></inject> (1)** and click on **Next (2)**
 
-    ![](./media/image_003.png)
+        ![](./media/image_003.png)
 
-    ![](./media/image_004.png)
+        ![](./media/image_004.png)
 1. Click on **Create (1)**.
 
     ![](./media/image_005.png)
@@ -40,8 +40,8 @@ In this exercise, you will be performing the following tasks:
 1. Search for **gpt-4o (1)**, select the model (2) and click on **Confirm (3)**.
 
     ![](./media/image_008.png)
-1. Change the **Deployment type** to **Standard (1)**.
 1. On the **Deploy model gpt-4o** blade, specify the following configuration options and click on **Deploy (4)**:
+   - **Deployment type**: **Standard** (1)
    - **Model version**: 2024-05-13 (Default) (2)
    - **Tokens per Minute Rate Limit**: **50K** (3)
 
