@@ -326,17 +326,21 @@ In this exercise, you will be performing the following tasks:
 </details>
 
 ## Task 3: Create and import the Geocoding Plugin
-1. Navigate to [Geocoding API](https://geocode.maps.co/) portal and click on **Free API key** button on the top.
-1. Enter you details and click on **Create Account**.
+1. Open a new tab in the browser and navigate to [Geocoding API](https://geocode.maps.co/) portal and click on **Free API key** button on the top.
+
+    ![](./media/image_057.png)
+1. Enter you details and click on **Create Account (1)**.
+
+    ![](./media/image_058.png)
     >**Note**: Use your personal or work e-mail ID to register.
-1. You will recieve an e-mail, click on the link in the e-mail to verify your e-mail.
-1. You will recieve your free **geocoding API key**, save it for further use.
+1. You will receive an e-mail, click on the link in the e-mail to verify your e-mail.
+1. You will receive your free **geocoding API key**, save it notepad for further use.
 
 <details>
 <summary><strong>Python</strong></summary>
 
 1. Navigate to `Python>src` directory and open **.env** file.
-1. Paste the geocoding API key you recieved just now via e-mail besides `GEOCODING_API_KEY`.
+1. Paste the geocoding API key you received just now via e-mail besides `GEOCODING_API_KEY`.
     >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
 1. Save the file.
 1. Navigate to `Python>src` directory and open **chat.py** file.
