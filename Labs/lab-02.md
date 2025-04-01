@@ -65,12 +65,16 @@ In this exercise, you will be performing the following tasks:
 <summary><strong>Python</strong></summary>
 
 1. Navigate to `Python>src` directory and open **chat.py** file.
-1. Add the following code in the `#Import Modules` section of the file.
+
+    ![](./media/image_030.png)
+1. Add the following code in the `#Import Modules` (1) section of the file.
     ```
     from semantic_kernel.connectors.ai.chat_completion_client_base import ChatCompletionClientBase
     from semantic_kernel.connectors.ai.open_ai import OpenAIChatPromptExecutionSettings
     import os
     ```
+
+    ![](./media/image_031.png)
 1. Add the following code in the `# Challenge 02 - Chat Completion Service` section of the file.
     ```
     chat_completion_service = AzureChatCompletion(
