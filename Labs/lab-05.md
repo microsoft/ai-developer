@@ -42,8 +42,9 @@ In this exercise, you will be performing the following tasks:
 1. On **Overview (1)** page copy the **URL (2)**, and paste it in notepad.
 
     ![](./media/image_091.png)
-1. Navigate to **Keys** under Settings in the left pane.
-1. Navigate to **Keys** underCopy the **Primary admin key** from Azure Portal , and paste it in notepad.
+1. Navigate to **Keys** under Settings in the left pane, copy the **Primary admin key** from Azure Portal , and paste it in notepad.
+
+    ![](./media/image_092.png)
 
 ## Task 2: Create a Semantic Search Plugin to query the AI Search Index
 
@@ -51,11 +52,17 @@ In this exercise, you will be performing the following tasks:
 <summary><strong>Python</strong></summary>
 
 1. Navigate to `Python>src` directory and open **.env** file.
-1. Paste the **AI search URL** that you copied earlier in the exercise besides `AI_SEARCH_URL` in **.env** file..
+
+    ![](./media/image_026.png)
+1. Paste the **AI search URL** that you copied earlier in the exercise besides `AI_SEARCH_URL` in **.env** file.
     >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
 1. Paste the **Primary admin key** that you copied earlier in the exercise besides `AI_SEARCH_KEY`.
+
+    ![](./media/image_093.png)
 1. Save the file.
 1. Navigate to `Python>src>plugins` directory and create a new file named **ContosoSearchPlugin.py**.
+
+    ![](./media/image_094.png)
 1. Add the following code in the file:
     ```
     import json
@@ -169,11 +176,15 @@ In this exercise, you will be performing the following tasks:
     ```
 1. Save the file.
 1. Navigate to `Python>src` directory and open **chat.py** file.
+
+    ![](./media/image_030.png)
 1. Add the following code in the `#Import Modules` section of the file.
     ```
     from semantic_kernel.connectors.ai.open_ai import AzureTextEmbedding
     from plugins.ContosoSearchPlugin import ContosoSearchPlugin
     ```
+
+    ![](./media/image_095.png)
 1. Add the following code in the `#Challenge 05 - Add Text Embedding service for semantic search` section of the file.
     ```
     text_embedding_service = AzureTextEmbedding(
@@ -185,6 +196,8 @@ In this exercise, you will be performing the following tasks:
     kernel.add_service(text_embedding_service)
     logger.info("Text Embedding service added")
     ```
+
+    ![](./media/image_096.png)
 1. Add the following code in the `# Challenge 05 - Add Search Plugin` section of the file.
     ```
     kernel.add_plugin(
@@ -193,12 +206,16 @@ In this exercise, you will be performing the following tasks:
     )
     logger.info("Contoso Handbook Search plugin loaded")
     ```
+
+    ![](./media/image_097.png)
 1. In case you encounter any indentation error, use the code from the following URL:
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-05.py
     ```
 1. Save the file.
 1. Right click on `Python>src` in the left pane and select **Open in Integrated Terminal**.
+
+    ![](./media/image_035.png)
 1. Use the following command to run the app:
     ```
     streamlit run app.py
@@ -217,6 +234,12 @@ In this exercise, you will be performing the following tasks:
     ```
     Who do I contact at Contoso for questions regarding workplace safety?
     ```
+
+    ![](./media/image_098.png)
+
+    ![](./media/image_099.png)
+    
+    ![](./media/image_100.png)
 </details>
 
 <details>
