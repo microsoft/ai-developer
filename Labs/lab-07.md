@@ -9,9 +9,12 @@ In this exercise, you will be performing the following tasks:
 
 ## Task 1: Deploy a DALL-E model
 1. Navigate to [Azure AI Foundry](https://ai.azure.com/) portal.
-1.  Click on **Models + endpoints** under **My assets** in the left pane.
-1.  Click on **+ Deploy model**, and then select **Deploy Base model**.
-1. Search for **dall-e-3**, select the model and click on **Confirm**.
+1. Click on **Models + endpoints (1)** under **My assets** in the left pane and then click on **+ Deploy model**, followed by **Deploy Base model (2)**.
+
+    ![](./media/image_007-1.png)
+1. Search for **dall-e-3 (1)**, select the model (2) and click on **Confirm (3)**.
+
+    ![](./media/image_110.png)
 1. Click on **Deploy**.
 
 <details>
