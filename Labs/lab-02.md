@@ -10,9 +10,15 @@ In this exercise, you will be performing the following tasks:
 ## Task 1: Setup Azure AI Foundry
 
 1. Open **Visual Studio code** from the desktop shortcut in the labvm.
-1. Click on **File** and select **Open Folder**.
-1. Navigate to `C:\LabFiles` and select **ai-developer** folder and click on **Select Folder**.
-1. If you receive `Do you trust the authors of the files in folder` warning, select the checkbox and click on **Yes, I trust the authors**.
+1. Click on **File (1)** and select **Open Folder (2)**.
+
+    ![](./media/image_023.png)
+1. Navigate to `C:\LabFiles` (1) and select **ai-developer (2)** folder and click on **Select Folder**.
+
+    ![](./media/image_024.png)
+1. If you receive `Do you trust the authors of the files in folder` warning, select the checkbox (1) and click on **Yes, I trust the authors (2)**.
+
+    ![](./media/image_025.png)
 1. Navigate to AI Foundry Portal and on **Overview (1)** page select **Azure OpenAI Service (2)** and **Copy (3)** the endpoint and paste it in **Notepad**, as it will be used in the upcoming exercises.
 
     ![](./media/image_021.png)
@@ -24,11 +30,14 @@ In this exercise, you will be performing the following tasks:
 <details>
 <summary><strong>Python</strong></summary>
 
-1. Navigate to `Python>src` directory and open **.env** file.
-1. Navigate to AI Foundry Portal and on Overview page select Azure OpenAI Service and copy the endpoint.
-1. Paste it besides `AZURE_OPENAI_ENDPOINT`.
+1. Navigate to `Python>src` directory and open **.env** (1) file.
+
+    ![](./media/image_026.png)
+1. Paste **Azure OpenAI Service endpoint** copied earlier in the exercise besides `AZURE_OPENAI_ENDPOINT`.
     >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
-1. Copy the API key from AI Foundry Portal and paste it besides `AZURE_OPENAI_API_KEY`.
+1. Paste **API key** copied earlier in the exercise besides `AZURE_OPENAI_API_KEY`.
+
+    ![](./media/image_027.png)
 1. Save the file.
 
 </details>
@@ -36,13 +45,16 @@ In this exercise, you will be performing the following tasks:
 <details>
 <summary><strong>C Sharp(C#)</strong></summary>
 
-1. Navigate to `Dotnet>src>BlazorAI` directory and open **appsettings.json** file.
-1. Navigate to AI Foundry Portal and on Overview page select Azure OpenAI Sercie and copy the endpoint.
-1. Paste it besides `AOI_ENDPOINT`.
+1. Navigate to `Dotnet>src>BlazorAI` directory and open **appsettings.json (1)** file.
+
+    ![](./media/image_028.png)
+1. Paste **Azure OpenAI Service endpoint** copied earlier in the exercise besides `AOI_ENDPOINT`.
     >**Note**:- Ensure that every value in the **appsettings.json** file is enclosed in **double quotes (")**.
 
     >**Note**:- Make sure to remove the "/" from the endpoint.
-1. Copy the API key from AI Foundry Portal and paste it besides `AOI_API_KEY`.
+1. Paste **API key** copied earlier in the exercise besides `AOI_API_KEY`.
+
+    ![](./media/image_029.png)
 1. Save the file.
 
 </details>
