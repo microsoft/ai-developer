@@ -75,7 +75,7 @@ In this exercise, you will be performing the following tasks:
     ```
 
     ![](./media/image_031.png)
-1. Add the following code in the `# Challenge 02 - Chat Completion Service` section of the file.
+1. Add the following code in the `# Challenge 02 - Chat Completion Service` (1) section of the file.
     ```
     chat_completion_service = AzureChatCompletion(
         deployment_name=os.getenv("AZURE_OPENAI_CHAT_DEPLOYMENT_NAME"),
@@ -86,6 +86,8 @@ In this exercise, you will be performing the following tasks:
     kernel.add_service(chat_completion_service)
     execution_settings = kernel.get_prompt_execution_settings_from_service_id("chat-service")
     ```
+
+    ![](./media/image_032.png)
 1. Add the following code in the `# Start Challenge 02 - Sending a message to the chat completion service by invoking kernel` section of the file.
     ```
     global chat_history
@@ -99,25 +101,33 @@ In this exercise, you will be performing the following tasks:
     )
     chat_history.add_assistant_message(str(response))
     ```
+
+    ![](./media/image_033.png)
 1. Add the following code in the `#return result` section of the file.
     ```
     logger.info(f"Response: {response}")
     return response
     ```
+
+    ![](./media/image_034.png)
 1. In case you encounter any indentation error, use the code from the following URL:
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-02.py
     ```
 1. Save the file.
 1. Right click on `Python>src` in the left pane and select **Open in Integrated Terminal**.
+
+    ![](./media/image_035.png)
 1. Use the following command to run the app:
     ```
     streamlit run app.py
     ```
-1. If you are asked for any email to register, feel free to use the below provided email:
+1. If you are asked for any email to register, feel free to use the below provided email, and hit **Enter**:
     ```
     test@gmail.com
     ```
+
+    ![](./media/image_036.png)
 1. If the app does not open automatically in the browser, you can access it using the following **URL**:
 
     ```
@@ -130,6 +140,8 @@ In this exercise, you will be performing the following tasks:
     ```
     Why is it red?
     ```
+1. You will receive a response similar to the one shown below:
+    ![](./media/image_036.png)
 </details>
 
 <details>
