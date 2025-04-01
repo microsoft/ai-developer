@@ -433,11 +433,11 @@ In this exercise, you will be performing the following tasks:
     ```
 1. You will receive a response similar to the one shown below:
 
-    ![](./media/image_098.png)
+    ![](./media/image_107.png)
 
-    ![](./media/image_099.png)
+    ![](./media/image_108.png)
 
-    ![](./media/image_100.png)
+    ![](./media/image_109.png)
 </details>
 
 ## Summary
