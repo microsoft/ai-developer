@@ -10,10 +10,6 @@ In this challenge, you will enhance the eShop Lite application by integrating Se
 
 The goal of this challenge is to replace the keyword search with a Semantic Search using the Azure AI Search vector database and the Azure Embedding model created in [Challenge 05](./Challenge-05.md).
 
-## Description
-
-TODO: Show the limits of keyword searching by searching for "light" and "I need to see in the dark".
-
 ## Prerequisites
 
 1. Complete the [Getting Familiar With eShop Lite](./Resources/Supporting%20Challenges/Challenge-09-Reference-App.md) guide.
