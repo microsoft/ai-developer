@@ -611,6 +611,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     A simplified sequence diagram between Semantic Kernel and AI is shown below:
 
+    ![](./media/seq_diag.png)
 
 </details>
 <details>
@@ -849,6 +850,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     A simplified sequence diagram between Semantic Kernel and AI is shown below:
 
+    ![](./media/seq_diag.png)
 
 </details>
 
