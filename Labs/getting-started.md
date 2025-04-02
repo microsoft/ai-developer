@@ -10,14 +10,14 @@ In this hands-on lab series, participants will explore the core capabilities of 
 
 **Explore how Azure AI Foundry and Semantic Kernel empower you to build intelligent, extensible, and responsible AI applications.** Gain hands-on experience deploying GPT-4o models, integrating external services and APIs, developing custom plugins, and implementing advanced AI design patterns such as Retrieval-Augmented Generation (RAG) and multi-agent collaboration. By the end of this lab series, you will be able to:
 
-- **Azure AI Foundry Fundamentals**: *Learn how to create, manage, and deploy AI projects using Azure AI Foundry and GPT-4o.*
-- **Semantic Kernel Fundamentals**: *Build an intelligent chat experience by connecting Semantic Kernel with GPT-4o through a simple starter app.*
-- **Semantic Kernel Plugins**: *Extend your chatbot’s capabilities by building and integrating custom Semantic Kernel plugins.*
-- **Import Plugin using OpenAPI**: *Seamlessly integrate external APIs into Semantic Kernel using OpenAPI specifications.*
-- **Retrieval-Augmented Generation (RAG)**: *Enhance AI responses by combining external knowledge retrieval with generative models using the RAG pattern.*
-- **Responsible AI: Exploring Content Filters in Azure AI Foundry**: *Apply content filtering tools to build safer, more responsible AI applications within Azure AI Foundry.*
-- **Image Generation using DALL·E**: *Generate creative visuals from text prompts by integrating DALL·E into your reference application.*
-- **Multi-Agent Systems**: *Coordinate multiple AI agents within Semantic Kernel to solve complex tasks through collaboration.*
+- **Azure AI Foundry Fundamentals**: Learn how to create, manage, and deploy AI projects using Azure AI Foundry and GPT-4o.
+- **Semantic Kernel Fundamentals**: Build an intelligent chat experience by connecting Semantic Kernel with GPT-4o through a simple starter app.
+- **Semantic Kernel Plugins**: Extend your chatbot’s capabilities by building and integrating custom Semantic Kernel plugins.
+- **Import Plugin using OpenAPI**: Seamlessly integrate external APIs into Semantic Kernel using OpenAPI specifications.
+- **Retrieval-Augmented Generation (RAG)**: Enhance AI responses by combining external knowledge retrieval with generative models using the RAG pattern.
+- **Responsible AI: Exploring Content Filters in Azure AI Foundry**: Apply content filtering tools to build safer, more responsible AI applications within Azure AI Foundry.
+- **Image Generation using DALL·E**: Generate creative visuals from text prompts by integrating DALL·E into your reference application.
+- **Multi-Agent Systems**: Coordinate multiple AI agents within Semantic Kernel to solve complex tasks through collaboration.
 
 ## Pre-requisites
 
