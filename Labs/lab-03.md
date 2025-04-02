@@ -36,7 +36,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. Navigate to `Python>src>plugins` directory and create a new file named **time_plugin.py (1)**.
 
     ![](./media/image_044.png)
-1. Add the following code in the file:
+1. Add the following code in the file: 
     ```
     from datetime import datetime
     from typing import Annotated
