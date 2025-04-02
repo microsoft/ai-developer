@@ -37,7 +37,7 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
     - **Select Azure AI Search Service**: select **AzureAISearch**
     - **Vector index**: **employeehandbook**
 
-    ![](./media/image_088.png)
+        ![](./media/image_088.png)
 1. CLick on **Next**, and select **Create vector index**.
     >**Note**: The data injection might take around 10-15 minutes.
 1. Navigate to Azure Portal and search **Ai Search** and Click on it, open the **AI Search** resource located there.
