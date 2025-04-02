@@ -1,7 +1,3 @@
-```
- f"&amp;current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m"
-```
-
 # **Exercise 3**: Semantic Kernel Plugins
 
 ### Estimated Duration: 50 minutes
@@ -497,7 +493,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
             url = (f"https://api.open-meteo.com/v1/forecast"
                 f"?latitude={latitude}&longitude={longitude}"
                 f"&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,weather_code"
-                f"&current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m"
+                f"&amp;current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m"
                 f"&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch"
                 f"&forecast_days={days}&timezone=auto")
             
