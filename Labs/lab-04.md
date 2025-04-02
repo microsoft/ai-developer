@@ -2,7 +2,7 @@
 
 ### Estimated Duration: 25 minutes
 
-This hands-on lab explores the integration of OpenAPI with Semantic Kernel to enhance AI-driven applications. Designed for developers new to API orchestration, the lab guides you through leveraging OpenAPI specifications to dynamically load external services as plugins. You will learn how to import the provided WorkItems API as an OpenAPI plugin, enabling seamless interaction through AI-driven prompts. By the end of this lab, you will understand how OpenAPI simplifies API integration, reduces manual coding, and enhances the automation of external service calls. Complete all prerequisites before starting, as the cloud-based environment allows you to complete the lab remotely.
+This hands-on lab explores the integration of OpenAPI with Semantic Kernel to enhance AI-driven applications. Designed for developers new to API orchestration, the lab guides you through leveraging OpenAPI specifications to dynamically load external services as plugins. You will learn how to import the provided WorkItems API as an OpenAPI plugin, enabling seamless interaction through AI-driven prompts. By the end of this lab, you will understand how OpenAPI simplifies API integration, reduces manual coding, and enhances the automation of external service calls.
 
 ## Objectives
 In this exercise, you will be performing the following tasks:

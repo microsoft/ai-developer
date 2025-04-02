@@ -2,7 +2,7 @@
 ### Estimated Duration: 25 minutes
 
 This hands-on lab introduces content filtering in Azure AI Foundry to help you build safer, more responsible AI applications.
-You'll learn to apply built-in filters, adjust settings, and create custom rules to block unwanted content—all within Azure AI Foundry Studio. Complete prerequisites before starting, as the lab runs in a cloud-based environment.
+You'll learn to apply built-in filters, adjust settings, and create custom rules to block unwanted content—all within Azure AI Foundry Studio.
 
 ## Objectives
 In this exercise, you will be performing the following tasks:
