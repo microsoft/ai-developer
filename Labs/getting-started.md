@@ -30,16 +30,9 @@ In this hands-on lab series, participants will explore the core capabilities of 
 - (Optional) Understanding of Retrieval-Augmented Generation (RAG) patterns for AI applications
 
 ## Architecture
-- **Azure Portal**: The Azure Portal is a unified web-based console that allows users to manage AI resources efficiently. It provides access to **Azure AI Foundry, Semantic Kernel services, AI models, and APIs**, enabling developers to build and monitor AI-driven applications with ease.  
-- **Azure AI Foundry**: Azure AI Foundry is a cloud-based AI development environment for **building, training, and deploying AI models**. It offers tools for **AI project management, model deployment (such as GPT-4o), and integrations with Semantic Kernel and external services**.  
-- **Semantic Kernel**: Semantic Kernel is a lightweight AI orchestration framework that connects **LLMs, external plugins, and APIs** to create dynamic, extensible AI applications. It enables developers to **implement chatbots, integrate external data sources, and enhance AI capabilities with minimal coding**.  
-- **Models + Endpoints**: The **Models + Endpoints** service in Azure AI Foundry allows developers to deploy and manage large language models like **GPT-4o**. This service facilitates **real-time AI interactions, text generation, and chatbot functionalities** while ensuring scalability and security.  
-- **Retrieval-Augmented Generation (RAG)**: RAG enhances AI-generated responses by retrieving relevant external knowledge before generating outputs. It integrates **Azure AI Search** to fetch contextually accurate information, ensuring AI-generated answers are well-informed and reliable.  
-- **Plugins**: Plugins extend the AI’s functionality by enabling **real-time data retrieval and automation**. The lab includes:  
-   - **Time & Weather Plugins**: Fetch live data for user queries.  
-   - **OpenAPI Plugin**: Enables seamless API integration with external services.  
-- **Content Filtering**: Content Filtering in Azure AI Foundry ensures **responsible AI usage** by applying **built-in filters, adjustable settings, and custom rules** to prevent harmful or inappropriate content from being generated.  
-- **DALL·E Image Generation**: DALL·E is an AI model integrated into Azure AI Foundry that **generates images from text-based descriptions**. It enables developers to create **visual content for applications, chatbots, and creative projects** with ease.  
+In this hands-on lab, participants will explore **Azure AI Foundry** and **Semantic Kernel** to build, deploy, and extend AI-powered applications. The journey begins with the **Azure Portal**, where they will access and manage AI services. They will deploy **GPT-4o** models using **Models + Endpoints**, enabling real-time AI interactions. To enhance response accuracy, participants will implement **Retrieval-Augmented Generation (RAG)** using **Azure AI Search**, ensuring contextually informed outputs.  
+
+The lab also covers **plugins**, such as **Time & Weather utilities** for real-time data retrieval and **OpenAPI integration** to seamlessly connect external services. Participants will explore **content filtering** within Azure AI Foundry, applying built-in safety measures to ensure responsible AI usage. Additionally, they will integrate **DALL·E** for AI-driven image generation, enabling creative AI applications. By the end of the lab, participants will have the foundational skills to develop scalable, secure, and extensible AI solutions using Azure’s powerful AI ecosystem.
 
 ## Architecture Diagram
 
