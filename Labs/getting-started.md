@@ -40,27 +40,19 @@ The lab also covers **plugins**, such as **Time & Weather utilities** for real-t
 
 ## Explanation of Components
 
-- **Understanding the Lifecycle of AI Application Development**: Explore how various components within **Azure AI Foundry** and **Semantic Kernel** interact to build scalable AI-powered applications.
+## **Explanation of Components**  
 
-- **AI Model Deployment with Azure AI Foundry**: Deploying models such as **GPT-4o** involves setting up endpoints, managing model versions, and ensuring scalable performance. This step allows seamless integration of **LLMs into applications** for real-time AI interactions.
-
-- **Enhancing AI Capabilities with Semantic Kernel**: Semantic Kernel facilitates **AI orchestration** by connecting LLMs, plugins, and external APIs. It allows developers to build intelligent applications with **dynamic prompts, real-time data retrieval, and API integration**. 
-
-- **Extending Functionality with Plugins**: Integrating plugins enhances AI’s ability to interact with external systems, improving user experience.
-   - **Time & Weather Plugins**: Retrieve real-time contextual information for chatbot interactions. 
-   - **OpenAPI Integration**: Seamlessly connects external APIs to automate AI-driven workflows. 
-
-- **Optimizing AI Responses with Retrieval-Augmented Generation (RAG)**:**RAG improves AI accuracy** by retrieving relevant external knowledge before generating responses. 
-   - **Azure AI Search** fetches relevant documents to support user queries.  
-   - The **GPT-4o model** processes this data for more **contextually aware and informed responses**.
-
-- **Implementing Content Safety for Responsible AI**: Ensuring responsible AI practices requires **content filtering tools** to prevent harmful or inappropriate responses. Azure AI Foundry provides:  
-   - **Pre-configured safety filters** to block sensitive content.  
-   - **Customizable content moderation settings** for ethical and secure AI interactions. 
-
-- **Integrating AI-Powered Creativity with DALL·E**: DALL·E enables AI-powered image generation from **text-based descriptions**, supporting:  
-   - **Creative AI applications** for generating visuals in response to user prompts.  
-   - **Enhanced user experiences** by adding **AI-generated imagery** to applications and workflows.
+- **Azure AI Foundry**: Provides an integrated environment for AI model development, deployment, and management.  
+- **Azure AI Studio**: A web-based interface for managing AI models, endpoints, and inference capabilities.  
+- **Models + Endpoints**: Used for deploying and managing **GPT-4o** models for real-time AI interactions.  
+- **Semantic Kernel**: An AI orchestration framework that connects **LLMs, plugins, and APIs** for enhanced AI capabilities.
+- **OpenAPI**: Facilitates seamless integration with external APIs for AI-driven workflows.  
+- **Azure AI Search**: Enhances **Retrieval-Augmented Generation (RAG)** by fetching relevant contextual data.  
+- **Azure Blob Storage**: Stores indexed documents, datasets, and knowledge bases for AI-powered insights.  
+- **Azure AI Content Safety**: Provides content filtering and moderation tools to ensure responsible AI usage.   
+- **Azure AI Vision Services**: Supports **DALL·E** integration for AI-powered image generation.  
+- **Visual Studio Code (VS Code)**: Development environment for AI application coding, debugging, and testing.    
+- **Python SDKs & REST APIs**: Used to interact with **Azure AI Foundry, Semantic Kernel, and OpenAI services**.
 
 ## Getting Started with the Lab
  
