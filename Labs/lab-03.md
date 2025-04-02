@@ -416,7 +416,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ![](./media/image_028.png)
 1. Paste the geocoding API key you received just now via e-mail besides `GEOCODING_API_KEY`.
 
-        ![](./media/image_063.png)
+    ![](./media/image_063.png)
     >Note:- Ensure that every value in the **appsettings.json** file is enclosed in **double quotes (")**.
 1. Save the file.
 1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs** file.
