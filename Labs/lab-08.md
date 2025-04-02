@@ -2,7 +2,7 @@
 
 ### Estimated Duration: 30 minutes
 
-This hands-on lab introduces image generation to your reference application using DALL·E, a powerful AI model that creates visuals from text-based descriptions. Designed for those new to generative AI, the lab walks you through integrating DALL·E to bring ideas to life—whether you're visualizing real-world objects, dynamic scenes, or entirely abstract concepts. By the end of this lab, you’ll understand how to harness DALL·E’s creative capabilities to enhance user experiences through AI-generated imagery.
+This hands-on lab introduces **multi-agent system development**, where a user request is processed by multiple agents, each with a distinct **persona and responsibility**. Designed for those new to **AI-driven automation**, the lab guides you through integrating agents that collaborate to generate a well-rounded response. Whether handling specialized tasks or combining expertise, this system ensures comprehensive and context-aware outputs. By the end of this lab, you’ll understand how to **orchestrate multi-agent interactions** to enhance AI-driven decision-making and user experiences.
 
 ## Objectives
 In this exercise, you will be performing the following tasks:
@@ -77,6 +77,15 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ![](./media/image_127.png)
 </details>
 
-## Summary
+## Review
 
-In this exercise, we integrated **DALL·E** into a reference application to enable **text-to-image generation** using descriptive prompts. We explored how to visualize real-world objects, dynamic scenes, and abstract concepts through AI-generated imagery. This enhanced our proficiency in leveraging generative AI to create engaging and visually rich user experiences.
+In this exercise, we integrated a **multi-agent system** into an AI application to process user requests through multiple specialized agents. We explored how each agent, with its own **persona and responsibility**, contributed expertise to generate a comprehensive response. This enhanced our proficiency in **orchestrating multi-agent interactions** to create intelligent, context-aware AI solutions.
+
+Successfully completed the below tasks for **multi-agent system development**:  
+
+- Designed a **multi-agent system** to process user requests through specialized agents.  
+- Assigned **distinct personas and responsibilities** to each agent for task-specific expertise.  
+- Integrated **agent's responses** into a unified, context-aware output.  
+- Explored **AI-driven decision-making** by coordinating multiple agents efficiently.
+
+## Go to the Next Lab by clicking on the navigation.

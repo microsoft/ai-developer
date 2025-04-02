@@ -448,6 +448,14 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ![](./media/image_109.png)
 </details>
 
-## Summary
+## Review
 
-In this exercise, we explored the **Retrieval-Augmented Generation (RAG) pattern** to enhance AI responses by integrating external knowledge into the generative process. We examined how retrieval mechanisms work alongside generative models to produce accurate, context-aware outputs. Additionally, we gained insights into **data privacy and security**, ensuring that prompts, completions, embeddings, and training data remain fully isolated. This enhanced our proficiency in building secure, knowledge-enriched AI solutions using the RAG architecture.
+In this exercise, we explored the **Retrieval-Augmented Generation (RAG) pattern** to enhance AI responses by integrating external knowledge into the generative process. We examined how retrieval mechanisms work alongside generative models to produce accurate, context-aware outputs. This enhanced our proficiency in building secure, knowledge-enriched AI solutions using the RAG architecture.
+
+Successfully completed the below tasks for **Retrieval-Augmented Generation (RAG) implementation**:  
+
+- Integrated the **RAG pattern** to enhance AI-generated responses with external knowledge retrieval.  
+- Utilized **Azure AI Search** to fetch relevant contextual data for more accurate outputs.  
+- Configured **Semantic Kernel** to orchestrate retrieval and generative workflows seamlessly.  
+
+## Go to the Next Lab by clicking on the navigation.

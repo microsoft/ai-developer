@@ -72,6 +72,15 @@ In this task, you will explore different flow types in Azure AI Foundry by filte
     - betting
 1. Click on **Add term**.
 
-## Summary
+## Review
 
 In this exercise, we explored **content filtering** in **Azure AI Foundry** to support the development of safer and more responsible AI applications. We applied built-in filters, adjusted content moderation settings, and created custom rules to block unwanted content within Azure AI Foundry Studio. This enhanced our proficiency in implementing ethical and secure AI solutions.
+
+Successfully completed the below tasks for **content filtering in Azure AI Foundry**:  
+
+- Implemented **Azure AI Content Safety** to ensure responsible AI interactions.  
+- Applied **built-in content filters** to block harmful or inappropriate responses.  
+- Configured **custom content moderation rules** within **Azure AI Foundry Studio**.  
+- Adjusted **content filtering settings** to align with ethical AI guidelines.  
+
+## Go to the Next Lab by clicking on the navigation.
