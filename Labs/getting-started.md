@@ -54,21 +54,20 @@ In this hands-on lab series, participants will explore the core capabilities of 
 - **Enhancing AI Capabilities with Semantic Kernel**: Semantic Kernel facilitates **AI orchestration** by connecting LLMs, plugins, and external APIs. It allows developers to build intelligent applications with **dynamic prompts, real-time data retrieval, and API integration**. 
 
 - **Extending Functionality with Plugins**: Integrating plugins enhances AI’s ability to interact with external systems, improving user experience.
+   - **Time & Weather Plugins**: Retrieve real-time contextual information for chatbot interactions. 
+   - **OpenAPI Integration**: Seamlessly connects external APIs to automate AI-driven workflows. 
 
-- **Time & Weather Plugins**: Retrieve real-time contextual information for chatbot interactions.  
-- **OpenAPI Integration**: Seamlessly connects external APIs to automate AI-driven workflows.  
-- **Optimizing AI Responses with Retrieval-Augmented Generation (RAG)**  
-**RAG improves AI accuracy** by retrieving relevant external knowledge before generating responses.  
-- **Azure AI Search** fetches relevant documents to support user queries.  
-- The **GPT-4o model** processes this data for more **contextually aware and informed responses**.  
-- **Implementing Content Safety for Responsible AI**  
-Ensuring responsible AI practices requires **content filtering tools** to prevent harmful or inappropriate responses. Azure AI Foundry provides:  
-- **Pre-configured safety filters** to block sensitive content.  
-- **Customizable content moderation settings** for ethical and secure AI interactions.  
-- **Integrating AI-Powered Creativity with DALL·E**  
-DALL·E enables AI-powered image generation from **text-based descriptions**, supporting:  
-- **Creative AI applications** for generating visuals in response to user prompts.  
-- **Enhanced user experiences** by adding **AI-generated imagery** to applications and workflows.
+- **Optimizing AI Responses with Retrieval-Augmented Generation (RAG)**:**RAG improves AI accuracy** by retrieving relevant external knowledge before generating responses. 
+   - **Azure AI Search** fetches relevant documents to support user queries.  
+   - The **GPT-4o model** processes this data for more **contextually aware and informed responses**.
+
+- **Implementing Content Safety for Responsible AI**: Ensuring responsible AI practices requires **content filtering tools** to prevent harmful or inappropriate responses. Azure AI Foundry provides:  
+   - **Pre-configured safety filters** to block sensitive content.  
+   - **Customizable content moderation settings** for ethical and secure AI interactions. 
+
+- **Integrating AI-Powered Creativity with DALL·E**: DALL·E enables AI-powered image generation from **text-based descriptions**, supporting:  
+   - **Creative AI applications** for generating visuals in response to user prompts.  
+   - **Enhanced user experiences** by adding **AI-generated imagery** to applications and workflows.
 
 ## Getting Started with the Lab
  
