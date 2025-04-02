@@ -367,6 +367,14 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ![](./media/image_121.png)
 </details>
 
-## Summary
+## Review
 
 In this exercise, we integrated **DALL·E** into a reference application to enable **AI-powered image generation** from text prompts. We explored how DALL·E transforms descriptive inputs into visuals—ranging from realistic scenes to abstract concepts—unlocking new creative possibilities. This enhanced our proficiency in applying generative AI for visual content creation and user interaction.
+
+Successfully completed the below tasks for **DALL·E integration in AI-powered image generation**:  
+
+- Integrated **DALL·E** into a reference application for **text-to-image generation**.  
+- Explored **AI-powered visual content creation**, transforming descriptive text into images.  
+- Configured **Azure AI Foundry** to support **DALL·E-based generative AI workflows**.  
+
+## Go to the Next Lab by clicking on the navigation.
