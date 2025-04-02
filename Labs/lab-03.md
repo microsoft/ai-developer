@@ -853,6 +853,15 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 </details>
 
-## Summary
+## Review
 
 In this exercise, we utilized **Semantic Kernel plugins** to enhance LLM capabilities by extending a chatbot's functionality. We developed and integrated a **time plugin** and a **weather retrieval plugin** to enable real-time, contextual responses beyond the model’s training data. Additionally, we built plugins in Python and used **Auto Function Calling** to chain them together seamlessly. This enhanced our proficiency in building extensible, intelligent AI solutions using Semantic Kernel.
+
+Successfully completed the below tasks for extending **LLM capabilities** using **Semantic Kernel plugins**:  
+
+- Developed and integrated a **time plugin** and a **weather retrieval plugin** for real-time contextual responses.  
+- Utilized **Semantic Kernel** to enhance chatbot functionality beyond the model’s training data.  
+- Implemented **Auto Function Calling** to seamlessly chain multiple plugins together.  
+- Built and deployed **Python-based plugins** to extend AI capabilities.  
+
+## Go to the Next Lab by clicking on the navigation.

@@ -200,6 +200,14 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
     ![](./media/image_042.png)
 </details>
 
-## Summary
+## Review
 
 In this exercise, we utilized **Semantic Kernel** in combination with the **Azure AI Foundry GPT-4o model** to build an intelligent chat feature within a starter application. We integrated the Semantic Kernel framework with GPT-4o, implemented a chat API to handle user prompts, and returned dynamic AI-generated responses. This enhanced our proficiency in connecting applications to powerful language models using modern AI development frameworks.
+
+Successfully completed the below tasks for AI-driven chat implementation using **Semantic Kernel** and **Azure AI Foundry GPT-4o**:  
+
+- Integrated **Semantic Kernel** with **GPT-4o** for intelligent AI interactions.  
+- Configured a **chat API** to process user prompts and generate AI-driven responses.     
+- Extended chatbot functionality by integrating **Azure AI Search** for contextual data retrieval.  
+
+## Go to the Next Lab by clicking on the navigation.
