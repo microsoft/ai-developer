@@ -13,6 +13,8 @@ In this exercise, you will be performing the following tasks:
 
 ## Task 1: Setup Azure AI Foundry
 
+In this task, you will explore different flow types in Azure AI Foundry by creating a project, deploying the GPT-4o model, and testing its capabilities in the playground.
+
 1. Navigate to [Azure AI Foundry](https://ai.azure.com/) portal and login using the below Azure credentials:
 
    - Username : <inject key="AzureAdUserEmail"></inject>

@@ -11,6 +11,8 @@ In this exercise, you will be performing the following tasks:
 
 ## Task 1: Setup environment variables
 
+In this task, you will explore different flow types in Azure AI Foundry by setting up Visual Studio Code, retrieving Azure OpenAI credentials, and configuring them in Python and C# environments.
+
 1. Open **Visual Studio code** from the desktop shortcut in the labvm.
 1. Click on **File (1)** and select **Open Folder (2)**.
 
@@ -61,6 +63,8 @@ In this exercise, you will be performing the following tasks:
 </details>
 
 ## Task 2: Update the code files and run the app
+
+In this task, you will explore different flow types in Azure AI Foundry by updating code files, running the AI-powered app in Python and C#, and testing responses to user prompts.
 
 <details>
 <summary><strong>Python</strong></summary>

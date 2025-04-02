@@ -12,6 +12,9 @@ In this exercise, you will be performing the following tasks:
 - Task 4: Create and import the Weather Plugin
 
 ## Task 1: Try the app without the Time Plugin
+
+In this task, you will explore different flow types in Azure AI Foundry by running the app without the Time Plugin to observe its default behavior.
+
 1. Launch your AI Chat app in any of the language, and submit the following prompt:
     ```
     What time is it?
@@ -24,6 +27,8 @@ In this exercise, you will be performing the following tasks:
     ![](./media/image_043.png)
 
 ## Task 2: Create and import the Time Plugin
+
+In this task, you will explore different flow types in Azure AI Foundry by creating and importing the Time Plugin to enhance the app's functionality.
 
 <details>
 <summary><strong>Python</strong></summary>
@@ -330,6 +335,9 @@ In this exercise, you will be performing the following tasks:
 </details>
 
 ## Task 3: Create and import the Geocoding Plugin
+
+In this task, you will explore different flow types in Azure AI Foundry by creating and importing the Geocoding Plugin to enable location-based functionality.
+
 1. Open a new tab in the browser and navigate to [Geocoding API](https://geocode.maps.co/) portal and click on **Free API key** button on the top.
 
     ![](./media/image_057.png)
@@ -454,6 +462,9 @@ In this exercise, you will be performing the following tasks:
 </details>
 
 ## Task 4: Create and import the Weather Plugin
+
+In this task, you will explore different flow types in Azure AI Foundry by creating and importing the Weather Plugin to integrate weather-related functionality.
+
 <details>
 <summary><strong>Python</strong></summary>
 
