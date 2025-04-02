@@ -37,7 +37,6 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     ![](./media/image_044.png)
 1. Add the following code in the file:
-
     ```
     from datetime import datetime
     from typing import Annotated
