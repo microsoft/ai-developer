@@ -43,6 +43,7 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 1. Navigate to Azure Portal and search **Ai Search** and Click on it, open the **AI Search** resource located there.
 
     ![](./media/image_089.png)
+    
     ![](./media/image_090.png)
 1. On **Overview (1)** page copy the **URL (2)**, and paste it in notepad.
 

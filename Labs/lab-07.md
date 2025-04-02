@@ -24,6 +24,7 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 1. On **dall-e-3** page, copy the **Target URI (1)** and **Key (2)** and paste it in notepad.
 
     ![](./media/image_111.png)
+
 <details>
 <summary><strong>Python</strong></summary>
 
@@ -36,6 +37,7 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 
     ![](./media/image_112.png)
 1. Save the file.
+
 </details>
 
 ## Task 2: Create and import the Image Generation Plugin
