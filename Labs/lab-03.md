@@ -1,5 +1,5 @@
 ```
- f"&current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m"
+ f"&amp;current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m"
 ```
 
 # **Exercise 3**: Semantic Kernel Plugins
