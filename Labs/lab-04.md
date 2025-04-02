@@ -11,7 +11,7 @@ In this exercise, you will be performing the following tasks:
 
 ## Task 1: Try the app without the OpenAPI Plugin
 
-1. Launch your AI Chat app in any of the languange, and submit the following prompt, and see how it responds:
+1. Launch your AI Chat app in any of the language, and submit the following prompt, and see how it responds:
     ```
     What are my work items?
     ```
