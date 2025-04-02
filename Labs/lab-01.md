@@ -9,6 +9,7 @@ You will explore Azure AI Foundry to create and manage AI projects, use Models +
 ## Objectives
 
 In this exercise, you will be performing the following tasks:
+- Task 1: Setup Azure AI Foundry
 
 ## Task 1: Setup Azure AI Foundry
 

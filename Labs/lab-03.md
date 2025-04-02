@@ -6,6 +6,10 @@ This hands-on lab explores the power of plugins in enhancing LLM development wit
 
 ## Objectives
 In this exercise, you will be performing the following tasks:
+- Task 1: Try the app without the Time Plugin
+- Task 2: Create and import the Time Plugin
+- Task 3: Create and import the Geocoding Plugin
+- Task 4: Create and import the Weather Plugin
 
 ## Task 1: Try the app without the Time Plugin
 1. Launch your AI Chat app in any of the language, and submit the following prompt:

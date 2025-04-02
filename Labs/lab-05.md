@@ -6,6 +6,8 @@ This hands-on lab introduces you to the Retrieval-Augmented Generation (RAG) pat
 
 ## Objectives
 In this exercise, you will be performing the following tasks:
+- Task 1: Deploy a Text Embedding model
+- Task 2: Create a Semantic Search Plugin to query the AI Search Index
 
 ## Task 1: Deploy a Text Embedding model
 1. Navigate to [Azure AI Foundry](https://ai.azure.com/) portal.

@@ -6,6 +6,7 @@ This hands-on lab introduces image generation to your reference application usin
 
 ## Objectives
 In this exercise, you will be performing the following tasks:
+- Task 1: Create Multi-agent chat system
 
 ## Task 1: Create Multi-agent chat system
 

@@ -6,6 +6,8 @@ This hands-on lab introduces image generation capabilities to your reference app
 
 ## Objectives
 In this exercise, you will be performing the following tasks:
+- Task 1: Deploy a DALL-E model
+- Task 2: Create and import the Image Generation Plugin
 
 ## Task 1: Deploy a DALL-E model
 1. Navigate to [Azure AI Foundry](https://ai.azure.com/) portal.

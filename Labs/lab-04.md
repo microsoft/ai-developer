@@ -6,8 +6,10 @@ This hands-on lab explores the integration of OpenAPI with Semantic Kernel to en
 
 ## Objectives
 In this exercise, you will be performing the following tasks:
+- Task 1: Try the app without the OpenAPI Plugin
+- Task 2: Create and import the OpenAPI Plugin
 
-## Task 1: Try the app without the Time Plugin
+## Task 1: Try the app without the OpenAPI Plugin
 
 1. Launch your AI Chat app in any of the languange, and submit the following prompt, and see how it responds:
     ```

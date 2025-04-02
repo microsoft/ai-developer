@@ -6,6 +6,8 @@ You'll learn to apply built-in filters, adjust settings, and create custom rules
 
 ## Objectives
 In this exercise, you will be performing the following tasks:
+- Task 1: Adjust Filter Settings
+- Task 2: Filter specific words or patterns
 
 
 ## Task 1: Adjust Filter Settings

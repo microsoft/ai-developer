@@ -6,8 +6,10 @@ This hands-on lab provides practical experience with Semantic Kernel and the Azu
 
 ## Objectives
 In this exercise, you will be performing the following tasks:
+- Task 1: Setup environment variables
+- Task 2: Update the code files and run the app
 
-## Task 1: Setup Azure AI Foundry
+## Task 1: Setup environment variables
 
 1. Open **Visual Studio code** from the desktop shortcut in the labvm.
 1. Click on **File (1)** and select **Open Folder (2)**.
@@ -26,7 +28,6 @@ In this exercise, you will be performing the following tasks:
 
     ![](./media/image_022.png)
 
-## Task 2: Setup environment variables
 <details>
 <summary><strong>Python</strong></summary>
 
@@ -59,7 +60,7 @@ In this exercise, you will be performing the following tasks:
 
 </details>
 
-## Task 3: Update the code files and run the app
+## Task 2: Update the code files and run the app
 
 <details>
 <summary><strong>Python</strong></summary>
