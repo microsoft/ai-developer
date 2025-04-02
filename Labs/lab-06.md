@@ -12,6 +12,8 @@ In this exercise, you will be performing the following tasks:
 
 ## Task 1: Adjust Filter Settings
 
+In this task, you will explore different flow types in Azure AI Foundry by adjusting filter settings to refine search results and improve query accuracy.
+
 1. Navigate to [Azure AI Foundry](https://ai.azure.com/) portal.
 1. Click on **Safety + security (1)** under **Assess and improve** in the left pane.
 
@@ -37,6 +39,8 @@ In this exercise, you will be performing the following tasks:
 
 
 ## Task 2: Filter specific words or patterns
+
+In this task, you will explore different flow types in Azure AI Foundry by filtering specific words or patterns to refine search results and enhance data relevance.
 
 1. Navigate to [Azure AI Foundry](https://ai.azure.com/) portal.
 1. Click on **Safety + security (1)** under **Assess and improve** in the left pane.

@@ -10,6 +10,9 @@ In this exercise, you will be performing the following tasks:
 - Task 2: Create a Semantic Search Plugin to query the AI Search Index
 
 ## Task 1: Deploy a Text Embedding model
+
+In this task, you will explore different flow types in Azure AI Foundry by deploying a Text Embedding model to enable text representation and similarity analysis.
+
 1. Navigate to [Azure AI Foundry](https://ai.azure.com/) portal.
 1. Click on **Models + endpoints (1)** under **My assets** in the left pane and then click on **+ Deploy model**, followed by **Deploy Base model (2)**.
 
@@ -49,6 +52,8 @@ In this exercise, you will be performing the following tasks:
     ![](./media/image_092.png)
 
 ## Task 2: Create a Semantic Search Plugin to query the AI Search Index
+
+In this task, you will explore different flow types in Azure AI Foundry by creating a Semantic Search Plugin to query the AI Search Index for enhanced retrieval capabilities.
 
 <details>
 <summary><strong>Python</strong></summary>

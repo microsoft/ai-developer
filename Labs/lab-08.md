@@ -10,6 +10,8 @@ In this exercise, you will be performing the following tasks:
 
 ## Task 1: Create Multi-agent chat system
 
+In this task, you will explore different flow types in Azure AI Foundry by creating a Multi-Agent Chat System to enable collaborative AI interactions.
+
 <details>
 <summary><strong>Python</strong></summary>
 
