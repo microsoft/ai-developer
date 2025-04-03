@@ -28,7 +28,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ![](./media/image_002.png)
 1. On the **Create a Project** blade, specify the following configuration options and click on **Next (4)**:
    - **Resource group**: **ai-foundry-<inject key="Deployment ID" enableCopy="false"></inject>** (1)
-   - **Location**: **East US** (2)
+   - **Location**: **<inject key="Region" enableCopy="false"></inject>** (2)
    - **Connect Azure AI Search**: click on **Create new AI Search (3)** and enter **ai-search-<inject key="Deployment ID" enableCopy="false"></inject> (1)** and click on **Next (2)**
 
         ![](./media/image_003.png)
