@@ -15,7 +15,7 @@ In this exercise, you will be performing the following tasks:
 
 In this task, you will explore different flow types in Azure AI Foundry by creating a project, deploying the GPT-4o model, and testing its capabilities in the playground.
 
-1. Navigate to [Azure AI Foundry](https://ai.azure.com/) portal and login using the below Azure credentials:
+1. Navigate to Azure AI Foundry (https://ai.azure.com/) portal and login using the below Azure credentials:
 
    - Username : <inject key="AzureAdUserEmail"></inject>
    - Password : <inject key="AzureAdUserPassword"></inject>
@@ -28,7 +28,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ![](./media/image_002.png)
 1. On the **Create a Project** blade, specify the following configuration options and click on **Next (4)**:
    - **Resource group**: **ai-foundry-<inject key="Deployment ID" enableCopy="false"></inject>** (1)
-   - **Location**: **East US** (2)
+   - **Location**: **<inject key="Region" enableCopy="false"></inject>** (2)
    - **Connect Azure AI Search**: click on **Create new AI Search (3)** and enter **ai-search-<inject key="Deployment ID" enableCopy="false"></inject> (1)** and click on **Next (2)**
 
         ![](./media/image_003.png)
