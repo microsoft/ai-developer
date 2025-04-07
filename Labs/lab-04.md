@@ -1,8 +1,8 @@
 # **Exercise 4**: Import Plugin using OpenAPI
 
-### Estimated Duration: 25 minutes
+### Estimated Duration: 25 Minutes
 
-This hands-on lab explores the integration of OpenAPI with Semantic Kernel to enhance AI-driven applications. Designed for developers new to API orchestration, the lab guides you through leveraging OpenAPI specifications to dynamically load external services as plugins. You will learn how to import the provided WorkItems API as an OpenAPI plugin, enabling seamless interaction through AI-driven prompts. By the end of this lab, you will understand how OpenAPI simplifies API integration, reduces manual coding, and enhances the automation of external service calls.
+This hands-on lab explores the integration of OpenAPI with Semantic Kernel to enhance AI-driven applications. Designed for developers new to API orchestration, the lab guides you through leveraging OpenAPI specifications to load external services as plugins dynamically. You will learn to import the provided WorkItems API as an OpenAPI plugin, enabling seamless interaction through AI-driven prompts. By the end of this lab, you will understand how OpenAPI simplifies API integration, reduces manual coding, and enhances the automation of external service calls.
 
 ## Objectives
 In this exercise, you will be performing the following tasks:
@@ -13,7 +13,7 @@ In this exercise, you will be performing the following tasks:
 
 In this task, you will explore different flow types in Azure AI Foundry by running the app without the OpenAPI Plugin to observe its default behavior.
 
-1. Launch your AI Chat app in any of the language, and submit the following prompt, and see how it responds:
+1. Launch your AI Chat app in any of the languages, submit the following prompt, and see how it responds:
     ```
     What are my work items?
     ```
@@ -36,10 +36,10 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     python api.py
     ```
     >**Note**:- Please don't close the `terminal`.
-1. You can find the OpenAPI spec in following path `http://127.0.0.1:8000/openapi.json`.
+1. You can find the OpenAPI spec in the following path `http://127.0.0.1:8000/openapi.json`.
 
     ![](./media/image_075.png)
-1. Swagger page can be found in `http://127.0.0.1:8000/docs`.
+1. The Swagger page can be found at `http://127.0.0.1:8000/docs`.
 
     ![](./media/image_076.png)
 1. Navigate to `Python>src` directory and open **chat.py** file.
@@ -92,11 +92,11 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
     dotnet run
     ```
-    >**Note**:- Please don,t close the `terminal`.
-1. You can find the OpenAPI spec in following path `http://localhost:5115/swagger/v1/swagger.json`.
+    >**Note**:- Please don't close the `terminal`.
+1. You can find the OpenAPI spec in the following path `http://localhost:5115/swagger/v1/swagger.json`.
 
     ![](./media/image_079.png)
-1. Swagger page can be found in `http://localhost:5115/swagger/index.html`.
+1. The swagger page can be found at `http://localhost:5115/swagger/index.html`.
 
     ![](./media/image_080.png)
 1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs** file.
@@ -112,7 +112,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
     await kernel.ImportPluginFromOpenApiAsync(
         pluginName: "todo",
-        uri: new Uri("http://localhost:5115/swagger/v1/swagger.json"),
+        url: new Url("http://localhost:5115/swagger/v1/swagger.json"),
         executionParameters: new OpenApiFunctionExecutionParameters()
         {
             EnablePayloadNamespacing = true
@@ -133,9 +133,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
     dotnet run
     ```
-1. Open a new tab in browser and navigate to the link for **blazor-aichat** i.e **https://localhost:7118/**.
+1. Open a new tab in the browser and navigate to the link for **blazor-aichat**, i.e. **https://localhost:7118/**.
     >**Note**: If you receive security warnings in the browser, close the browser and follow the link again.
-1. Submit the following prompt an see how the AI responds:
+1. Submit the following prompt and see how the AI responds:
     ```
     What are my work items?
     ```
@@ -148,9 +148,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 In this exercise, we utilized **OpenAPI integration with Semantic Kernel** to enhance AI-driven applications through dynamic API orchestration. We imported the **WorkItems API** as an OpenAPI plugin, enabling seamless interaction with external services using AI-generated prompts. This enhanced our proficiency in simplifying API integration, reducing manual coding, and automating external service calls within intelligent applications.
 
-Successfully completed the below tasks for **OpenAPI integration with Semantic Kernel**:  
+We have successfully completed the below tasks for **OpenAPI integration with Semantic Kernel**:  
 
 - Integrated **OpenAPI with Semantic Kernel** to enable dynamic API orchestration.  
 - Imported and configured the **WorkItems API** as an **OpenAPI plugin** for seamless external service interaction.  
 
-## Go to the Next Lab by clicking on the navigation.
+## Go to the next lab by clicking on the navigation.
