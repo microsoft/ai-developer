@@ -4,35 +4,35 @@
 
 ## Overview
 
-In this hands-on lab series, participants will explore the core capabilities of **Azure AI Foundry** and the **Semantic Kernel** framework to build intelligent, extensible AI applications. Designed for beginners in AI development, the labs guide participants through setting up AI projects in Azure AI Foundry, deploying the **GPT-4o** model, and connecting it seamlessly with Semantic Kernel to enable dynamic, prompt-based interactions. Participants will learn how to integrate **plugins**—such as time and weather utilities—to extend chatbot functionality, implement **Retrieval-Augmented Generation (RAG)** for more informed responses, and leverage **OpenAPI** to connect external services with minimal code. The labs also highlight responsible AI practices with **content filtering tools** in Foundry Studio and creative AI integration through **DALL·E** for image generation. Delivered in a secure, cloud-based environment, this series provides foundational, hands-on experience with Semantic Kernel and Azure AI Foundry to help participants build scalable, AI-powered applications.
+In this hands-on lab series, participants will explore the core capabilities of **Azure AI Foundry** and the **Semantic Kernel** framework to build intelligent, extensible AI applications. Designed for beginners in AI development, the labs guide participants through setting up AI projects in Azure AI Foundry, deploying the **GPT-4o** model, and connecting it seamlessly with Semantic Kernel to enable dynamic, prompt-based interactions. Participants will learn how to integrate **plugins**—such as time and weather utilities—to extend chatbot functionality, implement **Retrieval-Augmented Generation (RAG)** for more informed responses, and leverage **OpenAPI** to connect external services with minimal code. The labs also highlight responsible AI practices with **content filtering tools** in Foundry Studio and creative AI integration through **DALL·E** for image generation, delivered in a secure, cloud-based environment. This series provides foundational, hands-on experience with Semantic Kernel and Azure AI Foundry to help participants build scalable, AI-powered applications.
 
 ## Objective
 
-**Explore how Azure AI Foundry and Semantic Kernel empower you to build intelligent, extensible, and responsible AI applications.** Gain hands-on experience deploying GPT-4o models, integrating external services and APIs, developing custom plugins, and implementing advanced AI design patterns such as Retrieval-Augmented Generation (RAG) and multi-agent collaboration. By the end of this lab series, you will be able to:
+**Explore how Azure AI Foundry and Semantic Kernel empower you to build intelligent, extensible, and responsible AI applications.** Gain hands-on experience deploying GPT-4o models, integrating external services and APIs, developing custom plugins, and implementing advanced AI design patterns such as Retrieval-Augmented Generation (RAG) and multi-agent collaboration. By the end of this lab series, you'll be able to:
 
 - **Azure AI Foundry Fundamentals**: Learn how to create, manage, and deploy AI projects using Azure AI Foundry and GPT-4o.
 - **Semantic Kernel Fundamentals**: Build an intelligent chat experience by connecting Semantic Kernel with GPT-4o through a simple starter app.
 - **Semantic Kernel Plugins**: Extend your chatbot’s capabilities by building and integrating custom Semantic Kernel plugins.
 - **Import Plugin using OpenAPI**: Seamlessly integrate external APIs into Semantic Kernel using OpenAPI specifications.
 - **Retrieval-Augmented Generation (RAG)**: Enhance AI responses by combining external knowledge retrieval with generative models using the RAG pattern.
-- **Responsible AI: Exploring Content Filters in Azure AI Foundry**: Apply content filtering tools to build safer, more responsible AI applications within Azure AI Foundry.
+- **Responsible AI: Exploring Content Filters in Azure AI Foundry**: Apply content filtering tools to build safer, more accountable AI applications within Azure AI Foundry.
 - **Image Generation using DALL·E**: Generate creative visuals from text prompts by integrating DALL·E into your reference application.
 - **Multi-Agent Systems**: Coordinate multiple AI agents within Semantic Kernel to solve complex tasks through collaboration.
 
-## Pre-requisites
+## Prerequisites
 
 - Basic knowledge of Azure
 - Familiarity with AI concepts, such as language models and embeddings
 - Basic understanding of REST APIs and JSON data formats
 - Familiarity with Semantic Kernel concepts such as plugins, planners, and AI skills
-- Basic experience using for resource management
+- Basic experience using resource management
 - (Optional) Familiarity with OpenAPI specifications for plugin integration
 - (Optional) Understanding of Retrieval-Augmented Generation (RAG) patterns for AI applications
 
 ## Architecture
 In this hands-on lab, participants will explore **Azure AI Foundry** and **Semantic Kernel** to build, deploy, and extend AI-powered applications. The journey begins with the **Azure Portal**, where they will access and manage AI services. They will deploy **GPT-4o** models using **Models + Endpoints**, enabling real-time AI interactions. To enhance response accuracy, participants will implement **Retrieval-Augmented Generation (RAG)** using **Azure AI Search**, ensuring contextually informed outputs.  
 
-The lab also covers **plugins**, such as **Time & Weather utilities** for real-time data retrieval and **OpenAPI integration** to seamlessly connect external services. Participants will explore **content filtering** within Azure AI Foundry, applying built-in safety measures to ensure responsible AI usage. Additionally, they will integrate **DALL·E** for AI-driven image generation, enabling creative AI applications. By the end of the lab, participants will have the foundational skills to develop scalable, secure, and extensible AI solutions using Azure’s powerful AI ecosystem.
+The lab also covers **plugins**, such as **Time & Weather utilities** for real-time data retrieval and **OpenAPI integration** to connect external services seamlessly. Participants will explore **content filtering** within Azure AI Foundry, applying built-in safety measures to ensure responsible AI usage. Additionally, they will integrate **DALL·E** for AI-driven image generation, enabling creative AI applications. By the end of the lab, participants will have the foundational skills to develop scalable, secure, and extensible AI solutions using Azure’s powerful AI ecosystem.
 
 ## Architecture Diagram
 
@@ -74,19 +74,19 @@ To get a better understanding of your lab resources and credentials, navigate to
  
 ## Utilizing the Split Window Feature
  
-For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the Top right corner.
+For convenience, you can open the lab guide in a separate window by selecting the **Split Window (1)** button from the top right corner.
  
  ![Use the Split Window Feature](./media/spl.png)
  
 ## Managing Your Virtual Machine
  
-Feel free to start, stop, or restart your virtual machine as needed from the **Resources** tab. Your experience is in your hands!
+**Start, stop, or restart (2)** your virtual machine from the **Resources (1)** tab. Your experience is in your hands!
  
 ![Manage Your Virtual Machine](./media/res.png)
 
 ## Lab Validation
 
-1. After completing the task, hit the **Validate** button under Validation tab integrated within your lab guide. If you receive a success message, you can proceed to the next task, if not, carefully read the error message and retry the step, following the instructions in the lab guide.
+1. After completing the task, hit the **Validate** button under the Validation tab integrated into your lab guide. You can proceed to the next task if you receive a success message. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 
    ![Inline Validation](./media/inline-validation.png)
 
@@ -98,7 +98,7 @@ Feel free to start, stop, or restart your virtual machine as needed from the **R
 
    ![Launch Azure Portal](./media/lc-image(1).png)
    
-1. You'll see the **Sign into Microsoft Azure** tab. Here, enter your credentials:
+1. You'll see the **Sign in to Microsoft Azure** tab. Here, enter your credentials:
  
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
  
@@ -110,37 +110,37 @@ Feel free to start, stop, or restart your virtual machine as needed from the **R
  
        ![Enter Your Password](./media/lc-image-2.png)
 
-1. If **Action required** pop-up window appears, click on **Next**.
+1. If an **Action required** pop-up window appears, click on **Next**.
 
    ![Ask Later](./media/ask-later.png)
 1. On **Start by getting the app** page, click on **Next**.
 1. Click on **Next** twice.
-1. In **android**, go to the play store and Search for **Microsoft Authenticator** and Tap on **Install**.
+1. In **Android**, go to the Play Store, search for **Microsoft Authenticator,** and tap on **Install**.
 
    ![Install](./media/mobile.jpg)
 
-   >Note:For **iOS**, Open app store and repeat the steps.
+   >Note: For **iOS**, open the App Store and repeat the steps.
 
    >Note: Skip If already installed.
    
 1. Open the app and click on **Scan a QR code**.
-1. Scan the QR code visible on the screen and click on **Next**.
+1. Scan the **QR code (1)** visible on the screen and click on **Next (2)**.
 
    ![QR code](./media/demo001.png)
-1. Enter the digit displayed on the Screen in the Authenticator app on mobile and tap on **Yes**.
-1. Once the notification is approved, click on **Next**.
+1. Enter the digit displayed on the screen in the Authenticator app on mobile and tap on **Yes**.
+1. Once the notification is approved, click on **Next (1)**.
 
    ![Approved](./media/demo002.png)
 1. Click on **Done**.
-1. If prompted to stay signed in, you can click **"Yes"**.
+1. If prompted to stay signed in, you can click **"Yes."**
 
-1. Tap on **Finish** in the Mobile Device.
+1. Tap on **Finish** in the mobile device.
 
-   >NOTE: While logging in again , enter the digits displayed on the screen in the **Authenticator app** and click on Yes.
+   >NOTE: While logging in again, enter the digits displayed on the screen in the **Authenticator app** and click on Yes.
 
 1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **"Cancel"** to skip the tour.
 
-1. You can use the **Previous(1)** and **Next(2)** buttons to navigate through the lab guide.
+1. You can use the **Previous (1)** and **Next (2)** buttons to navigate through the lab guide.
 
    ![](./media/lc-image(3).png)
 
@@ -148,14 +148,14 @@ This hands-on lab will help you explore how Microsoft Copilot for Infrastructure
 
 ## Support Contact
 
-The CloudLabs support team is available 24/7, 365 days a year, via email and live chat to ensure seamless assistance at any time. We offer dedicated support channels tailored specifically for both learners and instructors, ensuring that all your needs are promptly and efficiently addressed.
+The CloudLabs support team is available 24/7, 365 days a year, via email and live chat to ensure seamless assistance anytime. We offer dedicated support channels tailored specifically for learners and instructors, ensuring that all your needs are promptly and efficiently addressed.
 
 Learner Support Contacts:
 
 - Email Support: cloudlabs-support@spektrasystems.com
 - Live Chat Support: https://cloudlabs.ai/labs-support
 
-Now, click on **Next** from the lower right corner to move on to the next page.
+Now, click **Next** from the lower right corner to move on to the next page.
 
 ![Launch Azure Portal](./media/lc-image(3).png)
 
