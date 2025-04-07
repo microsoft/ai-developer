@@ -33,14 +33,14 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 1. Navigate to `C:\LabFiles\ai-developer\Dotnet\src\BlazorAI\data\` and select **employee_handbook.pdf (1).** Click on **Open (2)**, followed by **Next**.
 
     ![](./media/image_087.png)
-1. On the **Index settings** blade, specify the following configuration options and click on **Next**:
-    - **Select Azure AI Search Service**: select **AzureAISearch**
-    - **Vector index**: **employeehandbook**
+1. On the **Index settings** blade, specify the following configuration options and click on **Next (3)**:
+    - **Select Azure AI Search Service**: select **AzureAISearch (1)**
+    - **Vector index**: **employeehandbook (2)**
 
         ![](./media/image_088.png)
 1. Click on **Next**, and select **Create vector index**.
     >**Note**: The data injection might take around 10-15 minutes.
-1. Navigate to the Azure Portal and search **AI Search.** Click on it and open the **AI Search** resource located there.
+1. Navigate to the Azure Portal and search **AI Search (1).** Click on it and open the **AI Search (2)** resource located there.
 
     ![](./media/image_089.png)
     
@@ -48,7 +48,7 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 1. On the **Overview (1)** page, copy the **URL (2)** and paste it into Notepad.
 
     ![](./media/image_091.png)
-1. Navigate to **Keys** under **Settings** in the left pane, copy the **Primary admin key** from Azure Portal, and paste it into Notepad.
+1. Navigate to **Keys (1)** under **Settings** in the left pane, copy the **Primary admin key (2)** from Azure Portal, and paste it into Notepad.
 
     ![](./media/image_092.png)
 
