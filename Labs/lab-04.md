@@ -28,7 +28,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 <details>
 <summary><strong>Python</strong></summary>
 
-1. Right click on `Python>src>workitems` in the left pane and select **Open in Integrated Terminal**.
+1. Right click on `Python>src>workitems` in the left pane and select **Open in Integrated Terminal (1)**.
 
     ![](./media/image_074.png)
 1. Use the following command to run the app:
@@ -42,7 +42,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. The Swagger page can be found at `http://127.0.0.1:8000/docs`.
 
     ![](./media/image_076.png)
-1. Navigate to `Python>src` directory and open **chat.py** file.
+1. Navigate to `Python>src` directory and open **chat.py (1)** file.
 
     ![](./media/image_030.png)
 1. Add the following code in the `# Placeholder for OpenAPI plugin` section of the file.
@@ -62,7 +62,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-04.py
     ```
 1. Save the file.
-1. Right click on `Python>src` in the left pane and select **Open in Integrated Terminal**.
+1. Right-click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
     ![](./media/image_035.png)
 1. Use the following command to run the app:
@@ -85,7 +85,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 <details>
 <summary><strong>C Sharp(C#)</strong></summary>
 
-1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` in the left pane and select **Open in Integrated Terminal**.
+1. Right-click on `Dotnet>src>Aspire>Aspire.AppHost` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
     ![](./media/image_040.png)
 1. Use the following command to run the app:
