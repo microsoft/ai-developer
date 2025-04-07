@@ -1,8 +1,8 @@
 # **Exercise 3**: Semantic Kernel Plugins
 
-### Estimated Duration: 50 minutes
+### Estimated Duration: 50 Minutes
 
-This hands-on lab explores the power of plugins in enhancing LLM development with Semantic Kernel. Designed for those new to AI extensibility, the lab guides you through building and integrating plugins to expand the capabilities of your chatbot. You will implement a time plugin and a weather retrieval plugin, enabling your AI to access real-time and contextual data beyond its training scope. Additionally, you will learn to develop Semantic Kernel plugins in Python and leverage Auto Function Calling to seamlessly chain them together.
+This hands-on lab explores the power of plugins in enhancing LLM development with Semantic Kernel. Designed for those new to AI extensibility, the lab guides you through building and integrating plugins to expand the capabilities of your chatbot. You will implement a time and weather retrieval plugin, enabling your AI to access real-time and contextual data beyond its training scope. Additionally, you will learn to develop Semantic Kernel plugins in Python and leverage Auto Function Calling to chain them together seamlessly.
 
 ## Objectives
 In this exercise, you will be performing the following tasks:
@@ -15,11 +15,11 @@ In this exercise, you will be performing the following tasks:
 
 In this task, you will explore different flow types in Azure AI Foundry by running the app without the Time Plugin to observe its default behavior.
 
-1. Launch your AI Chat app in any of the language, and submit the following prompt:
+1. Launch your AI Chat app in any of the languages, and submit the following prompt:
     ```
     What time is it?
     ```
-2. Since the AI does not have the capability to provide real-time information, you will get a response similar to the following:
+2. Since the AI cannot provide real-time information, you will get a response similar to the following:
     ```
     I can't provide real-time information, including the current time. You can check the time on your device or through various online sources.
     ```
@@ -36,7 +36,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. Navigate to `Python>src>plugins` directory and create a new file named **time_plugin.py (1)**.
 
     ![](./media/image_044.png)
-1. Add the following code in the file: 
+1. Add the following code to the file: 
     ```
     from datetime import datetime
     from typing import Annotated
@@ -135,7 +135,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
     What time is it?
     ```
-1. Since the AI have the **Time Plugin**, it will be able to provide real-time information, you will get a response similar to the following:
+1. Since the AI has the **Time Plugin**, it will be able to provide real-time information, you will get a response similar to the following:
     ```
     The current time is 3:43 PM on January 23, 2025.
     ```
@@ -149,7 +149,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. Navigate to `Dotnet>src>BlazorAI>Plugins` directory and create a new file named **TimePlugin.cs**.
 
     ![](./media/image_049.png)
-1. Add the following code in the file:
+1. Add the following code to the file:
     ```
     using System;
     using System.ComponentModel;
@@ -320,12 +320,12 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
     dotnet run
     ```
-1. Open a new tab in browser and navigate to the link for **blazor-aichat** i.e **https://localhost:7118/**.
+1. Open a new tab in the browser and navigate to the link for **blazor-aichat**, i.e. **https://localhost:7118/**.
 1. Submit the following prompt:
     ```
     What time is it?
     ```
-1. Since the AI have the **Time Plugin**, it will be able to provide real-time information, you will get a response similar to the following:
+1. Since the AI has the **Time Plugin**, it will be able to provide real-time information, and you will get a response similar to the following:
     ```
     The current time is 3:43 PM on January 23, 2025.
     ```
@@ -337,15 +337,15 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 In this task, you will explore different flow types in Azure AI Foundry by creating and importing the Geocoding Plugin to enable location-based functionality.
 
-1. Open a new tab in the browser and navigate to [Geocoding API](https://geocode.maps.co/) portal and click on **Free API key** button on the top.
+1. Open a new tab in the browser, navigate to the [Geocoding API](https://geocode.maps.co/) portal, and click on the **Free API Key** button on the top.
 
     ![](./media/image_057.png)
-1. Enter you details and click on **Create Account (1)**.
+1. Enter your details and click on **Create Account (1)**.
 
     ![](./media/image_058.png)
     >**Note**: Use your personal or work e-mail ID to register.
-1. You will receive an e-mail, click on the link in the e-mail to verify your e-mail.
-1. You will receive your free **geocoding API key**, save it notepad for further use.
+1. You will receive an e-mail. Click on the link in the e-mail to verify your e-mail.
+1. You will receive your free **geocoding API key,** save it in Notepad for further use.
 
 <details>
 <summary><strong>Python</strong></summary>
@@ -397,7 +397,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
     What are the geo-coordinates for Tampa, FL
     ```
-1. Since the AI have the **Geocoding Plugin**, it will be able to provide real-time information, you will get a response similar to the following:
+1. Since the AI has the **Geocoding Plugin**, it will be able to provide real-time information, you will get a response similar to the following:
     ```
     The geo-coordinates for Tampa, FL are:
 
@@ -443,12 +443,12 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
     dotnet run
     ```
-1. Open a new tab in browser and navigate to the link for **blazor-aichat** i.e **https://localhost:7118/**
+1. Open a new tab in the browser and navigate to the link for **blazor-aichat** i.e **https://localhost:7118/**
 1. Submit the following prompt:
     ```
     What are the geo-coordinates for Tampa, FL
     ```
-1. Since the AI have the **Geocoding Plugin**, it will be able to provide real-time information, you will get a response similar to the following:
+1. Since the AI has the **Geocoding Plugin**, it will be able to provide real-time information, you will get a response similar to the following:
     ```
     The geo-coordinates for Tampa, FL are:
 
@@ -830,7 +830,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
     dotnet run
     ```
-1. Open a new tab in browser and navigate to the link for **blazor-aichat** i.e **https://localhost:7118/**.
+1. Open a new tab in the browser and navigate to the link for **blazor-aichat**, i.e. **https://localhost:7118/**.
 1. Submit the following prompt:
     ```
     What is today's weather in San Francisco?
@@ -839,9 +839,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     ![](./media/image_072.png)
 
-    The AI will perform the following plan to answer the question but may do so in a different order or different set of functions:
+    The AI will perform the following plan to answer the question but may do so in a different order or with a different set of functions:
 
-    1️⃣ The AI should ask Semantic Kernel to call the GetDate function on the Time Plugin to get today's date in order to calculate the number of days until next Thursday
+    1️⃣ The AI should ask Semantic Kernel to call the GetDate function on the Time Plugin to get today's date to calculate the number of days until next Thursday
 
     2️⃣ Because the Weather Forecast requires a Latitude and Longitude, the AI should instruct Semantic Kernel to call the GetLocation function on the Geocoding Plugin to get the coordinates for San Francisco
 
@@ -855,13 +855,13 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 ## Review
 
-In this exercise, we utilized **Semantic Kernel plugins** to enhance LLM capabilities by extending a chatbot's functionality. We developed and integrated a **time plugin** and a **weather retrieval plugin** to enable real-time, contextual responses beyond the model’s training data. Additionally, we built plugins in Python and used **Auto Function Calling** to chain them together seamlessly. This enhanced our proficiency in building extensible, intelligent AI solutions using Semantic Kernel.
+In this exercise, we utilized **Semantic Kernel plugins** to enhance LLM capabilities by extending a chatbot's functionality. We developed and integrated **time** and **weather retrieval plugins** to enable real-time, contextual responses beyond the model’s training data. Additionally, we built plugins in Python and used **Auto Function Calling** to chain them together seamlessly. This enhanced our proficiency in building extensible, intelligent AI solutions using Semantic Kernel.
 
-Successfully completed the below tasks for extending **LLM capabilities** using **Semantic Kernel plugins**:  
+You have successfully completed the below tasks for extending **LLM capabilities** using **Semantic Kernel plugins**:  
 
-- Developed and integrated a **time plugin** and a **weather retrieval plugin** for real-time contextual responses.  
+- Developed and integrated **time** and **weather retrieval plugins** for real-time contextual responses.  
 - Utilized **Semantic Kernel** to enhance chatbot functionality beyond the model’s training data.  
-- Implemented **Auto Function Calling** to seamlessly chain multiple plugins together.  
+- Implemented **Auto Function Calling** to chain multiple plugins together seamlessly.  
 - Built and deployed **Python-based plugins** to extend AI capabilities.  
 
-## Go to the Next Lab by clicking on the navigation.
+## Go to the next lab by clicking on the navigation.
