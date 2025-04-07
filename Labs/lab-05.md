@@ -59,7 +59,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 <details>
 <summary><strong>Python</strong></summary>
 
-1. Navigate to `Python>src` directory and open **.env** file.
+1. Navigate to `Python>src` directory and open **.env (1)** file.
 
     ![](./media/image_026.png)
 1. Paste the **AI search URL** that you copied earlier in the exercise besides `AI_SEARCH_URL` in **.env** file.
@@ -68,7 +68,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     ![](./media/image_093.png)
 1. Save the file.
-1. Navigate to `Python>src>plugins` directory and create a new file named **ContosoSearchPlugin.py**.
+1. Navigate to `Python>src>plugins` directory and create a new file named **ContosoSearchPlugin.py (1)**.
 
     ![](./media/image_094.png)
 1. Add the following code to the file:
@@ -183,7 +183,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
         print(result)
     ```
 1. Save the file.
-1. Navigate to `Python>src` directory and open **chat.py** file.
+1. Navigate to `Python>src` directory and open **chat.py (1)** file.
 
     ![](./media/image_030.png)
 1. Add the following code in the `#Import Modules` section of the file.
@@ -221,7 +221,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-05.py
     ```
 1. Save the file.
-1. Right click on `Python>src` in the left pane and select **Open in Integrated Terminal**.
+1. Right click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
     ![](./media/image_035.png)
 1. Use the following command to run the app:
@@ -254,12 +254,12 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 <details>
 <summary><strong>C Sharp(C#)</strong></summary>
 
-1. Navigate to `Dotnet>src>BlazorAI` directory and open **appsettings.json** file.
+1. Navigate to `Dotnet>src>BlazorAI` directory and open **appsettings.json (1)** file.
 
     ![](./media/image_028.png)
 1. Paste the **AI search URL** that you copied earlier in the exercise besides `AI_SEARCH_URL` in **appsettings.json** file..
     >Note:- Ensure that every value in the **appsettings.json** file is enclosed in **double quotes (")**.
-1. Paste the **Primary admin key** that you copied earlier in the exercise besides `AI_SEARCH_KEY`.
+1. Paste the **Primary admin key (1)** that you copied earlier in the exercise besides `AI_SEARCH_KEY` **(2)**.
 
     ![](./media/image_101.png)
 1. Save the file.
@@ -366,7 +366,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     }
     ```
 1. Save the file.
-1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs** file.
+1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
 
     ![](./media/image_038.png)
 1. Add the following code in the `// Import Models` section of the file.
@@ -421,7 +421,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-05.cs
     ```
 1. Save the file.
-1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` in the left pane and select **Open in Integrated Terminal**.
+1. Right-click on `Dotnet>src>Aspire>Aspire.AppHost` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
     ![](./media/image_040.png)
 1. Use the following command to run the app:
