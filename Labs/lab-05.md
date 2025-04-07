@@ -1,6 +1,6 @@
 # **Exercise 5**: Retrieval-Augmented Generation (RAG)
 
-### Estimated Duration: 40 minutes
+### Estimated Duration: 40 Minutes
 
 This hands-on lab introduces you to the Retrieval-Augmented Generation (RAG) pattern—an AI architecture that enhances response quality by integrating relevant external knowledge into the generative process. Designed for those new to RAG, the lab guides you through how retrieval mechanisms work alongside generative models to deliver more accurate, informed, and context-aware outputs. You will also gain a clear understanding of data privacy and security prompts, completions, embeddings, and training data remaining fully isolated—they are not shared with other customers, OpenAI, Microsoft, or third parties, nor are they used to improve models automatically.
 
@@ -21,16 +21,16 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 
     ![](./media/image_084.png)
 1. Click on **Deploy**.
-1. Navigate back, select **gpt-4o**, and click on **Open in playground**.
+1. Navigate back, select **GPT-4o**, and click on **Open in playground**.
 
     ![](./media/image_020.png)
 1. Click on **Add your data (1)** and select **+ Add a new data source (2)**.
 
     ![](./media/image_085.png)
-1. On **Add your data** blade, select **Upload files (1)** as `Data source` and click on **Upload (2).** Select **Upload files (3)**.
+1. On the **Add your data** blade, select **Upload files (1)** `Data source` and click **Upload (2).** Select **Upload files (3)**.
 
     ![](./media/image_086.png)
-1. Navigate to `C:\LabFiles\ai-developer\Dotnet\src\BlazorAI\data\` and select **employee_handbook.pdf (1)**, and click on **Open (2)**, followed by **Next**.
+1. Navigate to `C:\LabFiles\ai-developer\Dotnet\src\BlazorAI\data\` and select **employee_handbook.pdf (1).** Click on **Open (2)**, followed by **Next**.
 
     ![](./media/image_087.png)
 1. On the **Index settings** blade, specify the following configuration options and click on **Next**:
@@ -38,17 +38,17 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
     - **Vector index**: **employeehandbook**
 
         ![](./media/image_088.png)
-1. CLick on **Next**, and select **Create vector index**.
+1. Click on **Next**, and select **Create vector index**.
     >**Note**: The data injection might take around 10-15 minutes.
-1. Navigate to Azure Portal and search **Ai Search** and Click on it, open the **AI Search** resource located there.
+1. Navigate to the Azure Portal and search **AI Search.** Click on it and open the **AI Search** resource located there.
 
     ![](./media/image_089.png)
     
     ![](./media/image_090.png)
-1. On **Overview (1)** page copy the **URL (2)**, and paste it in notepad.
+1. On the **Overview (1)** page, copy the **URL (2)** and paste it into Notepad.
 
     ![](./media/image_091.png)
-1. Navigate to **Keys** under Settings in the left pane, copy the **Primary admin key** from Azure Portal , and paste it in notepad.
+1. Navigate to **Keys** under **Settings** in the left pane, copy the **Primary admin key** from Azure Portal, and paste it into Notepad.
 
     ![](./media/image_092.png)
 
@@ -71,7 +71,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. Navigate to `Python>src>plugins` directory and create a new file named **ContosoSearchPlugin.py**.
 
     ![](./media/image_094.png)
-1. Add the following code in the file:
+1. Add the following code to the file:
     ```
     import json
     import os
@@ -266,7 +266,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. Navigate to `Dotnet>src>BlazorAI>Plugins` directory and create a new file named **ContosoSearchPlugin.cs (1)**.
 
     ![](./media/image_102.png)
-1. Add the following code in the file:
+1. Add the following code to the file:
     ```
     using System.ComponentModel;
     using System.Text.Json.Serialization;
@@ -303,7 +303,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
             }
 
             [KernelFunction("SearchHandbook")]
-            [Description("Searches the Contoso employee handbook for information about company policies, benefits, procedures or other employee-related questions. Use this when the user asks about company policies, employee benefits, work procedures, or any information that might be in an employee handbook.")]
+            [Description("Searches the Contoso employee handbook for information about company policies, benefits, procedures, or other employee-related questions. Use this when the user asks about company policies, employee benefits, work procedures, or any information that might be in an employee handbook.")]
             public async Task<string> Search(
                 [Description("The user's question about company policies, benefits, procedures or other handbook-related information")] string query)
             {
@@ -428,7 +428,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
     dotnet run
     ```
-1. Open a new tab in browser and navigate to the link for **blazor-aichat** i.e **https://localhost:7118/**.
+1. Open a new tab in the browser and navigate to the link for **blazor-aichat**, i.e. **https://localhost:7118/**.
 1. Submit the following prompt and see how the AI responds:
     ```
     What are the steps for the Contoso Performance Reviews?
@@ -452,10 +452,10 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 In this exercise, we explored the **Retrieval-Augmented Generation (RAG) pattern** to enhance AI responses by integrating external knowledge into the generative process. We examined how retrieval mechanisms work alongside generative models to produce accurate, context-aware outputs. This enhanced our proficiency in building secure, knowledge-enriched AI solutions using the RAG architecture.
 
-Successfully completed the below tasks for **Retrieval-Augmented Generation (RAG) implementation**:  
+You have successfully completed the below tasks for **Retrieval-Augmented Generation (RAG) implementation**:  
 
 - Integrated the **RAG pattern** to enhance AI-generated responses with external knowledge retrieval.  
 - Utilized **Azure AI Search** to fetch relevant contextual data for more accurate outputs.  
 - Configured **Semantic Kernel** to orchestrate retrieval and generative workflows seamlessly.  
 
-## Go to the Next Lab by clicking on the navigation.
+## Go to the next lab by clicking on the navigation.
