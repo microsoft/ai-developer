@@ -82,7 +82,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
                 return "Invalid date format. Please use YYYY-MM-DD."
     ```
 1. Save the file.
-1. Navigate to `Python>src` directory and open **chat.py** file.
+1. Navigate to `Python>src` directory and open **chat.py (1)** file.
 
     ![](./media/image_030.png)
 1. Add the following code in the `#Import Modules` section of the file.
@@ -94,7 +94,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
     
     ![](./media/image_045.png)
-1. Add the following code in the `#Challenge 03 - Create Prompt Execution Settings` section of the file.
+1. Add the following code in the `#Challenge 03 - Create Prompt Execution Settings` **(1)** section of the file.
     ```
     execution_settings = AzureChatPromptExecutionSettings()
     execution_settings.function_choice_behavior = FunctionChoiceBehavior.Auto()
@@ -102,7 +102,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
 
     ![](./media/image_046.png)
-1. Add the following code in the `# Placeholder for Time plugin` section of the file.
+1. Add the following code in the `# Placeholder for Time plugin` **(1)** section of the file.
     ```
     time_plugin = TimePlugin()
     kernel.add_plugin(time_plugin, plugin_name="TimePlugin")
@@ -114,13 +114,13 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
     execution_settings = kernel.get_prompt_execution_settings_from_service_id("chat-service")
     ```
-    >**Note**: You need to remove it from two code blocks, one will be inside **def initialize_kernel():** function and another will be in **global chat_history** code block.
+    >**Note**: You need to remove it from two code blocks; one will be inside the **def initialize_kernel():** function, and another will be in the **global chat_history** code block.
 1. In case you encounter any indentation error, use the code from the following URL:
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-03_time_plugin.py
     ```
 1. Save the file.
-1. Right click on `Python>src` in the left pane and select **Open in Integrated Terminal**.
+1. Right-click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
     ![](./media/image_035.png)
 1. Use the following command to run the app:
@@ -146,7 +146,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 <details>
 <summary><strong>C Sharp(C#)</strong></summary>
 
-1. Navigate to `Dotnet>src>BlazorAI>Plugins` directory and create a new file named **TimePlugin.cs**.
+1. Navigate to `Dotnet>src>BlazorAI>Plugins` directory and create a new file named **TimePlugin.cs (1)**.
 
     ![](./media/image_049.png)
 1. Add the following code to the file:
@@ -253,10 +253,10 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     }
     ```
 1. Save the file.
-1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs** file.
+1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
 
     ![](./media/image_038.png)
-1. Add the following code in the `// Import Models` section of the file.
+1. Add the following code in the `// Import Models` **(1)** section of the file.
     ```
     using Microsoft.SemanticKernel.Connectors.OpenAI;
     using BlazorAI.Plugins;
