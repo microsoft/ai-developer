@@ -21,7 +21,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-08.py
     ```
 1. Save the file.
-1. Right click on `Python>src` in the left pane and select **Open in Integrated Terminal**.
+1. Right click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
     ![](./media/image_035.png)
 1. Use the following command to run the app:
@@ -32,7 +32,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
     http://localhost:8501
     ```
-1. Select **Multi-Agent** on the left-hand side pane.
+1. Select **Multi-Agent (1)** on the left-hand side pane.
 
     ![](./media/image_123.png)
 1. Submit the following prompt and see how the AI responds:
@@ -47,7 +47,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 <details>
 <summary><strong>C Sharp(C#)</strong></summary>
 
-1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **MultiAgent.razor.cs** file.
+1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **MultiAgent.razor.cs (1)** file.
 
     ![](./media/image_125.png)
 1. Remove the existing code and add the code from the following URL in the file.
@@ -55,7 +55,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-08.cs
     ```
 1. Save the file.
-1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` in the left pane and select **Open in Integrated Terminal**.
+1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
     ![](./media/image_040.png)
 1. Use the following command to run the app:
@@ -65,7 +65,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. Open a new tab in the browser and navigate to the link for **blazor-aichat**, i.e. **https://localhost:7118/**.
 
     >**Note**: If you receive security warnings in the browser, close the browser and follow the link again.
-1. Select **Multi-Agent** on the left-hand side pane.
+1. Select **Multi-Agent (1)** on the left-hand side pane.
 
     ![](./media/image_126.png)
 1. Submit the following prompt and see how the AI responds:
