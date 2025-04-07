@@ -78,7 +78,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 In this exercise, we utilized **Azure AI Foundry** to build and deploy AI solutions by accessing the Azure portal and interacting with GPT-4o models. We created an AI project, deployed a base model, and integrated Azure AI Search for enhanced data retrieval. Finally, we tested the model in the playground using a prompt to extract structured data from text. This enhanced our proficiency in deploying and interacting with AI models on the Azure platform.
 
-Successfully completed the below tasks for AI development using **Azure AI Foundry**:  
+You have successfully completed the below tasks for AI development using **Azure AI Foundry**:  
 
 - Created an **AI project** and deployed a **GPT-4o** base model using **Models + Endpoints**.    
 - Utilized **Semantic Kernel** to connect AI models with external APIs and plugins.
