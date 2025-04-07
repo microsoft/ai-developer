@@ -28,12 +28,12 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 <details>
 <summary><strong>Python</strong></summary>
 
-1. Navigate to `Python>src` directory and open **.env** file.
+1. Navigate to `Python>src` directory and open **.env (1)** file.
 
     ![](./media/image_026.png)
 1. Paste the **Target URI** that you copied earlier in the exercise besides `AZURE_TEXT_TO_IMAGE_ENDPOINT` (1).
     >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
-1. Paste the **API key** that you copied earlier in the exercise besides `AZURE_TEXT_TO_IMAGE_API_KEY` (2).
+1. Paste the **API key (1)** that you copied earlier in the exercise besides `AZURE_TEXT_TO_IMAGE_API_KEY` (2).
 
     ![](./media/image_112.png)
 1. Save the file.
@@ -47,7 +47,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 <details>
 <summary><strong>Python</strong></summary>
 
-1. Navigate to `Python>src>plugins` directory and create a new file named **ImageGenerationPlugin.py**.
+1. Navigate to `Python>src>plugins` directory and create a new file named **ImageGenerationPlugin.py (1)**.
 
     ![](./media/image_113.png)
 1. Add the following code to the file:
@@ -154,7 +154,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
                 return f"Error generating image: {str(e)}"
     ```
 1. Save the file.
-1. Navigate to `Python>src` directory and open **chat.py** file.
+1. Navigate to `Python>src` directory and open **chat.py (1)** file.
 
     ![](./media/image_030.png)
 1. Add the following code in the `#Import Modules` section of the file.
@@ -193,7 +193,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-07.py
     ```
 1. Save the file.
-1. Right click on `Python>src` in the left pane and select **Open in Integrated Terminal**.
+1. Right click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
     ![](./media/image_035.png)
 1. Use the following command to run the app:
@@ -326,7 +326,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     }
     ```
 1. Save the file.
-1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs** file.
+1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
 
     ![](./media/image_038.png)
 1. Add the following code in the `// Challenge 07 - Add Azure AI Foundry Text To Image` section of the file.
