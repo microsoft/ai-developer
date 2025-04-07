@@ -2,7 +2,7 @@
 
 ### Estimated Duration: 40 minutes
 
-This hands-on lab introduces you to the Retrieval-Augmented Generation (RAG) pattern—an AI architecture that enhances response quality by integrating relevant external knowledge into the generative process. Designed for those new to RAG, the lab guides you through how retrieval mechanisms work alongside generative models to deliver more accurate, informed, and context-aware outputs. You will also gain a clear understanding of data privacy and security: your prompts, completions, embeddings, and training data remain fully isolated—they are not shared with other customers, OpenAI, Microsoft, or third parties, nor are they used to improve models automatically.
+This hands-on lab introduces you to the Retrieval-Augmented Generation (RAG) pattern—an AI architecture that enhances response quality by integrating relevant external knowledge into the generative process. Designed for those new to RAG, the lab guides you through how retrieval mechanisms work alongside generative models to deliver more accurate, informed, and context-aware outputs. You will also gain a clear understanding of data privacy and security prompts, completions, embeddings, and training data remaining fully isolated—they are not shared with other customers, OpenAI, Microsoft, or third parties, nor are they used to improve models automatically.
 
 ## Objectives
 In this exercise, you will be performing the following tasks:
@@ -13,21 +13,21 @@ In this exercise, you will be performing the following tasks:
 
 In this task, you will explore different flow types in Azure AI Foundry by deploying a Text Embedding model to enable text representation and similarity analysis.
 
-1. Navigate to [Azure AI Foundry](https://ai.azure.com/) portal.
-1. Click on **Models + endpoints (1)** under **My assets** in the left pane and then click on **+ Deploy model**, followed by **Deploy Base model (2)**.
+1. Navigate to the [Azure AI Foundry](https://ai.azure.com/) portal.
+1. Click on **Models + endpoints (1)** under **My assets** in the left pane, then click on **+ Deploy model**, followed by **Deploy Base model (2)**.
 
     ![](./media/image_007-1.png)
-1. Search for **text-embedding-ada-002**, select the model and click on **Confirm**.
+1. Search for **text-embedding-ada-002**, select the model, and click on **Confirm**.
 
     ![](./media/image_084.png)
 1. Click on **Deploy**.
-1. Navigate back and select **gpt-4o**, and click on **Open in playground**.
+1. Navigate back, select **gpt-4o**, and click on **Open in playground**.
 
     ![](./media/image_020.png)
-1. Click on **Add you data (1)** and select **+ Add a new data source (2)**.
+1. Click on **Add your data (1)** and select **+ Add a new data source (2)**.
 
     ![](./media/image_085.png)
-1. On **Add your data** blade, select **Upload files (1)** as the `Data source` and click on **Upload (2)**, and select **Upload files (3)**.
+1. On **Add your data** blade, select **Upload files (1)** as `Data source` and click on **Upload (2).** Select **Upload files (3)**.
 
     ![](./media/image_086.png)
 1. Navigate to `C:\LabFiles\ai-developer\Dotnet\src\BlazorAI\data\` and select **employee_handbook.pdf (1)**, and click on **Open (2)**, followed by **Next**.
