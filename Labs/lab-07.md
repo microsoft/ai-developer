@@ -1,6 +1,6 @@
 # **Exercise 7**: Image Generation using DALL-E
 
-### Estimated Duration: 25 minutes
+### Estimated Duration: 25 Minutes
 
 This hands-on lab introduces image generation capabilities to your reference application using DALL·E, an advanced AI model that transforms text into visuals. Designed for those new to AI-powered creativity, the lab guides you step-by-step in integrating DALL·E to generate images from descriptive text prompts. You will explore how DALL·E can create visuals ranging from realistic objects and scenes to imaginative, abstract concepts—unlocking new possibilities for creative expression and user interaction.
 
@@ -13,27 +13,27 @@ In this exercise, you will be performing the following tasks:
 
 In this task, you will explore different flow types in Azure AI Foundry by deploying a DALL-E model to generate images from text prompts.
 
-1. Navigate to [Azure AI Foundry](https://ai.azure.com/) portal.
-1. Click on **Models + endpoints (1)** under **My assets** in the left pane and then click on **+ Deploy model**, followed by **Deploy Base model (2)**.
+1. Navigate to the [Azure AI Foundry](https://ai.azure.com/) portal.
+1. Click on **Models + endpoints (1)** under **My assets** in the left pane, then click on **+ Deploy model**, followed by **Deploy base model (2)**.
 
     ![](./media/image_007-1.png)
-1. Search for **dall-e-3 (1)**, select the model (2) and click on **Confirm (3)**.
+1. Search for **dall-e-3 (1)**, select the model (2), and click on **Confirm (3)**.
 
     ![](./media/image_110.png)
 1. Click on **Deploy**.
-1. On **dall-e-3** page, copy the **Target URI (1)** and **Key (2)** and paste it in notepad.
+1. On the **dall-e-3** page, copy the **Target URI (1)** and **Key (2)** and paste them into Notepad.
 
     ![](./media/image_111.png)
 
 <details>
 <summary><strong>Python</strong></summary>
 
-1. Navigate to `Python>src` directory and open **.env** file.
+1. Navigate to `Python>src` directory and open **.env (1)** file.
 
     ![](./media/image_026.png)
 1. Paste the **Target URI** that you copied earlier in the exercise besides `AZURE_TEXT_TO_IMAGE_ENDPOINT` (1).
     >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
-1. Paste the **API key** that you copied earlier in the exercise besides `AZURE_TEXT_TO_IMAGE_API_KEY` (2).
+1. Paste the **API key (1)** that you copied earlier in the exercise besides `AZURE_TEXT_TO_IMAGE_API_KEY` (2).
 
     ![](./media/image_112.png)
 1. Save the file.
@@ -47,10 +47,10 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 <details>
 <summary><strong>Python</strong></summary>
 
-1. Navigate to `Python>src>plugins` directory and create a new file named **ImageGenerationPlugin.py**.
+1. Navigate to `Python>src>plugins` directory and create a new file named **ImageGenerationPlugin.py (1)**.
 
     ![](./media/image_113.png)
-1. Add the following code in the file:
+1. Add the following code to the file:
 
     ```
     import os
@@ -154,7 +154,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
                 return f"Error generating image: {str(e)}"
     ```
 1. Save the file.
-1. Navigate to `Python>src` directory and open **chat.py** file.
+1. Navigate to `Python>src` directory and open **chat.py (1)** file.
 
     ![](./media/image_030.png)
 1. Add the following code in the `#Import Modules` section of the file.
@@ -193,7 +193,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-07.py
     ```
 1. Save the file.
-1. Right click on `Python>src` in the left pane and select **Open in Integrated Terminal**.
+1. Right click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
     ![](./media/image_035.png)
 1. Use the following command to run the app:
@@ -219,7 +219,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. Navigate to `Dotnet>src>BlazorAI>Plugins` directory and create a new file named **ImageGenerationPlugin.cs**.
 
     ![](./media/image_118.png)
-1. Add the following code in the file:
+1. Add the following code to the file:
     ```
     using System;
     using System.ComponentModel;
@@ -326,7 +326,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     }
     ```
 1. Save the file.
-1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs** file.
+1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
 
     ![](./media/image_038.png)
 1. Add the following code in the `// Challenge 07 - Add Azure AI Foundry Text To Image` section of the file.
@@ -355,7 +355,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
     dotnet run
     ```
-1. Open a new tab in browser and navigate to the link for **blazor-aichat** i.e **https://localhost:7118/**.
+1. Open a new tab in the browser and navigate to the link for **blazor-aichat**, i.e. **https://localhost:7118/**.
 
     >**Note**: If you receive security warnings in the browser, close the browser and follow the link again.
 1. Submit the following prompt and see how the AI responds:
@@ -371,10 +371,10 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 In this exercise, we integrated **DALL·E** into a reference application to enable **AI-powered image generation** from text prompts. We explored how DALL·E transforms descriptive inputs into visuals—ranging from realistic scenes to abstract concepts—unlocking new creative possibilities. This enhanced our proficiency in applying generative AI for visual content creation and user interaction.
 
-Successfully completed the below tasks for **DALL·E integration in AI-powered image generation**:  
+You have successfully completed the below tasks for **DALL·E integration in AI-powered image generation**:  
 
 - Integrated **DALL·E** into a reference application for **text-to-image generation**.  
 - Explored **AI-powered visual content creation**, transforming descriptive text into images.  
 - Configured **Azure AI Foundry** to support **DALL·E-based generative AI workflows**.  
 
-## Go to the Next Lab by clicking on the navigation.
+## Go to the next lab by clicking on the navigation.

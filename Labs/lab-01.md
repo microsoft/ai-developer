@@ -9,13 +9,13 @@ You will explore Azure AI Foundry to create and manage AI projects, use Models +
 ## Objectives
 
 In this exercise, you will be performing the following tasks:
-- Task 1: Setup Azure AI Foundry
+- Task 1: Set up Azure AI Foundry
 
-## Task 1: Setup Azure AI Foundry
+## Task 1: Set up Azure AI Foundry
 
 In this task, you will explore different flow types in Azure AI Foundry by creating a project, deploying the GPT-4o model, and testing its capabilities in the playground.
 
-1. Navigate to Azure AI Foundry (https://ai.azure.com/) portal and login using the below Azure credentials:
+1. Navigate to the Azure AI Foundry (https://ai.azure.com/) portal and log in using the below Azure credentials:
 
    - Username : <inject key="AzureAdUserEmail"></inject>
    - Password : <inject key="AzureAdUserPassword"></inject>
@@ -23,7 +23,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. Click on **Create Project (1)**.
 
     ![](./media/image_001.png)
-1. Provide **ai-foundry-project-<inject key="Deployment ID" enableCopy="false"></inject> (1)** as Project name and click on **Customize (2)**.
+1. Provide **ai-foundry-project-<inject key="Deployment ID" enableCopy="false"></inject> (1)** as the Project name and click on **Customize (2)**.
 
     ![](./media/image_002.png)
 1. On the **Create a Project** blade, specify the following configuration options and click on **Next (4)**:
@@ -37,19 +37,19 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. Click on **Create (1)**.
 
     ![](./media/image_005.png)
-1. Click on **Models + endpoints (1)** under **My assets** in the left pane and then click on **+ Deploy model**, followed by **Deploy Base model (2)**.
+1. Click on **Models + endpoints (1)** under **My assets** in the left pane, then click on **+ Deploy model**, followed by **Deploy Base model (2)**.
 
     ![](./media/image_007-1.png)
-1. Search for **gpt-4o (1)**, select the model (2) and click on **Confirm (3)**.
+1. Search for **GPT-4o (1)**, select the model (2), and click on **Confirm (3)**.
 
     ![](./media/image_008.png)
-1. On the **Deploy model gpt-4o** blade, specify the following configuration options and click on **Deploy (4)**:
+1. On the **Deploy model GPT-4o** blade, specify the following configuration options and click on **Deploy (4)**:
    - **Deployment type**: **Standard** (1)
    - **Model version**: 2024-05-13 (Default) (2)
    - **Tokens per Minute Rate Limit**: **50K** (3)
 
         ![](./media/image_009.png)
-1. Once the model is deployed, click on **Open in playground (1)**.
+1. Once the model is deployed, click **Open in Playground (1)**.
 
     ![](./media/image_020.png)
 1. You can explore the capabilities of Azure OpenAI by using the prompt: `Extract the United States Postal Service (USPS) formatted address from the following email` to identify and extract the postal address from the following email:
@@ -61,7 +61,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     Dear John,
     At BrightEdge Marketing, we believe in the power of innovative marketing strategies to elevate brands and drive business success. Our team of experts is dedicated to helping you achieve your marketing goals through a comprehensive suite of services tailored to your unique needs.
 
-    Please send letters to 123 Marketing Lane, Suite 400 in area 90210 located in Innovation City California.
+    Please send letters to 123 Marketing Lane, Suite 400, in area 90210, Innovation City, California.
 
     Thank you for considering BrightEdge Marketing.
     Best regards,
@@ -78,9 +78,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 In this exercise, we utilized **Azure AI Foundry** to build and deploy AI solutions by accessing the Azure portal and interacting with GPT-4o models. We created an AI project, deployed a base model, and integrated Azure AI Search for enhanced data retrieval. Finally, we tested the model in the playground using a prompt to extract structured data from text. This enhanced our proficiency in deploying and interacting with AI models on the Azure platform.
 
-Successfully completed the below tasks for AI development using **Azure AI Foundry**:  
+You have successfully completed the below tasks for AI development using **Azure AI Foundry**:  
 
 - Created an **AI project** and deployed a **GPT-4o** base model using **Models + Endpoints**.    
 - Utilized **Semantic Kernel** to connect AI models with external APIs and plugins.
 
-## Go to the Next Lab by clicking on the navigation.
+## Go to the next lab by clicking on the navigation.

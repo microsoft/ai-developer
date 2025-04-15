@@ -1,32 +1,32 @@
 # **Exercise 2**: Semantic Kernel Fundamentals
 
-### Estimated Duration: 25 minutes
+### Estimated Duration: 25 Minutes
 
-This hands-on lab provides practical experience with Semantic Kernel and the Azure AI Foundry GPT-4o model. Designed for those new to AI development, the lab guides you step-by-step to build an intelligent chat feature within a starter application. You will use the Semantic Kernel framework to connect with the GPT-4o model, implement a chat API that sends user prompts, and return dynamic AI-generated responses.
+This hands-on lab provides practical experience with Semantic Kernel and the Azure AI Foundry GPT-4o model. Designed for those new to AI development, the lab guides you step-by-step on how to build an intelligent chat feature within a starter application. You will use the Semantic Kernel framework to connect with the GPT-4o model, implement a chat API that sends user prompts, and return dynamic AI-generated responses.
 
 ## Objectives
 In this exercise, you will be performing the following tasks:
-- Task 1: Setup environment variables
+- Task 1: Set up environment variables
 - Task 2: Update the code files and run the app
 
-## Task 1: Setup environment variables
+## Task 1: Set up environment variables
 
 In this task, you will explore different flow types in Azure AI Foundry by setting up Visual Studio Code, retrieving Azure OpenAI credentials, and configuring them in Python and C# environments.
 
-1. Open **Visual Studio code** from the desktop shortcut in the labvm.
+1. Open **Visual Studio Code** using the desktop shortcut in the labvm.
 1. Click on **File (1)** and select **Open Folder (2)**.
 
     ![](./media/image_023.png)
-1. Navigate to `C:\LabFiles` (1) and select **ai-developer (2)** folder and click on **Select Folder**.
+1. Navigate to `C:\LabFiles` (1), select the **ai-developer (2)** folder, and click **Select Folder**.
 
     ![](./media/image_024.png)
-1. If you receive `Do you trust the authors of the files in folder` warning, select the checkbox (1) and click on **Yes, I trust the authors (2)**.
+1. If you receive a `Do you trust the authors of the files in folder` warning, select the **checkbox (1)** and click **Yes, I trust the authors (2)**.
 
     ![](./media/image_025.png)
-1. Navigate to AI Foundry Portal and on **Overview (1)** page select **Azure OpenAI Service (2)** and **Copy (3)** the endpoint and paste it in **Notepad**, as it will be used in the upcoming exercises.
+1. Navigate to the AI Foundry Portal, and on the **Overview (1)** page, select **Azure OpenAI Service (2).** **Copy (3)** the endpoint and paste it into **Notepad** to be used in the upcoming exercises.
 
     ![](./media/image_021.png)
-1. Copy the API key from AI Foundry Portal and paste it in **Notepad**, as it will be used in the upcoming exercises.
+1. Copy the API key from the AI Foundry Portal and paste it into **Notepad** for use in the upcoming exercises.
 
     ![](./media/image_022.png)
 
@@ -175,7 +175,7 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` in the left pane and select **Open in Integrated Terminal**.
 
     ![](./media/image_040.png)
-1. Run the following line of code to trust the dev-certificates neccessary to run the app locally, and then select on **Yes**:
+1. Run the following line of code to trust the dev certificates necessary to run the app locally, and then select **Yes**:
     ```
     dotnet dev-certs https --trust
     ```
@@ -185,7 +185,7 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
     ```
     dotnet run
     ```
-1. Open a new tab in browser and navigate to the link for **blazor-aichat** i.e **https://localhost:7118/**.
+1. Open a new tab in the browser and navigate to the link for **blazor-aichat**, i.e. **https://localhost:7118/**.
 
     >**Note**: If you receive security warnings in the browser, close the browser and follow the link again.
 1. Submit the following prompt and see how the AI responds:
@@ -204,10 +204,10 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 
 In this exercise, we utilized **Semantic Kernel** in combination with the **Azure AI Foundry GPT-4o model** to build an intelligent chat feature within a starter application. We integrated the Semantic Kernel framework with GPT-4o, implemented a chat API to handle user prompts, and returned dynamic AI-generated responses. This enhanced our proficiency in connecting applications to powerful language models using modern AI development frameworks.
 
-Successfully completed the below tasks for AI-driven chat implementation using **Semantic Kernel** and **Azure AI Foundry GPT-4o**:  
+You have successfully completed the below tasks for AI-driven chat implementation using **Semantic Kernel** and **Azure AI Foundry GPT-4o**:  
 
 - Integrated **Semantic Kernel** with **GPT-4o** for intelligent AI interactions.  
 - Configured a **chat API** to process user prompts and generate AI-driven responses.     
 - Extended chatbot functionality by integrating **Azure AI Search** for contextual data retrieval.  
 
-## Go to the Next Lab by clicking on the navigation.
+## Go to the next lab by clicking on the navigation.

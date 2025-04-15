@@ -1,8 +1,8 @@
 # **Exercise 5**: Retrieval-Augmented Generation (RAG)
 
-### Estimated Duration: 40 minutes
+### Estimated Duration: 40 Minutes
 
-This hands-on lab introduces you to the Retrieval-Augmented Generation (RAG) pattern—an AI architecture that enhances response quality by integrating relevant external knowledge into the generative process. Designed for those new to RAG, the lab guides you through how retrieval mechanisms work alongside generative models to deliver more accurate, informed, and context-aware outputs. You will also gain a clear understanding of data privacy and security: your prompts, completions, embeddings, and training data remain fully isolated—they are not shared with other customers, OpenAI, Microsoft, or third parties, nor are they used to improve models automatically.
+This hands-on lab introduces you to the Retrieval-Augmented Generation (RAG) pattern—an AI architecture that enhances response quality by integrating relevant external knowledge into the generative process. Designed for those new to RAG, the lab guides you through how retrieval mechanisms work alongside generative models to deliver more accurate, informed, and context-aware outputs. You will also gain a clear understanding of data privacy and security prompts, completions, embeddings, and training data remaining fully isolated—they are not shared with other customers, OpenAI, Microsoft, or third parties, nor are they used to improve models automatically.
 
 ## Objectives
 In this exercise, you will be performing the following tasks:
@@ -13,42 +13,42 @@ In this exercise, you will be performing the following tasks:
 
 In this task, you will explore different flow types in Azure AI Foundry by deploying a Text Embedding model to enable text representation and similarity analysis.
 
-1. Navigate to [Azure AI Foundry](https://ai.azure.com/) portal.
-1. Click on **Models + endpoints (1)** under **My assets** in the left pane and then click on **+ Deploy model**, followed by **Deploy Base model (2)**.
+1. Navigate to the [Azure AI Foundry](https://ai.azure.com/) portal.
+1. Click on **Models + endpoints (1)** under **My assets** in the left pane, then click on **+ Deploy model**, followed by **Deploy Base model (2)**.
 
     ![](./media/image_007-1.png)
-1. Search for **text-embedding-ada-002**, select the model and click on **Confirm**.
+1. Search for **text-embedding-ada-002**, select the model, and click on **Confirm**.
 
     ![](./media/image_084.png)
 1. Click on **Deploy**.
-1. Navigate back and select **gpt-4o**, and click on **Open in playground**.
+1. Navigate back, select **GPT-4o**, and click on **Open in playground**.
 
     ![](./media/image_020.png)
-1. Click on **Add you data (1)** and select **+ Add a new data source (2)**.
+1. Click on **Add your data (1)** and select **+ Add a new data source (2)**.
 
     ![](./media/image_085.png)
-1. On **Add your data** blade, select **Upload files (1)** as the `Data source` and click on **Upload (2)**, and select **Upload files (3)**.
+1. On the **Add your data** blade, select **Upload files (1)** `Data source` and click **Upload (2).** Select **Upload files (3)**.
 
     ![](./media/image_086.png)
-1. Navigate to `C:\LabFiles\ai-developer\Dotnet\src\BlazorAI\data\` and select **employee_handbook.pdf (1)**, and click on **Open (2)**, followed by **Next**.
+1. Navigate to `C:\LabFiles\ai-developer\Dotnet\src\BlazorAI\data\` and select **employee_handbook.pdf (1).** Click on **Open (2)**, followed by **Next**.
 
     ![](./media/image_087.png)
-1. On the **Index settings** blade, specify the following configuration options and click on **Next**:
-    - **Select Azure AI Search Service**: select **AzureAISearch**
-    - **Vector index**: **employeehandbook**
+1. On the **Index settings** blade, specify the following configuration options and click on **Next (3)**:
+    - **Select Azure AI Search Service**: select **AzureAISearch (1)**
+    - **Vector index**: **employeehandbook (2)**
 
         ![](./media/image_088.png)
-1. CLick on **Next**, and select **Create vector index**.
+1. Click on **Next**, and select **Create vector index**.
     >**Note**: The data injection might take around 10-15 minutes.
-1. Navigate to Azure Portal and search **Ai Search** and Click on it, open the **AI Search** resource located there.
+1. Navigate to the Azure Portal and search **AI Search (1).** Click on it and open the **AI Search (2)** resource located there.
 
     ![](./media/image_089.png)
     
     ![](./media/image_090.png)
-1. On **Overview (1)** page copy the **URL (2)**, and paste it in notepad.
+1. On the **Overview (1)** page, copy the **URL (2)** and paste it into Notepad.
 
     ![](./media/image_091.png)
-1. Navigate to **Keys** under Settings in the left pane, copy the **Primary admin key** from Azure Portal , and paste it in notepad.
+1. Navigate to **Keys (1)** under **Settings** in the left pane, copy the **Primary admin key (2)** from Azure Portal, and paste it into Notepad.
 
     ![](./media/image_092.png)
 
@@ -59,7 +59,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 <details>
 <summary><strong>Python</strong></summary>
 
-1. Navigate to `Python>src` directory and open **.env** file.
+1. Navigate to `Python>src` directory and open **.env (1)** file.
 
     ![](./media/image_026.png)
 1. Paste the **AI search URL** that you copied earlier in the exercise besides `AI_SEARCH_URL` in **.env** file.
@@ -68,10 +68,10 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     ![](./media/image_093.png)
 1. Save the file.
-1. Navigate to `Python>src>plugins` directory and create a new file named **ContosoSearchPlugin.py**.
+1. Navigate to `Python>src>plugins` directory and create a new file named **ContosoSearchPlugin.py (1)**.
 
     ![](./media/image_094.png)
-1. Add the following code in the file:
+1. Add the following code to the file:
     ```
     import json
     import os
@@ -183,7 +183,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
         print(result)
     ```
 1. Save the file.
-1. Navigate to `Python>src` directory and open **chat.py** file.
+1. Navigate to `Python>src` directory and open **chat.py (1)** file.
 
     ![](./media/image_030.png)
 1. Add the following code in the `#Import Modules` section of the file.
@@ -221,7 +221,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-05.py
     ```
 1. Save the file.
-1. Right click on `Python>src` in the left pane and select **Open in Integrated Terminal**.
+1. Right click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
     ![](./media/image_035.png)
 1. Use the following command to run the app:
@@ -254,19 +254,19 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 <details>
 <summary><strong>C Sharp(C#)</strong></summary>
 
-1. Navigate to `Dotnet>src>BlazorAI` directory and open **appsettings.json** file.
+1. Navigate to `Dotnet>src>BlazorAI` directory and open **appsettings.json (1)** file.
 
     ![](./media/image_028.png)
 1. Paste the **AI search URL** that you copied earlier in the exercise besides `AI_SEARCH_URL` in **appsettings.json** file..
     >Note:- Ensure that every value in the **appsettings.json** file is enclosed in **double quotes (")**.
-1. Paste the **Primary admin key** that you copied earlier in the exercise besides `AI_SEARCH_KEY`.
+1. Paste the **Primary admin key (1)** that you copied earlier in the exercise besides `AI_SEARCH_KEY` **(2)**.
 
     ![](./media/image_101.png)
 1. Save the file.
 1. Navigate to `Dotnet>src>BlazorAI>Plugins` directory and create a new file named **ContosoSearchPlugin.cs (1)**.
 
     ![](./media/image_102.png)
-1. Add the following code in the file:
+1. Add the following code to the file:
     ```
     using System.ComponentModel;
     using System.Text.Json.Serialization;
@@ -303,7 +303,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
             }
 
             [KernelFunction("SearchHandbook")]
-            [Description("Searches the Contoso employee handbook for information about company policies, benefits, procedures or other employee-related questions. Use this when the user asks about company policies, employee benefits, work procedures, or any information that might be in an employee handbook.")]
+            [Description("Searches the Contoso employee handbook for information about company policies, benefits, procedures, or other employee-related questions. Use this when the user asks about company policies, employee benefits, work procedures, or any information that might be in an employee handbook.")]
             public async Task<string> Search(
                 [Description("The user's question about company policies, benefits, procedures or other handbook-related information")] string query)
             {
@@ -366,7 +366,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     }
     ```
 1. Save the file.
-1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs** file.
+1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
 
     ![](./media/image_038.png)
 1. Add the following code in the `// Import Models` section of the file.
@@ -421,14 +421,14 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-05.cs
     ```
 1. Save the file.
-1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` in the left pane and select **Open in Integrated Terminal**.
+1. Right-click on `Dotnet>src>Aspire>Aspire.AppHost` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
     ![](./media/image_040.png)
 1. Use the following command to run the app:
     ```
     dotnet run
     ```
-1. Open a new tab in browser and navigate to the link for **blazor-aichat** i.e **https://localhost:7118/**.
+1. Open a new tab in the browser and navigate to the link for **blazor-aichat**, i.e. **https://localhost:7118/**.
 1. Submit the following prompt and see how the AI responds:
     ```
     What are the steps for the Contoso Performance Reviews?
@@ -452,10 +452,10 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 In this exercise, we explored the **Retrieval-Augmented Generation (RAG) pattern** to enhance AI responses by integrating external knowledge into the generative process. We examined how retrieval mechanisms work alongside generative models to produce accurate, context-aware outputs. This enhanced our proficiency in building secure, knowledge-enriched AI solutions using the RAG architecture.
 
-Successfully completed the below tasks for **Retrieval-Augmented Generation (RAG) implementation**:  
+You have successfully completed the below tasks for **Retrieval-Augmented Generation (RAG) implementation**:  
 
 - Integrated the **RAG pattern** to enhance AI-generated responses with external knowledge retrieval.  
 - Utilized **Azure AI Search** to fetch relevant contextual data for more accurate outputs.  
 - Configured **Semantic Kernel** to orchestrate retrieval and generative workflows seamlessly.  
 
-## Go to the Next Lab by clicking on the navigation.
+## Go to the next lab by clicking on the navigation.
