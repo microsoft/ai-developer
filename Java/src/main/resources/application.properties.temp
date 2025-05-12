@@ -1,0 +1,20 @@
+spring.application.name=SprintAI
+spring.ai.azure.openai.api-key=
+spring.ai.azure.openai.endpoint=
+spring.ai.azure.openai.chat.deployment-name=gpt-4
+
+#Configuration for GeoCode and location setting
+client.geo.url=
+client.geo.key=
+
+#Configuration for weather API
+client.weather.url=
+
+#Configuration for Azure Search
+client.azure.search.endpoint=
+client.azure.search.index=
+client.azure.search.adminkey=
+client.azure.search.embedding.deployment=
+
+
+
