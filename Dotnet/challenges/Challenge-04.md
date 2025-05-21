@@ -21,13 +21,18 @@ This challenge will introduce you to how to import OpenAPI API as Semantic Kerne
 
         :bulb: [Adding the OpenAPI plugin](https://learn.microsoft.com/en-us/semantic-kernel/concepts/plugins/adding-openapi-plugins?pivots=programming-language-csharp#adding-the-openapi-plugin)
 
-        :exclamation: We have created the API for you to use in this challenge. You can find the OpenAPI spec by going to the swagger webpage from Aspire or starting the API from your local machine.
+        :exclamation: We have created the API for you to use in this challenge. You need to construct the OpenAPI spec URL using environment variables defined in Program.cs.
 
-        1. Open Aspire and navigate to the Swagger page.
-        ![Aspire Dashboard](./Resources/images/aspire-api.png)
-
-        1. Copy the OpenAPI spec url from the Swagger page.
-        ![Swagger Page](./Resources/images/openapispecurl.png)
+        1. In your application, the OpenAPI spec URL should be constructed by combining two environment variables:
+           - `WORKITEMS_BASE_URL`: The base URL of the WorkItems API
+           - `OPEN_API_DOC_ROUTE`: The path to the OpenAPI document (set to "/openapi/v1.json")
+        
+        2. Construct the complete URL by using the Configuration object to access these environment variables and the nested Uri constructor to properly handle trailing slashes:
+           ```csharp
+           var openApiUrl = new Uri(new Uri(Configuration["WORKITEMS_BASE_URL"]), Configuration["OPEN_API_DOC_ROUTE"]);
+           ```
+           
+        3. Use this URL when importing the plugin into Semantic Kernel.
 
         :exclamation: Semantic Kernel SDK for OpenAPI's - your plugin name must be 64 characters or less.
 

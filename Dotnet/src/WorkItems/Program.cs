@@ -1,5 +1,8 @@
-using Microsoft.OpenApi.Models;
+using Scalar.AspNetCore;
 using System.Globalization;
+using Microsoft.AspNetCore.OpenApi;
+using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi.Any;
 
 namespace WorkItems
 {
@@ -69,17 +72,25 @@ namespace WorkItems
                 });
             });
 
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+            // Configure OpenAPI and endpoints
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddOpenApi();
 
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
-                app.UseSwagger();
-                app.UseSwaggerUI();
+                app.MapOpenApi();
+                app.MapScalarApiReference(options =>
+                {
+                    options
+                        .WithTitle("Work Items API")
+                        .WithTheme(ScalarTheme.Alternate)
+                        .WithDarkMode(true)
+                        .WithLayout(ScalarLayout.Classic)
+                        .WithClientButton(false);
+                });
             }
 
             app.UseCors("AllowAll");
@@ -91,9 +102,9 @@ namespace WorkItems
                     Summary = "Gets all work items",
                     Description = "Retrieves all work items including Bug, Epic, Feature, Task, Test Case, Test Plan, Test Suite, or User Story for all users.",
                     Tags = new List<OpenApiTag> { new() { Name = "WorkItems" } },
-                    Responses = new OpenApiResponses
+                    Responses =
                     {
-                        ["200"] = new OpenApiResponse { Description = "A list of work items" }
+                        ["200"] = new() { Description = "A list of work items" }
                     }
                 });
 
@@ -104,9 +115,9 @@ namespace WorkItems
                     Summary = "Gets current user's work items",
                     Description = "Retrieves work items assigned to the current user including Bug, Epic, Feature, Task, Test Case, Test Plan, Test Suite, or User Story.",
                     Tags = new List<OpenApiTag> { new() { Name = "WorkItems" } },
-                    Responses = new OpenApiResponses
+                    Responses =
                     {
-                        ["200"] = new OpenApiResponse { Description = "A list of work items assigned to the current user" }
+                        ["200"] = new() { Description = "A list of work items assigned to the current user" }
                     }
                 });
 
@@ -121,20 +132,21 @@ namespace WorkItems
                 Summary = "Gets a work item by ID",
                 Description = "Retrieves a specific work item by its ID.",
                 Tags = new List<OpenApiTag> { new() { Name = "WorkItems" } },
-                Parameters = new List<OpenApiParameter>
+                Parameters =
                 {
-                    new() {
+                    new()
+                    {
                         Name = "id",
                         In = ParameterLocation.Path,
                         Required = true,
                         Description = "The ID of the work item",
-                        Schema = new OpenApiSchema { Type = "integer" }
+                        Schema = new() { Type = "integer" }
                     }
                 },
-                Responses = new OpenApiResponses
+                Responses =
                 {
-                    ["200"] = new OpenApiResponse { Description = "The requested work item" },
-                    ["404"] = new OpenApiResponse { Description = "Work item not found" }
+                    ["200"] = new() { Description = "The requested work item" },
+                    ["404"] = new() { Description = "Work item not found" }
                 }
             });
 
@@ -157,21 +169,21 @@ namespace WorkItems
                 Summary = "Creates a new work item",
                 Description = "Creates a new work item with the provided details.",
                 Tags = new List<OpenApiTag> { new() { Name = "WorkItems" } },
-                RequestBody = new OpenApiRequestBody
+                RequestBody = new()
                 {
                     Description = "The work item to create",
                     Required = true,
-                    Content = new Dictionary<string, OpenApiMediaType>
+                    Content =
                     {
-                        ["application/json"] = new OpenApiMediaType
+                        ["application/json"] = new()
                         {
-                            Schema = new OpenApiSchema { Reference = new OpenApiReference { Id = "WorkItemsDTO", Type = ReferenceType.Schema } }
+                            Schema = new() { Reference = new() { Id = "WorkItemsDTO", Type = ReferenceType.Schema } }
                         }
                     }
                 },
-                Responses = new OpenApiResponses
+                Responses =
                 {
-                    ["201"] = new OpenApiResponse { Description = "The created work item" }
+                    ["201"] = new() { Description = "The created work item" }
                 }
             });
 
@@ -220,32 +232,33 @@ namespace WorkItems
                 Summary = "Updates an existing work item",
                 Description = "Updates the details of an existing work item by its ID. Only the provided fields will be updated.",
                 Tags = new List<OpenApiTag> { new() { Name = "WorkItems" } },
-                Parameters = new List<OpenApiParameter>
+                Parameters =
                 {
-                    new() {
+                    new()
+                    {
                         Name = "id",
                         In = ParameterLocation.Path,
                         Required = true,
                         Description = "The ID of the work item to update",
-                        Schema = new OpenApiSchema { Type = "integer" }
+                        Schema = new() { Type = "integer" }
                     }
                 },
-                RequestBody = new OpenApiRequestBody
+                RequestBody = new()
                 {
                     Description = "The updated work item details",
                     Required = true,
-                    Content = new Dictionary<string, OpenApiMediaType>
+                    Content =
                     {
-                        ["application/json"] = new OpenApiMediaType
+                        ["application/json"] = new()
                         {
-                            Schema = new OpenApiSchema { Reference = new OpenApiReference { Id = "WorkItemsDTO", Type = ReferenceType.Schema } }
+                            Schema = new() { Reference = new() { Id = "WorkItemsDTO", Type = ReferenceType.Schema } }
                         }
                     }
                 },
-                Responses = new OpenApiResponses
+                Responses =
                 {
-                    ["200"] = new OpenApiResponse { Description = "The updated work item" },
-                    ["404"] = new OpenApiResponse { Description = "Work item not found" }
+                    ["200"] = new() { Description = "The updated work item" },
+                    ["404"] = new() { Description = "Work item not found" }
                 }
             });
 
@@ -266,20 +279,21 @@ namespace WorkItems
                 Summary = "Deletes a work item",
                 Description = "Deletes a specific work item by its ID.",
                 Tags = new List<OpenApiTag> { new() { Name = "WorkItems" } },
-                Parameters = new List<OpenApiParameter>
+                Parameters =
                 {
-                    new() {
+                    new()
+                    {
                         Name = "id",
                         In = ParameterLocation.Path,
                         Required = true,
                         Description = "The ID of the work item to delete",
-                        Schema = new OpenApiSchema { Type = "integer" }
+                        Schema = new() { Type = "integer" }
                     }
                 },
-                Responses = new OpenApiResponses
+                Responses =
                 {
-                    ["204"] = new OpenApiResponse { Description = "Work item deleted" },
-                    ["404"] = new OpenApiResponse { Description = "Work item not found" }
+                    ["204"] = new() { Description = "Work item deleted" },
+                    ["404"] = new() { Description = "Work item not found" }
                 }
             });
 
@@ -290,9 +304,9 @@ namespace WorkItems
                     Summary = "Gets all work item types",
                     Description = "Retrieves a list of distinct work item types.",
                     Tags = new List<OpenApiTag> { new() { Name = "WorkItems" } },
-                    Responses = new OpenApiResponses
+                    Responses =
                     {
-                        ["200"] = new OpenApiResponse { Description = "A list of work item types" }
+                        ["200"] = new() { Description = "A list of work item types" }
                     }
                 });
 
@@ -303,9 +317,9 @@ namespace WorkItems
                     Summary = "Gets all work item states",
                     Description = "Retrieves a list of distinct work item states.",
                     Tags = new List<OpenApiTag> { new() { Name = "WorkItems" } },
-                    Responses = new OpenApiResponses
+                    Responses =
                     {
-                        ["200"] = new OpenApiResponse { Description = "A list of work item states" }
+                        ["200"] = new() { Description = "A list of work item states" }
                     }
                 });
 
