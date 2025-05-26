@@ -13,46 +13,76 @@ In this exercise, you will be performing the following tasks:
 
 ## Task 1: Set up Azure AI Foundry
 
-In this task, you will explore different flow types in Azure AI Foundry by creating a project, deploying the GPT-4o model, and testing its capabilities in the playground.
+In this task, you will explore different flow types in Azure AI Foundry by creating a AI hub through Azure portal, then deploying the GPT-4o model, and testing its capabilities in the playground from the Azure AI Foundry.
 
-1. Navigate to the Azure AI Foundry (https://ai.azure.com/) portal and log in using the below Azure credentials:
+1. On the **Azure portal** search bar, search for **AI Foundry (1)** and then select **Azure AI Foundry (2)** from the services.
 
-   - Username : <inject key="AzureAdUserEmail"></inject>
-   - Password : <inject key="AzureAdUserPassword"></inject>
+    ![](./media/sk2.png)
 
-1. Click on **Create Project (1)**.
+1. Expnad **Use with AI Foundry (1)**, select **AI Hubs (2)**, click on the **Create (3)** drop down and then select **Hub (4)**.
 
-    ![](./media/image_001.png)
-1. Provide **ai-foundry-project-<inject key="Deployment ID" enableCopy="false"></inject> (1)** as the Project name and click on **Customize (2)**.
+    ![](./media/sk6.png)
 
-    ![](./media/image_002.png)
-1. On the **Create a Project** blade, specify the following configuration options and click on **Next (4)**:
-   - **Resource group**: **ai-foundry-<inject key="Deployment ID" enableCopy="false"></inject>** (1)
-   - **Location**: **<inject key="Region" enableCopy="false"></inject>** (2)
-   - **Connect Azure AI Search**: click on **Create new AI Search (3)** and enter **ai-search-<inject key="Deployment ID" enableCopy="false"></inject> (1)** and click on **Next (2)**
+1. On the **Azure AI hub** page, provide the following details and then click on **Review+create (5)**:
 
-        ![](./media/image_003.png)
+    - **Subscription**: Leave the default one **(1)**
+    - Resource group: Select **ai-foundry-<inject key="Deployment ID" enableCopy="false"></inject> (2)**
+    - Region: **<inject key="Region" enableCopy="false"></inject> (3)**
+    - Name: Enter **ai-foundry-hub-<inject key="Deployment ID" enableCopy="false"></inject> (4)**
 
-        ![](./media/image_004.png)
-1. Click on **Create (1)**.
+      ![](./media/sk4.png)
 
-    ![](./media/image_005.png)
-1. Click on **Models + endpoints (1)** under **My assets** in the left pane, then click on **+ Deploy model**, followed by **Deploy Base model (2)**.
+1. Once the Validation passed, click on **Create**.
 
-    ![](./media/image_007-1.png)
-1. Search for **GPT-4o (1)**, select the model (2), and click on **Confirm (3)**.
+    ![](./media/sk5.png)
+
+1. Once the deployment is completed, click on **Go to resource**.
+
+    ![](./media/sk7.png)
+
+1. Click on **Launch Azure AI Foundry**.
+
+    ![](./media/sk8.png)
+
+1. Select **Model + endpoints (1)**, then then click on **+ Deploy model (2)**, followed by **Deploy Base model (3)**.  
+
+    ![](./media/sk9.png)
+
+1. Search for **gpt-4o (1)**, select the **gpt-4o** model **(2)**, and click on **Confirm (3)**.
 
     ![](./media/image_008.png)
-1. On the **Deploy model GPT-4o** blade, specify the following configuration options and click on **Deploy (4)**:
-   - **Deployment type**: **Standard** (1)
-   - **Model version**: 2024-05-13 (Default) (2)
-   - **Tokens per Minute Rate Limit**: **50K** (3)
 
-        ![](./media/image_009.png)
-1. Once the model is deployed, click **Open in Playground (1)**.
+1. On the **Deploy model gpt-4o** blade, specify the following configuration options and click on **Deploy (4)**:
 
-    ![](./media/image_020.png)
-1. You can explore the capabilities of Azure OpenAI by using the prompt: `Extract the United States Postal Service (USPS) formatted address from the following email` to identify and extract the postal address from the following email:
+    - **Deployment type**: **Standard** (1)
+    - **Model version**: 2024-05-13 (Default) (2)
+    - **Tokens per Minute Rate Limit**: **50K** (3)
+
+      ![](./media/image_009.png) 
+
+1. Click on **Azure AI Foundry**.
+
+    ![](./media/sk10.png)
+
+1. Select the **aifoundryhubxxxxxx** resource.
+
+    ![](./media/sk11.png)
+
+     >**Note**: **xxxxx** refers to randomly generated suffix.
+
+1. Navigate to **Model + endpoints (1)**, then select **gpt-4o (2)** model and the click on **Open in Playground (3)**.
+
+    ![](./media/sk12.png)
+
+1. Replace the existing text with `Extract the United States Postal Service (USPS) formatted address from the following email` **(1)** then click on **Apply changes (2)**. Using this you can explore the capabilities of Azure OpenAI.
+
+    ![](./media/sk13.png)
+
+1. Click on **Continue**.
+
+    ![](./media/sk14.png)
+
+1. Provide the below mail in the chat **(1)** then click on **Send (2)** to identify and extract the postal address from the following email:
     ```
     Subject: Elevate Your Brand with Our Comprehensive Marketing Solutions!
     From: BrightEdge Marketing
@@ -70,9 +100,10 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
 
     ![](./media/image_018.png)
+    
 1. You will receive a response similar to the one shown below:
 
-    ![](./media/image_019.png)
+    ![](./media/sk15.png)
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
  
@@ -80,7 +111,32 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
-   <validation step="a3e77878-3ce2-4d69-b4e6-c88d4a0f45ec" />   
+   <validation step="a3e77878-3ce2-4d69-b4e6-c88d4a0f45ec" />  
+
+## Task 2: Create Azure AI Search
+
+1. Navigate back to the **Azure portal**.
+
+1. On the search bar, search for **AI Search (1)** then select **AI Search (2)** from the services.
+
+    ![](./media/sk16.png)
+
+1. Select **AI Search (1)** then click on **+ Create (2)**.
+
+    ![](./media/sk17.png)
+
+1. On the **Create a search service** page, provide the following details and then click on **Review+create (5)**:
+
+    - Subscription: Leave the default one **(1)**
+    - Resource group: Select **ai-foundry-<inject key="Deployment ID" enableCopy="false"></inject> (2)**
+    - Service name: Enter **ai-search-<inject key="Deployment ID" enableCopy="false"></inject> (3)**
+    - Region: **<inject key="Region" enableCopy="false"></inject> (4)** 
+
+      ![](./media/sk18.png)
+
+1. Click on **Create**.
+
+    ![](./media/sk19.png)
 
 ## Review
 
