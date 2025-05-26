@@ -74,6 +74,14 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     ![](./media/image_019.png)
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+ 
+- Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+- If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+- If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+   <validation step="a3e77878-3ce2-4d69-b4e6-c88d4a0f45ec" />   
+
 ## Review
 
 In this exercise, we utilized **Azure AI Foundry** to build and deploy AI solutions by accessing the Azure portal and interacting with GPT-4o models. We created an AI project, deployed a base model, and integrated Azure AI Search for enhanced data retrieval. Finally, we tested the model in the playground using a prompt to extract structured data from text. This enhanced our proficiency in deploying and interacting with AI models on the Azure platform.
