@@ -60,7 +60,7 @@ The lab also covers **plugins**, such as **Time & Weather utilities** for real-t
  
 Once you're ready to dive in, your virtual machine and lab guide will be right at your fingertips within your web browser.
 
-   ![](./media/labguide-1.png)
+   ![](./media/gsk1.png)
 
 ## Virtual Machine & Lab Guide
  
@@ -70,25 +70,25 @@ Your virtual machine is your workhorse throughout the workshop. The lab guide is
  
 To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
  
-   ![Explore Lab Resources](./media/env-1.png)
+   ![Explore Lab Resources](./media/gsk2.png)
  
 ## Utilizing the Split Window Feature
  
 For convenience, you can open the lab guide in a separate window by selecting the **Split Window (1)** button from the top right corner.
  
- ![Use the Split Window Feature](./media/spl.png)
+ ![Use the Split Window Feature](./media/gsk3.png)
  
 ## Managing Your Virtual Machine
  
 **Start, stop, or restart (2)** your virtual machine from the **Resources (1)** tab. Your experience is in your hands!
  
-![Manage Your Virtual Machine](./media/res.png)
+![Manage Your Virtual Machine](./media/gsk4.png)
 
 ## Lab Validation
 
 1. After completing the task, hit the **Validate** button under the Validation tab integrated into your lab guide. You can proceed to the next task if you receive a success message. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 
-   ![Inline Validation](./media/inline-validation.png)
+   ![Inline Validation](./media/gdev5.png)
 
 1. If you need any assistance, please contact us at **cloudlabs-support@spektrasystems.com**.
 
@@ -157,6 +157,6 @@ Learner Support Contacts:
 
 Now, click **Next** from the lower right corner to move on to the next page.
 
-![Launch Azure Portal](./media/lc-image(3).png)
+![Launch Azure Portal](./media/gsk5.png)
 
 ## Happy Learning!!
