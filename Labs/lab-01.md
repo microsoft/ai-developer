@@ -10,6 +10,7 @@ You will explore Azure AI Foundry to create and manage AI projects, use Models +
 
 In this exercise, you will be performing the following tasks:
 - Task 1: Set up Azure AI Foundry
+- Task 2: Create Azure AI Search
 
 ## Task 1: Set up Azure AI Foundry
 
@@ -114,6 +115,8 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
    <validation step="a3e77878-3ce2-4d69-b4e6-c88d4a0f45ec" />  
 
 ## Task 2: Create Azure AI Search
+
+In this task you will create a Azure AI Search resource.
 
 1. Navigate back to the **Azure portal**.
 
