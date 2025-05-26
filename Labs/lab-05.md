@@ -1,4 +1,4 @@
-# **Exercise 5**: Retrieval-Augmented Generation (RAG)
+# Exercise 5: Retrieval-Augmented Generation (RAG)
 
 ### Estimated Duration: 40 Minutes
 
@@ -17,34 +17,68 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 1. Click on **Models + endpoints (1)** under **My assets** in the left pane, then click on **+ Deploy model**, followed by **Deploy Base model (2)**.
 
     ![](./media/image_007-1.png)
-1. Search for **text-embedding-ada-002**, select the model, and click on **Confirm**.
+1. Search for **text-embedding-ada-002**, select the model **(1)**, and click on **Confirm (2)**.
 
     ![](./media/image_084.png)
-1. Click on **Deploy**.
-1. Navigate back, select **GPT-4o**, and click on **Open in playground**.
 
-    ![](./media/image_020.png)
+1. Click on **Deploy**.
+
+1. Navigate back to **Models+endpoints (1)**, select **GPT-4o (2)**, and click on **Open in playground (3)**.
+
+    ![](./media/sk34.png)
+
 1. Click on **Add your data (1)** and select **+ Add a new data source (2)**.
 
     ![](./media/image_085.png)
-1. On the **Add your data** blade, select **Upload files (1)** `Data source` and click **Upload (2).** Select **Upload files (3)**.
 
-    ![](./media/image_086.png)
-1. Navigate to `C:\LabFiles\ai-developer\Dotnet\src\BlazorAI\data\` and select **employee_handbook.pdf (1).** Click on **Open (2)**, followed by **Next**.
+1. On the **Select or add data source**blade, provide the following details and then click on **Next (6)**:
+
+    - Select **Upload files (1)** for `Data source`
+    - Subscription: Leave the default one **(2)**
+    - Select Azure blob Azure Storage blob resouce: Select the storage account that starts with **aifoundryhubxxxxxx (3)**
+    - Select Azure AI Search resource: Select **ai-search-<inject key="Deployment ID" enableCopy="false"></inject> (4)** 
+    - Enter the index name: Enter **employeehandbook (5)** 
+ 
+      ![](./media/sk35.png)
+
+1. Click on **Browse for files**.
+
+    ![](./media/sk36.png)
+  
+1. Navigate to `C:\LabFiles\ai-developer\Dotnet\src\BlazorAI\data\` and select **employee_handbook.pdf (1).** Click on **Open (2)**.
 
     ![](./media/image_087.png)
-1. On the **Index settings** blade, specify the following configuration options and click on **Next (3)**:
-    - **Select Azure AI Search Service**: select **AzureAISearch (1)**
-    - **Vector index**: **employeehandbook (2)**
 
-        ![](./media/image_088.png)
-1. Click on **Next**, and select **Create vector index**.
-    >**Note**: The data injection might take around 10-15 minutes.
-1. Navigate to the Azure Portal and search **AI Search (1).** Click on it and open the **AI Search (2)** resource located there.
+1. Click on **Upload files**.
+
+    ![](./media/sk37.png)
+
+1. Click on **Next**.
+
+1. On the **Data Management** page, click on **Next**.
+
+    ![](./media/sk38.png)
+
+1. On the **Data Connection** blade, select **API Key (1)** for authenticatio and then click on **Next (2)**.    
+
+    ![](./media/sk39.png)
+
+1. Review the configuration and then click on **Save and close**.
+
+    ![](./media/sk40.png)
+
+1. The data injection might take around 5 minutes.
+
+    ![](./media/sk41.png)
+
+1. Navigate to the **Azure Portal** and search **AI Search (1).** Click on it and open the **AI Search (2)** resource located there.
 
     ![](./media/image_089.png)
+
+1. Select **ai-search-<inject key="Deployment ID" enableCopy="false"></inject>**.    
     
     ![](./media/image_090.png)
+
 1. On the **Overview (1)** page, copy the **URL (2)** and paste it into Notepad.
 
     ![](./media/image_091.png)
@@ -63,10 +97,13 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     ![](./media/image_026.png)
 1. Paste the **AI search URL** that you copied earlier in the exercise besides `AI_SEARCH_URL` in **.env** file.
+
     >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
+
 1. Paste the **Primary admin key** that you copied earlier in the exercise besides `AI_SEARCH_KEY`.
 
-    ![](./media/image_093.png)
+    ![](./media/sk42.png)
+
 1. Save the file.
 1. Navigate to `Python>src>plugins` directory and create a new file named **ContosoSearchPlugin.py (1)**.
 
@@ -206,6 +243,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
 
     ![](./media/image_096.png)
+
+     >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
+
 1. Add the following code in the `# Challenge 05 - Add Search Plugin` section of the file.
     ```
     kernel.add_plugin(
@@ -216,6 +256,8 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
 
     ![](./media/image_097.png)
+
+     >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.    
 1. In case you encounter any indentation error, use the code from the following URL:
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-05.py
@@ -387,6 +429,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
 
     ![](./media/image_104.png)
+
+     >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
+
 1. Add the following code in the `// Challenge 05 - Register Search Index` section of the file.
     ```
     kernelBuilder.Services.AddSingleton<SearchIndexClient>(sp => 
@@ -409,6 +454,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
 
     ![](./media/image_105.png)
+
+     >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
+
 1. Add the following code in the `// Challenge 05 - Add Search Plugin` section of the file.
     ```
     var searchPlugin = new ContosoSearchPlugin(Configuration);
@@ -446,6 +494,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ![](./media/image_108.png)
 
     ![](./media/image_109.png)
+
+1. Once you receive the response, navigate back to the Visual studio code terminal and then press **Ctrl+C** to stop the build process.
+
 </details>
 
 ## Review
