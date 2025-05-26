@@ -57,8 +57,8 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
-   <validation step="aba3f1c2-bf55-4ca3-baf6-fcaa280552fa" />
-   
+<validation step="aba3f1c2-bf55-4ca3-baf6-fcaa280552fa" />
+  
 
 ## Task 2: Create a Semantic Search Plugin to query the AI Search Index
 

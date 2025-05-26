@@ -112,7 +112,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
     await kernel.ImportPluginFromOpenApiAsync(
         pluginName: "todo",
-        url: new Url("http://localhost:5115/swagger/v1/swagger.json"),
+        uri: new Uri("http://localhost:5115/swagger/v1/swagger.json"),
         executionParameters: new OpenApiFunctionExecutionParameters()
         {
             EnablePayloadNamespacing = true
