@@ -1,4 +1,4 @@
-# **Exercise 2**: Semantic Kernel Fundamentals
+# Exercise 2: Semantic Kernel Fundamentals
 
 ### Estimated Duration: 25 Minutes
 
@@ -14,21 +14,25 @@ In this exercise, you will be performing the following tasks:
 In this task, you will explore different flow types in Azure AI Foundry by setting up Visual Studio Code, retrieving Azure OpenAI credentials, and configuring them in Python and C# environments.
 
 1. Open **Visual Studio Code** using the desktop shortcut in the labvm.
+
 1. Click on **File (1)** and select **Open Folder (2)**.
 
     ![](./media/image_023.png)
-1. Navigate to `C:\LabFiles` (1), select the **ai-developer (2)** folder, and click **Select Folder**.
+1. Navigate to `C:\LabFiles` (1), select the **ai-developer (2)** folder, and click **Select Folder (3)**.
 
-    ![](./media/image_024.png)
+    ![](./media/sk20.png)
+
 1. If you receive a `Do you trust the authors of the files in folder` warning, select the **checkbox (1)** and click **Yes, I trust the authors (2)**.
 
     ![](./media/image_025.png)
-1. Navigate to the AI Foundry Portal, and on the **Overview (1)** page, select **Azure OpenAI Service (2).** **Copy (3)** the endpoint and paste it into **Notepad** to be used in the upcoming exercises.
 
-    ![](./media/image_021.png)
-1. Copy the API key from the AI Foundry Portal and paste it into **Notepad** for use in the upcoming exercises.
+1. Navigate to the **AI Foundry** Portal, go to the **Home (1)** page, select **Azure OpenAI (2)**. Then **Copy (3)** the endpoint and paste it into **Notepad** to be used in the upcoming exercises.
 
-    ![](./media/image_022.png)
+    ![](./media/sk21.png)
+
+1. Copy the **API key** from the AI Foundry Portal and paste it into **Notepad** for use in the upcoming exercises.
+
+    ![](./media/sk22.png)
 
 <details>
 <summary><strong>Python</strong></summary>
@@ -36,29 +40,33 @@ In this task, you will explore different flow types in Azure AI Foundry by setti
 1. Navigate to `Python>src` directory and open **.env** (1) file.
 
     ![](./media/image_026.png)
+
 1. Paste **Azure OpenAI Service endpoint** copied earlier in the exercise besides `AZURE_OPENAI_ENDPOINT`.
     >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
 1. Paste **API key** copied earlier in the exercise besides `AZURE_OPENAI_API_KEY`.
 
     ![](./media/image_027.png)
-1. Save the file.
+
+1. Use **Ctrl+S** to save the file.
 
 </details>
 
 <details>
 <summary><strong>C Sharp(C#)</strong></summary>
 
-1. Navigate to `Dotnet>src>BlazorAI` directory and open **appsettings.json (1)** file.
+1. Navigate to `Dotnet>src>BlazorAI` directory and open **appsettings.json** file.
 
-    ![](./media/image_028.png)
+    ![](./media/sk23.png)
+
 1. Paste **Azure OpenAI Service endpoint** copied earlier in the exercise besides `AOI_ENDPOINT`.
     >**Note**:- Ensure that every value in the **appsettings.json** file is enclosed in **double quotes (")**.
 
     >**Note**:- Make sure to remove the "/" from the endpoint.
 1. Paste **API key** copied earlier in the exercise besides `AOI_API_KEY`.
 
-    ![](./media/image_029.png)
-1. Save the file.
+    ![](./media/sk25.png)
+
+1. Use **Ctrl+S** to save the file.
 
 </details>
 
@@ -69,9 +77,10 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 <details>
 <summary><strong>Python</strong></summary>
 
-1. Navigate to `Python>src` directory and open **chat.py** file.
+1. Navigate to `Python>src` directory and open **chat.py (1)** file.
 
     ![](./media/image_030.png)
+
 1. Add the following code in the `#Import Modules` (1) section of the file.
     ```
     from semantic_kernel.connectors.ai.chat_completion_client_base import ChatCompletionClientBase
@@ -171,8 +180,10 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-02.cs
     ```
-1. Save the file.
-1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` in the left pane and select **Open in Integrated Terminal**.
+
+1. Use **Ctrl+S** to save the file.
+
+1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
     ![](./media/image_040.png)
 1. Run the following line of code to trust the dev certificates necessary to run the app locally, and then select **Yes**:
@@ -198,6 +209,9 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 1. You will receive a response similar to the one shown below:
 
     ![](./media/image_042.png)
+
+1. Once you receive the response, navigate back to the Visual studio code terminal and then press **Ctrl+C** to stop the build process.
+
 </details>
 
 ## Review

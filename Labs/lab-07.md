@@ -17,13 +17,18 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 1. Click on **Models + endpoints (1)** under **My assets** in the left pane, then click on **+ Deploy model**, followed by **Deploy base model (2)**.
 
     ![](./media/image_007-1.png)
-1. Search for **dall-e-3 (1)**, select the model (2), and click on **Confirm (3)**.
+
+1. Search for **dall-e-3 (1)**, select the model **(2)**, and click on **Confirm (3)**.
 
     ![](./media/image_110.png)
+
 1. Click on **Deploy**.
+
+    ![](./media/sk52.png)
+
 1. On the **dall-e-3** page, copy the **Target URI (1)** and **Key (2)** and paste them into Notepad.
 
-    ![](./media/image_111.png)
+    ![](./media/sk54.png)
 
 <details>
 <summary><strong>Python</strong></summary>
@@ -35,7 +40,8 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
     >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
 1. Paste the **API key (1)** that you copied earlier in the exercise besides `AZURE_TEXT_TO_IMAGE_API_KEY` (2).
 
-    ![](./media/image_112.png)
+    ![](./media/sk58.png)
+
 1. Save the file.
 
 </details>
@@ -175,7 +181,10 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     kernel.add_service(image_generation_service)
     ```
 
-    ![](./media/image_115.png)
+    ![](./media/sk57.png)
+
+     >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
+
 1. Add the following code in the `# Placeholder for Text To Image plugin` section of the file.
     ```
     image_plugin = ImageGenerationPlugin()
@@ -188,6 +197,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
 
     ![](./media/image_116.png)
+
+     >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
+
 1. In case you encounter any indentation error, use the code from the following URL:
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-07.py
@@ -365,6 +377,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. You will receive a response similar to the one shown below:
 
     ![](./media/image_121.png)
+
+1. Once you receive the response, navigate back to the Visual studio code terminal and then press **Ctrl+C** to stop the build process.
+
 </details>
 
 ## Review

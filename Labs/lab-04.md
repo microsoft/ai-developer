@@ -1,4 +1,4 @@
-# **Exercise 4**: Import Plugin using OpenAPI
+# Exercise 4: Import Plugin using OpenAPI
 
 ### Estimated Duration: 25 Minutes
 
@@ -57,6 +57,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
 
     ![](./media/image_077.png)
+
+     >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
+
 1. In case you encounter any indentation error, use the code from the following URL:
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-04.py
@@ -79,7 +82,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
 1. You will receive a response similar to the one shown below:
 
-    ![](./media/image_078.png)
+    ![](./media/sk33.png)
 </details>
 
 <details>
@@ -99,7 +102,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. The swagger page can be found at `http://localhost:5115/swagger/index.html`.
 
     ![](./media/image_080.png)
-1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs** file.
+1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
 
     ![](./media/image_038.png)
 1. Add the following code in the `// Import Models` section of the file.
@@ -121,12 +124,15 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
 
     ![](./media/image_082.png)
+
+     >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
+
 1. In case you encounter any indentation error, use the code from the following URL:
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-04.cs
     ```
 1. Save the file.
-1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` in the left pane and select **Open in Integrated Terminal**.
+1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
     ![](./media/image_040.png)
 1. Use the following command to run the app:
@@ -142,6 +148,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. You will receive a response similar to the one shown below:
 
     ![](./media/image_083.png)
+
+1. Once you receive the response, navigate back to the Visual studio code terminal and then press **Ctrl+C** to stop the build process.
+
 </details>
 
 ## Review

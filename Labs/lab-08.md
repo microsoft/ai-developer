@@ -16,6 +16,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 <summary><strong>Python</strong></summary>
 
 1. Navigate to `Python>src` directory and open **multi_agent.py** file.
+
+    ![](./media/sk59.png)
+
 1. Remove the existing code and add the code from the following URL in the file.
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-08.py
