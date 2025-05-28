@@ -1,4 +1,4 @@
-# AI DEVELOPER
+# Azure AI Foundry and Semantic Kernel Fundamentals
 
 ## Exercise 1: Azure AI Foundry Fundamentals
 
