@@ -176,8 +176,7 @@ In this task, you will explore different flow types in Azure AI Foundry by setti
 
     ![](./media/sk22.png)
 
-<details>
-<summary><strong>Python</strong></summary>
+### Python:
 
 1. Navigate to `Python>src` directory and open **.env** (1) file.
 
@@ -191,10 +190,7 @@ In this task, you will explore different flow types in Azure AI Foundry by setti
 
 1. Use **Ctrl+S** to save the file.
 
-</details>
-
-<details>
-<summary><strong>C Sharp(C#)</strong></summary>
+### C Sharp(C#):
 
 1. Navigate to `Dotnet>src>BlazorAI` directory and open **appsettings.json** file.
 
@@ -210,14 +206,12 @@ In this task, you will explore different flow types in Azure AI Foundry by setti
 
 1. Use **Ctrl+S** to save the file.
 
-</details>
 
 ### Task 2: Update the code files and run the app
 
 In this task, you will explore different flow types in Azure AI Foundry by updating code files, running the AI-powered app in Python and C#, and testing responses to user prompts.
 
-<details>
-<summary><strong>Python</strong></summary>
+### Python:
 
 1. Navigate to `Python>src` directory and open **chat.py (1)** file.
 
@@ -302,10 +296,8 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 1. You will receive a response similar to the one shown below:
 
     ![](./media/image_037.png)
-</details>
 
-<details>
-<summary><strong>C Sharp(C#)</strong></summary>
+### C Sharp(C#):
 
 1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
 
@@ -389,8 +381,7 @@ In this task, you will explore different flow types in Azure AI Foundry by runni
 
 In this task, you will explore different flow types in Azure AI Foundry by creating and importing the Time Plugin to enhance the app's functionality.
 
-<details>
-<summary><strong>Python</strong></summary>
+### Python:
 
 1. Navigate to `Python>src>plugins` directory, right click on **Plugins** then click on **New file** and then create a new file named **time_plugin.py (1)**.
 
@@ -503,10 +494,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
 
     ![](./media/image_048.png)
-</details>
 
-<details>
-<summary><strong>C Sharp(C#)</strong></summary>
+
+### C Sharp(C#):
 
 1. Navigate to `Dotnet>src>BlazorAI>Plugins` directory, right click on **Plugins** then click on **New file** and then  and create a new file named **TimePlugin.cs (1)**.
 
@@ -700,8 +690,6 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Once you receive the response, navigate back to the Visual studio code terminal and then press **Ctrl+C** to stop the build process.
 
-</details>
-
 ### Task 3: Create and import the Geocoding Plugin
 
 In this task, you will explore different flow types in Azure AI Foundry by creating and importing the Geocoding Plugin to enable location-based functionality.
@@ -709,6 +697,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. Open a new tab in the browser, navigate to the [Geocoding API](https://geocode.maps.co/) portal, and click on the **Free API Key** button on the top.
 
     ![](./media/image_057.png)
+
 1. Enter your details and click on **Create Account (1)**.
 
     ![](./media/image_058.png)
@@ -721,8 +710,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     ![](./media/sk30.png)
 
-<details>
-<summary><strong>Python</strong></summary>
+### Python:
 
 1. Navigate to `Python>src` directory and open **.env (1)** file.
 
@@ -784,10 +772,8 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
 
     ![](./media/image_062.png)
-</details>
 
-<details>
-<summary><strong>C Sharp(C#)</strong></summary>
+### C Sharp(C#):
 
 1. Navigate to `Dotnet>src>BlazorAI` directory and open **appsettings.json** file.
 
@@ -839,14 +825,11 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     ![](./media/sk32.png)
 
-</details>
-
 ### Task 4: Create and import the Weather Plugin
 
 In this task, you will explore different flow types in Azure AI Foundry by creating and importing the Weather Plugin to integrate weather-related functionality.
 
-<details>
-<summary><strong>Python</strong></summary>
+### Python:
 
 1. Navigate to `Python>src>plugins` directory and create a new file named **weather_plugin.py (1)**.
 
@@ -996,9 +979,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     ![](./media/seq_diag.png)
 
-</details>
-<details>
-<summary><strong>C Sharp(C#)</strong></summary>
+### C Sharp(C#):
 
 1. Navigate to `Dotnet>src>BlazorAI>Plugins` directory and create a new file named **WeatherPlugin.cs (1)**.
 
@@ -1262,8 +1243,7 @@ In this task, you will explore different flow types in Azure AI Foundry by runni
 
 In this task, you will explore different flow types in Azure AI Foundry by creating and importing the OpenAPI Plugin to extend the app's capabilities.
 
-<details>
-<summary><strong>Python</strong></summary>
+### Python:
 
 1. Right click on `Python>src>workitems` in the left pane and select **Open in Integrated Terminal (1)**.
 
@@ -1320,10 +1300,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. You will receive a response similar to the one shown below:
 
     ![](./media/sk33.png)
-</details>
 
-<details>
-<summary><strong>C Sharp(C#)</strong></summary>
+
+### C Sharp(C#):
 
 1. Right-click on `Dotnet>src>Aspire>Aspire.AppHost` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
@@ -1487,8 +1466,7 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 
 In this task, you will explore different flow types in Azure AI Foundry by creating a Semantic Search Plugin to query the AI Search Index for enhanced retrieval capabilities.
 
-<details>
-<summary><strong>Python</strong></summary>
+### Python:
 
 1. Navigate to `Python>src` directory and open **.env (1)** file.
 
@@ -1688,10 +1666,8 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ![](./media/image_099.png)
 
     ![](./media/image_100.png)
-</details>
 
-<details>
-<summary><strong>C Sharp(C#)</strong></summary>
+### C Sharp(C#):
 
 1. Navigate to `Dotnet>src>BlazorAI` directory and open **appsettings.json (1)** file.
 
@@ -2012,8 +1988,7 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 
     ![](./media/sk54.png)
 
-<details>
-<summary><strong>Python</strong></summary>
+### Python:
 
 1. Navigate to `Python>src` directory and open **.env (1)** file.
 
@@ -2026,14 +2001,11 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 
 1. Save the file.
 
-</details>
-
 ### Task 2: Create and import the Image Generation Plugin
 
 In this task, you will explore different flow types in Azure AI Foundry by creating and importing the Image Generation Plugin to enable AI-powered image creation.
 
-<details>
-<summary><strong>Python</strong></summary>
+### Python:
 
 1. Navigate to `Python>src>plugins` directory and create a new file named **ImageGenerationPlugin.py (1)**.
 
@@ -2145,13 +2117,16 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. Navigate to `Python>src` directory and open **chat.py (1)** file.
 
     ![](./media/image_030.png)
+
 1. Add the following code in the `#Import Modules` section of the file.
+
     ```
     from plugins.ImageGenerationPlugin import ImageGenerationPlugin
     from semantic_kernel.connectors.ai.open_ai import AzureTextToImage
     ```
 
     ![](./media/image_114.png)
+
 1. Add the following code in the `#Challenge 07 - Add DALL-E image generation service` section of the file.
     ```
     image_generation_service = AzureTextToImage(
@@ -2168,6 +2143,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
      >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
 1. Add the following code in the `# Placeholder for Text To Image plugin` section of the file.
+
     ```
     image_plugin = ImageGenerationPlugin()
     image_plugin.set_kernel(kernel)
@@ -2183,6 +2159,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
      >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
 1. In case you encounter any indentation error, use the code from the following URL:
+
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-07.py
     ```
@@ -2190,25 +2167,26 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. Right click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
     ![](./media/image_035.png)
+
 1. Use the following command to run the app:
     ```
     streamlit run app.py
     ```
 1. If the app does not open automatically in the browser, you can access it using the following **URL**:
+
     ```
     http://localhost:8501
     ```
 1. Submit the following prompt and see how the AI responds:
+
     ```
     Create a picture of a cute kitten wearing a hat.
     ```
 1. You will receive a response similar to the one shown below:
 
     ![](./media/image_117.png)
-</details>
 
-<details>
-<summary><strong>C Sharp(C#)</strong></summary>
+### C Sharp(C#):
 
 1. Navigate to `Dotnet>src>BlazorAI>Plugins` directory and create a new file named **ImageGenerationPlugin.cs**.
 
@@ -2323,6 +2301,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
 
     ![](./media/image_038.png)
+    
 1. Add the following code in the `// Challenge 07 - Add Azure AI Foundry Text To Image` section of the file.
     ```
     kernelBuilder.AddAzureOpenAITextToImage(
@@ -2332,6 +2311,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
 
     ![](./media/image_119.png)
+
 1. Add the following code in the `// Challenge 07 - Text To Image Plugin` section of the file.
     ```
     var imageGenerationPlugin = new ImageGenerationPlugin(Configuration);
@@ -2376,8 +2356,7 @@ In this exercise, you will be performing the following tasks:
 
 In this task, you will explore different flow types in Azure AI Foundry by creating a Multi-Agent Chat System to enable collaborative AI interactions.
 
-<details>
-<summary><strong>Python</strong></summary>
+### Python:
 
 1. Navigate to `Python>src` directory and open **multi_agent.py** file.
 
@@ -2409,10 +2388,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. You will receive a response similar to the one shown below:
 
     ![](./media/image_124.png)
-</details>
 
-<details>
-<summary><strong>C Sharp(C#)</strong></summary>
+
+### C Sharp(C#):
 
 1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **MultiAgent.razor.cs (1)** file.
 
@@ -2442,7 +2420,6 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. You will receive a response similar to the one shown below:
 
     ![](./media/image_127.png)
-
 
 ## Review :
 
