@@ -7,10 +7,9 @@ import com.azure.core.util.TracingOptions;
 import com.azure.search.documents.indexes.SearchIndexAsyncClient;
 import com.azure.search.documents.indexes.SearchIndexClientBuilder;
 import com.microsoft.semantickernel.aiservices.openai.textembedding.OpenAITextEmbeddingGenerationService;
-import com.microsoft.semantickernel.connectors.data.azureaisearch.AzureAISearchVectorStore;
-import com.microsoft.semantickernel.connectors.data.azureaisearch.AzureAISearchVectorStoreOptions;
-import com.microsoft.semantickernel.connectors.data.azureaisearch.AzureAISearchVectorStoreRecordCollectionOptions;
+import com.microsoft.semantickernel.data.azureaisearch.AzureAISearchVectorStore;
 import com.microsoft.semantickernel.data.vectorsearch.VectorSearchResult;
+import com.microsoft.semantickernel.data.azureaisearch.AzureAISearchVectorStoreRecordCollectionOptions;
 import com.microsoft.semantickernel.data.vectorstorage.VectorStoreRecordCollection;
 import com.microsoft.semantickernel.semanticfunctions.annotations.DefineKernelFunction;
 import com.microsoft.semantickernel.semanticfunctions.annotations.KernelFunctionParameter;
@@ -76,20 +75,17 @@ public class AISearchPlugin {
             }
 
             // Perform vector search
-            List<VectorSearchResult<Handbook>> searchResults = collection
-                .searchAsync(embeddings.get(0).getVector(), null)
-                .timeout(Duration.ofSeconds(30))
-                .block();
+            var searchResults = collection
+            .searchAsync(embeddings.get(0).getVector(), null)
+            .timeout(Duration.ofSeconds(30))
+            .block();
 
-            if (searchResults == null || searchResults.isEmpty()) {
-                return "No matching results found";
-            }
+            if (searchResults == null || searchResults.getTotalCount() == 0) {
+            return "No matching results found";
+        }
 
-            // Get best match
-            return searchResults.stream()
-                .max(Comparator.comparing(VectorSearchResult::getScore))
-                .map(result -> result.getRecord().getChunk())
-                .orElse("No result found");
+            // Get best match - results are already sorted by score            
+            return searchResults.getResults().get(0).getRecord().getChunk();
 
         } catch (Exception e) {
             e.printStackTrace();
