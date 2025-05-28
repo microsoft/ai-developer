@@ -1,3 +1,5 @@
+# AI DEVELOPER
+
 ## Exercise 1: Azure AI Foundry Fundamentals
 
 ### Estimated Duration: 20 minutes
