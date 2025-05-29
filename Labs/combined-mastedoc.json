@@ -1,0 +1,21 @@
+[
+  {
+    "Name": "AI Framework",
+    "Language": "English",
+    "BaseURL": "https://github.com/CloudLabsAI-Azure/ai-developer/tree/prod",
+    "Files": [
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/prod/Labs/getting-started.md",
+        "Order": 1
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/Labs/ai-develeper-combine.md",
+        "Order": 2
+      },
+      {
+        "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabsAI-Azure/Build-Custom-Knowledge-RAG-App-With-Azure-AI-Foundry/refs/heads/main/Instructions/Labs/Build-Custom-Knowledge-RAG-App-With-Azure-AI-Foundry-combine.md",
+        "Order": 3
+      }
+    ]
+  }
+]
