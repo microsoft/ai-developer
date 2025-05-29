@@ -59,7 +59,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     - **Model version**: 2024-05-13 (Default) (2)
     - **Tokens per Minute Rate Limit**: **50K** (3)
 
-      ![](./media/image_009.png) 
+      ![](./media/image_009a.png) 
 
 1. Click on **Azure AI Foundry**.
 
@@ -84,6 +84,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ![](./media/sk14.png)
 
 1. Provide the below mail in the chat **(1)** then click on **Send (2)** to identify and extract the postal address from the following email:
+
     ```
     Subject: Elevate Your Brand with Our Comprehensive Marketing Solutions!
     From: BrightEdge Marketing
@@ -107,9 +108,10 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ![](./media/sk15.png)
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
- - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
- - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
- - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+      
+   - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+   - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+   - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
 <validation step="a3e77878-3ce2-4d69-b4e6-c88d4a0f45ec" />  
 
@@ -146,7 +148,8 @@ In this exercise, we utilized **Azure AI Foundry** to build and deploy AI soluti
 
 You have successfully completed the below tasks for AI development using **Azure AI Foundry**:  
 
-- Created an **AI project** and deployed a **GPT-4o** base model using **Models + Endpoints**.    
+- Created an **AI project** and deployed a **GPT-4o** base model using **Models + Endpoints**. 
+   
 - Utilized **Semantic Kernel** to connect AI models with external APIs and plugins.
 
 ## Go to the next lab by clicking on the navigation.

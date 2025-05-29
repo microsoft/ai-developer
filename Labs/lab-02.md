@@ -18,6 +18,7 @@ In this task, you will explore different flow types in Azure AI Foundry by setti
 1. Click on **File (1)** and select **Open Folder (2)**.
 
     ![](./media/image_023.png)
+    
 1. Navigate to `C:\LabFiles` (1), select the **ai-developer (2)** folder, and click **Select Folder (3)**.
 
     ![](./media/sk20.png)
@@ -82,6 +83,7 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
     ![](./media/image_030.png)
 
 1. Add the following code in the `#Import Modules` (1) section of the file.
+
     ```
     from semantic_kernel.connectors.ai.chat_completion_client_base import ChatCompletionClientBase
     from semantic_kernel.connectors.ai.open_ai import OpenAIChatPromptExecutionSettings
@@ -89,7 +91,9 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
     ```
 
     ![](./media/image_031.png)
+
 1. Add the following code in the `# Challenge 02 - Chat Completion Service` (1) section of the file.
+
     ```
     chat_completion_service = AzureChatCompletion(
         deployment_name=os.getenv("AZURE_OPENAI_CHAT_DEPLOYMENT_NAME"),
@@ -102,7 +106,9 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
     ```
 
     ![](./media/image_032.png)
+
 1. Add the following code in the `# Start Challenge 02 - Sending a message to the chat completion service by invoking kernel` section of the file.
+
     ```
     global chat_history
     chat_history.add_user_message(user_input)
@@ -117,26 +123,36 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
     ```
 
     ![](./media/image_033.png)
+
 1. Add the following code in the `#return result` section of the file.
+
     ```
     logger.info(f"Response: {response}")
     return response
     ```
 
     ![](./media/image_034.png)
+
 1. In case you encounter any indentation error, use the code from the following URL:
+
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-02.py
     ```
+
 1. Save the file.
+
 1. Right click on `Python>src` in the left pane and select **Open in Integrated Terminal**.
 
     ![](./media/image_035.png)
+
 1. Use the following command to run the app:
+
     ```
     streamlit run app.py
     ```
+
 1. If you are asked for any email to register, feel free to use the below provided email, and hit **Enter**:
+
     ```
     test@gmail.com
     ```
@@ -147,13 +163,17 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
     ```
     http://localhost:8501
     ```
+
 1. Submit the following prompt and see how the AI responds:
+
     ```
     Why is the sky blue?
     ```
+
     ```
     Why is it red?
     ```
+
 1. You will receive a response similar to the one shown below:
 
     ![](./media/image_037.png)
@@ -166,6 +186,7 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 
     ![](./media/image_038.png)
 1. Add the following code in the `// Your code goes here(Line no. 92)` (1) section of the file.
+
     ```
     chatHistory.AddUserMessage(userMessage);
     var chatCompletionService = kernel.GetRequiredService<IChatCompletionService>();
@@ -177,6 +198,7 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 
     ![](./media/image_039.png)
 1. In case you encounter any indentation error, use the code from the following URL: 
+
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-02.cs
     ```
@@ -187,25 +209,33 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 
     ![](./media/image_040.png)
 1. Run the following line of code to trust the dev certificates necessary to run the app locally, and then select **Yes**:
+
     ```
     dotnet dev-certs https --trust
     ```
 
     ![](./media/image_041.png)
+
 1. Use the following command to run the app:
+
     ```
     dotnet run
     ```
+    
 1. Open a new tab in the browser and navigate to the link for **blazor-aichat**, i.e. **https://localhost:7118/**.
 
     >**Note**: If you receive security warnings in the browser, close the browser and follow the link again.
+
 1. Submit the following prompt and see how the AI responds:
+
     ```
     Why is the sky blue?
     ```
+
     ```
     Why is it red?
     ```
+    
 1. You will receive a response similar to the one shown below:
 
     ![](./media/image_042.png)
