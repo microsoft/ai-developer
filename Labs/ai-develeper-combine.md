@@ -2144,37 +2144,37 @@ In this exercise, you will be performing the following tasks:
 In this task, you will explore different flow types in Azure AI Foundry by deploying a DALL-E model to generate images from text prompts.
 
 1. Navigate to the [Azure AI Foundry](https://ai.azure.com/) portal.
-1. Click on **Models + endpoints (1)** under **My assets** in the left pane, then click on **+ Deploy model**, followed by **Deploy base model (2)**.
+
+2. Click on **Models + endpoints (1)** under **My assets** in the left pane, then click on **+ Deploy model**, followed by **Deploy base model (2)**.
 
       ![](./media/image_007-1.png)
 
-1. Search for **dall-e-3 (1)**, select the model **(2)**, and click on **Confirm (3)**.
+3. Search for **dall-e-3 (1)**, select the model **(2)**, and click on **Confirm (3)**.
 
       ![](./media/image_110.png)
 
-1. Click on **Deploy**.
+4. Click on **Deploy**.
 
       ![](./media/sk52.png)
 
-1. On the **dall-e-3** page, copy the **Target URI (1)** and **Key (2)** and paste them into Notepad.
+5. On the **dall-e-3** page, copy the **Target URI (1)** and **Key (2)** and paste them into Notepad.
 
       ![](./media/sk54.png)
 
 ### Python:
 
-1. Navigate to `Python>src` directory and open **.env (1)** file.
+6. Navigate to `Python>src` directory and open **.env (1)** file.
 
       ![](./media/image_026.png)
 
-1. Paste the **Target URI** that you copied earlier in the exercise besides `AZURE_TEXT_TO_IMAGE_ENDPOINT` (1).
+7. Paste the **Target URI** that you copied earlier in the exercise besides `AZURE_TEXT_TO_IMAGE_ENDPOINT` (1).
     
     >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
 
-1. Paste the **API key (1)** that you copied earlier in the exercise besides `AZURE_TEXT_TO_IMAGE_API_KEY` (2).
+8. Paste the **API key (1)** that you copied earlier in the exercise besides `AZURE_TEXT_TO_IMAGE_API_KEY` (2). Save the file.
 
       ![](./media/sk58.png)
 
-1. Save the file.
 
 ### Task 2: Create and import the Image Generation Plugin
 
@@ -2182,23 +2182,23 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 ### Python:
 
-1. Navigate to `Python>src>plugins` directory and create a new file named **ImageGenerationPlugin.py (1)**.
+1. Navigate to `Python>src>plugins` directory and create a new file named **ImageGenerationPlugin.py (1)**. 
 
       ![](./media/image_113.png)
 
-1. Add the following code to the file:
+2. Add the following code to the file and Save the file:
 
-    ```
-     import os
-     import json
-     from typing import Annotated
-     from semantic_kernel.functions import kernel_function, KernelFunction
-     from semantic_kernel.kernel import Kernel
-     import httpx
-     from PIL import Image
+     ```
+        import os
+        import json
+        from typing import Annotated
+        from semantic_kernel.functions import kernel_function, KernelFunction
+        from semantic_kernel.kernel import Kernel
+        import httpx
+        from PIL import Image
 
-     class ImageGenerationPlugin:
-        """Plugin for generating images using DALL-E."""
+        class ImageGenerationPlugin:
+            """Plugin for generating images using DALL-E."""
 
         def __init__(self):
             """Initialize the ImageGenerationPlugin."""
@@ -2288,39 +2288,38 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
                 error_details = traceback.format_exc()
                 print(f"Error generating image: {str(e)}\n{error_details}")
                 return f"Error generating image: {str(e)}"
-    ```
-1. Save the file.
+      ```
 
-1. Navigate to `Python>src` directory and open **chat.py (1)** file.
+3. Navigate to `Python>src` directory and open **chat.py (1)** file.
 
       ![](./media/image_030.png)
 
-1. Add the following code in the `#Import Modules` section of the file.
+4. Add the following code in the `#Import Modules` section of the file.
 
-    ```
-     from plugins.ImageGenerationPlugin import ImageGenerationPlugin
-     from semantic_kernel.connectors.ai.open_ai import AzureTextToImage
-    ```
+     ```
+      from plugins.ImageGenerationPlugin import ImageGenerationPlugin
+      from semantic_kernel.connectors.ai.open_ai import AzureTextToImage
+     ```
 
-     ![](./media/image_114.png)
+      ![](./media/image_114.png)
 
-1. Add the following code in the `#Challenge 07 - Add DALL-E image generation service` section of the file.
+5. Add the following code in the `#Challenge 07 - Add DALL-E image generation service` section of the file.
     
-    ```
-     image_generation_service = AzureTextToImage(
+      ```
+        image_generation_service = AzureTextToImage(
         deployment_name=os.getenv("AZURE_TEXT_TO_IMAGE_DEPLOYMENT_NAME"),
         api_key=os.getenv("AZURE_TEXT_TO_IMAGE_API_KEY"),
         endpoint=os.getenv("AZURE_TEXT_TO_IMAGE_ENDPOINT"),
         service_id="image-service"
-     )
-     kernel.add_service(image_generation_service)
-    ```
+        )
+        kernel.add_service(image_generation_service)
+      ```
 
      ![](./media/sk57.png)
 
     >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
-1. Add the following code in the `# Placeholder for Text To Image plugin` section of the file.
+6. Add the following code in the `# Placeholder for Text To Image plugin` section of the file.
 
     ```
      image_plugin = ImageGenerationPlugin()
@@ -2336,32 +2335,32 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
-1. In case you encounter any indentation error, use the code from the following URL:
+7. In case you encounter any indentation error, use the code from the following URL and Save the file:
 
     ```
      https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-07.py
     ```
-1. Save the file.
-1. Right click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
+
+8. Right click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
      ![](./media/image_035.png)
 
-1. Use the following command to run the app:
+9. Use the following command to run the app:
     
     ```
      streamlit run app.py
     ```
-1. If the app does not open automatically in the browser, you can access it using the following **URL**:
+10. If the app does not open automatically in the browser, you can access it using the following **URL**:
 
     ```
      http://localhost:8501
     ```
-1. Submit the following prompt and see how the AI responds:
+11. Submit the following prompt and see how the AI responds:
 
     ```
      Create a picture of a cute kitten wearing a hat.
     ```
-1. You will receive a response similar to the one shown below:
+12. You will receive a response similar to the one shown below:
 
       ![](./media/image_117.png)
 
