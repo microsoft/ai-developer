@@ -141,7 +141,7 @@ In this task you will create a Azure AI Search resource.
 
 1. Click on **Create**.
     
-     ![](./media/sk19.png)
+    ![](./media/sk19.png)
 
 ## Exercise 2: Semantic Kernel Fundamentals
 
@@ -284,25 +284,25 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
     ```
 1. If you are asked for any email to register, feel free to use the below provided email, and hit **Enter**:
 
-    ```
-    test@gmail.com
-    ```
+     ```
+     test@gmail.com
+     ```
 
-     ![](./media/image_036.png)
+      ![](./media/image_036.png)
 
 1. If the app does not open automatically in the browser, you can access it using the following **URL**:
 
-    ```
-    http://localhost:8501
-    ```
+     ```
+     http://localhost:8501
+     ```
 1. Submit the following prompt and see how the AI responds:
 
-    ```
-    Why is the sky blue?
-    ```
-    ```
-    Why is it red?
-    ```
+     ```
+     Why is the sky blue?
+     ```
+     ```
+     Why is it red?
+     ```
 1. You will receive a response similar to the one shown below:
 
      ![](./media/image_037.png)
@@ -315,22 +315,23 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 
 1. Add the following code in the `// Your code goes here(Line no. 92)` (1) section of the file.
 
-    ```
-    chatHistory.AddUserMessage(userMessage);
-    var chatCompletionService = kernel.GetRequiredService<IChatCompletionService>();
-    var assistantResponse = await chatCompletionService.GetChatMessageContentAsync(
+     ```
+     chatHistory.AddUserMessage(userMessage);
+     var chatCompletionService = kernel.GetRequiredService<IChatCompletionService>();
+     var assistantResponse = await chatCompletionService.GetChatMessageContentAsync(
         chatHistory: chatHistory,
         kernel: kernel);
-    chatHistory.AddAssistantMessage(assistantResponse.Content);
-    ```
+    
+     chatHistory.AddAssistantMessage(assistantResponse.Content);
+     ```
 
-     ![](./media/image_039.png)
+      ![](./media/image_039.png)
 
 1. In case you encounter any indentation error, use the code from the following URL: 
 
-    ```
-    https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-02.cs
-    ```
+     ```
+     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-02.cs
+     ```
 
 1. Use **Ctrl+S** to save the file.
 
@@ -340,28 +341,29 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 
 1. Run the following line of code to trust the dev certificates necessary to run the app locally, and then select **Yes**:
 
-    ```
-    dotnet dev-certs https --trust
-    ```
+     ```
+     dotnet dev-certs https --trust
+     ```
 
-     ![](./media/image_041.png)
+      ![](./media/image_041.png)
 
 1. Use the following command to run the app:
 
-    ```
-    dotnet run
-    ```
+     ```
+     dotnet run
+     ```
 1. Open a new tab in the browser and navigate to the link for **blazor-aichat**, i.e. **https://localhost:7118/**.
 
     >**Note**: If you receive security warnings in the browser, close the browser and follow the link again.
+
 1. Submit the following prompt and see how the AI responds:
 
-    ```
-    Why is the sky blue?
-    ```
-    ```
-    Why is it red?
-    ```
+     ```
+     Why is the sky blue?
+     ```
+     ```
+     Why is it red?
+     ```
 1. You will receive a response similar to the one shown below:
 
      ![](./media/image_042.png)
@@ -456,6 +458,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. Navigate to `Python>src` directory and open **chat.py (1)** file.
 
     ![](./media/image_030.png)
+
 1. Add the following code in the `#Import Modules` section of the file.
     ```
     from semantic_kernel.connectors.ai.open_ai.prompt_execution_settings.azure_chat_prompt_execution_settings import (
@@ -465,6 +468,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
     
     ![](./media/image_045.png)
+
 1. Add the following code in the `#Challenge 03 - Create Prompt Execution Settings` **(1)** section of the file.
     ```
     execution_settings = AzureChatPromptExecutionSettings()
@@ -473,6 +477,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
 
     ![](./media/image_046.png)
+
 1. Add the following code in the `# Placeholder for Time plugin` section of the file.
     ```
     time_plugin = TimePlugin()
