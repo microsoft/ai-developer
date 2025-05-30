@@ -2494,11 +2494,11 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Add the following code in the `// Challenge 07 - Text To Image Plugin` section of the file.
     
-    ```
-     var imageGenerationPlugin = new ImageGenerationPlugin(Configuration);
+      ```
+      var imageGenerationPlugin = new ImageGenerationPlugin(Configuration);
     
      kernel.ImportPluginFromObject(imageGenerationPlugin, "ImagePlugin");
-    ```
+     ```
 
       ![](./media/image_120.png)
 
