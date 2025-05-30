@@ -2484,7 +2484,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. Add the following code in the `// Challenge 07 - Add Azure AI Foundry Text To Image` section of the file.
     
     ```
-     kernelBuilder.AddAzureOpenAITextToImage(
+    kernelBuilder.AddAzureOpenAITextToImage(
         Configuration["DALLE_DEPLOYMODEL"]!,
         Configuration["AOI_ENDPOINT"]!,
         Configuration["AOI_API_KEY"]!);
@@ -2494,11 +2494,11 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Add the following code in the `// Challenge 07 - Text To Image Plugin` section of the file.
     
-      ```
-      var imageGenerationPlugin = new ImageGenerationPlugin(Configuration);
+    ```
+    var imageGenerationPlugin = new ImageGenerationPlugin(Configuration);
     
-     kernel.ImportPluginFromObject(imageGenerationPlugin, "ImagePlugin");
-     ```
+    kernel.ImportPluginFromObject(imageGenerationPlugin, "ImagePlugin");
+    ```
 
       ![](./media/image_120.png)
 
