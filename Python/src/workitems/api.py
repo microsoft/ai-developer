@@ -23,8 +23,10 @@ class WorkItemsDTO(BaseModel):
     State: str
     Tags: str
 
-# Load CSV data into a DataFrame
-data = pd.read_csv("data/workitems.csv")
+# Get the directory where this script is located
+script_dir = os.path.dirname(os.path.abspath(__file__))
+# Construct path to workitems.csv
+csv_path = os.path.join(script_dir, "data", "workitems.csv")
 
 workitems = []
 workItemTypes = set()
@@ -48,7 +50,8 @@ def load_work_items_from_csv(file_path):
                 workItemTypes.add(work_item.WorkItemType)
                 workItemStates.add(work_item.State)
 
-load_work_items_from_csv('data/workitems.csv')
+# Load the workitems using the absolute path
+load_work_items_from_csv(csv_path)
 
 
 app.add_middleware(

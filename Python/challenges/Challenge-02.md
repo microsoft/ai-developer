@@ -8,7 +8,7 @@ The first step in understanding Semantic Kernel is to become familiar with the b
 
 ## Description
 
-In this challenge, you will be provided with a starter application that will require you to complete the implementation of the chat feature using Semantic Kernel and the Azure AI Foundry GPT-4o model. The AI model will then respond with an answer or completion to the prompt. The application uses the Semantic Kernel framework to interact with the AI model. You will need to complete the implementation of the chat API to send the user's prompt to the AI model and return the response to the user.
+In this challenge, you will be working with a starter application that requires you to complete the implementation of the chat feature using Semantic Kernel and the Azure AI Foundry GPT-4o model. The application has the basic structure set up, and you'll need to implement key parts of the chat functionality to allow users to interact with the AI model.
 
 ## Prerequisites
 
@@ -18,109 +18,166 @@ In this challenge, you will be provided with a starter application that will req
 
 ### Implementation Steps
 
-1. Deploy a GTP-4o model using  [Azure AI Foundry](https://ai.azure.com) `https://ai.azure.com`. The **Deployment name** should be something similar to ``` gpt-4o ```. This name will be needed next when configuring Semantic Kernel. :exclamation: Deployment type should be **Standard**. :exclamation:
+> [!IMPORTANT]
+> **Install Python Dependencies First!**
+> 
+> Before you can run the application, you **must** install the required Python packages. The application will not work without these dependencies.
+>
+> It is **highly recommended** that you create a Python virtual environment for your packages.
+>
+> **Creating your Python virtual environment**
+> 1. Open your terminal or command prompt
+> 2. Navigate to the `src` directory in your terminal/command prompt
+> 3. Run the following command to create the virtual environment: `python -m venv <virtual environment name>`
+> 4. Then activate the virtual environment: `.\<name of your virtual environment>\Scripts\activate`
+> 5. Proceed with installing your requirements
+> 6. To deactivate your virtual environment: `.\<name of your virtual environment>\Scripts\deactivate`
+>
+> **Using VS Code (Recommended):**
+> 1. Open the integrated terminal in VS Code (`Terminal` → `New Terminal` or `` Ctrl+` ``)
+> 2. Make sure you're in the `src` directory: `cd src`
+> 3. Install the requirements: `pip install -r requirements.txt`
+>
+> **Using Command Line:**
+> 1. Navigate to the `src` directory in your terminal/command prompt
+> 2. Run: `pip install -r requirements.txt`
+>
+> **Troubleshooting:**
+> - If you see permission errors, you may need to activate your virtual environment first
+> - On Windows, you might need to use `python -m pip install -r requirements.txt`
+> - The installation may take a few minutes as it downloads Semantic Kernel and other dependencies
 
-1. Update the *.env* file with the Azure AI Foundry *Deployment name*, *Endpoint URL* and the *API Key*. These values can be found in the Azure AI Foundry.
+1. Deploy a GTP-4o model using [Azure AI Foundry](https://ai.azure.com) `https://ai.azure.com`. The **Deployment name** should be something similar to ``` gpt-4o ```. This name will be needed next when configuring Semantic Kernel. :exclamation: Deployment type should be **Standard**. :exclamation:
 
-    **.env*
+2. Create a new `.env` file in the `src` directory with the Azure AI Foundry configuration values:
 
-    ```json
-    "AZURE_OPENAI_CHAT_DEPLOYMENT_NAME": "Replace with your AOI deployment name",
-    "AZURE_OPENAI_ENDPOINT": "Replace with your AOI endpoint",
-    "AZURE_OPENAI_API_KEY": "Replace with your AOI API key",
-    "AZURE_OPENAI_API_VERSION": "Replace with your AIO API version"
+    ```
+    AZURE_OPENAI_CHAT_DEPLOYMENT_NAME="your-deployment-name"
+    AZURE_OPENAI_ENDPOINT="your-endpoint-url"
+    AZURE_OPENAI_API_KEY="your-api-key"
+    AZURE_OPENAI_API_VERSION="your-api-version"
     ```
 
-1. Navigate to the `chat.py` and Implement the following code to add the Azure AI Foundry Chat Completion service to the Kernel object inside `initialize_kernel()`.
-
-    ```python
-    //Add Azure AI Foundry Chat Completion
-    chat_completion_service = AzureChatCompletion(
-        deployment_name="my-deployment",  
-        api_key="my-api-key",
-        endpoint="my-api-endpoint", # Used to point to your service
-        service_id="my-service-id", # Optional; for targeting specific services within Semantic Kernel
-    )
+    > **Note:** For the endpoint URL, only include up to the `.com` part as the SDK will build the full URL.
     
-    # You can do the following if you have set the necessary environment variables or created a .env file
-    chat_completion_service = AzureChatCompletion(service_id="my-service-id")
-    ```
+    > **Important:** According to the [Semantic Kernel documentation](https://github.com/microsoft/semantic-kernel/blob/main/python/samples/concepts/setup/ALL_SETTINGS.md), these environment variables are specifically required for the AzureChatCompletion service. Semantic Kernel will automatically look for these variables when initializing the service. As you work through subsequent challenges, you'll add more environment variables to this same `.env` file to support additional AI services.
 
-1. Locate the code comment `// Challenge 02 - Chat Completion Service` in the `chat.py` file.
+3. In the `chat.py` file, locate the `initialize_kernel()` function and implement the code to create and add the Azure AI Foundry Chat Completion service to the kernel:
 
-    :bulb: [Retrieving chat completion services](https://learn.microsoft.com/en-us/semantic-kernel/concepts/ai-services/chat-completion/?tabs=csharp-AzureOpenAI%2Cpython-AzureOpenAI%2Cjava-AzureOpenAI&pivots=programming-language-python#retrieving-chat-completion-services)
+    * Find the comment: `#Challenge 02 - Chat Completion Service`
+    * Create a chat completion service that uses the environment variables from your `.env` file
+    * Add the service to the kernel
 
-    :pushpin:  The kernel itself doesn't expose AI functionality directly - instead, it manages services that do. When we want to send messages to the AI, we need to obtain a reference to the chat service specifically (kernel.Services).
+    :bulb: Review the [Semantic Kernel documentation on chat completion services](https://learn.microsoft.com/en-us/semantic-kernel/concepts/ai-services/chat-completion/?tabs=csharp-AzureOpenAI%2Cpython-AzureOpenAI%2Cjava-AzureOpenAI&pivots=programming-language-python#creating-a-chat-completion-service) to understand how to properly initialize the service.
 
 ### Implement Chat
 
-1. Add the **user's message** to the chat history collection.
+1. In the `process_message()` function, find the comment `# Start Challenge 02 - Sending a message to the chat completion service by invoking kernel` and implement the following steps:
 
-    In the `chat.py` file, Below the comment `// Start Challenge 02 - Sending a message to the chat completion service`, add the user's prompt from the `ChatRequest` object to the chat history collection.
+    * Retrieve the chat completion service from the kernel
+    * Use the global chat history variable rather than creating a new one
+    * Add the user's message to the chat history
+    * Create appropriate execution settings for the chat request
+    * Call the chat completion service with the chat history
+    * Add the AI's response to the chat history
+    * Return the AI response
 
-    :pushpin: The chat history maintains a record of the conversation between user and AI. By adding each message to this history, we give the AI context about the ongoing conversation, allowing it to provide more relevant and coherent responses.
+    :bulb: The [Chat Completion documentation](https://learn.microsoft.com/en-us/semantic-kernel/concepts/ai-services/chat-completion/?tabs=python-AzureOpenAI%2Cpython-AzureOpenAI%2Cjava-AzureOpenAI&pivots=programming-language-python#using-chat-completion-services) provides examples of how to properly call the service.
 
-    :bulb: For a detailed explanation of Chat History, please refer to the documentation [here](https://learn.microsoft.com/en-us/semantic-kernel/concepts/ai-services/chat-completion/chat-history?pivots=programming-language-python).
-
-1. Use the Chat Completion service to send the entire chat history, including the latest prompt, to the Azure AI Foundry chat service. Once the service processes this and generates a response, wait until the full response is received before sending it back to the client.
-
-    :bulb: Refer to the Semantic Kernel documentation [here](https://learn.microsoft.com/en-us/semantic-kernel/concepts/ai-services/chat-completion/?tabs=python-AzureOpenAI%2Cpython-AzureOpenAI%2Cjava-AzureOpenAI&pivots=programming-language-python#using-chat-completion-services) for an example of how to call the chat completion service.
-
-    1. Now add the **AI's Response** *Content* to the Chat History collection.
-
-       :pushpin: We add both user messages and AI responses to the same chat history collection, but with different roles (User vs Assistant). This maintains the conversation context for future AI responses.
-
-       :bulb: To see how the ChatHistory object works in detail, see the documentation [here](https://learn.microsoft.com/en-us/semantic-kernel/concepts/ai-services/chat-completion/chat-history?pivots=programming-language-python#creating-a-chat-history-object)
+    :bulb: Review the [Chat History documentation](https://learn.microsoft.com/en-us/semantic-kernel/concepts/ai-services/chat-completion/chat-history?pivots=programming-language-python#creating-a-chat-history-object) to understand how to properly manage the conversation context.
 
 ### Testing
 
-1. Run the application and test the chat completion by submitting the prompt:
+1. **Start the application** using the recommended VS Code launch profile "Python: Streamlit App" (as covered in the [reference application guide](../challenges/Resources/Supporting%20Challenges/Challenge-02-Reference-App.md#getting-started-with-vs-code-launch-profiles)), then test the chat completion by submitting the prompt:
 
     ```text
     Why is the sky blue?
     ```
 
-    The response should be similar to the following
+    The response should be similar to the following:
 
     ![Chat Response](./Resources/image/ch02img1.png)
 
-    :bulb: For more information on the Semantic Kernel, refer to the documentation [here](https://learn.microsoft.com/en-us/semantic-kernel/concepts/kernel?pivots=programming-language-python).
-
-1. Test the Chat History by submitting the following prompt without refreshing the browsing window and clearing the chat history.
+2. Test the Chat History by submitting the following prompt without refreshing the browser window:
 
     ```text
     Why is it red?
     ```
 
-    If the chat history is working, the AI will understand the context of the next question  and provide a relevant response.
+    If the chat history is working correctly, the AI will understand the context from the previous question and provide a relevant response about why the sky appears red at certain times.
 
-    If you restart the chat, the AI will not have the context of the previous question and will not provide a relevant response. So then you would have to provide the context again by asking the question:
+3. Test the application with a variety of prompts to ensure it responds appropriately.
 
-    ```text
-    Why is the sky red?
-    ```
+## Understanding Semantic Kernel Chat Flow
 
-    :bulb: For more information on Chat History, refer to the documentation [here](https://learn.microsoft.com/en-us/semantic-kernel/concepts/ai-services/chat-completion/chat-history?pivots=programming-language-python).
+The diagram below illustrates the basic flow of the chat completion process using Semantic Kernel:
 
-1. Test the application with a variety of prompts to ensure it responds appropriately.
+```mermaid
+flowchart TB
+    subgraph User
+        A[User sends message]
+    end
+    
+    subgraph Application
+        B[process_message function]
+        C[Get chat completion service from kernel]
+        D[Add user message to chat history]
+        E[Create execution settings]
+        F[Get AI response]
+        G[Add AI response to chat history]
+        H[Return response to user]
+    end
+    
+    subgraph AzureAIFoundry["Azure AI Foundry"]
+        I[GPT-4o model processes request]
+    end
+    
+    A -->|user input| B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F -->|request| I
+    I -->|response| F
+    F --> G
+    G --> H
+    H -->|display response| A
+    
+    classDef userClass fill:#00FFFF,stroke:#FFFFFF,stroke-width:2px,color:black
+    classDef appClass fill:#00FF00,stroke:#FFFFFF,stroke-width:2px,color:black
+    classDef azureClass fill:#FF9966,stroke:#FFFFFF,stroke-width:2px,color:black
+    
+    class A userClass
+    class B,C,D,E,F,G,H appClass
+    class I azureClass
+```
+
+This diagram shows how a user's message travels through your application, gets processed by the Azure AI Foundry service via Semantic Kernel, and how the response is returned to the user. The key components are:
+
+1. Your application receives user input
+2. The Semantic Kernel retrieves the appropriate service
+3. Chat history maintains context between interactions
+4. The Azure AI Foundry GPT-4o model processes the request
+5. The response is added to chat history and returned to the user
 
 ## Success Criteria
 
-- Configuration
+- **Setup & Configuration**
+  - [ ] **Installed Python dependencies** using `pip install -r requirements.txt`
   - [ ] Deployed GPT model in Azure AI Foundry
-  - [ ] Added deployment name, endpoint URL, and API key to environment file.
+  - [ ] Created a new `.env` file with deployment name, endpoint URL, and API key
 - Kernel Setup
-  - [ ] Registered chat completion service with kernel
-  - [ ] Built kernel instance
-  - [ ] Add chat completion service to kernel
+  - [ ] Implemented the chat completion service in `initialize_kernel()`
+  - [ ] Added the service to the kernel instance
 - Message Handling
+  - [ ] Used the global chat history variable correctly
   - [ ] Implemented adding user messages to chat history
   - [ ] Successfully calling chat completion service
-  - [ ] Adding AI responses to chat history
+  - [ ] Added AI responses to chat history
 - Testing
-  - [ ] "Why is the sky blue" returns a coherent response
-  - [ ] "Why is it red" demonstrates chat history is working
-  - [ ] AI responds appropriately to follow-up questions
+  - [ ] "Why is the sky blue?" returns a coherent response
+  - [ ] "Why is it red?" demonstrates chat history is working
+  - [ ] AI responds appropriately to various prompts
 
 ## Learning Resources
 
@@ -131,5 +188,7 @@ In this challenge, you will be provided with a starter application that will req
 [Chat history](https://learn.microsoft.com/en-us/semantic-kernel/concepts/ai-services/chat-completion/chat-history?pivots=programming-language-python)
 
 [What is a Planner?](https://learn.microsoft.com/en-us/semantic-kernel/concepts/planning?pivots=programming-language-python)
+
+[Semantic Kernel Environment Variables Reference](https://github.com/microsoft/semantic-kernel/blob/main/python/samples/concepts/setup/ALL_SETTINGS.md)
 
 ### [< Previous Challenge](./Challenge-01.md) - **[Home](../README.md)** - [Next Challenge >](./Challenge-03.md)

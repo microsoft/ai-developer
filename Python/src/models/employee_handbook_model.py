@@ -28,12 +28,12 @@ from semantic_kernel.data import (
 @vectorstoremodel
 @dataclass
 class EmployeeHandbookModel(BaseModel):
-    chunk_id: Annotated[str, VectorStoreRecordKeyField]
-    parent_id: Annotated[str | None, VectorStoreRecordDataField()] = None
+    id: Annotated[str, VectorStoreRecordKeyField]
     content: Annotated[str, VectorStoreRecordDataField()]
     title: Annotated[str, VectorStoreRecordDataField()]
     url: Annotated[str, VectorStoreRecordDataField()]
     filepath: Annotated[str, VectorStoreRecordDataField()]
+    meta_json_string: Annotated[str, VectorStoreRecordDataField()]
     contentVector: Annotated[
         list[float] | None,
         VectorStoreRecordVectorField(

@@ -1,14 +1,22 @@
 ### [< Previous Challenge](./Challenge-04.md) - **[Home](../README.md)** - [Next Challenge >](./Challenge-06.md)
 
-# Challenge 05 -  Retrieval-Augmented Generation (RAG)
+# Challenge 05 - RAG Pattern with Azure AI Search
 
-## Some Background (optional)
+## Introduction
 
-### Retrieval-Augmented Generation (RAG)
+Retrieval Augmented Generation (RAG) is an AI architecture pattern that combines retrieval mechanisms with generative AI models to produce more accurate, relevant, and contextually-appropriate responses. In a RAG system, when a query is received, the system first retrieves relevant information from a knowledge base or external data source. This retrieved information is then used to augment or condition the input to a generative AI model, enhancing its ability to provide accurate and comprehensive responses.
 
-The RAG (Retrieval-Augmented Generation) pattern is an AI model architecture that enhances the generation of text by integrating external, relevant information retrieved from a knowledge base or database, improving accuracy and context. It combines retrieval mechanisms with generative models to produce more informed and contextually relevant responses.
+The RAG pattern is particularly valuable because it addresses two key limitations of large language models (LLMs): their potential to produce factually incorrect information (hallucinations) and their reliance on the data they were initially trained on, which may become outdated. By retrieving and incorporating up-to-date, relevant information from external sources, RAG systems can provide more current and accurate responses.
 
-#### :exclamation:**IMPORTANT**
+## Description
+
+In RAG systems, the retrieval component typically involves searching a database, knowledge base, or other structured or unstructured data source to find information relevant to a given query. This retrieval can be based on traditional search techniques, keyword matching, or more sophisticated methods like semantic or vector search, which aim to capture the meaning behind the query rather than just matching specific terms.
+
+The retrieved information is then fed into the generative model as conditioning context along with the original query. This additional context helps the model to generate a response that is not only conversationally appropriate but also grounded in the retrieved information. The generative model might directly incorporate facts from the retrieved documents, paraphrase them, or use them as a reference to ensure the coherence and factual accuracy of its output.
+
+For instance, if a user asks about a company's employee safety policy, a RAG system might first retrieve specific company safety documents that mention safety protocols. The generative model could then use this information to provide an accurate response that reflects the company's specific policies, rather than providing generic information about safety practices or making unsupported assertions about the company's policies.
+
+#### :exclamation:**IMPORTANT - Privacy and Security**
 
 Your prompts (inputs), completions (outputs), embeddings, and training data are:
 
@@ -19,7 +27,7 @@ Your prompts (inputs), completions (outputs), embeddings, and training data are:
 * NOT used for automatically improving Azure AI Foundry models for your use in your resource (The models are stateless, unless you explicitly fine-tune models with your training data).
 
 > Your fine-tuned Azure AI Foundry models are available exclusively for your use.
-The Azure AI Foundry Service is fully controlled by Microsoft; Microsoft hosts the OpenAI models in Microsoft’s Azure environment and the Service does NOT interact with any services operated by OpenAI (e.g. ChatGPT, or the OpenAI API).
+The Azure AI Foundry Service is fully controlled by Microsoft; Microsoft hosts the OpenAI models in Microsoft's Azure environment and the Service does NOT interact with any services operated by OpenAI (e.g. ChatGPT, or the OpenAI API).
 
 For more information on Data, privacy, and security for Azure AI Foundry Service visit this [Link](https://learn.microsoft.com/en-us/legal/cognitive-services/openai/data-privacy)
 
@@ -41,9 +49,9 @@ In essence, embedding models take something complex (like words or images) and t
 
 ### Document Chunking
 
-Document chunking is a technique used in AI, especially in Retrieval-Augmented Generation (RAG) models, to break down large documents into smaller, manageable pieces or “chunks.” This makes it easier for the AI to process the relevant information. Imagine you have a long book and you want to find specific information quickly. Instead of reading the entire book, you divide it into chapters or sections. Each chunk can then be indexed and searched individually, making the retrieval process faster and more efficient.
+Document chunking is a technique used in AI, especially in Retrieval-Augmented Generation (RAG) models, to break down large documents into smaller, manageable pieces or "chunks." This makes it easier for the AI to process the relevant information. Imagine you have a long book and you want to find specific information quickly. Instead of reading the entire book, you divide it into chapters or sections. Each chunk can then be indexed and searched individually, making the retrieval process faster and more efficient.
 
-In the context of RAG, these chunks are used to enhance the AI’s ability to generate accurate and contextually relevant responses. When a query is made, the retrieval mechanism searches through these smaller chunks to find the most relevant information, which the model then uses to generate a coherent and informative answer. This method improves the performance and accuracy of AI models by ensuring they have access to the most pertinent data without being overwhelmed by the volume of information.
+In the context of RAG, these chunks are used to enhance the AI's ability to generate accurate and contextually relevant responses. When a query is made, the retrieval mechanism searches through these smaller chunks to find the most relevant information, which the model then uses to generate a coherent and informative answer. This method improves the performance and accuracy of AI models by ensuring they have access to the most pertinent data without being overwhelmed by the volume of information.
 
 ## Pre-requisites
 
@@ -71,14 +79,6 @@ In this challenge, you will create a Semantic Search Plugin that utilizes an Azu
 1. Once the AI Search resource is created, navigate to the resource.
     1. Grab the **URL** from the Overview section.
     1. Grab the **Key** from the Keys section.
-    1. Add these values to the **.env** file in the reference application. You will need these values later when configuring AI Search.
-
-    ```json
-      "AZURE_AI_SEARCH_ENDPOINT": "Replace with your AI Search URI",
-      "AZURE_AI_SEARCH_API_KEY": "Replace with your AI Search API Key"
-    ```
-
-    :bulb: The AI Search endpoint and Key will be used to configure the AI Search Connector in the Semantic Search Plugin.
 
 ### Deploy Storage Account with CORS enabled
 
@@ -109,27 +109,38 @@ In this challenge, you will create a Semantic Search Plugin that utilizes an Azu
 
 ### Use AI Foundry to deploy a Text Embedding model
 
-1. Using [Azure AI Foundry](https://ai.azure.com/resource/deployments), deploy a *Standard* **text-embedding-ada-002** model in the same deployment as your previous GPT-4o model. Once deployed, add the **Embedding Deployment Model Name** as a new setting to the **.env** file in the reference application. You will need this value later when configuring the Semantic Search Plugin.
+1. Using [Azure AI Foundry](https://ai.azure.com/resource/deployments), deploy a *Standard* **text-embedding-ada-002** model in the same deployment as your previous GPT-4o model. 
 
     ![Embedding Model](./Resources/image/ch05img2.png)
 
-2. Add the **Embedding Deployment Model Name** to the **.env** file in the reference application.
+## Environment Setup
 
-    ```bash
-    AZURE_OPENAI_EMBED_DEPLOYMENT_NAME: "text-embedding-ada-002"
-    ```
+Now that you have deployed all the necessary resources, you'll need to update your `.env` file with the appropriate configuration settings.
 
-    :bulb: This model will be used to translate your documents and queries into embeddings (see above)
+1. Review the list of required environment variables for Azure AI Search and Text Embeddings by checking the [Semantic Kernel Environment Settings documentation](https://github.com/microsoft/semantic-kernel/blob/main/python/samples/concepts/setup/ALL_SETTINGS.md).
+
+2. Add the necessary environment variables to your existing `.env` file. The variables should include settings for:
+   - Azure AI Search configuration
+   - Text Embedding model configuration
+
+Ensure all required settings are properly configured before proceeding to the next step.
+
+> **Hint:** Look for settings related to Azure AI Search and Text Embeddings in the documentation. You'll need to add settings for the endpoint, API key, index name, and embedding model deployment.
 
 ### Import documents
 
-1. In Azure AI Foundry click on Chat -> Add Your Data -> Add Data Source
+1. In Azure AI Foundry click on Playground -> Chat Playground
+
+    ![Add Data Sournce](./Resources/image/ch05img0.png)
+
+1. Ensure the correct model is selected under Deployment. Then click the drop down Add your data -> Add new data source
 
     ![Add Data Sournce](./Resources/image/ch05img3.png)
 
 1. Select Data Source = ```Upload Files```.
-1. Select the existing Blob Storage resource you created earlier.
-1. Click **Turn on CORS** if prompted.
+
+    ![Upload Files](./Resources/image/ch05img4.png)
+
 1. Choose the **AI Search Resource** setup in the previous step.
 1. For the Index Name use:
 
@@ -139,28 +150,26 @@ In this challenge, you will create a Semantic Search Plugin that utilizes an Azu
 
     > :bulb: The AI Search Index Name will be needed by the reference application
 
-    ![Upload Files](./Resources/image/ch05img4.png)
-
-1. Check **Add Vector Search**
-1. Select the **text-embedding-ada-002** model created previously
 1. Click Next
 
     ![Vector Search](./Resources/image/ch05img5.png)
 
-1. Upload the ```employee_handbook.pdf``` from the **.\data** directory and **click Next**
-1. Set the Search type to **Vector** and the Chunk Size to **1024** then **click Next**
+1. Check **Add Vector Search**
+1. Select your Azure OpenAI connection
+1. Select the **text-embedding-ada-002** model
+1. Select your **text-embedding-ada-002** model deployment that was created previously
 
-  > :bulb: Chunk size refers to how much text is grouped together into a single segment or "chunk" before creating an embedding. When processing large documents, the text is often divided into smaller chunks to create embeddings for each segment. The chunk size determines how much text is included in each embedding.
+  <!-- > :bulb: Chunk size refers to how much text is grouped together into a single segment or "chunk" before creating an embedding. When processing large documents, the text is often divided into smaller chunks to create embeddings for each segment. The chunk size determines how much text is included in each embedding.
   >
   > Choosing the right chunk size is important: if chunks are too large, important details might get lost or diluted in the embedding; if too small, the system might miss out on essential context. The chunk size thus impacts the accuracy and relevance of the information retrieved and subsequently used in generating responses
 
-  ![Chunk Size](./Resources/image/ch05img6.png)
-
+  ![Chunk Size](./Resources/image/ch05img6.png) -->
+<!-- 
 1. Set the Resource Authentication Type to **API Key**
 
     ![Api Key](./Resources/image/ch05img7.png)
 
-    :repeat: Click **Next** and wait for the import to finish
+    :repeat: Click **Next** and wait for the import to finish -->
 
 ### Create a Semantic Search Plugin to query the AI Search Index
 
@@ -227,6 +236,59 @@ In this challenge, you will create a Semantic Search Plugin that utilizes an Azu
     * ```text
         Who do I contact at Contoso for questions regarding workplace safety?
       ```
+
+## Understanding Retrieval Augmented Generation (RAG)
+
+The following diagram illustrates how the RAG pattern works with Azure AI Search to enhance AI responses with custom knowledge:
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#242424', 'primaryTextColor': '#fff', 'primaryBorderColor': '#555', 'lineColor': '#555', 'secondaryColor': '#444', 'tertiaryColor': '#333'}}}%%
+flowchart LR
+    classDef indexClass fill:#4B6BFD,stroke:#333,stroke-width:1px,color:white
+    classDef queryClass fill:#28A745,stroke:#333,stroke-width:1px,color:white
+    classDef userClass fill:#6F42C1,stroke:#333,stroke-width:1px,color:white
+    classDef resultClass fill:#E83E8C,stroke:#333,stroke-width:1px,color:white
+    
+    subgraph Indexing["Document Processing (Before Query Time)"]
+        direction LR
+        I1[Document intake]:::indexClass --> I2[Split into chunks]:::indexClass
+        I2 --> I3[Generate embeddings]:::indexClass
+        I3 --> I4[Store in vector DB]:::indexClass
+    end
+    
+    subgraph Querying["Query Processing (At Runtime)"]
+        direction LR
+        Q1[User query]:::userClass --> Q2[Convert to embedding]:::queryClass
+        Q2 --> Q3[Search vector DB]:::queryClass
+        Q3 --> Q4[Retrieve relevant chunks]:::queryClass
+        Q4 --> Q5[Add chunks to prompt]:::queryClass
+        Q5 --> Q6[Send to AI model]:::queryClass
+        Q6 --> Q7[Generate enhanced response]:::resultClass
+        Q7 --> Q8[Display to user]:::userClass
+    end
+    
+    I4 -.->|Vector similarity search| Q3
+```
+
+This diagram shows the complete RAG workflow:
+
+1. **Document Processing (Done before query time)**
+   - Documents are ingested
+   - Split into smaller chunks
+   - Each chunk is converted into a vector embedding
+   - These embeddings are stored in the Azure AI Search vector database
+
+2. **Query Processing (At runtime)**
+   - User asks a question
+   - The question is converted to a vector embedding
+   - This embedding is used to search the vector database for similar content
+   - The most relevant document chunks are retrieved
+   - The retrieved chunks are combined with the original query
+   - This enhanced prompt is sent to the AI model
+   - The model generates a response that incorporates specific knowledge from the documents
+   - User receives an accurate answer grounded in your organization's data
+
+The RAG pattern ensures responses are factual, up-to-date, and relevant to your specific organization, eliminating "hallucinations" and providing access to information not in the model's original training data.
 
 ## Success Criteria
 

@@ -14,7 +14,7 @@ Semantic Kernel truly shines in LLM development when you incorporate plugins. Th
 
 This challenge will introduce you to building Semantic Kernel Plugins in python, and how to chain plugins using the Auto Function Calling capabilities of Semantic Kernel.
 
-Challenges:
+### Challenges
 
 * Launch your AI Chat app, and submit the prompt.
 
@@ -60,15 +60,17 @@ Challenges:
 
 * **Review the ```geo_coding_plugin.py``` file located in the ***plugins*** directory**
   * Register for a free API key from [Geocoding API](https://geocode.maps.co/) to use in the plugin
-  * Update ```.env``` with your GEOCODING_API_KEY
-  * Register the Plugin by adding the following code in **chat.py**
-  
-      ```python
-      kernel.add_plugin(
-                GeoPlugin(),
-                plugin_name="GeoLocation",
-      )
-      ```
+
+  ### Environment Setup
+
+  Now that you've registered for a geocoding API key, update the `.env` file you created in Challenge-02:
+
+  ```
+  # Add this to your existing .env file
+  GEOCODING_API_KEY="your-geocoding-api-key"
+  ```
+
+  * Register the Plugin
 
   * Run the application and test the Geocoding plugin by submitting the following prompt:
 
@@ -138,6 +140,84 @@ Challenges:
     ```
 
     :bulb: Set breakpoints in your plugins to verify that the functions are being called correctly and that the data is being passed between the plugins correctly.
+
+## Understanding Semantic Kernel Plugin Architecture
+
+The following diagram illustrates how Semantic Kernel plugins extend AI capabilities through native functions and automatic function calling:
+
+```mermaid
+flowchart TB
+    subgraph User
+        A[User asks about weather in San Francisco]
+    end
+    
+    subgraph SemanticKernel["Semantic Kernel"]
+        B[Process user query]
+        C{Function choice}
+        
+        subgraph TimePlugin["Time Plugin"]
+            D[GetDate function]
+            E[GetDayOfWeek function]
+        end
+        
+        subgraph GeoPlugin["Geo Plugin"]
+            F[GetLocation function]
+        end
+        
+        subgraph WeatherPlugin["Weather Plugin"]
+            G[GetWeatherForecast function]
+        end
+        
+        H[Combine results & generate response]
+    end
+    
+    subgraph ExternalSystems["External Data Sources"]
+        I[Current time data]
+        J[Geocoding API]
+        K[Weather API]
+    end
+    
+    A -->|user query| B
+    B --> C
+    
+    C -->|"detect: need current date"| D
+    D <-->|fetch current date| I
+    D -->|return date| C
+    
+    C -->|"detect: need day of week"| E
+    E -->|calculate| C
+    
+    C -->|"detect: need location coords"| F
+    F <-->|geocode location| J
+    F -->|return coordinates| C
+    
+    C -->|"detect: need weather data"| G
+    G <-->|fetch forecast| K
+    G -->|return weather data| C
+    
+    C --> H
+    H --> A
+    
+    classDef userClass fill:#00FFFF,stroke:#FFFFFF,stroke-width:2px,color:black
+    classDef skClass fill:#00FF00,stroke:#FFFFFF,stroke-width:2px,color:black
+    classDef pluginClass fill:#FFFF00,stroke:#FFFFFF,stroke-width:2px,color:black
+    classDef externalClass fill:#FF9966,stroke:#FFFFFF,stroke-width:2px,color:black
+    
+    class A userClass
+    class B,C,H skClass
+    class D,E,F,G pluginClass
+    class I,J,K externalClass
+```
+
+This diagram demonstrates how Semantic Kernel handles a complex user request by:
+
+1. **Analyzing the user's query** to determine required information
+2. **Automatically detecting** which plugin functions to call
+3. **Orchestrating calls** to different plugins in the appropriate sequence
+4. **Retrieving external data** through plugin functions that connect to real-world APIs
+5. **Combining all information** to generate a comprehensive response
+
+The plugin architecture allows the AI model to access real-time, specialized information that it couldn't otherwise obtain, significantly extending its capabilities beyond what's contained in its training data.
 
 ## Success Criteria
 
