@@ -113,7 +113,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
  - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
  - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
-<validation step="a3e77878-3ce2-4d69-b4e6-c88d4a0f45ec" />  
+<validation step="2b3e38c5-a34d-4134-9f1e-1625b32328c0" />  
 
 ### Task 2: Create Azure AI Search
 
@@ -122,11 +122,11 @@ In this task you will create a Azure AI Search resource.
 1. Navigate back to the **Azure portal**.
 
 1. On the search bar, search for **AI Search (1)** then select **AI Search (2)** from the services.
-
+    
     ![](./media/sk16.png)
 
 1. Select **AI Search (1)** then click on **+ Create (2)**.
-
+    
     ![](./media/sk17.png)
 
 1. On the **Create a search service** page, provide the following details and then click on **Review+create (5)**:
@@ -136,10 +136,10 @@ In this task you will create a Azure AI Search resource.
     - Service name: Enter **ai-search-<inject key="Deployment ID" enableCopy="false"></inject> (3)**
     - Region: **<inject key="Region" enableCopy="false"></inject> (4)** 
 
-      ![](./media/sk18.png)
+        ![](./media/sk18.png)
 
 1. Click on **Create**.
-
+    
     ![](./media/sk19.png)
 
 ## Exercise 2: Semantic Kernel Fundamentals
@@ -162,6 +162,7 @@ In this task, you will explore different flow types in Azure AI Foundry by setti
 1. Click on **File (1)** and select **Open Folder (2)**.
 
     ![](./media/image_023.png)
+    
 1. Navigate to `C:\LabFiles` (1), select the **ai-developer (2)** folder, and click **Select Folder (3)**.
 
     ![](./media/sk20.png)
@@ -1462,7 +1463,7 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
  - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
  - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
-<validation step="aba3f1c2-bf55-4ca3-baf6-fcaa280552fa" />  
+<validation step="d14590b3-6fd6-4081-858c-f38572b7468c" />  
 
 ### Task 2: Create a Semantic Search Plugin to query the AI Search Index
 
