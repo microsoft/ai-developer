@@ -656,21 +656,21 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
      using System;
     ```
 
-      ![](./media/image_050.png)
+    ![](./media/image_050.png)
 
 1. Search **private Kernel? kernel;** (using Ctrl+F)  and add the following piece of code below it:
     
-    ```
-     private OpenAIPromptExecutionSettings? promptSettings;
-    ```
+      ```
+      private OpenAIPromptExecutionSettings? promptSettings;
+      ```
 
-     ![](./media/image_051.png)
+      ![](./media/image_051.png)
 
 1. Search **chatHistory = [];** (using Ctrl+F)  and add the following piece of code below it:
      
-     ```
-     chatHistory = new ChatHistory();
-     ```
+      ```
+      chatHistory = new ChatHistory();
+      ```
 
       ![](./media/image_052.png)
 
@@ -686,7 +686,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
      };
     ```
 
-      ![](./media/image_053.png)
+    ![](./media/image_053.png)
 
     >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
@@ -697,7 +697,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     kernel.ImportPluginFromObject(timePlugin, "TimePlugin");
     ```
 
-      ![](./media/image_054.png)
+    ![](./media/image_054.png)
 
 1. Search **var assistantResponse = await chatCompletionService.GetChatMessageContentAsync** (using Ctrl+F)  and add the following line of code between chatHistory and kernel:
     
@@ -713,7 +713,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
         kernel: kernel);
     ```
     
-      ![](./media/image_055.png)
+    ![](./media/image_055.png)
 
 1. In case you encounter any indentation error, use the code from the following URL:
     
