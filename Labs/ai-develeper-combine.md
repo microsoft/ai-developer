@@ -141,7 +141,7 @@ In this task you will create a Azure AI Search resource.
 
 1. Click on **Create**.
     
-    ![](./media/sk19.png)
+      ![](./media/sk19.png)
 
 ## Exercise 2: Semantic Kernel Fundamentals
 
