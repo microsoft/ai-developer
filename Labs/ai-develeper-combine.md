@@ -137,11 +137,11 @@ In this task you will create a Azure AI Search resource.
      - Service name: Enter **ai-search-<inject key="Deployment ID" enableCopy="false"></inject> (3)**
      - Region: **<inject key="Region" enableCopy="false"></inject> (4)** 
 
-      ![](./media/sk18.png)
+        ![](./media/sk18.png)
 
 1. Click on **Create**.
     
-    ![](./media/sk19.png)
+      ![](./media/sk19.png)
 
 ## Exercise 2: Semantic Kernel Fundamentals
 
