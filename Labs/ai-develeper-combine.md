@@ -109,9 +109,10 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ![](./media/sk15.png)
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
- - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
- - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
- - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+- Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+- If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+- If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
 <validation step="2b3e38c5-a34d-4134-9f1e-1625b32328c0" />  
 
