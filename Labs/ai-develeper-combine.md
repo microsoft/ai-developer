@@ -141,7 +141,7 @@ In this task you will create a Azure AI Search resource.
 
 1. Click on **Create**.
     
-      ![](./media/sk19.png)
+     ![](./media/sk19.png)
 
 ## Exercise 2: Semantic Kernel Fundamentals
 
@@ -162,35 +162,35 @@ In this task, you will explore different flow types in Azure AI Foundry by setti
 
 1. Click on **File (1)** and select **Open Folder (2)**.
 
-    ![](./media/image_023.png)
+     ![](./media/image_023.png)
     
 1. Navigate to `C:\LabFiles` (1), select the **ai-developer (2)** folder, and click **Select Folder (3)**.
 
-    ![](./media/sk20.png)
+     ![](./media/sk20.png)
 
 1. If you receive a `Do you trust the authors of the files in folder` warning, select the **checkbox (1)** and click **Yes, I trust the authors (2)**.
 
-    ![](./media/image_025.png)
+     ![](./media/image_025.png)
 
 1. Navigate to the **AI Foundry** Portal, go to the **Home (1)** page, select **Azure OpenAI (2)**. Then **Copy (3)** the endpoint and paste it into **Notepad** to be used in the upcoming exercises.
 
-    ![](./media/sk21.png)
+     ![](./media/sk21.png)
 
 1. Copy the **API key** from the AI Foundry Portal and paste it into **Notepad** for use in the upcoming exercises.
 
-    ![](./media/sk22.png)
+     ![](./media/sk22.png)
 
 ### Python:
 
 1. Navigate to `Python>src` directory and open **.env** (1) file.
 
-    ![](./media/image_026.png)
+     ![](./media/image_026.png)
 
 1. Paste **Azure OpenAI Service endpoint** copied earlier in the exercise besides `AZURE_OPENAI_ENDPOINT`.
     >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
 1. Paste **API key** copied earlier in the exercise besides `AZURE_OPENAI_API_KEY`.
 
-    ![](./media/image_027.png)
+     ![](./media/image_027.png)
 
 1. Use **Ctrl+S** to save the file.
 
@@ -198,7 +198,7 @@ In this task, you will explore different flow types in Azure AI Foundry by setti
 
 1. Navigate to `Dotnet>src>BlazorAI` directory and open **appsettings.json** file.
 
-    ![](./media/sk23.png)
+     ![](./media/sk23.png)
 
 1. Paste **Azure OpenAI Service endpoint** copied earlier in the exercise besides `AOI_ENDPOINT`.
     >**Note**:- Ensure that every value in the **appsettings.json** file is enclosed in **double quotes (")**.
@@ -206,7 +206,7 @@ In this task, you will explore different flow types in Azure AI Foundry by setti
     >**Note**:- Make sure to remove the "/" from the endpoint.
 1. Paste **API key** copied earlier in the exercise besides `AOI_API_KEY`.
 
-    ![](./media/sk25.png)
+     ![](./media/sk25.png)
 
 1. Use **Ctrl+S** to save the file.
 
@@ -219,7 +219,7 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 
 1. Navigate to `Python>src` directory and open **chat.py (1)** file.
 
-    ![](./media/image_030.png)
+     ![](./media/image_030.png)
 
 1. Add the following code in the `#Import Modules` (1) section of the file.
     ```
@@ -228,8 +228,10 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
     import os
     ```
 
-    ![](./media/image_031.png)
+     ![](./media/image_031.png)
+
 1. Add the following code in the `# Challenge 02 - Chat Completion Service` (1) section of the file.
+    
     ```
     chat_completion_service = AzureChatCompletion(
         deployment_name=os.getenv("AZURE_OPENAI_CHAT_DEPLOYMENT_NAME"),
@@ -241,7 +243,8 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
     execution_settings = kernel.get_prompt_execution_settings_from_service_id("chat-service")
     ```
 
-    ![](./media/image_032.png)
+     ![](./media/image_032.png)
+
 1. Add the following code in the `# Start Challenge 02 - Sending a message to the chat completion service by invoking kernel` section of the file.
     ```
     global chat_history
@@ -256,14 +259,15 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
     chat_history.add_assistant_message(str(response))
     ```
 
-    ![](./media/image_033.png)
+     ![](./media/image_033.png)
+
 1. Add the following code in the `#return result` section of the file.
     ```
     logger.info(f"Response: {response}")
     return response
     ```
 
-    ![](./media/image_034.png)
+     ![](./media/image_034.png)
 
 1. In case you encounter any indentation error, use the code from the following URL:
     ```
@@ -272,18 +276,19 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 1. Save the file.
 1. Right click on `Python>src` in the left pane and select **Open in Integrated Terminal**.
 
-    ![](./media/image_035.png)
+     ![](./media/image_035.png)
 
 1. Use the following command to run the app:
     ```
     streamlit run app.py
     ```
 1. If you are asked for any email to register, feel free to use the below provided email, and hit **Enter**:
+
     ```
     test@gmail.com
     ```
 
-    ![](./media/image_036.png)
+     ![](./media/image_036.png)
 
 1. If the app does not open automatically in the browser, you can access it using the following **URL**:
 
@@ -291,6 +296,7 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
     http://localhost:8501
     ```
 1. Submit the following prompt and see how the AI responds:
+
     ```
     Why is the sky blue?
     ```
@@ -299,14 +305,16 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
     ```
 1. You will receive a response similar to the one shown below:
 
-    ![](./media/image_037.png)
+     ![](./media/image_037.png)
 
 ### C Sharp(C#):
 
 1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
 
-    ![](./media/image_038.png)
+     ![](./media/image_038.png)
+
 1. Add the following code in the `// Your code goes here(Line no. 92)` (1) section of the file.
+
     ```
     chatHistory.AddUserMessage(userMessage);
     var chatCompletionService = kernel.GetRequiredService<IChatCompletionService>();
@@ -316,8 +324,10 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
     chatHistory.AddAssistantMessage(assistantResponse.Content);
     ```
 
-    ![](./media/image_039.png)
+     ![](./media/image_039.png)
+
 1. In case you encounter any indentation error, use the code from the following URL: 
+
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-02.cs
     ```
@@ -326,14 +336,18 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 
 1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
-    ![](./media/image_040.png)
+     ![](./media/image_040.png)
+
 1. Run the following line of code to trust the dev certificates necessary to run the app locally, and then select **Yes**:
+
     ```
     dotnet dev-certs https --trust
     ```
 
-    ![](./media/image_041.png)
+     ![](./media/image_041.png)
+
 1. Use the following command to run the app:
+
     ```
     dotnet run
     ```
@@ -341,6 +355,7 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 
     >**Note**: If you receive security warnings in the browser, close the browser and follow the link again.
 1. Submit the following prompt and see how the AI responds:
+
     ```
     Why is the sky blue?
     ```
@@ -349,7 +364,7 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
     ```
 1. You will receive a response similar to the one shown below:
 
-    ![](./media/image_042.png)
+     ![](./media/image_042.png)
 
 1. Once you receive the response, navigate back to the Visual studio code terminal and then press **Ctrl+C** to stop the build process.
 
