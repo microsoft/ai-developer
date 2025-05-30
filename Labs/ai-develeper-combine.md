@@ -2607,7 +2607,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
 6. Open a new tab in the browser and navigate to the link for **blazor-aichat**, i.e. **https://localhost:7118/**.
 
-    >**Note**: If you receive security warnings in the browser, close the browser and follow the link again.
+   >**Note**: If you receive security warnings in the browser, close the browser and follow the link again.
 
 7. Select **Multi-Agent (1)** on the left-hand side pane.
 
