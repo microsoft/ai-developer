@@ -123,11 +123,12 @@ In this task you will create a Azure AI Search resource.
 1. Navigate back to the **Azure portal**.
 
 1. On the search bar, search for **AI Search (1)** then select **AI Search (2)** from the services.
-        ![](./media/sk16.png)
+    
+      ![](./media/sk16.png)
 
 1. Select **AI Search (1)** then click on **+ Create (2)**.
     
-    ![](./media/sk17.png)
+      ![](./media/sk17.png)
 
 1. On the **Create a search service** page, provide the following details and then click on **Review+create (5)**:
 
