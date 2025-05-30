@@ -22,11 +22,11 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     ![](./media/sk2.png)
 
-1. Expnad **Use with AI Foundry (1)**, select **AI Hubs (2)**, click on the **Create (3)** drop down and then select **Hub (4)**.
+2. Expnad **Use with AI Foundry (1)**, select **AI Hubs (2)**, click on the **Create (3)** drop down and then select **Hub (4)**.
 
     ![](./media/sk6.png)
 
-1. On the **Azure AI hub** page, provide the following details and then click on **Review+create (5)**:
+3. On the **Azure AI hub** page, provide the following details and then click on **Review+create (5)**:
 
     - **Subscription**: Leave the default one **(1)**
     - Resource group: Select **ai-foundry-<inject key="Deployment ID" enableCopy="false"></inject> (2)**
@@ -35,27 +35,27 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
       ![](./media/sk4.png)
 
-1. Once the Validation passed, click on **Create**.
+4. Once the Validation passed, click on **Create**.
 
     ![](./media/sk5.png)
 
-1. Once the deployment is completed, click on **Go to resource**.
+5. Once the deployment is completed, click on **Go to resource**.
 
     ![](./media/sk7.png)
 
-1. Click on **Launch Azure AI Foundry**.
+6. Click on **Launch Azure AI Foundry**.
 
     ![](./media/sk8.png)
 
-1. Select **Model + endpoints (1)**, then then click on **+ Deploy model (2)**, followed by **Deploy Base model (3)**.  
+7. Select **Model + endpoints (1)**, then then click on **+ Deploy model (2)**, followed by **Deploy Base model (3)**.  
 
     ![](./media/sk9.png)
 
-1. Search for **gpt-4o (1)**, select the **gpt-4o** model **(2)**, and click on **Confirm (3)**.
+8. Search for **gpt-4o (1)**, select the **gpt-4o** model **(2)**, and click on **Confirm (3)**.
 
     ![](./media/image_008.png)
 
-1. On the **Deploy model gpt-4o** blade, specify the following configuration options and click on **Deploy (4)**:
+9. On the **Deploy model gpt-4o** blade, specify the following configuration options and click on **Deploy (4)**:
 
     - **Deployment type**: **Standard** (1)
     - **Model version**: 2024-05-13 (Default) (2)
@@ -63,29 +63,29 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
       ![](./media/image_009.png) 
 
-1. Click on **Azure AI Foundry**.
+10. Click on **Azure AI Foundry**.
 
     ![](./media/sk10.png)
 
-1. Select the **aifoundryhubxxxxxx** resource.
+11. Select the **aifoundryhubxxxxxx** resource.
 
     ![](./media/sk11.png)
 
      >**Note**: **xxxxx** refers to randomly generated suffix.
 
-1. Navigate to **Model + endpoints (1)**, then select **gpt-4o (2)** model and the click on **Open in Playground (3)**.
+12. Navigate to **Model + endpoints (1)**, then select **gpt-4o (2)** model and the click on **Open in Playground (3)**.
 
     ![](./media/sk12.png)
 
-1. Replace the existing text with `Extract the United States Postal Service (USPS) formatted address from the following email` **(1)** then click on **Apply changes (2)**. Using this you can explore the capabilities of Azure OpenAI.
+13. Replace the existing text with `Extract the United States Postal Service (USPS) formatted address from the following email` **(1)** then click on **Apply changes (2)**. Using this you can explore the capabilities of Azure OpenAI.
 
     ![](./media/sk13.png)
 
-1. Click on **Continue**.
+14. Click on **Continue**.
 
     ![](./media/sk14.png)
 
-1. Provide the below mail in the chat **(1)** then click on **Send (2)** to identify and extract the postal address from the following email:
+15. Provide the below mail in the chat **(1)** then click on **Send (2)** to identify and extract the postal address from the following email:
     ```
     Subject: Elevate Your Brand with Our Comprehensive Marketing Solutions!
     From: BrightEdge Marketing
@@ -104,7 +104,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     ![](./media/image_018.png)
     
-1. You will receive a response similar to the one shown below:
+16. You will receive a response similar to the one shown below:
 
     ![](./media/sk15.png)
 
@@ -122,15 +122,15 @@ In this task you will create a Azure AI Search resource.
 
 1. Navigate back to the **Azure portal**.
 
-1. On the search bar, search for **AI Search (1)** then select **AI Search (2)** from the services.
+2. On the search bar, search for **AI Search (1)** then select **AI Search (2)** from the services.
     
       ![](./media/sk16.png)
 
-1. Select **AI Search (1)** then click on **+ Create (2)**.
+3. Select **AI Search (1)** then click on **+ Create (2)**.
     
       ![](./media/sk17.png)
 
-1. On the **Create a search service** page, provide the following details and then click on **Review+create (5)**:
+4. On the **Create a search service** page, provide the following details and then click on **Review+create (5)**:
 
      - Subscription: Leave the default one **(1)**
      - Resource group: Select **ai-foundry-<inject key="Deployment ID" enableCopy="false"></inject> (2)**
@@ -139,7 +139,7 @@ In this task you will create a Azure AI Search resource.
 
         ![](./media/sk18.png)
 
-1. Click on **Create**.
+5. Click on **Create**.
     
       ![](./media/sk19.png)
 
@@ -160,23 +160,23 @@ In this task, you will explore different flow types in Azure AI Foundry by setti
 
 1. Open **Visual Studio Code** using the desktop shortcut in the labvm.
 
-1. Click on **File (1)** and select **Open Folder (2)**.
+2. Click on **File (1)** and select **Open Folder (2)**.
 
      ![](./media/image_023.png)
     
-1. Navigate to `C:\LabFiles` (1), select the **ai-developer (2)** folder, and click **Select Folder (3)**.
+3. Navigate to `C:\LabFiles` (1), select the **ai-developer (2)** folder, and click **Select Folder (3)**.
 
      ![](./media/sk20.png)
 
-1. If you receive a `Do you trust the authors of the files in folder` warning, select the **checkbox (1)** and click **Yes, I trust the authors (2)**.
+4. If you receive a `Do you trust the authors of the files in folder` warning, select the **checkbox (1)** and click **Yes, I trust the authors (2)**.
 
      ![](./media/image_025.png)
 
-1. Navigate to the **AI Foundry** Portal, go to the **Home (1)** page, select **Azure OpenAI (2)**. Then **Copy (3)** the endpoint and paste it into **Notepad** to be used in the upcoming exercises.
+5. Navigate to the **AI Foundry** Portal, go to the **Home (1)** page, select **Azure OpenAI (2)**. Then **Copy (3)** the endpoint and paste it into **Notepad** to be used in the upcoming exercises.
 
      ![](./media/sk21.png)
 
-1. Copy the **API key** from the AI Foundry Portal and paste it into **Notepad** for use in the upcoming exercises.
+6. Copy the **API key** from the AI Foundry Portal and paste it into **Notepad** for use in the upcoming exercises.
 
      ![](./media/sk22.png)
 
@@ -186,13 +186,13 @@ In this task, you will explore different flow types in Azure AI Foundry by setti
 
      ![](./media/image_026.png)
 
-1. Paste **Azure OpenAI Service endpoint** copied earlier in the exercise besides `AZURE_OPENAI_ENDPOINT`.
+2. Paste **Azure OpenAI Service endpoint** copied earlier in the exercise besides `AZURE_OPENAI_ENDPOINT`.
     >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
-1. Paste **API key** copied earlier in the exercise besides `AZURE_OPENAI_API_KEY`.
+3. Paste **API key** copied earlier in the exercise besides `AZURE_OPENAI_API_KEY`.
 
      ![](./media/image_027.png)
 
-1. Use **Ctrl+S** to save the file.
+4. Use **Ctrl+S** to save the file.
 
 ### C Sharp(C#):
 
@@ -200,15 +200,15 @@ In this task, you will explore different flow types in Azure AI Foundry by setti
 
      ![](./media/sk23.png)
 
-1. Paste **Azure OpenAI Service endpoint** copied earlier in the exercise besides `AOI_ENDPOINT`.
+2. Paste **Azure OpenAI Service endpoint** copied earlier in the exercise besides `AOI_ENDPOINT`.
     >**Note**:- Ensure that every value in the **appsettings.json** file is enclosed in **double quotes (")**.
 
     >**Note**:- Make sure to remove the "/" from the endpoint.
-1. Paste **API key** copied earlier in the exercise besides `AOI_API_KEY`.
+3. Paste **API key** copied earlier in the exercise besides `AOI_API_KEY`.
 
      ![](./media/sk25.png)
 
-1. Use **Ctrl+S** to save the file.
+4. Use **Ctrl+S** to save the file.
 
 
 ### Task 2: Update the code files and run the app
@@ -221,7 +221,7 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 
      ![](./media/image_030.png)
 
-1. Add the following code in the `#Import Modules` (1) section of the file.
+2. Add the following code in the `#Import Modules` (1) section of the file.
     ```
     from semantic_kernel.connectors.ai.chat_completion_client_base import ChatCompletionClientBase
     from semantic_kernel.connectors.ai.open_ai import OpenAIChatPromptExecutionSettings
@@ -230,7 +230,7 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 
      ![](./media/image_031.png)
 
-1. Add the following code in the `# Challenge 02 - Chat Completion Service` (1) section of the file.
+3. Add the following code in the `# Challenge 02 - Chat Completion Service` (1) section of the file.
     
       ```
        chat_completion_service = AzureChatCompletion(
@@ -244,7 +244,7 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
       ```
       ![](./media/image_032.png)
 
-1. Add the following code in the `# Start Challenge 02 - Sending a message to the chat completion service by invoking kernel` section of the file.
+4. Add the following code in the `# Start Challenge 02 - Sending a message to the chat completion service by invoking kernel` section of the file.
     ```
     global chat_history
     chat_history.add_user_message(user_input)
@@ -260,7 +260,7 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 
      ![](./media/image_033.png)
 
-1. Add the following code in the `#return result` section of the file.
+5. Add the following code in the `#return result` section of the file.
     ```
     logger.info(f"Response: {response}")
     return response
@@ -268,20 +268,21 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 
      ![](./media/image_034.png)
 
-1. In case you encounter any indentation error, use the code from the following URL:
+6. In case you encounter any indentation error, use the code from the following URL, and save the file:
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-02.py
     ```
-1. Save the file.
-1. Right click on `Python>src` in the left pane and select **Open in Integrated Terminal**.
+
+7. Right click on `Python>src` in the left pane and select **Open in Integrated Terminal**.
 
      ![](./media/image_035.png)
 
-1. Use the following command to run the app:
-    ```
-    streamlit run app.py
-    ```
-1. If you are asked for any email to register, feel free to use the below provided email, and hit **Enter**:
+8. Use the following command to run the app:
+    
+      ```
+      streamlit run app.py
+      ```
+9. If you are asked for any email to register, feel free to use the below provided email, and hit **Enter**:
 
      ```
      test@gmail.com
@@ -289,12 +290,12 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 
       ![](./media/image_036.png)
 
-1. If the app does not open automatically in the browser, you can access it using the following **URL**:
+10. If the app does not open automatically in the browser, you can access it using the following **URL**:
 
      ```
      http://localhost:8501
      ```
-1. Submit the following prompt and see how the AI responds:
+11. Submit the following prompt and see how the AI responds:
 
      ```
      Why is the sky blue?
@@ -302,7 +303,7 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
      ```
      Why is it red?
      ```
-1. You will receive a response similar to the one shown below:
+12. You will receive a response similar to the one shown below:
 
      ![](./media/image_037.png)
 
@@ -409,7 +410,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
      ![](./media/image_044.png)
 
-1. Add the following code to the file:
+2. Add the following code to the file:
 
     ```
      from datetime import datetime
@@ -482,7 +483,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
       ![](./media/image_046.png)
 
-1. Add the following code in the `# Placeholder for Time plugin` section of the file.
+7. Add the following code in the `# Placeholder for Time plugin` section of the file.
 
       ```
         time_plugin = TimePlugin()
@@ -492,7 +493,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
       
       ![](./media/sk27.png)
 
-1. Search (using Ctrl+F) and remove the following piece of code from the file as we will enable automatic function calling and this is no longer required:
+8. Search (using Ctrl+F) and remove the following piece of code from the file as we will enable automatic function calling and this is no longer required:
 
      ```
      execution_settings = kernel.get_prompt_execution_settings_from_service_id ("chat-service")
@@ -500,35 +501,35 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     >**Note**: You need to remove it from two code blocks; one will be inside the **def initialize_kernel():** function, and another will be in the **global chat_history** code block.
 
-1. In case you encounter any indentation error, use the code from the following URL:
+9. In case you encounter any indentation error, use the code from the following URL:
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-03_time_plugin.py
     ```
-1. Save the file.
-1. Right-click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
+10. Save the file.
+11. Right-click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
       ![](./media/image_035.png)
 
-1. Use the following command to run the app:
+12. Use the following command to run the app:
 
-     ```
-     streamlit run app.py
-     ```
-1. If the app does not open automatically in the browser, you can access it using the following **URL**:
+      ```
+      streamlit run app.py
+      ```
+13. If the app does not open automatically in the browser, you can access it using the following **URL**:
     
-     ```
-     http://localhost:8501
-     ```
-1. Submit the following prompt:
+      ```
+      http://localhost:8501
+      ```
+14. Submit the following prompt:
 
-     ```
-     What time is it?
-     ```
-1. Since the AI has the **Time Plugin**, it will be able to provide real-time information, you will get a response similar to the following:
+      ```
+      What time is it?
+      ```
+15. Since the AI has the **Time Plugin**, it will be able to provide real-time information, you will get a response similar to the following:
 
-     ```
-     The current time is 3:43 PM on January 23, 2025.
-     ```
+      ```
+      The current time is 3:43 PM on January 23, 2025.
+      ```
 
       ![](./media/image_048.png)
 
@@ -643,11 +644,11 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
          }
       }
      ```
-1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
+2. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
 
       ![](./media/image_038.png)
 
-1. Add the following code in the `// Import Models` **(1)** section of the file.
+3. Add the following code in the `// Import Models` **(1)** section of the file.
 
       ```
       using Microsoft.SemanticKernel.Connectors.OpenAI;
@@ -657,7 +658,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
       ![](./media/image_050.png)
 
-1. Search **private Kernel? kernel;** (using Ctrl+F)  and add the following piece of code below it:
+4. Search **private Kernel? kernel;** (using Ctrl+F)  and add the following piece of code below it:
     
       ```
       private OpenAIPromptExecutionSettings? promptSettings;
@@ -665,7 +666,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
       ![](./media/image_051.png)
 
-1. Search **chatHistory = [];** (using Ctrl+F)  and add the following piece of code below it:
+5. Search **chatHistory = [];** (using Ctrl+F)  and add the following piece of code below it:
      
       ```
       chatHistory = new ChatHistory();
@@ -673,7 +674,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
       ![](./media/image_052.png)
 
-1. Add the following code in the `// Challenge 03 - Create OpenAIPromptExecutionSettings` (1) section of the file.
+6. Add the following code in the `// Challenge 03 - Create OpenAIPromptExecutionSettings` (1) section of the file.
     
       ```
        promptSettings = new OpenAIPromptExecutionSettings
@@ -689,7 +690,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
-1. Add the following code in the `// Challenge 03 - Add Time Plugin` section of the file.
+7. Add the following code in the `// Challenge 03 - Add Time Plugin` section of the file.
     
       ```
       var timePlugin = new Plugins.TimePlugin();
@@ -698,7 +699,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
       ![](./media/image_054.png)
 
-1. Search **var assistantResponse = await chatCompletionService.GetChatMessageContentAsync** (using Ctrl+F)  and add the following line of code between chatHistory and kernel:
+8. Search **var assistantResponse = await chatCompletionService.GetChatMessageContentAsync** (using Ctrl+F)  and add the following line of code between chatHistory and kernel:
     
       ```
       executionSettings: promptSettings,
@@ -714,29 +715,29 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     
      ![](./media/image_055.png)
 
-1. In case you encounter any indentation error, use the code from the following URL, and Save the file.:
+9. In case you encounter any indentation error, use the code from the following URL, and Save the file.:
     
      ```
      https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-03_time_plugin.cs
      ```
 
-1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
+10. Right click on `Dotnet>src>Aspire>Aspire.AppHost` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
       ![](./media/image_040.png)
 
-1. Use the following command to run the app:
+11. Use the following command to run the app:
     
      ```
       dotnet run
      ```
-1. Open a new tab in the browser and navigate to the link for **blazor-aichat**, i.e. **https://localhost:7118/**.
+12. Open a new tab in the browser and navigate to the link for **blazor-aichat**, i.e. **https://localhost:7118/**.
 
-1. Submit the following prompt:
+13. Submit the following prompt:
     
      ```
       What time is it?
      ```
-1. Since the AI has the **Time Plugin**, it will be able to provide real-time information, and you will get a response similar to the following:
+14. Since the AI has the **Time Plugin**, it will be able to provide real-time information, and you will get a response similar to the following:
     
      ```
       The current time is 3:43 PM on January 23, 2025.
@@ -744,7 +745,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
       ![](./media/sk28.png)
 
-1. Once you receive the response, navigate back to the Visual studio code terminal and then press **Ctrl+C** to stop the build process.
+15. Once you receive the response, navigate back to the Visual studio code terminal and then press **Ctrl+C** to stop the build process.
 
 ### Task 3: Create and import the Geocoding Plugin
 
@@ -754,17 +755,17 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
       ![](./media/image_057.png)
 
-1. Enter your details and click on **Create Account (1)**.
+2. Enter your details and click on **Create Account (1)**.
 
       ![](./media/image_058.png)
     
     >**Note**: Use your personal or work e-mail ID to register.
 
-1. You will receive an e-mail. Click on the link in the e-mail to verify your e-mail.
+3. You will receive an e-mail. Click on the link in the e-mail to verify your e-mail.
 
       ![](./media/sk29.png)
 
-1. You will receive your free **geocoding API key,** save it in Notepad for further use.
+4. You will receive your free **geocoding API key,** save it in Notepad for further use.
 
       ![](./media/sk30.png)
 
@@ -774,17 +775,17 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
       ![](./media/image_026.png)
 
-1. Paste the geocoding API key you received just now via e-mail besides `GEOCODING_API_KEY`.
+2. Paste the geocoding API key you received just now via e-mail besides `GEOCODING_API_KEY` and save the file.
 
       ![](./media/image_059.png)
     
     >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
-1. Save the file.
-1. Navigate to `Python>src` directory and open **chat.py** file.
+
+3. Navigate to `Python>src` directory and open **chat.py** file.
 
       ![](./media/image_030.png)
 
-1. Add the following code in the `#Import Modules` section of the file.
+4. Add the following code in the `#Import Modules` section of the file.
     
      ```
       from plugins.geo_coding_plugin import GeoPlugin
@@ -792,7 +793,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
      ![](./media/sk31.png)
 
-1. Add the following code in the `# Placeholder for Time plugin` section, after the **time plugin** in the file.
+5. Add the following code in the `# Placeholder for Time plugin` section, after the **time plugin** in the file.
     
      ```
       kernel.add_plugin(
@@ -807,41 +808,41 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
-1. In case you encounter any indentation error, use the code from the following URL:
+6. In case you encounter any indentation error, use the code from the following URL and save the file:
     
      ```
       https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-03_geo_coding.py
      ```
-1. Save the file.
-1. Right click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
+
+7. Right click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
       ![](./media/image_035.png)
 
-1. Use the following command to run the app:
+8. Use the following command to run the app:
     
-    ```
-     streamlit run app.py
-    ```
-1. If the app does not open automatically in the browser, you can access it using the following **URL**:
+      ```
+      streamlit run app.py
+      ```
+9. If the app does not open automatically in the browser, you can access it using the following **URL**:
     
-    ```
-     http://localhost:8501
-    ```
-1. Submit the following prompt:
+      ```
+       http://localhost:8501
+      ```
+10. Submit the following prompt:
     
-    ```
-     What are the geo-coordinates for Tampa, FL
-    ```
-1. Since the AI has the **Geocoding Plugin**, it will be able to provide real-time information, you will get a response similar to the following:
+      ```
+       What are the geo-coordinates for Tampa, FL
+      ```
+11. Since the AI has the **Geocoding Plugin**, it will be able to provide real-time information, you will get a response similar to the following:
     
-     ```
+      ```
       The geo-coordinates for Tampa, FL are:
 
       Latitude: 27.9477595
       Longitude: -82.458444 
-     ```
+      ```
 
-     ![](./media/image_062.png)
+      ![](./media/image_062.png)
 
 ### C Sharp(C#):
 
@@ -849,18 +850,17 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
       ![](./media/image_028.png)
 
-1. Paste the geocoding API key you received just now via e-mail besides `GEOCODING_API_KEY`.
+2. Paste the geocoding API key you received just now via e-mail besides `GEOCODING_API_KEY` and save the file.
 
       ![](./media/image_063.png)
     
     >Note:- Ensure that every value in the **appsettings.json** file is enclosed in **double quotes (")**.
 
-1. Save the file.
-1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs** file.
+3. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs** file.
 
       ![](./media/image_038.png)
 
-1. Add the following code in the `// Challenge 03 - Add Time Plugin` section, after the **time plugin** in the file.
+4. Add the following code in the `// Challenge 03 - Add Time Plugin` section, after the **time plugin** in the file.
 
      ```
       var geocodingPlugin = new GeocodingPlugin(
@@ -873,29 +873,29 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
-1. In case you encounter any indentation error, use the code from the following URL:
+5. In case you encounter any indentation error, use the code from the following URL and save the file:
     
      ```
       https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-03_geo_coding.cs
      ```
-1. Save the file.
-1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
+
+6. Right click on `Dotnet>src>Aspire>Aspire.AppHost` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
       ![](./media/image_040.png)
 
-1. Use the following command to run the app:
+7. Use the following command to run the app:
    
      ```
       dotnet run
      ```
-1. Open a new tab in the browser and navigate to the link for **blazor-aichat** i.e **https://localhost:7118/**
+8. Open a new tab in the browser and navigate to the link for **blazor-aichat** i.e **https://localhost:7118/**
 
-1. Submit the following prompt:
+9. Submit the following prompt:
     
      ```
       What are the geo-coordinates for Tampa, FL
      ```
-1. Since the AI has the **Geocoding Plugin**, it will be able to provide real-time information, you will get a response similar to the following:
+10. Since the AI has the **Geocoding Plugin**, it will be able to provide real-time information, you will get a response similar to the following:
     
      ```
       The geo-coordinates for Tampa, FL are:
@@ -916,7 +916,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
      ![](./media/image_066.png)
 
-1. Add the following code in the file and Save the file:
+2. Add the following code in the file and Save the file:
     
       ```
        from typing import Annotated
@@ -1004,11 +1004,11 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
             return weather_codes.get(code, "Unknown")
     ```
 
-1. Navigate to `Python>src` directory and open **chat.py (1)** file.
+3. Navigate to `Python>src` directory and open **chat.py (1)** file.
 
       ![](./media/image_030.png)
 
-1. Add the following code in the `#Import Modules` section of the file.
+4. Add the following code in the `#Import Modules` section of the file.
     
      ```
       from plugins.weather_plugin import 
@@ -1017,7 +1017,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
      ![](./media/image_067.png)
 
-1. Add the following code in the `# Placeholder for Time plugin` section, after the **Geocoding plugin** in the file.
+5. Add the following code in the `# Placeholder for Time plugin` section, after the **Geocoding plugin** in the file.
     
       ```
        kernel.add_plugin(
@@ -1031,32 +1031,32 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.    
 
-1. In case you encounter any indentation error, use the code from the following URL:
+6. In case you encounter any indentation error, use the code from the following URL and save the file:
     
       ```
       https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-03_weather.py
       ```
-1. Save the file.
-1. Right click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
+
+7. Right click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
      ![](./media/image_035.png)
 
-1. Use the following command to run the app:
+8. Use the following command to run the app:
     
       ```
        streamlit run app.py
       ```
-1. If the app does not open automatically in the browser, you can access it using the following **URL**:
+9. If the app does not open automatically in the browser, you can access it using the following **URL**:
     
       ```
        http://localhost:8501
       ```
-1. Submit the following prompt:
+10. Submit the following prompt:
     
       ```
        What is today's weather in San Francisco?
       ```
-1. You will receive a response similar to the one shown below:
+11. You will receive a response similar to the one shown below:
 
       ![](./media/image_069.png)
 
@@ -1078,7 +1078,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
       ![](./media/image_070.png)
 
-1. Add the following code in the file:
+2. Add the following code in the file and save the file:
 
     ```
      using System;
@@ -1266,12 +1266,12 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
         }
      }
     ```
-1. Save the file.
-1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
+
+3. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
 
      ![](./media/image_038.png)
 
-1. Add the following code in the `// Challenge 03 - Add Time Plugin` section, after the **geocoding plugin** in the file.yeah
+4. Add the following code in the `// Challenge 03 - Add Time Plugin` section, after the **geocoding plugin** in the file.yeah
 
       ```
        var weatherPlugin = new WeatherPlugin(
@@ -1281,29 +1281,30 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
       ![](./media/image_071.png)
 
-1. In case you encounter any indentation error, use the code from the following URL and Save the file:
+5. In case you encounter any indentation error, use the code from the following URL and Save the file:
 
       ```
       https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-03_weather.cs
       ```
 
-1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` in the left pane and select **Open in Integrated Terminal**.
+6. Right click on `Dotnet>src>Aspire>Aspire.AppHost` in the left pane and select **Open in Integrated Terminal**.
 
       ![](./media/image_040.png)
 
-1. Use the following command to run the app:
+7. Use the following command to run the app:
     
       ```
       dotnet run
       ```
-1. Open a new tab in the browser and navigate to the link for **blazor-aichat**, i.e. **https://localhost:7118/**.
-1. Submit the following prompt:
+8. Open a new tab in the browser and navigate to the link for **blazor-aichat**, i.e. **https://localhost:7118/**.
+
+9. Submit the following prompt:
     
       ```
        What is today's weather in San Francisco?
       ```
 
-1. You will receive a response similar to the one shown below:
+10. You will receive a response similar to the one shown below:
 
       ![](./media/image_072.png)
 
@@ -1339,7 +1340,7 @@ In this task, you will explore different flow types in Azure AI Foundry by runni
     ```
      What are my work items?
     ```
-1. You will receive a response similar to the one shown below:
+2. You will receive a response similar to the one shown below:
 
       ![](./media/image_073.png)
 
@@ -1353,7 +1354,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
      ![](./media/image_074.png)
 
-1. Use the following command to run the app:
+2. Use the following command to run the app:
 
      ```
       python api.py
@@ -1361,19 +1362,19 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     >**Note**:- Please don't close the `terminal`.
 
-1. You can find the OpenAPI spec in the following path `http://127.0.0.1:8000/openapi.json`.
+3. You can find the OpenAPI spec in the following path `http://127.0.0.1:8000/openapi.json`.
 
       ![](./media/image_075.png)
 
-1. The Swagger page can be found at `http://127.0.0.1:8000/docs`.
+4. The Swagger page can be found at `http://127.0.0.1:8000/docs`.
 
       ![](./media/image_076.png)
 
-1. Navigate to `Python>src` directory and open **chat.py (1)** file.
+5. Navigate to `Python>src` directory and open **chat.py (1)** file.
 
       ![](./media/image_030.png)
 
-1. Add the following code in the `# Placeholder for OpenAPI plugin` section of the file.
+6. Add the following code in the `# Placeholder for OpenAPI plugin` section of the file.
 
       ```
       kernel.add_plugin_from_openapi(
@@ -1389,32 +1390,32 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
-1. In case you encounter any indentation error, use the code from the following URL:
+7. In case you encounter any indentation error, use the code from the following URL and save the file:
     
       ```
       https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-04.py
       ```
-1. Save the file.
-1. Right-click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
+
+8. Right-click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
      ![](./media/image_035.png)
 
-1. Use the following command to run the app:
+9. Use the following command to run the app:
 
       ```
        streamlit run app.py
       ```
-1. If the app does not open automatically in the browser, you can access it using the following **URL**:
+10. If the app does not open automatically in the browser, you can access it using the following **URL**:
   
       ```
        http://localhost:8501
       ```
-1. Submit the following prompt and see how the AI responds:
+11. Submit the following prompt and see how the AI responds:
   
       ```
        What are my work items?
       ```
-1. You will receive a response similar to the one shown below:
+12. You will receive a response similar to the one shown below:
 
       ![](./media/sk33.png)
 
@@ -1425,26 +1426,26 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
       ![](./media/image_040.png)
 
-1. Use the following command to run the app:
+2. Use the following command to run the app:
  
       ```
       dotnet run
       ```
     >**Note**:- Please don't close the `terminal`.
 
-1. You can find the OpenAPI spec in the following path `http://localhost:5115/swagger/v1/swagger.json`.
+3. You can find the OpenAPI spec in the following path `http://localhost:5115/swagger/v1/swagger.json`.
 
       ![](./media/image_079.png)
 
-1. The swagger page can be found at `http://localhost:5115/swagger/index.html`.
+4. The swagger page can be found at `http://localhost:5115/swagger/index.html`.
 
       ![](./media/image_080.png)
 
-1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
+5. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
 
       ![](./media/image_038.png)
 
-1. Add the following code in the `// Import Models` section of the file.
+6. Add the following code in the `// Import Models` section of the file.
     
       ```
        using Microsoft.SemanticKernel.Plugins.OpenApi;
@@ -1452,7 +1453,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
       ![](./media/image_081.png)
 
-1. Add the following code in the `// Challenge 04 - Import OpenAPI Spec` (1) section of the file.
+7. Add the following code in the `// Challenge 04 - Import OpenAPI Spec` (1) section of the file.
 
       ```
        await kernel.ImportPluginFromOpenApiAsync(
@@ -1469,35 +1470,35 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
-1. In case you encounter any indentation error, use the code from the following URL:
+8. In case you encounter any indentation error, use the code from the following URL and save the file:
 
       ```
       https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-04.cs
       ```
-1. Save the file.
-1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
+
+9. Right click on `Dotnet>src>Aspire>Aspire.AppHost` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
       ![](./media/image_040.png)
 
-1. Use the following command to run the app:
+10. Use the following command to run the app:
 
       ```
       dotnet run
       ```
-1. Open a new tab in the browser and navigate to the link for **blazor-aichat**, i.e. **https://localhost:7118/**.
+11. Open a new tab in the browser and navigate to the link for **blazor-aichat**, i.e. **https://localhost:7118/**.
 
     >**Note**: If you receive security warnings in the browser, close the browser and follow the link again.
 
-1. Submit the following prompt and see how the AI responds:
+12. Submit the following prompt and see how the AI responds:
 
       ```
       What are my work items?
       ```
-1. You will receive a response similar to the one shown below:
+13. You will receive a response similar to the one shown below:
 
       ![](./media/image_083.png)
 
-1. Once you receive the response, navigate back to the Visual studio code terminal and then press **Ctrl+C** to stop the build process.
+14. Once you receive the response, navigate back to the Visual studio code terminal and then press **Ctrl+C** to stop the build process.
 
 ## Exercise 5: Retrieval-Augmented Generation (RAG)
 
@@ -1516,25 +1517,25 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 
 1. Navigate to the [Azure AI Foundry](https://ai.azure.com/) portal.
 
-1. Click on **Models + endpoints (1)** under **My assets** in the left pane, then click on **+ Deploy model**, followed by **Deploy Base model (2)**.
+2. Click on **Models + endpoints (1)** under **My assets** in the left pane, then click on **+ Deploy model**, followed by **Deploy Base model (2)**.
 
       ![](./media/image_007-1.png)
 
-1. Search for **text-embedding-ada-002**, select the model **(1)**, and click on **Confirm (2)**.
+3. Search for **text-embedding-ada-002**, select the model **(1)**, and click on **Confirm (2)**.
 
       ![](./media/image_084.png)
 
-1. Click on **Deploy**.
+4. Click on **Deploy**.
 
-1. Navigate back to **Models+endpoints (1)**, select **GPT-4o (2)**, and click on **Open in playground (3)**.
+5. Navigate back to **Models+endpoints (1)**, select **GPT-4o (2)**, and click on **Open in playground (3)**.
 
       ![](./media/sk34.png)
 
-1. Click on **Add your data (1)** and select **+ Add a new data source (2)**.
+6. Click on **Add your data (1)** and select **+ Add a new data source (2)**.
 
       ![](./media/image_085.png)
 
-1. On the **Select or add data source**blade, provide the following details and then click on **Next (6)**:
+7. On the **Select or add data source**blade, provide the following details and then click on **Next (6)**:
 
     - Select **Upload files (1)** for `Data source`
     - Subscription: Leave the default one **(2)**
@@ -1544,49 +1545,49 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
  
       ![](./media/sk35.png)
 
-1. Click on **Browse for files**.
+8. Click on **Browse for files**.
 
       ![](./media/sk36.png)
   
-1. Navigate to `C:\LabFiles\ai-developer\Dotnet\src\BlazorAI\data\` and select **employee_handbook.pdf (1).** Click on **Open (2)**.
+9. Navigate to `C:\LabFiles\ai-developer\Dotnet\src\BlazorAI\data\` and select **employee_handbook.pdf (1).** Click on **Open (2)**.
 
       ![](./media/image_087.png)
 
-1. Click on **Upload files**.
+10. Click on **Upload files**.
 
       ![](./media/sk37.png)
 
-1. Click on **Next**.
+11. Click on **Next**.
 
-1. On the **Data Management** page, click on **Next**.
+12. On the **Data Management** page, click on **Next**.
 
       ![](./media/sk38.png)
 
-1. On the **Data Connection** blade, select **API Key (1)** for authenticatio and then click on **Next (2)**.    
+13. On the **Data Connection** blade, select **API Key (1)** for authenticatio and then click on **Next (2)**.    
 
       ![](./media/sk39.png)
 
-1. Review the configuration and then click on **Save and close**.
+14. Review the configuration and then click on **Save and close**.
 
       ![](./media/sk40.png)
 
-1. The data injection might take around 5 minutes.
+15. The data injection might take around 5 minutes.
 
       ![](./media/sk41.png)
 
-1. Navigate to the **Azure Portal** and search **AI Search (1).** Click on it and open the **AI Search (2)** resource located there.
+16. Navigate to the **Azure Portal** and search **AI Search (1).** Click on it and open the **AI Search (2)** resource located there.
 
       ![](./media/image_089.png)
 
-1. Select **ai-search-<inject key="Deployment ID" enableCopy="false"></inject>**.    
+17. Select **ai-search-<inject key="Deployment ID" enableCopy="false"></inject>**.    
     
       ![](./media/image_090.png)
 
-1. On the **Overview (1)** page, copy the **URL (2)** and paste it into Notepad.
+18. On the **Overview (1)** page, copy the **URL (2)** and paste it into Notepad.
 
       ![](./media/image_091.png)
 
-1. Navigate to **Keys (1)** under **Settings** in the left pane, copy the **Primary admin key (2)** from Azure Portal, and paste it into Notepad.
+19. Navigate to **Keys (1)** under **Settings** in the left pane, copy the **Primary admin key (2)** from Azure Portal, and paste it into Notepad.
 
       ![](./media/image_092.png)
 
@@ -1607,20 +1608,20 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
       ![](./media/image_026.png)
 
-1. Paste the **AI search URL** that you copied earlier in the exercise besides `AI_SEARCH_URL` in **.env** file.
+2. Paste the **AI search URL** that you copied earlier in the exercise besides `AI_SEARCH_URL` in **.env** file.
 
     >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
 
-1. Paste the **Primary admin key** that you copied earlier in the exercise besides `AI_SEARCH_KEY`.
+3. Paste the **Primary admin key** that you copied earlier in the exercise besides `AI_SEARCH_KEY` and save the file.
 
       ![](./media/sk42.png)
 
-1. Save the file.
-1. Navigate to `Python>src>plugins` directory and create a new file named **ContosoSearchPlugin.py (1)**.
+
+4. Navigate to `Python>src>plugins` directory and create a new file named **ContosoSearchPlugin.py (1)**.
 
       ![](./media/image_094.png)
 
-1. Add the following code to the file:
+5. Add the following code to the file:
 
     ```
      import json
@@ -1733,12 +1734,12 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
         print(result)
     ```
 
-1. Save the file.
-1. Navigate to `Python>src` directory and open **chat.py (1)** file.
+6. Save the file.
+7. Navigate to `Python>src` directory and open **chat.py (1)** file.
 
       ![](./media/image_030.png)
 
-1. Add the following code in the `#Import Modules` section of the file.
+8. Add the following code in the `#Import Modules` section of the file.
  
       ```
        from semantic_kernel.connectors.ai.open_ai import AzureTextEmbedding
@@ -1747,7 +1748,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
       
       ![](./media/image_095.png)
 
-1. Add the following code in the `#Challenge 05 - Add Text Embedding service for semantic search` section of the file.
+9. Add the following code in the `#Challenge 05 - Add Text Embedding service for semantic search` section of the file.
 
       ```
        text_embedding_service = AzureTextEmbedding(
@@ -1764,7 +1765,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
-1. Add the following code in the `# Challenge 05 - Add Search Plugin` section of the file.
+10. Add the following code in the `# Challenge 05 - Add Search Plugin` section of the file.
     
       ```
        kernel.add_plugin(
@@ -1778,17 +1779,17 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.    
 
-1. In case you encounter any indentation error, use the code from the following URL, and save the file:
+11. In case you encounter any indentation error, use the code from the following URL, and save the file:
 
       ```
       https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-05.py
       ```
 
-1. Right click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
+12. Right click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
      ![](./media/image_035.png)
 
-1. Use the following command to run the app:
+13. Use the following command to run the app:
  
       ```
       streamlit run app.py
@@ -1798,7 +1799,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
       ```
       http://localhost:8501
       ```
-1. Submit the following prompt and see how the AI responds:
+14. Submit the following prompt and see how the AI responds:
   
       ```
        What are the steps for the Contoso 
@@ -1812,7 +1813,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
        Who do I contact at Contoso for questions regarding workplace safety?
       ```
 
-1. You will receive a response similar to the one shown below:
+15. You will receive a response similar to the one shown below:
 
       ![](./media/image_098.png)
 
@@ -1826,21 +1827,21 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
       ![](./media/image_028.png)
 
-1. Paste the **AI search URL** that you copied earlier in the exercise besides `AI_SEARCH_URL` in **appsettings.json** file..
+2. Paste the **AI search URL** that you copied earlier in the exercise besides `AI_SEARCH_URL` in **appsettings.json** file..
 
     >Note:- Ensure that every value in the **appsettings.json** file is enclosed in **double quotes (")**.
 
-1. Paste the **Primary admin key (1)** that you copied earlier in the exercise besides `AI_SEARCH_KEY` **(2)**.
+3. Paste the **Primary admin key (1)** that you copied earlier in the exercise besides `AI_SEARCH_KEY` **(2)**.
 
       ![](./media/image_101.png)
 
-1. Save the file.
+4. Save the file.
 
-1. Navigate to `Dotnet>src>BlazorAI>Plugins` directory and create a new file named **ContosoSearchPlugin.cs (1)**.
+5. Navigate to `Dotnet>src>BlazorAI>Plugins` directory and create a new file named **ContosoSearchPlugin.cs (1)**.
 
       ![](./media/image_102.png)
 
-1. Add the following code to the file and save the file:
+6. Add the following code to the file and save the file:
  
       ```
        using System.ComponentModel;
@@ -1941,11 +1942,11 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
         }
       ```
 
-1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
+7. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
 
       ![](./media/image_038.png)
 
-1. Add the following code in the `// Import Models` section of the file.
+8. Add the following code in the `// Import Models` section of the file.
 
       ```
        using Microsoft.SemanticKernel.Connectors.AzureAISearch;
@@ -1956,7 +1957,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
       ![](./media/image_103.png)
 
-1. Add the following code in the `// Challenge 05 - Register Azure AI Foundry Text Embeddings Generation` section of the file.
+9. Add the following code in the `// Challenge 05 - Register Azure AI Foundry Text Embeddings Generation` section of the file.
 
       ```  
        kernelBuilder.AddAzureOpenAITextEmbeddingGeneration(
@@ -1969,7 +1970,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
-1. Add the following code in the `// Challenge 05 - Register Search Index` section of the file.
+10. Add the following code in the `// Challenge 05 - Register Search Index` section of the file.
     
       ```
        kernelBuilder.Services.AddSingleton<SearchIndexClient>(sp => 
@@ -1994,7 +1995,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
-1. Add the following code in the `// Challenge 05 - Add Search Plugin` section of the file.
+11. Add the following code in the `// Challenge 05 - Add Search Plugin` section of the file.
     
       ```
        var searchPlugin = new ContosoSearchPlugin(Configuration);
@@ -2003,22 +2004,22 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
       ![](./media/image_106.png)
 
-1. In case you encounter any indentation error, use the code from the following URL and save the file:
+12. In case you encounter any indentation error, use the code from the following URL and save the file:
  
       ```
        https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-05.cs
       ```
-1. Right-click on `Dotnet>src>Aspire>Aspire.AppHost` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
+13. Right-click on `Dotnet>src>Aspire>Aspire.AppHost` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
      ![](./media/image_040.png)
 
-1. Use the following command to run the app:
+14. Use the following command to run the app:
  
       ```
        dotnet run
       ```
-1. Open a new tab in the browser and navigate to the link for **blazor-aichat**, i.e. **https://localhost:7118/**.
-1. Submit the following prompt and see how the AI responds:
+15. Open a new tab in the browser and navigate to the link for **blazor-aichat**, i.e. **https://localhost:7118/**.
+16. Submit the following prompt and see how the AI responds:
  
       ```
        What are the steps for the Contoso Performance Reviews?
@@ -2030,7 +2031,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
       Who do I contact at Contoso for questions regarding workplace safety?
       ```
 
-1. You will receive a response similar to the one shown below:
+17. You will receive a response similar to the one shown below:
 
       ![](./media/image_107.png)
 
@@ -2038,7 +2039,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
       ![](./media/image_109.png)
 
-1. Once you receive the response, navigate back to the Visual studio code terminal and then press **Ctrl+C** to stop the build process.
+18. Once you receive the response, navigate back to the Visual studio code terminal and then press **Ctrl+C** to stop the build process.
 
 ## Exercise 6: Responsible AI: Exploring Content Filters in Azure AI Foundry
 ### Estimated Duration: 25 Minutes
@@ -2058,26 +2059,26 @@ In this task, you will explore different flow types in Azure AI Foundry by adjus
 
 1. Navigate to the [Azure AI Foundry](https://ai.azure.com/) portal.
 
-1. Click on **Guardrails + Controls (1)** under **Protect and govern** in the left pane. Navigate to **Content filters (2)** tab and then **+ Create content filter (3)**.
+2. Click on **Guardrails + Controls (1)** under **Protect and govern** in the left pane. Navigate to **Content filters (2)** tab and then **+ Create content filter (3)**.
 
       ![](./media/sk43.png)
 
-1. On the **Create filters to allow or block specific types of content** blade, specify the following configuration options and click on **Next (2)**:
+3. On the **Create filters to allow or block specific types of content** blade, specify the following configuration options and click on **Next (2)**:
    - **Name**:  **AggressiveContentFilter (1)**
 
       ![](./media/sk44.png)
 
-1. Leave the visible options to default and click on **Next** twice.
+4. Leave the visible options to default and click on **Next** twice.
 
-1. On the **Create filters to allow or block specific types of content**, **Deployment (Optional)** blade, select **all 2** of the deployments, and click **Next (2)**.
+5. On the **Create filters to allow or block specific types of content**, **Deployment (Optional)** blade, select **all 2** of the deployments, and click **Next (2)**.
 
       ![](./media/sk45.png)
 
-1. If you get a **Replacing existing content filter** warning, click on **Replace (1)**.
+6. If you get a **Replacing existing content filter** warning, click on **Replace (1)**.
 
       ![](./media/image_014.png)
 
-1. Create one **Create filter**.
+7. Create one **Create filter**.
 
       ![](./media/sk46.png)
 
@@ -2090,16 +2091,16 @@ In this task, you will explore different flow types in Azure AI Foundry by filte
 
       ![](./media/sk47.png)
     
-1. On the **Create a blocklist** blade, specify the following configuration options and click on **Create blocklist (3)**:
+2. On the **Create a blocklist** blade, specify the following configuration options and click on **Create blocklist (3)**:
 
     - **Name**:  **CustomBlocklist<inject key="Deployment ID" enableCopy="false"></inject> (1)**
     - **Description**: This is a custom blocklist. **(2)**
 
       ![](./media/sk48.png)
 
-1. Click on **CustomBlocklist<inject key="Deployment ID" enableCopy="false"></inject>** created earlier.
+3. Click on **CustomBlocklist<inject key="Deployment ID" enableCopy="false"></inject>** created earlier.
 
-1. Click on **+ Add new term**.
+4. Click on **+ Add new term**.
 
       ![](./media/sk49.png)
 
@@ -2107,9 +2108,9 @@ In this task, you will explore different flow types in Azure AI Foundry by filte
 
       ![](./media/sk50.png)
 
-1. Click on **+ Add new term** again.   
+5. Click on **+ Add new term** again.   
 
-1. Repeat the step for the following and select the type as required (**Exact Match** or **Regex**):-
+6. Repeat the step for the following and select the type as required (**Exact Match** or **Regex**):-
 
     - credentials
     - exploit
@@ -2368,7 +2369,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
       ![](./media/image_118.png)
 
-1. Add the following code to the file:
+2. Add the following code to the file:
  
     ```
      using System;
@@ -2475,22 +2476,22 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
         }
      }
     ```
-1. Save the file and navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
+3. Save the file and navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
 
       ![](./media/image_038.png)
     
-1. Add the following code in the `// Challenge 07 - Add Azure AI Foundry Text To Image` section of the file.
+4. Add the following code in the `// Challenge 07 - Add Azure AI Foundry Text To Image` section of the file.
     
-    ```
-    kernelBuilder.AddAzureOpenAITextToImage(
+      ```
+      kernelBuilder.AddAzureOpenAITextToImage(
         Configuration["DALLE_DEPLOYMODEL"]!,
         Configuration["AOI_ENDPOINT"]!,
         Configuration["AOI_API_KEY"]!);
-    ```
+      ```
 
       ![](./media/image_119.png)
 
-1. Add the following code in the `// Challenge 07 - Text To Image Plugin` section of the file.
+5. Add the following code in the `// Challenge 07 - Text To Image Plugin` section of the file.
     
       ```
       var imageGenerationPlugin = new ImageGenerationPlugin(Configuration);
@@ -2500,32 +2501,32 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
       ![](./media/image_120.png)
 
-1. In case you encounter any indentation error, use the code from the following URL:
+6. In case you encounter any indentation error, use the code from the following URL:
     
       ```
        https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-07.cs
       ```
-1. Save the file.
-1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` in the left pane and select **Open in Integrated Terminal**.
-1. Use the following command to run the app:
+7. Save the file.
+8. Right click on `Dotnet>src>Aspire>Aspire.AppHost` in the left pane and select **Open in Integrated Terminal**.
+9. Use the following command to run the app:
     
       ```
       dotnet run
       ```
-1. Open a new tab in the browser and navigate to the link for **blazor-aichat**, i.e. **https://localhost:7118/**.
+10. Open a new tab in the browser and navigate to the link for **blazor-aichat**, i.e. **https://localhost:7118/**.
 
     >**Note**: If you receive security warnings in the browser, close the browser and follow the link again.
 
-1. Submit the following prompt and see how the AI responds:
+11. Submit the following prompt and see how the AI responds:
 
       ```
       Create a picture of a cute kitten wearing a hat.
       ```
-1. You will receive a response similar to the one shown below:
+12. You will receive a response similar to the one shown below:
 
       ![](./media/image_121.png)
 
-1. Once you receive the response, navigate back to the Visual studio code terminal and then press **Ctrl+C** to stop the build process.
+13. Once you receive the response, navigate back to the Visual studio code terminal and then press **Ctrl+C** to stop the build process.
 
 ## Exercise 8: Multi-Agent Systems
 
