@@ -1787,7 +1787,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 12. Right click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
-     ![](./media/image_035.png)
+      ![](./media/image_035.png)
 
 13. Use the following command to run the app:
  
@@ -2320,25 +2320,25 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 6. Add the following code in the `# Placeholder for Text To Image plugin` section of the file.
 
-    ```
-     image_plugin = ImageGenerationPlugin()
-     image_plugin.set_kernel(kernel)
-     kernel.add_plugin(
+      ```
+      image_plugin = ImageGenerationPlugin()
+      image_plugin.set_kernel(kernel)
+      kernel.add_plugin(
         image_plugin,
         plugin_name="ImageGeneration",
-     )
-     logger.info("Image Generation plugin loaded")
-    ```
+      )
+      logger.info("Image Generation plugin loaded")
+      ```
 
-     ![](./media/image_116.png)
+      ![](./media/image_116.png)
 
     >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
 7. In case you encounter any indentation error, use the code from the following URL and Save the file:
 
-    ```
-     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-07.py
-    ```
+      ```
+      https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-07.py
+      ```
 
 8. Right click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
@@ -2346,19 +2346,19 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 9. Use the following command to run the app:
     
-    ```
-     streamlit run app.py
-    ```
+      ```
+      streamlit run app.py
+      ```
 10. If the app does not open automatically in the browser, you can access it using the following **URL**:
 
-    ```
-     http://localhost:8501
-    ```
+      ```
+      http://localhost:8501
+      ```
 11. Submit the following prompt and see how the AI responds:
 
-    ```
-     Create a picture of a cute kitten wearing a hat.
-    ```
+      ```
+      Create a picture of a cute kitten wearing a hat.
+      ```
 12. You will receive a response similar to the one shown below:
 
       ![](./media/image_117.png)
