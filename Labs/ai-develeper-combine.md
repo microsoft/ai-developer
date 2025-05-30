@@ -232,18 +232,17 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 
 1. Add the following code in the `# Challenge 02 - Chat Completion Service` (1) section of the file.
     
-    ```
-    chat_completion_service = AzureChatCompletion(
+      ```
+       chat_completion_service = AzureChatCompletion(
         deployment_name=os.getenv("AZURE_OPENAI_CHAT_DEPLOYMENT_NAME"),
         api_key=os.getenv("AZURE_OPENAI_API_KEY"),
         endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
         service_id="chat-service",
-    )
-    kernel.add_service(chat_completion_service)
-    execution_settings = kernel.get_prompt_execution_settings_from_service_id("chat-service")
-    ```
-
-     ![](./media/image_032.png)
+       )
+       kernel.add_service(chat_completion_service)
+       execution_settings = kernel.get_prompt_execution_settings_from_service_id("chat-service")
+      ```
+      ![](./media/image_032.png)
 
 1. Add the following code in the `# Start Challenge 02 - Sending a message to the chat completion service by invoking kernel` section of the file.
     ```
@@ -464,33 +463,33 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 5. Add the following code in the `#Import Modules` section of the file.
 
-    ```
-     from semantic_kernel.connectors.ai.open_ai.prompt_execution_settings.azure_chat_prompt_execution_settings import (
+      ```
+       from semantic_kernel.connectors.ai.open_ai.prompt_execution_settings.azure_chat_prompt_execution_settings import (
         AzureChatPromptExecutionSettings,
-     )
-     from plugins.time_plugin import TimePlugin
-    ```
+       )
+       from plugins.time_plugin import TimePlugin
+      ```
     
       ![](./media/image_045.png)
 
 6. Add the following code in the `#Challenge 03 - Create Prompt Execution Settings` **(1)** section of the file.
 
-    ```
-    execution_settings = AzureChatPromptExecutionSettings()
-    execution_settings.function_choice_behavior = FunctionChoiceBehavior.Auto()
-    logger.info("Automatic function calling enabled")
-    ```
+      ```
+       execution_settings = AzureChatPromptExecutionSettings()
+       execution_settings.function_choice_behavior = FunctionChoiceBehavior.Auto()
+       logger.info("Automatic function calling enabled")
+      ```
 
       ![](./media/image_046.png)
 
 1. Add the following code in the `# Placeholder for Time plugin` section of the file.
 
-    ```
-    time_plugin = TimePlugin()
-    kernel.add_plugin(time_plugin, plugin_name="TimePlugin")
-    logger.info("Time plugin loaded")
-    ```
-
+      ```
+        time_plugin = TimePlugin()
+        kernel.add_plugin(time_plugin, plugin_name="TimePlugin")
+        logger.info("Time plugin loaded")
+      ```
+      
       ![](./media/sk27.png)
 
 1. Search (using Ctrl+F) and remove the following piece of code from the file as we will enable automatic function calling and this is no longer required:
@@ -512,9 +511,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Use the following command to run the app:
 
-    ```
-    streamlit run app.py
-    ```
+     ```
+     streamlit run app.py
+     ```
 1. If the app does not open automatically in the browser, you can access it using the following **URL**:
     
      ```
@@ -642,7 +641,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
                     out result) || DateTime.TryParse(dateStr, out result);
             }
         }
-    }
+     }
     ```
 1. Save the file.
 1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
