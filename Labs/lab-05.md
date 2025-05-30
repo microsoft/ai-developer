@@ -27,9 +27,9 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 
     ![](./media/sk34.png)
 
-1. Click on **Add your data (1)** and select **+ Add a new data source (2)**.
+1. Click on **Add your data (1)** and select **+ Add a data source (2)**.
 
-    ![](./media/image_085.png)
+    ![](./media/image_085a.png)
 
 1. On the **Select or add data source**blade, provide the following details and then click on **Next (6)**:
 
@@ -40,6 +40,10 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
     - Enter the index name: Enter **employeehandbook (5)** 
  
       ![](./media/sk35.png)
+
+      >**Note:** If you receive a message prompting you to **Turn on CORS**, go ahead and click on it.
+
+      ![](./media/sk35a.png)      
 
 1. Click on **Browse for files**.
 
@@ -82,14 +86,16 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 1. On the **Overview (1)** page, copy the **URL (2)** and paste it into Notepad.
 
     ![](./media/image_091.png)
+
 1. Navigate to **Keys (1)** under **Settings** in the left pane, copy the **Primary admin key (2)** from Azure Portal, and paste it into Notepad.
 
     ![](./media/image_092.png)
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
- - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
- - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
- - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+   - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+   - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+   - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
 <validation step="aba3f1c2-bf55-4ca3-baf6-fcaa280552fa" />  
 
@@ -103,6 +109,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. Navigate to `Python>src` directory and open **.env (1)** file.
 
     ![](./media/image_026.png)
+
 1. Paste the **AI search URL** that you copied earlier in the exercise besides `AI_SEARCH_URL` in **.env** file.
 
     >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
@@ -112,10 +119,13 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ![](./media/sk42.png)
 
 1. Save the file.
+
 1. Navigate to `Python>src>plugins` directory and create a new file named **ContosoSearchPlugin.py (1)**.
 
     ![](./media/image_094.png)
+
 1. Add the following code to the file:
+
     ```
     import json
     import os
@@ -226,18 +236,24 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
         result = search_plugin.query_handbook(query)
         print(result)
     ```
+
 1. Save the file.
+
 1. Navigate to `Python>src` directory and open **chat.py (1)** file.
 
     ![](./media/image_030.png)
+
 1. Add the following code in the `#Import Modules` section of the file.
+
     ```
     from semantic_kernel.connectors.ai.open_ai import AzureTextEmbedding
     from plugins.ContosoSearchPlugin import ContosoSearchPlugin
     ```
 
     ![](./media/image_095.png)
+
 1. Add the following code in the `#Challenge 05 - Add Text Embedding service for semantic search` section of the file.
+
     ```
     text_embedding_service = AzureTextEmbedding(
         deployment_name=os.getenv("AZURE_OPENAI_EMBED_DEPLOYMENT_NAME"),
@@ -254,6 +270,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
      >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
 1. Add the following code in the `# Challenge 05 - Add Search Plugin` section of the file.
+
     ```
     kernel.add_plugin(
         ContosoSearchPlugin(),
@@ -265,32 +282,45 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ![](./media/image_097.png)
 
      >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.    
+
 1. In case you encounter any indentation error, use the code from the following URL:
+
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-05.py
     ```
+
 1. Save the file.
+
 1. Right click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
     ![](./media/image_035.png)
+
 1. Use the following command to run the app:
+
     ```
     streamlit run app.py
     ```
+
 1. If the app does not open automatically in the browser, you can access it using the following **URL**:
+
     ```
     http://localhost:8501
     ```
+
 1. Submit the following prompt and see how the AI responds:
+
     ```
     What are the steps for the Contoso Performance Reviews?
     ```
+
     ```
     What is Contoso's policy on Data Security?
     ```
+
     ```
     Who do I contact at Contoso for questions regarding workplace safety?
     ```
+
 1. You will receive a response similar to the one shown below:
 
     ![](./media/image_098.png)
@@ -298,6 +328,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ![](./media/image_099.png)
 
     ![](./media/image_100.png)
+
 </details>
 
 <details>
@@ -306,16 +337,23 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. Navigate to `Dotnet>src>BlazorAI` directory and open **appsettings.json (1)** file.
 
     ![](./media/image_028.png)
-1. Paste the **AI search URL** that you copied earlier in the exercise besides `AI_SEARCH_URL` in **appsettings.json** file..
+
+1. Paste the **AI search URL** that you copied earlier in the exercise besides `AI_SEARCH_URL` in **appsettings.json** file.
+
     >Note:- Ensure that every value in the **appsettings.json** file is enclosed in **double quotes (")**.
+
 1. Paste the **Primary admin key (1)** that you copied earlier in the exercise besides `AI_SEARCH_KEY` **(2)**.
 
     ![](./media/image_101.png)
+
 1. Save the file.
+
 1. Navigate to `Dotnet>src>BlazorAI>Plugins` directory and create a new file named **ContosoSearchPlugin.cs (1)**.
 
     ![](./media/image_102.png)
+
 1. Add the following code to the file:
+
     ```
     using System.ComponentModel;
     using System.Text.Json.Serialization;
@@ -414,11 +452,15 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
         }
     }
     ```
+
 1. Save the file.
+
 1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
 
     ![](./media/image_038.png)
+
 1. Add the following code in the `// Import Models` section of the file.
+
     ```
     using Microsoft.SemanticKernel.Connectors.AzureAISearch;
     using Azure;
@@ -427,7 +469,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
 
     ![](./media/image_103.png)
+
 1. Add the following code in the `// Challenge 05 - Register Azure AI Foundry Text Embeddings Generation` section of the file.
+
     ```
     kernelBuilder.AddAzureOpenAITextEmbeddingGeneration(
         Configuration["EMBEDDINGS_DEPLOYMODEL"]!,
@@ -440,6 +484,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
      >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
 1. Add the following code in the `// Challenge 05 - Register Search Index` section of the file.
+
     ```
     kernelBuilder.Services.AddSingleton<SearchIndexClient>(sp => 
         new SearchIndexClient(
@@ -465,26 +510,35 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
      >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
 1. Add the following code in the `// Challenge 05 - Add Search Plugin` section of the file.
+
     ```
     var searchPlugin = new ContosoSearchPlugin(Configuration);
     kernel.ImportPluginFromObject(searchPlugin, "HandbookPlugin");
     ```
 
     ![](./media/image_106.png)
+
 1. In case you encounter any indentation error, use the code from the following URL:
+
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-05.cs
     ```
 1. Save the file.
+
 1. Right-click on `Dotnet>src>Aspire>Aspire.AppHost` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
     ![](./media/image_040.png)
+
 1. Use the following command to run the app:
+
     ```
     dotnet run
     ```
+
 1. Open a new tab in the browser and navigate to the link for **blazor-aichat**, i.e. **https://localhost:7118/**.
+
 1. Submit the following prompt and see how the AI responds:
+
     ```
     What are the steps for the Contoso Performance Reviews?
     ```
@@ -494,6 +548,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
     Who do I contact at Contoso for questions regarding workplace safety?
     ```
+
 1. You will receive a response similar to the one shown below:
 
     ![](./media/image_107.png)
