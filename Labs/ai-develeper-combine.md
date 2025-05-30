@@ -676,51 +676,50 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Add the following code in the `// Challenge 03 - Create OpenAIPromptExecutionSettings` (1) section of the file.
     
-    ```
-     promptSettings = new OpenAIPromptExecutionSettings
-     {
-        ToolCallBehavior = ToolCallBehavior.AutoInvokeKernelFunctions,
-        Temperature = 0.7,
-        TopP = 0.95,
-        MaxTokens = 800
-     };
-    ```
+      ```
+       promptSettings = new OpenAIPromptExecutionSettings
+       {
+         ToolCallBehavior = ToolCallBehavior.AutoInvokeKernelFunctions,
+         Temperature = 0.7,
+         TopP = 0.95,
+         MaxTokens = 800
+        };
+      ```
 
-    ![](./media/image_053.png)
+      ![](./media/image_053.png)
 
     >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
 1. Add the following code in the `// Challenge 03 - Add Time Plugin` section of the file.
     
-    ```
-    var timePlugin = new Plugins.TimePlugin();
-    kernel.ImportPluginFromObject(timePlugin, "TimePlugin");
-    ```
+      ```
+      var timePlugin = new Plugins.TimePlugin();
+      kernel.ImportPluginFromObject(timePlugin, "TimePlugin");
+      ```
 
-    ![](./media/image_054.png)
+      ![](./media/image_054.png)
 
 1. Search **var assistantResponse = await chatCompletionService.GetChatMessageContentAsync** (using Ctrl+F)  and add the following line of code between chatHistory and kernel:
     
-    ```
-     executionSettings: promptSettings,
-    ```
-    >**Note**: The final piece of code will be similar to the code below:
+      ```
+      executionSettings: promptSettings,
+      ```
+      >**Note**: The final piece of code will be similar to the code below:
     
-    ```
-     var assistantResponse = await chatCompletionService.GetChatMessageContentAsync(
-        chatHistory: chatHistory,
-        executionSettings: promptSettings,
-        kernel: kernel);
-    ```
+      ```
+       var assistantResponse = await chatCompletionService.GetChatMessageContentAsync(
+         chatHistory: chatHistory,
+         executionSettings: promptSettings,
+         kernel: kernel);
+      ```
     
-    ![](./media/image_055.png)
+     ![](./media/image_055.png)
 
-1. In case you encounter any indentation error, use the code from the following URL:
+1. In case you encounter any indentation error, use the code from the following URL, and Save the file.:
     
-    ```
-    https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-03_time_plugin.cs
-    ```
-1. Save the file.
+     ```
+     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-03_time_plugin.cs
+     ```
 
 1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
@@ -728,23 +727,23 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Use the following command to run the app:
     
-    ```
-     dotnet run
-    ```
+     ```
+      dotnet run
+     ```
 1. Open a new tab in the browser and navigate to the link for **blazor-aichat**, i.e. **https://localhost:7118/**.
 
 1. Submit the following prompt:
     
-    ```
-     What time is it?
-    ```
+     ```
+      What time is it?
+     ```
 1. Since the AI has the **Time Plugin**, it will be able to provide real-time information, and you will get a response similar to the following:
     
-    ```
-     The current time is 3:43 PM on January 23, 2025.
-    ```
+     ```
+      The current time is 3:43 PM on January 23, 2025.
+     ```
 
-     ![](./media/sk28.png)
+      ![](./media/sk28.png)
 
 1. Once you receive the response, navigate back to the Visual studio code terminal and then press **Ctrl+C** to stop the build process.
 
@@ -788,32 +787,32 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Add the following code in the `#Import Modules` section of the file.
     
-    ```
-     from plugins.geo_coding_plugin import GeoPlugin
-    ```
+     ```
+      from plugins.geo_coding_plugin import GeoPlugin
+     ```
 
-      ![](./media/sk31.png)
+     ![](./media/sk31.png)
 
 1. Add the following code in the `# Placeholder for Time plugin` section, after the **time plugin** in the file.
     
-    ```
-     kernel.add_plugin(
+     ```
+      kernel.add_plugin(
         GeoPlugin(),
         plugin_name="GeoLocation",
-     )
+      )
     
-     logger.info("GeoLocation plugin loaded")
-    ```
+      logger.info("GeoLocation plugin loaded")
+     ```
 
-      ![](./media/image_061.png)
+     ![](./media/image_061.png)
 
     >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
 1. In case you encounter any indentation error, use the code from the following URL:
     
-    ```
-     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-03_geo_coding.py
-    ```
+     ```
+      https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-03_geo_coding.py
+     ```
 1. Save the file.
 1. Right click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
@@ -836,14 +835,14 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
 1. Since the AI has the **Geocoding Plugin**, it will be able to provide real-time information, you will get a response similar to the following:
     
-    ```
-     The geo-coordinates for Tampa, FL are:
+     ```
+      The geo-coordinates for Tampa, FL are:
 
-     Latitude: 27.9477595
-     Longitude: -82.458444 
-    ```
+      Latitude: 27.9477595
+      Longitude: -82.458444 
+     ```
 
-      ![](./media/image_062.png)
+     ![](./media/image_062.png)
 
 ### C Sharp(C#):
 
@@ -864,47 +863,47 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Add the following code in the `// Challenge 03 - Add Time Plugin` section, after the **time plugin** in the file.
 
-    ```
-     var geocodingPlugin = new GeocodingPlugin(
+     ```
+      var geocodingPlugin = new GeocodingPlugin(
         kernel.Services.GetRequiredService<IHttpClientFactory>(), 
         Configuration);
-     kernel.ImportPluginFromObject(geocodingPlugin, "GeocodingPlugin");
-    ```
+      kernel.ImportPluginFromObject(geocodingPlugin, "GeocodingPlugin");
+     ```
 
-      ![](./media/image_064.png)
+     ![](./media/image_064.png)
 
     >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
 1. In case you encounter any indentation error, use the code from the following URL:
     
-    ```
-    https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-03_geo_coding.cs
-    ```
+     ```
+      https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-03_geo_coding.cs
+     ```
 1. Save the file.
 1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
-     ![](./media/image_040.png)
+      ![](./media/image_040.png)
 
 1. Use the following command to run the app:
    
-    ```
-     dotnet run
-    ```
+     ```
+      dotnet run
+     ```
 1. Open a new tab in the browser and navigate to the link for **blazor-aichat** i.e **https://localhost:7118/**
 
 1. Submit the following prompt:
     
-    ```
-     What are the geo-coordinates for Tampa, FL
-    ```
+     ```
+      What are the geo-coordinates for Tampa, FL
+     ```
 1. Since the AI has the **Geocoding Plugin**, it will be able to provide real-time information, you will get a response similar to the following:
     
-    ```
-     The geo-coordinates for Tampa, FL are:
+     ```
+      The geo-coordinates for Tampa, FL are:
 
-     Latitude: 27.9477595
-     Longitude: -82.458444 
-    ```
+      Latitude: 27.9477595
+      Longitude: -82.458444 
+     ```
 
      ![](./media/sk32.png)
 
@@ -1012,21 +1011,22 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Add the following code in the `#Import Modules` section of the file.
     
-    ```
-     from plugins.weather_plugin import WeatherPlugin
-    ```
+     ```
+      from plugins.weather_plugin import 
+      WeatherPlugin
+     ```
 
-      ![](./media/image_067.png)
+     ![](./media/image_067.png)
 
 1. Add the following code in the `# Placeholder for Time plugin` section, after the **Geocoding plugin** in the file.
     
-    ```
-     kernel.add_plugin(
+      ```
+       kernel.add_plugin(
         WeatherPlugin(),
         plugin_name="Weather",
-     )
-     logger.info("Weather plugin loaded")
-    ```
+       )
+       logger.info("Weather plugin loaded")
+      ```
 
       ![](./media/image_068.png)
 
@@ -1445,11 +1445,11 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Add the following code in the `// Import Models` section of the file.
     
-    ```
-     using Microsoft.SemanticKernel.Plugins.OpenApi;
-    ```
+      ```
+       using Microsoft.SemanticKernel.Plugins.OpenApi;
+      ```
 
-     ![](./media/image_081.png)
+      ![](./media/image_081.png)
 
 1. Add the following code in the `// Challenge 04 - Import OpenAPI Spec` (1) section of the file.
 
