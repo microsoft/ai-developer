@@ -2611,7 +2611,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 7. Select **Multi-Agent (1)** on the left-hand side pane.
 
-    ![](./media/image_126.png)
+     ![](./media/image_126.png)
 
 8. Submit the following prompt and see how the AI responds:
 
