@@ -2550,36 +2550,36 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
       ![](./media/sk59.png)
 
-1. Remove the existing code and add the code from the following URL in the file.
+2. Remove the existing code and add the code from the following URL in the file.
     
-    ```
-     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-08.py
-    ```
-1. Save the file.
-1. Right click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
+      ```
+      https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-08.py
+     ```
+3. Save the file.
+4. Right click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
       ![](./media/image_035.png)
 
-1. Use the following command to run the app:
+5. Use the following command to run the app:
     
     ```
      streamlit run app.py
     ```
-1. If the app does not open automatically in the browser, you can access it using the following **URL**:
+6. If the app does not open automatically in the browser, you can access it using the following **URL**:
 
     ```
      http://localhost:8501
     ```
-1. Select **Multi-Agent (1)** on the left-hand side pane.
+7. Select **Multi-Agent (1)** on the left-hand side pane.
 
       ![](./media/image_123.png)
 
-1. Submit the following prompt and see how the AI responds:
+8. Submit the following prompt and see how the AI responds:
 
     ```
      Build a Calculator app.
     ```
-1. You will receive a response similar to the one shown below:
+9. You will receive a response similar to the one shown below:
 
       ![](./media/image_124.png)
 
@@ -2590,34 +2590,34 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
       ![](./media/image_125.png)
 
-1. Remove the existing code and add the code from the following URL in the file.
+2. Remove the existing code and add the code from the following URL in the file.
 
     ```
      https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-08.cs
     ```
-1. Save the file.
-1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
+3. Save the file.
+4. Right click on `Dotnet>src>Aspire>Aspire.AppHost` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
      ![](./media/image_040.png)
 
-1. Use the following command to run the app:
+5. Use the following command to run the app:
 
     ```
      dotnet run
     ```
-1. Open a new tab in the browser and navigate to the link for **blazor-aichat**, i.e. **https://localhost:7118/**.
+6. Open a new tab in the browser and navigate to the link for **blazor-aichat**, i.e. **https://localhost:7118/**.
 
     >**Note**: If you receive security warnings in the browser, close the browser and follow the link again.
-1. Select **Multi-Agent (1)** on the left-hand side pane.
+7. Select **Multi-Agent (1)** on the left-hand side pane.
 
       ![](./media/image_126.png)
 
-1. Submit the following prompt and see how the AI responds:
+8. Submit the following prompt and see how the AI responds:
 
     ```
      Build a Calculator app.
     ```
-1. You will receive a response similar to the one shown below:
+9. You will receive a response similar to the one shown below:
 
       ![](./media/image_127.png)
 
