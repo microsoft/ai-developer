@@ -132,12 +132,12 @@ In this task you will create a Azure AI Search resource.
 
 1. On the **Create a search service** page, provide the following details and then click on **Review+create (5)**:
 
-    - Subscription: Leave the default one **(1)**
-    - Resource group: Select **ai-foundry-<inject key="Deployment ID" enableCopy="false"></inject> (2)**
-    - Service name: Enter **ai-search-<inject key="Deployment ID" enableCopy="false"></inject> (3)**
-    - Region: **<inject key="Region" enableCopy="false"></inject> (4)** 
+     - Subscription: Leave the default one **(1)**
+     - Resource group: Select **ai-foundry-<inject key="Deployment ID" enableCopy="false"></inject> (2)**
+     - Service name: Enter **ai-search-<inject key="Deployment ID" enableCopy="false"></inject> (3)**
+     - Region: **<inject key="Region" enableCopy="false"></inject> (4)** 
 
-        ![](./media/sk18.png)
+      ![](./media/sk18.png)
 
 1. Click on **Create**.
     
