@@ -313,7 +313,7 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 
      ![](./media/image_038.png)
 
-1. Add the following code in the `// Your code goes here(Line no. 92)` (1) section of the file.
+2. Add the following code in the `// Your code goes here(Line no. 92)` (1) section of the file.
 
      ```
      chatHistory.AddUserMessage(userMessage);
@@ -327,19 +327,19 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 
       ![](./media/image_039.png)
 
-1. In case you encounter any indentation error, use the code from the following URL: 
+3. In case you encounter any indentation error, use the code from the following URL: 
 
      ```
      https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-02.cs
      ```
 
-1. Use **Ctrl+S** to save the file.
+4. Use **Ctrl+S** to save the file.
 
-1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
+5. Right click on `Dotnet>src>Aspire>Aspire.AppHost` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
      ![](./media/image_040.png)
 
-1. Run the following line of code to trust the dev certificates necessary to run the app locally, and then select **Yes**:
+6. Run the following line of code to trust the dev certificates necessary to run the app locally, and then select **Yes**:
 
      ```
      dotnet dev-certs https --trust
@@ -347,16 +347,16 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 
       ![](./media/image_041.png)
 
-1. Use the following command to run the app:
+7. Use the following command to run the app:
 
      ```
      dotnet run
      ```
-1. Open a new tab in the browser and navigate to the link for **blazor-aichat**, i.e. **https://localhost:7118/**.
+8. Open a new tab in the browser and navigate to the link for **blazor-aichat**, i.e. **https://localhost:7118/**.
 
     >**Note**: If you receive security warnings in the browser, close the browser and follow the link again.
 
-1. Submit the following prompt and see how the AI responds:
+9. Submit the following prompt and see how the AI responds:
 
      ```
      Why is the sky blue?
@@ -364,11 +364,11 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
      ```
      Why is it red?
      ```
-1. You will receive a response similar to the one shown below:
+10. You will receive a response similar to the one shown below:
 
      ![](./media/image_042.png)
 
-1. Once you receive the response, navigate back to the Visual studio code terminal and then press **Ctrl+C** to stop the build process.
+11. Once you receive the response, navigate back to the Visual studio code terminal and then press **Ctrl+C** to stop the build process.
 
 ## Exercise 3: Semantic Kernel Plugins
 
@@ -388,15 +388,17 @@ In this exercise, you will be performing the following tasks:
 In this task, you will explore different flow types in Azure AI Foundry by running the app without the Time Plugin to observe its default behavior.
 
 1. Launch your AI Chat app in any of the languages, and submit the following prompt:
+
     ```
     What time is it?
     ```
 2. Since the AI cannot provide real-time information, you will get a response similar to the following:
+
     ```
     I can't provide real-time information, including the current time. You can check the time on your device or through various online sources.
     ```
 
-    ![](./media/sk26.png)
+     ![](./media/sk26.png)
 
 ### Task 2: Create and import the Time Plugin
 
@@ -406,16 +408,17 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Navigate to `Python>src>plugins` directory, right click on **Plugins** then click on **New file** and then create a new file named **time_plugin.py (1)**.
 
-    ![](./media/image_044.png)
+     ![](./media/image_044.png)
 
 1. Add the following code to the file:
+
     ```
-    from datetime import datetime
-    from typing import Annotated
-    from semantic_kernel.functions import kernel_function
+     from datetime import datetime
+     from typing import Annotated
+     from semantic_kernel.functions import kernel_function
 
 
-    class TimePlugin:
+     class TimePlugin:
         @kernel_function()
         def current_time(self) -> str:
             return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -457,7 +460,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Navigate to `Python>src` directory and open **chat.py (1)** file.
 
-    ![](./media/image_030.png)
+     ![](./media/image_030.png)
 
 1. Add the following code in the `#Import Modules` section of the file.
     ```
