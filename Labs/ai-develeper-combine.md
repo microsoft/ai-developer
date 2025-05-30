@@ -1745,7 +1745,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
      from plugins.ContosoSearchPlugin import ContosoSearchPlugin
     ```    
       
-      ![](./media/image_095.png)
+    ![](./media/image_095.png)
 
 1. Add the following code in the `#Challenge 05 - Add Text Embedding service for semantic search` section of the file.
 
@@ -1760,7 +1760,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
      logger.info("Text Embedding service added")
     ```
 
-      ![](./media/image_096.png)
+    ![](./media/image_096.png)
 
     >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
@@ -1774,7 +1774,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
      logger.info("Contoso Handbook Search plugin loaded")
     ```
 
-      ![](./media/image_097.png)
+    ![](./media/image_097.png)
 
     >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.    
 
@@ -1953,7 +1953,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
      using Microsoft.Extensions.DependencyInjection;
     ```
 
-      ![](./media/image_103.png)
+    ![](./media/image_103.png)
 
 1. Add the following code in the `// Challenge 05 - Register Azure AI Foundry Text Embeddings Generation` section of the file.
 
@@ -1964,7 +1964,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
         Configuration["AOI_API_KEY"]!);
     ```
 
-      ![](./media/image_104.png)
+    ![](./media/image_104.png)
 
     >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
@@ -1992,7 +1992,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
      kernelBuilder.AddAzureAISearchVectorStore();
     ```
 
-      ![](./media/image_105.png)
+    ![](./media/image_105.png)
 
     >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
@@ -2003,7 +2003,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
      kernel.ImportPluginFromObject(searchPlugin, "HandbookPlugin");
     ```
 
-      ![](./media/image_106.png)
+    ![](./media/image_106.png)
 
 1. In case you encounter any indentation error, use the code from the following URL:
  
@@ -2331,7 +2331,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
      logger.info("Image Generation plugin loaded")
     ```
 
-      ![](./media/image_116.png)
+     ![](./media/image_116.png)
 
     >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
