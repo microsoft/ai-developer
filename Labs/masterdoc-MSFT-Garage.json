@@ -1,1 +1,13 @@
-
+[
+  {
+    "Name": "Azure AI Foundry and Semantic Kernel Fundamentals",
+    "Language": "English",
+    "BaseURL": "https://github.com/CloudLabsAI-Azure/ai-developer/tree/prod",
+    "Files": [
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/prod/Labs/lab-08.md",
+        "Order": 1
+      }
+    ]
+  }
+]
