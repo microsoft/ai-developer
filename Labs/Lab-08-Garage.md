@@ -1,4 +1,4 @@
-# **Exercise 8**: Multi-Agent Systems
+# Exercise 1: Multi-Agent Systems
 
 ### Estimated Duration: 30 Minutes
 
