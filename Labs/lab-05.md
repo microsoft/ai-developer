@@ -245,39 +245,39 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Add the following code in the `#Import Modules` section of the file.
 
-     ```
-     from semantic_kernel.connectors.ai.open_ai import AzureTextEmbedding
-     from plugins.ContosoSearchPlugin import ContosoSearchPlugin
-     ```
+      ```
+      from semantic_kernel.connectors.ai.open_ai import AzureTextEmbedding
+      from plugins.ContosoSearchPlugin import ContosoSearchPlugin
+      ```
 
       ![](./media/image_095.png)
 
 1. Add the following code in the `#Challenge 05 - Add Text Embedding service for semantic search` section of the file.
 
-     ```
-     text_embedding_service = AzureTextEmbedding(
-         deployment_name=os.getenv("AZURE_OPENAI_EMBED_DEPLOYMENT_NAME"),
-         api_key=os.getenv("AZURE_OPENAI_API_KEY"),
-         endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
-         service_id="embedding-service"
-     )
-     kernel.add_service(text_embedding_service)
-     logger.info("Text Embedding service added")
-     ```
+      ```
+      text_embedding_service = AzureTextEmbedding(
+          deployment_name=os.getenv("AZURE_OPENAI_EMBED_DEPLOYMENT_NAME"),
+          api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+          endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
+          service_id="embedding-service"
+      )
+      kernel.add_service(text_embedding_service)
+      logger.info("Text Embedding service added")
+      ```
 
-     ![](./media/image_096.png)
+      ![](./media/image_096.png)
 
       > **Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
 1. Add the following code in the `# Challenge 05 - Add Search Plugin` section of the file.
 
-     ```
-     kernel.add_plugin(
-         ContosoSearchPlugin(),
-         plugin_name="ContosoSearch",
-     )
-     logger.info("Contoso Handbook Search plugin loaded")
-     ```
+      ```
+      kernel.add_plugin(
+          ContosoSearchPlugin(),
+          plugin_name="ContosoSearch",
+      )
+      logger.info("Contoso Handbook Search plugin loaded")
+      ```
 
       ![](./media/image_097.png)
 
@@ -285,9 +285,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. In case you encounter any indentation error, use the code from the following URL:
 
-     ```
-     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-05.py
-     ```
+      ```
+      https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-05.py
+      ```
 
 1. Save the file.
 
@@ -297,37 +297,37 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Use the following command to run the app:
 
-     ```
-     streamlit run app.py
-     ```
+      ```
+      streamlit run app.py
+      ```
 
 1. If the app does not open automatically in the browser, you can access it using the following **URL**:
 
-     ```
-     http://localhost:8501
-     ```
+      ```
+      http://localhost:8501
+      ```
 
 1. Submit the following prompt and see how the AI responds:
 
-     ```
-     What are the steps for the Contoso Performance Reviews?
-     ```
+      ```
+      What are the steps for the Contoso Performance Reviews?
+      ```
 
-     ```
-     What is Contoso's policy on Data Security?
-     ```
+      ```
+      What is Contoso's policy on Data Security?
+      ```
 
-     ```
-     Who do I contact at Contoso for questions regarding workplace safety?
-     ```
+      ```
+      Who do I contact at Contoso for questions regarding workplace safety?
+      ```
 
 1. You will receive a response similar to the one shown below:
 
-     ![](./media/image_098.png)
+      ![](./media/image_098.png)
 
-     ![](./media/image_099.png)
+      ![](./media/image_099.png)
 
-     ![](./media/image_100.png)
+      ![](./media/image_100.png)
 
 </details>
 
