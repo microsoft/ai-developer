@@ -354,104 +354,104 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Add the following code to the file:
 
-    ```
-    using System.ComponentModel;
-    using System.Text.Json.Serialization;
-    using Azure;
-    using Azure.Search.Documents;
-    using Azure.Search.Documents.Indexes;
-    using Azure.Search.Documents.Models;
-    using Microsoft.SemanticKernel;
-    using Microsoft.SemanticKernel.Embeddings;
-    using System.Text;
+     ```
+     using System.ComponentModel;
+     using System.Text.Json.Serialization;
+     using Azure;
+     using Azure.Search.Documents;
+     using Azure.Search.Documents.Indexes;
+     using Azure.Search.Documents.Models;
+     using Microsoft.SemanticKernel;
+     using Microsoft.SemanticKernel.Embeddings;
+     using System.Text;
 
-    namespace BlazorAI.Plugins
-    {
-        public class ContosoSearchPlugin
-        {
-            private readonly ITextEmbeddingGenerationService _textEmbeddingGenerationService;
-            private readonly SearchIndexClient _indexClient;
+     namespace BlazorAI.Plugins
+     {
+         public class ContosoSearchPlugin
+         {
+             private readonly ITextEmbeddingGenerationService _textEmbeddingGenerationService;
+             private readonly SearchIndexClient _indexClient;
 
-            public ContosoSearchPlugin(IConfiguration configuration)
-            {
-                // Create the search index client
-                _indexClient = new SearchIndexClient(
-                    new Uri(configuration["AI_SEARCH_URL"]),
-                    new AzureKeyCredential(configuration["AI_SEARCH_KEY"]));
+             public ContosoSearchPlugin(IConfiguration configuration)
+             {
+                 // Create the search index client
+                 _indexClient = new SearchIndexClient(
+                     new Uri(configuration["AI_SEARCH_URL"]),
+                     new AzureKeyCredential(configuration["AI_SEARCH_KEY"]));
 
-                // Get the embedding service from the kernel
-                var kernelBuilder = Kernel.CreateBuilder();
-                kernelBuilder.AddAzureOpenAITextEmbeddingGeneration(
-                    configuration["EMBEDDINGS_DEPLOYMODEL"],
-                    configuration["AOI_ENDPOINT"],
-                    configuration["AOI_API_KEY"]);
-                var kernel = kernelBuilder.Build();
-                _textEmbeddingGenerationService = kernel.GetRequiredService<ITextEmbeddingGenerationService>();
-            }
+                 // Get the embedding service from the kernel
+                 var kernelBuilder = Kernel.CreateBuilder();
+                 kernelBuilder.AddAzureOpenAITextEmbeddingGeneration(
+                     configuration["EMBEDDINGS_DEPLOYMODEL"],
+                     configuration["AOI_ENDPOINT"],
+                     configuration["AOI_API_KEY"]);
+                 var kernel = kernelBuilder.Build();
+                 _textEmbeddingGenerationService = kernel.GetRequiredService<ITextEmbeddingGenerationService>();
+             }
 
-            [KernelFunction("SearchHandbook")]
-            [Description("Searches the Contoso employee handbook for information about company policies, benefits, procedures, or other employee-related questions. Use this when the user asks about company policies, employee benefits, work procedures, or any information that might be in an employee handbook.")]
-            public async Task<string> Search(
-                [Description("The user's question about company policies, benefits, procedures or other handbook-related information")] string query)
-            {
-                try
-                {
-                    // Convert string query to vector embedding
-                    ReadOnlyMemory<float> embedding = await _textEmbeddingGenerationService.GenerateEmbeddingAsync(query);
+             [KernelFunction("SearchHandbook")]
+             [Description("Searches the Contoso employee handbook for information about company policies, benefits, procedures, or other employee-related questions. Use this when the user asks about company policies, employee benefits, work procedures, or any information that might be in an employee handbook.")]
+             public async Task<string> Search(
+                 [Description("The user's question about company policies, benefits, procedures or other handbook-related information")] string query)
+             {
+                 try
+                 {
+                     // Convert string query to vector embedding
+                     ReadOnlyMemory<float> embedding = await _textEmbeddingGenerationService.GenerateEmbeddingAsync(query);
 
-                    // Get client for search operations
-                    SearchClient searchClient = _indexClient.GetSearchClient("employeehandbook");
+                     // Get client for search operations
+                     SearchClient searchClient = _indexClient.GetSearchClient("employeehandbook");
 
-                    // Configure request parameters
-                    VectorizedQuery vectorQuery = new(embedding);
-                    vectorQuery.Fields.Add("contentVector");  // The vector field in your index
-                    vectorQuery.KNearestNeighborsCount = 3;   // Get top 3 matches
+                     // Configure request parameters
+                     VectorizedQuery vectorQuery = new(embedding);
+                     vectorQuery.Fields.Add("contentVector");  // The vector field in your index
+                     vectorQuery.KNearestNeighborsCount = 3;   // Get top 3 matches
 
-                    SearchOptions searchOptions = new()
-                    {
-                        VectorSearch = new() { Queries = { vectorQuery } },
-                        Size = 3  // Return top 3 results
-                    };
+                     SearchOptions searchOptions = new()
+                     {
+                         VectorSearch = new() { Queries = { vectorQuery } },
+                         Size = 3  // Return top 3 results
+                     };
 
-                    // Perform search request
-                    Response<SearchResults<IndexSchema>> response = await searchClient.SearchAsync<IndexSchema>(searchOptions);
+                     // Perform search request
+                     Response<SearchResults<IndexSchema>> response = await searchClient.SearchAsync<IndexSchema>(searchOptions);
 
-                    // Collect search results
-                    StringBuilder results = new StringBuilder();
-                    await foreach (SearchResult<IndexSchema> result in response.Value.GetResultsAsync())
-                    {
-                        if (!string.IsNullOrEmpty(result.Document.Content))
-                        {
-                            results.AppendLine($"Title: {result.Document.Title}");
-                            results.AppendLine($"Content: {result.Document.Content}");
-                            results.AppendLine();
-                        }
-                    }
+                     // Collect search results
+                     StringBuilder results = new StringBuilder();
+                     await foreach (SearchResult<IndexSchema> result in response.Value.GetResultsAsync())
+                     {
+                         if (!string.IsNullOrEmpty(result.Document.Content))
+                         {
+                             results.AppendLine($"Title: {result.Document.Title}");
+                             results.AppendLine($"Content: {result.Document.Content}");
+                             results.AppendLine();
+                         }
+                     }
 
-                    return results.Length > 0 
-                        ? results.ToString()
-                        : "No relevant information found in the employee handbook.";
-                }
-                catch (Exception ex)
-                {
-                    return $"Search error: {ex.Message}";
-                }
-            }
+                     return results.Length > 0 
+                         ? results.ToString()
+                         : "No relevant information found in the employee handbook.";
+                 }
+                 catch (Exception ex)
+                 {
+                     return $"Search error: {ex.Message}";
+                 }
+             }
 
-            private sealed class IndexSchema
-            {
-                [JsonPropertyName("content")]
-                public string Content { get; set; }
+             private sealed class IndexSchema
+             {
+                 [JsonPropertyName("content")]
+                 public string Content { get; set; }
 
-                [JsonPropertyName("title")]
-                public string Title { get; set; }
+                 [JsonPropertyName("title")]
+                 public string Title { get; set; }
 
-                [JsonPropertyName("url")]
-                public string Url { get; set; }
-            }
-        }
-    }
-    ```
+                 [JsonPropertyName("url")]
+                 public string Url { get; set; }
+             }
+         }
+     }
+     ```
 
 1. Save the file.
 
@@ -461,23 +461,23 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Add the following code in the `// Import Models` section of the file.
 
-    ```
-    using Microsoft.SemanticKernel.Connectors.AzureAISearch;
-    using Azure;
-    using Azure.Search.Documents.Indexes;
-    using Microsoft.Extensions.DependencyInjection;
-    ```
+     ```
+     using Microsoft.SemanticKernel.Connectors.AzureAISearch;
+     using Azure;
+     using Azure.Search.Documents.Indexes;
+     using Microsoft.Extensions.DependencyInjection;
+     ```
 
       ![](./media/image_103.png)
 
 1. Add the following code in the `// Challenge 05 - Register Azure AI Foundry Text Embeddings Generation` section of the file.
 
-    ```
-    kernelBuilder.AddAzureOpenAITextEmbeddingGeneration(
-        Configuration["EMBEDDINGS_DEPLOYMODEL"]!,
-        Configuration["AOI_ENDPOINT"]!,
-        Configuration["AOI_API_KEY"]!);
-    ```
+     ```
+     kernelBuilder.AddAzureOpenAITextEmbeddingGeneration(
+         Configuration["EMBEDDINGS_DEPLOYMODEL"]!,
+         Configuration["AOI_ENDPOINT"]!,
+         Configuration["AOI_API_KEY"]!);
+     ```
 
       ![](./media/image_104.png)
 
@@ -485,25 +485,25 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Add the following code in the `// Challenge 05 - Register Search Index` section of the file.
 
-    ```
-    kernelBuilder.Services.AddSingleton<SearchIndexClient>(sp => 
-        new SearchIndexClient(
-            new Uri(Configuration["AI_SEARCH_URL"]!), 
-            new AzureKeyCredential(Configuration["AI_SEARCH_KEY"]!)
-        )
-    );
+     ```
+     kernelBuilder.Services.AddSingleton<SearchIndexClient>(sp => 
+         new SearchIndexClient(
+             new Uri(Configuration["AI_SEARCH_URL"]!), 
+             new AzureKeyCredential(Configuration["AI_SEARCH_KEY"]!)
+         )
+     );
 
-    kernelBuilder.Services.AddSingleton<AzureAISearchVectorStoreRecordCollection<Dictionary<string, object>>>(sp =>
-    {
-        var searchIndexClient = sp.GetRequiredService<SearchIndexClient>();
-        return new AzureAISearchVectorStoreRecordCollection<Dictionary<string, object>>(
-            searchIndexClient,
-            "employeehandbook"
-        );
-    });
+     kernelBuilder.Services.AddSingleton<AzureAISearchVectorStoreRecordCollection<Dictionary<string, object>>>(sp =>
+     {
+         var searchIndexClient = sp.GetRequiredService<SearchIndexClient>();
+         return new AzureAISearchVectorStoreRecordCollection<Dictionary<string, object>>(
+             searchIndexClient,
+             "employeehandbook"
+         );
+     });
 
-    kernelBuilder.AddAzureAISearchVectorStore();
-    ```
+     kernelBuilder.AddAzureAISearchVectorStore();
+     ```
 
       ![](./media/image_105.png)
 
@@ -511,18 +511,18 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Add the following code in the `// Challenge 05 - Add Search Plugin` section of the file.
 
-    ```
-    var searchPlugin = new ContosoSearchPlugin(Configuration);
-    kernel.ImportPluginFromObject(searchPlugin, "HandbookPlugin");
-    ```
+     ```
+     var searchPlugin = new ContosoSearchPlugin(Configuration);
+     kernel.ImportPluginFromObject(searchPlugin, "HandbookPlugin");
+     ```
 
       ![](./media/image_106.png)
 
 1. In case you encounter any indentation error, use the code from the following URL:
 
-    ```
-    https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-05.cs
-    ```
+     ```
+     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-05.cs
+     ```
 1. Save the file.
 
 1. Right-click on `Dotnet>src>Aspire>Aspire.AppHost` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
@@ -531,31 +531,31 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Use the following command to run the app:
 
-    ```
-    dotnet run
-    ```
+     ```
+     dotnet run
+     ```
 
 1. Open a new tab in the browser and navigate to the link for **blazor-aichat**, i.e. **https://localhost:7118/**.
 
 1. Submit the following prompt and see how the AI responds:
 
-    ```
-    What are the steps for the Contoso Performance Reviews?
-    ```
-    ```
-    What is Contoso's policy on Data Security?
-    ```
-    ```
-    Who do I contact at Contoso for questions regarding workplace safety?
-    ```
+     ```
+     What are the steps for the Contoso Performance Reviews?
+     ```
+     ```
+     What is Contoso's policy on Data Security?
+     ```
+     ```
+     Who do I contact at Contoso for questions regarding workplace safety?
+     ```
 
 1. You will receive a response similar to the one shown below:
 
-     ![](./media/image_107.png)
+      ![](./media/image_107.png)
 
-     ![](./media/image_108.png)
+      ![](./media/image_108.png)
 
-     ![](./media/image_109.png)
+      ![](./media/image_109.png)
 
 1. Once you receive the response, navigate back to the Visual studio code terminal and then press **Ctrl+C** to stop the build process.
 
