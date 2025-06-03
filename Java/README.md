@@ -67,3 +67,5 @@ Participants will learn how to:
 ## Contributors
 
 - [Vivek Mishra](https://github.com/mishravivek-ms)
+- [William Griffin](https://github.com/WillGKizan)
+- [Chris McKee](https://github.com/ChrisMcKee1)

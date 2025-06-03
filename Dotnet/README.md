@@ -73,3 +73,5 @@ Participants will learn how to:
 - [Travis Terrell](https://github.com/travisterrell)
 - [Eric Rhoads](https://github.com/ecrhoads)
 - [Wael Kdouh](https://github.com/waelkdouh)
+- [Julian Heidt](https://github.com/julian-heidt)
+- [William Griffin](https://github.com/WillGKizan)

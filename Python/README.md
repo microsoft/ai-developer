@@ -63,3 +63,6 @@ Participants will learn how to:
 - [Brijraj Singh](https://github.com/brijrajsingh)
 - [Linda M Thomas](https://github.com/lindamthomas)
 - [Suman More](https://github.com/sumanmore257)
+- [Chris McKee](https://github.com/ChrisMcKee1)
+- [Julian Heidt](https://github.com/julian-heidt)
+- [William Griffin](https://github.com/WillGKizan)
