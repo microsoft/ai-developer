@@ -336,21 +336,21 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Navigate to `Dotnet>src>BlazorAI` directory and open **appsettings.json (1)** file.
 
-    ![](./media/image_028.png)
+      ![](./media/image_028.png)
 
 1. Paste the **AI search URL** that you copied earlier in the exercise besides `AI_SEARCH_URL` in **appsettings.json** file.
 
-    >Note:- Ensure that every value in the **appsettings.json** file is enclosed in **double quotes (")**.
+      > **Note:** Ensure that every value in the **appsettings.json** file is enclosed in **double quotes (")**.
 
 1. Paste the **Primary admin key (1)** that you copied earlier in the exercise besides `AI_SEARCH_KEY` **(2)**.
 
-    ![](./media/image_101.png)
+      ![](./media/image_101.png)
 
 1. Save the file.
 
 1. Navigate to `Dotnet>src>BlazorAI>Plugins` directory and create a new file named **ContosoSearchPlugin.cs (1)**.
 
-    ![](./media/image_102.png)
+      ![](./media/image_102.png)
 
 1. Add the following code to the file:
 
@@ -457,7 +457,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
 
-    ![](./media/image_038.png)
+      ![](./media/image_038.png)
 
 1. Add the following code in the `// Import Models` section of the file.
 
@@ -468,7 +468,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     using Microsoft.Extensions.DependencyInjection;
     ```
 
-    ![](./media/image_103.png)
+      ![](./media/image_103.png)
 
 1. Add the following code in the `// Challenge 05 - Register Azure AI Foundry Text Embeddings Generation` section of the file.
 
@@ -479,9 +479,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
         Configuration["AOI_API_KEY"]!);
     ```
 
-    ![](./media/image_104.png)
+      ![](./media/image_104.png)
 
-     >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
+      > **Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
 1. Add the following code in the `// Challenge 05 - Register Search Index` section of the file.
 
@@ -505,9 +505,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     kernelBuilder.AddAzureAISearchVectorStore();
     ```
 
-    ![](./media/image_105.png)
+      ![](./media/image_105.png)
 
-     >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
+      > **Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
 1. Add the following code in the `// Challenge 05 - Add Search Plugin` section of the file.
 
@@ -516,7 +516,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     kernel.ImportPluginFromObject(searchPlugin, "HandbookPlugin");
     ```
 
-    ![](./media/image_106.png)
+      ![](./media/image_106.png)
 
 1. In case you encounter any indentation error, use the code from the following URL:
 
@@ -527,7 +527,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Right-click on `Dotnet>src>Aspire>Aspire.AppHost` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
-    ![](./media/image_040.png)
+      ![](./media/image_040.png)
 
 1. Use the following command to run the app:
 
@@ -551,11 +551,11 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. You will receive a response similar to the one shown below:
 
-    ![](./media/image_107.png)
+     ![](./media/image_107.png)
 
-    ![](./media/image_108.png)
+     ![](./media/image_108.png)
 
-    ![](./media/image_109.png)
+     ![](./media/image_109.png)
 
 1. Once you receive the response, navigate back to the Visual studio code terminal and then press **Ctrl+C** to stop the build process.
 
