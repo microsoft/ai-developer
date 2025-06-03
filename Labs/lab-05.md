@@ -108,21 +108,21 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Navigate to `Python>src` directory and open **.env (1)** file.
 
-    ![](./media/image_026.png)
+     ![](./media/image_026.png)
 
 1. Paste the **AI search URL** that you copied earlier in the exercise besides `AI_SEARCH_URL` in **.env** file.
 
-    >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
+     > **Note:** Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
 
 1. Paste the **Primary admin key** that you copied earlier in the exercise besides `AI_SEARCH_KEY`.
 
-    ![](./media/sk42.png)
+     ![](./media/sk42.png)
 
 1. Save the file.
 
 1. Navigate to `Python>src>plugins` directory and create a new file named **ContosoSearchPlugin.py (1)**.
 
-    ![](./media/image_094.png)
+     ![](./media/image_094.png)
 
 1. Add the following code to the file:
 
