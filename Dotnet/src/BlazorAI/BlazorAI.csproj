@@ -31,8 +31,7 @@
     <PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Icons" Version="4.11.9" />
     <PackageReference Include="Microsoft.SemanticKernel" Version="1.52.1" />
     <PackageReference Include="Microsoft.SemanticKernel.Agents.Core" Version="1.52.1" />
-    <PackageReference Include="Microsoft.SemanticKernel.Connectors.AzureAISearch"
-      Version="1.40.1-preview" />
+    <PackageReference Include="Microsoft.SemanticKernel.Connectors.AzureAISearch" Version="1.52.0-preview" />
     <PackageReference Include="Microsoft.SemanticKernel.Connectors.OpenAI" Version="1.52.1" />
     <PackageReference Include="Microsoft.SemanticKernel.Plugins.OpenApi" Version="1.52.1" />
   </ItemGroup>

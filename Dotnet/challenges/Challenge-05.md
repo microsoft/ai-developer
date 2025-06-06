@@ -172,7 +172,7 @@ In this challenge, you will create a Semantic Search Plugin that utilizes an Azu
 
     :bulb: There are several ways to add the AI Search Connector to Semantic Kernel. Follow the instructions using the **kernelBuilder**.
   
-    * Refer to the [documentation](https://learn.microsoft.com/en-us/semantic-kernel/concepts/vector-store-connectors/out-of-the-box-connectors/azure-ai-search-connector?pivots=programming-language-csharp#getting-started) for more information on how to configure the connector.
+    * Refer to the [documentation](https://learn.microsoft.com/en-us/semantic-kernel/concepts/vector-store-connectors/out-of-the-box-connectors/azure-ai-search-connector?pivots=programming-language-csharp) (Getting Started Section) for more information on how to configure the connector.
     * Be sure to use the code sample where the ```SearchIndexClient``` is registered separately, you will need this class in your plugin
     * Also note the 2 App Settings you added to the appsettings.json file: AI_SEARCH_URL, AI_SEARCH_KEY.
 
