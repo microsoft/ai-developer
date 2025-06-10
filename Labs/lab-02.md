@@ -240,8 +240,6 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 
     ![](./media/image_042.png)
 
-1. Once you receive the response, navigate back to the Visual studio code terminal and then press **Ctrl+C** to stop the build process.
-
 </details>
 
 ## Review
