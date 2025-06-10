@@ -739,9 +739,10 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
                 var url = $"https://api.open-meteo.com/v1/forecast" +
                         $"?latitude={latitude}&longitude={longitude}" +
                         $"&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,weather_code" +
-                        $"&current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m" +
+                        $"&amp;current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m" +
                         $"&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch" +
                         $"&forecast_days={days}&timezone=auto";
+
 
                 try
                 {
