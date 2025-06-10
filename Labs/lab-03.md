@@ -715,18 +715,15 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     using System.Text.Json;
     using System.Threading.Tasks;
     using Microsoft.SemanticKernel;
-
     namespace BlazorAI.Plugins
     {
         public class WeatherPlugin
         {
             private readonly IHttpClientFactory _httpClientFactory;
-
             public WeatherPlugin(IHttpClientFactory httpClientFactory)
             {
                 _httpClientFactory = httpClientFactory;
             }
-
             [KernelFunction("GetWeatherForecast")]
             [Description("Get weather forecast for a location up to 16 days in the future")]
             public async Task<string> GetWeatherForecastAsync(
@@ -744,17 +741,13 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
                         $"&amp;current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m" +
                         $"&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch" +
                         $"&forecast_days={days}&timezone=auto";
-
-
                 try
                 {
                     var httpClient = _httpClientFactory.CreateClient();
                     var response = await httpClient.GetAsync(url);
                     response.EnsureSuccessStatusCode();
-                    
                     var content = await response.Content.ReadAsStringAsync();
                     var data = JsonDocument.Parse(content);
-                    
                     // Extract daily forecast data
                     var dailyElement = data.RootElement.GetProperty("daily");
                     var times = dailyElement.GetProperty("time").EnumerateArray().ToArray();
@@ -763,7 +756,6 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
                     var precipSums = dailyElement.GetProperty("precipitation_sum").EnumerateArray().ToArray();
                     var precipProbs = dailyElement.GetProperty("precipitation_probability_max").EnumerateArray().ToArray();
                     var weatherCodes = dailyElement.GetProperty("weather_code").EnumerateArray().ToArray();
-                    
                     // Build a readable forecast for each day
                     var forecasts = new List<object>();
                     for (int i = 0; i < times.Length; i++)
@@ -772,9 +764,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
                         var dateStr = times[i].GetString();
                         var dateObj = DateTime.Parse(dateStr!);
                         var dayName = dateObj.ToString("dddd, MMMM dd", CultureInfo.InvariantCulture);
-                        
                         var weatherDesc = GetWeatherDescription(weatherCodes[i].GetInt32());
-                        
                         var forecast = new
                         {
                             date = dateStr,
@@ -785,17 +775,14 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
                             precipitation_probability = $"{precipProbs[i]}%",
                             conditions = weatherDesc
                         };
-                        
                         forecasts.Add(forecast);
                     }
-                    
                     var result = new
                     {
                         location_coords = $"{latitude}, {longitude}",
                         forecast_days = forecasts.Count,
                         forecasts
                     };
-                    
                     // For more concise output in chat
                     return JsonSerializer.Serialize(result, new JsonSerializerOptions { WriteIndented = true });
                 }
@@ -804,7 +791,6 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
                     return $"Error fetching forecast weather: {ex.Message}";
                 }
             }
-            
             [KernelFunction("GetForecastWithPlugins")]
             [Description("Gets weather forecast for any location by coordinating with Time and Geocoding plugins.")]
             public async Task<string> GetForecastWithPluginsAsync(
@@ -839,7 +825,6 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
                     {
                         return $"Invalid day specification: {daySpec}. Please provide a day name or number of days.";
                     }
-                    
                     // Step 3: Get location coordinates from Geocoding Plugin
                     var locationResult = await kernel.InvokeAsync("Geocoding", "GetLocation", new() { ["location"] = location });
                     string? locationJson = locationResult.GetValue<string>();
@@ -851,7 +836,6 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
                     
                     var locationData = JsonDocument.Parse(locationJson);
                     double latitude, longitude;
-                    
                     try {
                         latitude = locationData.RootElement.GetProperty("latitude").GetDouble();
                         longitude = locationData.RootElement.GetProperty("longitude").GetDouble();
@@ -860,7 +844,6 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
                     {
                         return $"Could not extract coordinates for location: {location}";
                     }
-                    
                     // Step 4: Get weather forecast
                     return await GetWeatherForecastAsync(latitude, longitude, daysInFuture + 1);
                 }
@@ -869,7 +852,6 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
                     return $"Error coordinating weather forecast: {ex.Message}";
                 }
             }
-
             private string GetWeatherDescription(int code)
             {
                 var weatherCodes = new Dictionary<int, string>
@@ -887,7 +869,6 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
                     { 85, "Slight snow showers" }, { 86, "Heavy snow showers" },
                     { 95, "Thunderstorm" }, { 96, "Thunderstorm with slight hail" }, { 99, "Thunderstorm with heavy hail" }
                 };
-                
                 return weatherCodes.TryGetValue(code, out var description) ? description : "Unknown";
             }
         }
