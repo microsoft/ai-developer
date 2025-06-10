@@ -26,6 +26,8 @@ In this task, you will explore different flow types in Azure AI Foundry by runni
 
     ![](./media/sk26.png)
 
+3. Once you receive the response, navigate back to the Visual studio code terminal and then press **Ctrl+C** to stop the build process.   
+
 ## Task 2: Create and import the Time Plugin
 
 In this task, you will explore different flow types in Azure AI Foundry by creating and importing the Time Plugin to enhance the app's functionality.
