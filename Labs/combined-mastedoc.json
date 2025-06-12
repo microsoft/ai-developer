@@ -11,7 +11,12 @@
       {
         "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabsAI-Azure/Build-Custom-Knowledge-RAG-App-With-Azure-AI-Foundry/refs/heads/main/Instructions/Labs/Build-Custom-Knowledge-RAG-App-With-Azure-AI-Foundry-combine.md",
         "Order": 2
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Knowledge-Augmented-Chatbot-with-LangChain-and-AI-Search/refs/heads/main/combined-guide.md",
+        "Order": 3
       }
+
     ]
   }
 ]
