@@ -43,6 +43,8 @@ public class AzureAIConfig {
     @Value("${client.azure.search.embedding.deployment}")
     private String embeddingDeploymentName;
 
+   
+
     public String getEmbeddingDeploymentName() {
         return embeddingDeploymentName;
     }
@@ -131,5 +133,6 @@ public class AzureAIConfig {
         this.chatDeploymentName = chatDeploymentName;
     }
 
+    
 }
 

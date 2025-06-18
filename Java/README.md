@@ -62,10 +62,14 @@ Participants will learn how to:
 - [Challenge 04](challenges/Challenge-04.md): Retrieval-Augmented Generation (RAG)
   - Document Chunking & Embedding
   - Enhance AI responses by searching external sources
+
 - [Challenge 05](challenges/Challenge-05.md): Plugin using prompt
+
+- [Challenge 06](./challenges/Challenge-06.md): Responsible AI: Exploring Content Filters in Azure AI Foundry
+  - Configuring content filters in Azure AI Foundry Studio.
+  - Testing content filters.
+  - Creating custom filters to block specific words or phrases.
   
 ## Contributors
 
 - [Vivek Mishra](https://github.com/mishravivek-ms)
-- [William Griffin](https://github.com/WillGKizan)
-- [Chris McKee](https://github.com/ChrisMcKee1)

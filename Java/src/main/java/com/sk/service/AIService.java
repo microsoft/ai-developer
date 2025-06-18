@@ -1,10 +1,6 @@
 package com.sk.service;
 
-import com.azure.ai.openai.OpenAIAsyncClient;
-import com.azure.ai.openai.OpenAIClientBuilder;
-import com.azure.core.credential.AzureKeyCredential;
 import com.microsoft.semantickernel.Kernel;
-import com.microsoft.semantickernel.aiservices.openai.chatcompletion.OpenAIChatCompletion;
 import com.microsoft.semantickernel.orchestration.InvocationContext;
 import com.microsoft.semantickernel.orchestration.InvocationReturnMode;
 import com.microsoft.semantickernel.orchestration.ToolCallBehavior;
@@ -15,14 +11,12 @@ import com.microsoft.semantickernel.services.chatcompletion.ChatCompletionServic
 import com.microsoft.semantickernel.services.chatcompletion.ChatHistory;
 import com.microsoft.semantickernel.services.chatcompletion.ChatMessageContent;
 import com.sk.config.AzureAIConfig;
-import com.sk.kernel.kernelUtil;
 import com.sk.model.ChatRequest;
 import com.sk.plugins.AISearchPlugin;
 import com.sk.plugins.DateTimePlugin;
 import com.sk.plugins.GeocodingPlugin;
 import com.sk.plugins.WeatherPlugin;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -37,7 +31,7 @@ public class AIService {
     @Autowired
     AzureAIConfig config;
     @Autowired
-    com.sk.kernel.kernelUtil kernelUtil;
+    com.sk.kernel.kernelUtil kernelUtil;   
 
     public List<ChatMessageContent<?>> getAIResponse(ChatRequest chatRequest) throws IOException, ServiceNotFoundException {
         long startTime = System.nanoTime(); // Start the timer
@@ -45,7 +39,7 @@ public class AIService {
             Kernel kernel = kernelBuilder();
 
             // Challenge 3, for adding the plugins
-            //kernel = AddPlugins(kernel);
+            kernel = AddPlugins(kernel);
 
 
 
@@ -87,8 +81,7 @@ public class AIService {
             if (responses == null || responses.isEmpty()) {
                 throw new ServiceNotFoundException("No response from the service");
             }
-            // Add AI response to chat history
-            //chatHistory.addUserMessage(responses.get(0).getContent());
+            // Do not add AI response to chat history as a user message
             System.out.println("AI response: success");
             return responses;
         } catch (Exception e) {
@@ -105,26 +98,32 @@ public class AIService {
 
     private Kernel AddPlugins(Kernel kernel) throws IOException {
         // Challenge 03 START for Create the DateTimePlugin
-        /*KernelPlugin dateTimePlugin = KernelPluginFactory
-                .createFromObject(<Plugin Class>, "<Plugin Name>);
-          KernelPlugin geoPlugin = KernelPluginFactory
+        KernelPlugin dateTimePlugin = KernelPluginFactory
+                .createFromObject(new DateTimePlugin(), "DateTimePlugin");
+
+        KernelPlugin geoPlugin = KernelPluginFactory
                 .createFromObject(new GeocodingPlugin(config, restTemplate), "GeocodingPlugin");
 
-          KernelPlugin weatherPlugin = KernelPluginFactory
+        KernelPlugin weatherPlugin = KernelPluginFactory
                 .createFromObject(new WeatherPlugin(config, restTemplate), "WeatherPlugin");
-        */
+        
         //Challenge 04 START for Create the RAGPlugin
-        // Challenge 04, Uncomment bellow line for AI search plugin and add the plugin to the list
-        /*KernelPlugin AISearch = KernelPluginFactory
+        //Challenge 04, Uncomment bellow line for AI search plugin and add the plugin to the list
+        KernelPlugin AISearch = KernelPluginFactory
                 .createFromObject(new AISearchPlugin(config, kernelUtil), "AISearchPlugin");
-*/
+
+       
+                
+
+                
+ 
         // Challenge 05, Uncomment bellow line for food plugin and add the plugin to the list
-        /*KernelPlugin foodplugin = KernelPluginFactory
-                .importPluginFromDirectory(Path.of("src/main/resources"),
-                        "promptconfig", null);
-*/
+        //KernelPlugin foodplugin = KernelPluginFactory
+        //        .importPluginFromDirectory(Path.of("src/main/resources"),
+        //                "promptconfig", null);
+        
         // Challenge 03 add the plugin into kernel
-        //kernel = addPluginwithKernel(kernel, List.of());
+        kernel = addPluginwithKernel(kernel, List.of(dateTimePlugin, geoPlugin, weatherPlugin, AISearch));
 
         return kernel;
     }
@@ -150,7 +149,10 @@ public class AIService {
 		 This client is configured with the API key and endpoint from the AzureAIConfig.
 		 It is used to interact with OpenAI services asynchronously.
 		*/
-
+        com.azure.ai.openai.OpenAIAsyncClient client = new com.azure.ai.openai.OpenAIClientBuilder()
+                .credential(new com.azure.core.credential.AzureKeyCredential(config.getOpenAiApiKey()))
+                .endpoint(config.getOpenAiEndpoint())
+                .buildAsyncClient();
 
         // Challenge 2 Create the chat completion service
 		/*
@@ -158,7 +160,10 @@ public class AIService {
 		 This service is configured with the OpenAIAsyncClient and the model ID from the AzureAIConfig.
 		 It is used to handle chat completions.
 		*/
-
+        ChatCompletionService chatCompletionService = com.microsoft.semantickernel.aiservices.openai.chatcompletion.OpenAIChatCompletion.builder()
+                .withOpenAIAsyncClient(client)
+                .withModelId(config.getChatDeploymentName())
+                .build();
 
         Kernel kernel = null;
 		/*
@@ -166,7 +171,9 @@ public class AIService {
 		 Build a Kernel instance using the Kernel builder.
 		 Configure it with the ChatCompletionService and finalize the build process.
 		*/
-
+        kernel = Kernel.builder()
+                .withAIService(ChatCompletionService.class, chatCompletionService)
+                .build();
 
         return kernel;
 
@@ -187,15 +194,18 @@ public class AIService {
         ChatHistory chatHistory = new ChatHistory();
         chatAppRequest.getMessages().forEach(
                 historyChat -> {
-                    if("user".equals(historyChat.getRole())) {
-                        chatHistory.addUserMessage(historyChat.getContent());
+                    // Validate that content is not null or empty before adding to chat history
+                    String content = historyChat.getContent();
+                    if (content != null && !content.trim().isEmpty()) {
+                        if("user".equals(historyChat.getRole())) {
+                            chatHistory.addUserMessage(content);
+                        }
+                        if("assistant".equals(historyChat.getRole())) {
+                            chatHistory.addAssistantMessage(content);
+                        }
                     }
-                    if("assistant".equals(historyChat.getRole()))
-                        chatHistory.addAssistantMessage(historyChat.getContent());
                 });
 
-
         return chatHistory;
-
     }
 }

@@ -1,0 +1,112 @@
+:root {
+  /* Default theme variables (will be overridden by JS) */
+  --color-primary: #ff6188;
+  --color-secondary: #78dce8;
+  --color-success: #a9dc76;
+  --color-info: #78dce8;
+  --color-warning: #ffd866;
+  --color-danger: #fc9867;
+  --color-background: #2d2a2e;
+  --color-surfaceBackground: #221f22;
+  --color-surfaceForeground: #fcfcfa;
+  --color-textPrimary: #fcfcfa;
+  --color-textSecondary: #939293;
+  --color-borderColor: #727072;
+  --color-disabledBackground: #403e41;
+  --color-disabledText: #727072;
+  
+  /* Typography */
+  --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-size: 16px;
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  
+  /* Border radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Dark mode styles */
+.dark-mode {
+  --tw-bg-opacity: 1;
+  background-color: var(--color-background);
+  color: var(--color-textPrimary);
+}
+
+/* Light mode styles */
+.light-mode {
+  --tw-bg-opacity: 1;
+  background-color: var(--color-background);
+  color: var(--color-textPrimary);
+}
+
+/* Modern component transitions */
+.modern-transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Focus states */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+  --tw-ring-color: var(--color-primary);
+}
+
+/* Themed button styles */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  filter: brightness(110%);
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: black;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  filter: brightness(110%);
+}
+
+/* Themed input styles */
+.input-themed {
+  background-color: var(--color-surfaceBackground);
+  color: var(--color-textPrimary);
+  border-color: var(--color-borderColor);
+}
+
+.input-themed:focus {
+  border-color: var(--color-primary);
+  outline-color: var(--color-primary);
+}
+
+.input-themed:disabled {
+  background-color: var(--color-disabledBackground);
+  color: var(--color-disabledText);
+  cursor: not-allowed;
+}
+
+/* Themed label styles */
+.label-themed {
+  color: var(--color-textPrimary);
+}
+
+.label-themed.disabled {
+  color: var(--color-disabledText);
+} 

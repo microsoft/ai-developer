@@ -1,10 +1,11 @@
 package com.sk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.microsoft.semantickernel.data.vectorstorage.attributes.VectorStoreRecordDataAttribute;
-import com.microsoft.semantickernel.data.vectorstorage.attributes.VectorStoreRecordKeyAttribute;
-import com.microsoft.semantickernel.data.vectorstorage.attributes.VectorStoreRecordVectorAttribute;
+import com.microsoft.semantickernel.data.vectorstorage.annotations.VectorStoreRecordData;
+import com.microsoft.semantickernel.data.vectorstorage.annotations.VectorStoreRecordKey;
+import com.microsoft.semantickernel.data.vectorstorage.annotations.VectorStoreRecordVector;
 import com.microsoft.semantickernel.data.vectorstorage.definition.DistanceFunction;
+import com.microsoft.semantickernel.data.vectorstorage.definition.IndexKind;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
@@ -12,13 +13,13 @@ import java.util.Collections;
 import java.util.List;
 
 public class Handbook {
-    @VectorStoreRecordKeyAttribute
+    @VectorStoreRecordKey
     private String chunk_id;
-    @VectorStoreRecordDataAttribute
+    @VectorStoreRecordData
     private String parent_id;
-    @VectorStoreRecordDataAttribute
+    @VectorStoreRecordData
     private String chunk;
-    @VectorStoreRecordDataAttribute
+    @VectorStoreRecordData
     private String title;
 
     public String getChunk_id() {
@@ -65,7 +66,7 @@ public class Handbook {
         private String chunk_id;
         @VectorStoreRecordDataAttribute
         private String last_updated;*/
-    @VectorStoreRecordVectorAttribute(dimensions = 1536, indexKind = "Hnsw", distanceFunction = DistanceFunction.COSINE_DISTANCE)
+    @VectorStoreRecordVector(dimensions = 1536, indexKind = IndexKind.HNSW, distanceFunction = DistanceFunction.COSINE_DISTANCE)
     private List<Float> text_vector;
 
     public Handbook() {
