@@ -78,10 +78,13 @@ Participants will learn how to:
 
 ## Contributors
 
+  
+## Contributors
+
 - [Chris McKee](https://github.com/ChrisMcKee1)
 - [Randy Patterson](https://github.com/RandyPatterson)
-- [Zack Way](https://github.com/seiggy)
 - [Vivek Mishra](https://github.com/mishravivek-ms)
+- [Zack Way](https://github.com/seiggy)
 - [Travis Terrell](https://github.com/travisterrell)
 - [Eric Rhoads](https://github.com/ecrhoads)
 - [Wael Kdouh](https://github.com/waelkdouh)
@@ -89,3 +92,5 @@ Participants will learn how to:
 - [Brijraj Singh](https://github.com/brijrajsingh)
 - [Linda M Thomas](https://github.com/lindamthomas)
 - [Suman More](https://github.com/sumanmore257)
+- [Julian Heidt](https://github.com/julian-heidt)
+- [William Griffin](https://github.com/WillGKizan)
