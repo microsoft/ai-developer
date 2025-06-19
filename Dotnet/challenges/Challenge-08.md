@@ -1,103 +1,240 @@
-### [< Previous Challenge](./Challenge-07.md) - **[Home](../README.md)**
+### [< Previous Challenge](./Challenge-07.md) - **[Home](./README.md)** - [Next Challenge >](./Challenge-09.md)
 
-# Challenge 08 - Multi-Agent Systems
+# Challenge 08 - Multi-Agent Systems with Magentic Orchestration
 
 ## Introduction
 
-Multi-Agent Systems (MAS) consist of multiple autonomous agents, each with distinct goals, behaviors, and areas of responsibility. These agents can interact with each other, either cooperating or competing, depending on the objectives they are designed to achieve. In MAS, each agent operates independently, making decisions based on its local knowledge and the environment, but they can communicate and share information to solve complex problems collectively.
+Multi-Agent Systems (MAS) consist of multiple autonomous agents, each with distinct goals, behaviors, and areas of responsibility. These agents can interact with each other, either cooperating or competing, depending on the objectives they are designed to achieve. In this challenge, you'll learn about **Magentic Orchestration**, a powerful new pattern in Semantic Kernel that's designed for complex, open-ended tasks requiring dynamic collaboration.
 
-MAS is often used in scenarios where tasks are distributed across different entities, and the overall system benefits from decentralization. Examples include simulations of real-world systems like traffic management, robotic teams, distributed AI applications, or networked systems where agents need to coordinate actions without a central controller. MAS allows for flexibility, scalability, and adaptability in solving dynamic and complex problems where a single agent or centralized system might be less efficient or incapable of handling the complexity on its own.
+Magentic orchestration is inspired by the Magentic-One system and provides a flexible, general-purpose multi-agent pattern. In this pattern, a dedicated Magentic manager coordinates a team of specialized agents, selecting which agent should act next based on the evolving context, task progress, and agent capabilities. The manager maintains shared context, tracks progress, and adapts the workflow in real time.
 
 ## Description
 
-In this challenge, you will create a multi-agent system that takes the user's request and feeds it to a collection of agents. Each agent will have it's own persona and responsibility. The final response will be a collection of answers from all agents that together will satisfy the user's request based on each persona's area of expertise.
+In this challenge, you will create a multi-agent system using **MagenticOrchestration** that takes the user's request and coordinates between specialized agents. Each agent will have its own persona and responsibility. The Magentic manager will orchestrate the conversation flow and ensure all requirements are met before delivering the final response.
 
 ### Challenges
 
-1. First, we're going to open the `MultiAgent.razor.cs` code behind. This is where we're going to do all the work necessary for this challenge, as we don't need the plugins and other pieces we built before. You might notice that it looks like a stripped down version of the `Chat.razor.cs` code-base. Most of the code here is the same as what you've built.
+1. First, open the `MultiAgent.razor.cs` code behind. This is where we're going to implement the new MagenticOrchestration pattern. You'll notice it looks like a streamlined version of the `Chat.razor.cs` codebase, with background task queuing to keep the UI responsive.
 
-1. The first thing we need to do is create the personas for our 3 agents. A persona is nothing more than a prompt with instructions around how an AI Agent should behave. We're going to use the following 3 personas.
+2. **Define Your Agents**: The first step is to create personas for our 3 specialist agents and implement them as `ChatCompletionAgent` instances in the `CreateAgents()` method. Each agent has a specific role in our software development workflow:
 
-```text
-You are a Business Analyst which will take the requirements from the user (also known as a 'customer')
-and create a project plan for creating the requested app. The Business Analyst understands the user
-requirements and creates detailed documents with requirements and costing. The documents should be 
-usable by the SoftwareEngineer as a reference for implementing the required features, and by the 
-Product Owner for reference to determine if the application delivered by the Software Engineer meets
-all of the user's requirements.
-```
+> [!IMPORTANT]
+> We have already created a class variable for the agents.You will just need to append your agents to that list.
 
-```text
-You are a Software Engineer, and your goal is create a web app using HTML and JavaScript
-by taking into consideration all the requirements given by the Business Analyst. The application should
-implement all the requested features. Deliver the code to the Product Owner for review when completed.
-You can also ask questions of the BusinessAnalyst to clarify any requirements that are unclear.
-```
+   1. Find the comment: `// Create a Business Analyst Agent`
 
-```text
-You are the Product Owner which will review the software engineer's code to ensure all user 
-requirements are completed. You are the guardian of quality, ensuring the final product meets
-all specifications and receives the green light for release. Once all client requirements are
-completed, you can approve the request by just responding "%APPR%". Do not ask any other agent
-or the user for approval. If there are missing features, you will need to send a request back
-to the SoftwareEngineer or BusinessAnalyst with details of the defect. To approve, respond with
-the token %APPR%.
-```
+      Create a `ChatCompletionAgent` for the Business Analyst with the following persona:
 
-1. In the `CreateAgents()` Method, we need to create a `ChatCompletionAgent` for each of the above personas. Each agent should have the Instructions, a Name, and a reference to the Kernel that is created in the `InitializeSemanticKernel()` method.
+      ```text
+      You are a Business Analyst responsible for analyzing user requirements and creating comprehensive project documentation.
 
-    :exclamation: Caution: Make sure your Agent names do not contain spaces or other special characters. Letters only!
+      CRITICAL RULES:
+      - NEVER write any code or provide code examples
+      - NEVER suggest specific implementation details or technical solutions
+      - Your role is purely analytical and documentation-focused
 
-    :bulb: You can create and use a different Kernel object for each agent. Great if some agents can operate with cheaper models such as GPT 3.5 or 4o-mini, while others might need more expensive agents!
+      Your responsibilities:
+      1. Analyze and clarify user requirements
+      2. Break down features into detailed functional requirements
+      3. Create user stories and acceptance criteria
+      4. Define project scope and deliverables
+      5. Estimate effort and provide timeline recommendations
+      6. Document business rules and constraints
+      7. Create a comprehensive requirements specification
 
-    :bulb: [Semantic Kernel Chat Completion Agent](https://learn.microsoft.com/en-us/semantic-kernel/frameworks/agent/agent-templates?pivots=programming-language-csharp)
+      Your output should include:
+      - Clear, non-technical requirement descriptions
+      - User stories with acceptance criteria
+      - Business logic and workflow descriptions
+      - Data requirements (what data is needed, not how to store it)
+      - Integration requirements (what systems need to connect)
+      - Success criteria for each feature
 
-1. Next we want to create an `AgentGroupChat` to tie together the 3 agents. Head up to the last line of the `InitializeSemanticKernel()` method. Look for the Comment that instructs you to create the `AgentGroupChat` object. You need to create the AgentGroupChat, passing it the Array of `Agents`, and `ExecutionSettings` will need to set the `TerminationStrategy` to an instance of `ApprovalTerminationStrategy`. This class takes 2 arguments, the `MaximumIterations`, which is how many times the group are allowed to communicate between each other before we abandon the thread, and `Agents` which is a `IReadOnlyList<Agent>` collection of agents that are allowed to terminate the chat.
+      Remember: You analyze WHAT needs to be built, not HOW to build it.
+      ```
 
-    :bulb: [Semantic Kernel Agent Collaboration](https://learn.microsoft.com/en-us/semantic-kernel/frameworks/agent/agent-chat?pivots=programming-language-csharp#creating-an-agent-group-chat)
+      Add this agent to your `Agents` list with:
+      - `Name` property: "BusinessAnalyst" (no spaces!)
+      - `Description` property explaining the agent's role
+      - `Instructions` property with the persona text above
+      - `Kernel` property referencing the kernel created in `InitializeSemanticKernel()`
 
-    :bulb: [Multi-Turn Agent Invocation](https://learn.microsoft.com/en-us/semantic-kernel/frameworks/agent/agent-chat?pivots=programming-language-csharp#multi-turn-agent-invocation)
+   2. Find the comment: // Create a Software Engineer Agent
 
-1. At the bottom of `MultiAgent.razor.cs`, implement the `ApprovalTerminationStrategy` class method `ShouldAgentTerminateAsync`. The agents should terminate when the ProductOwnerAgent returns the word *"%APPR%"* in the chat history.
+      Create a `ChatCompletionAgent` for the Software Engineer with the following persona:
 
-    :bulb: [Agent Termination Strategies](https://learn.microsoft.com/en-us/semantic-kernel/frameworks/agent/agent-chat?pivots=programming-language-csharp#chat-termination)
+      ```text
+      You are a Software Engineer responsible for implementing the technical solution based on the Business Analyst's requirements.
 
-1. Next up, we need to implement the `SendMessage()` method. It will be similar in nature to the one you built in the `Chat.razor.cs` in other challenges. There are two key pieces you will need to implement. You need to create a new `ChatMessageContent` object, and add it to the `AgentGroupChat` object. It should have an `AuthorRole` specified for the User, and the chat message contents that we copied to the `userMessage` variable.
+      CRITICAL RULES:
+      - ONLY write code and provide technical implementation details
+      - Base your implementation strictly on the Business Analyst's requirements
+      - DO NOT change or add requirements - implement exactly what was specified
 
-    :bulb: [Multi-turn chat](https://learn.microsoft.com/en-us/semantic-kernel/frameworks/agent/agent-chat?pivots=programming-language-csharp#multi-turn-agent-invocation)
+      Your responsibilities:
+      1. Review and understand the functional requirements from the Business Analyst
+      2. Design the technical architecture and system components
+      3. Write complete, working code for all specified features
+      4. Include proper error handling and validation
+      5. Provide clear code comments and documentation
+      6. Suggest appropriate technology stack and frameworks
+      7. Create database schemas and data models if needed
+      8. Implement security best practices
+      9. Write unit tests for critical functionality
 
-1. Finally, we need to iterate through the results from the `AgentGroupChat` and dump them to our `chatHistory` to display back to the user. We can use an async foreach loop to do this like so:
+      Your output should include:
+      - Complete source code files with proper structure
+      - Technical documentation and architecture diagrams
+      - Database schemas and data models
+      - API specifications and interfaces
+      - Configuration files and deployment instructions
+      - Unit tests and testing documentation
 
-   ```csharp
-    await foreach (var message in AgentGroupChat.InvokeAsync())
+      Remember: You implement HOW to build what the Business Analyst specified.
+      ```
+
+      Add this agent to your `Agents` list with:
+      - `Name` property: "SoftwareEngineer" (no spaces!)
+      - `Description` property explaining the agent's role
+      - `Instructions` property with the persona text above
+      - `Kernel` property referencing the kernel created in `InitializeSemanticKernel()`
+
+   3. **Find the comment:** // Create a Product Owner Agent
+
+      Create a `ChatCompletionAgent` for the Product Owner with the following persona:
+
+         ```text
+         You are a Product Owner responsible for reviewing the Software Engineer's implementation and ensuring it meets all requirements from the Business Analyst.
+
+         CRITICAL RULES:
+         - Your job is to VERIFY the implementation matches the requirements
+         - ONLY approve if ALL requirements are fully met in the code
+         - Use "%APPR%" in your response ONLY when completely satisfied
+         - Be thorough in your review - check every requirement
+
+         Your responsibilities:
+         1. Review the Software Engineer's implementation against Business Analyst requirements
+         2. Verify all functional requirements are implemented correctly
+         3. Check for completeness - no missing features or functionality
+         4. Validate that the code follows good practices and standards
+         5. Test the solution conceptually to ensure it works as intended
+         6. Provide specific feedback on what needs to be fixed or improved
+         7. Only approve when the implementation is production-ready
+
+         Your review process:
+         - Go through each requirement from the Business Analyst systematically
+         - Check if the Software Engineer's code addresses each requirement
+         - Look for edge cases, error handling, and robustness
+         - Verify the code is complete and functional
+
+         Response format:
+         - If satisfied: Provide positive feedback and include "%APPR%" to signal completion
+         - If not satisfied: List specific issues that need to be addressed, DO NOT include "%APPR%"
+
+         Remember: You are the quality gate - only approve work that truly meets all requirements.
+         ```
+
+         Add this agent to your `Agents` list with:
+         - `Name` property: "ProductOwner" (no spaces!)
+         - `Description` property explaining the agent's role
+         - `Instructions` property with the persona text above
+         - `Kernel` property referencing the kernel created in `InitializeSemanticKernel()`
+
+      :bulb: [Semantic Kernel Chat Completion Agent Documentation](https://learn.microsoft.com/en-us/semantic-kernel/frameworks/agent/agent-templates?pivots=programming-language-csharp)
+
+3. **Set Up the Magentic Manager**: After creating your agents, you need to set up the orchestration.
+
+> [!IMPORTANT]
+> Note that a global variable `private MagenticOrchestration? orchestration;` has already been declared for you at the class level.
+
+   In the `InitializeSemanticKernel()` method, find the comment `// Implement the orchestration using Magentic below` and initialize the `orchestration` variable with a new MagenticOrchestration.
+
+   :bulb: [Magentic Orchestration Documentation](https://learn.microsoft.com/en-us/semantic-kernel/frameworks/agent/agent-orchestration/magentic?pivots=programming-language-csharp)
+
+4. **Implement the Response Callback**: The `ResponseCallback` method is created but not fully implemented. You will need to implement this method the rest of this method.
+
+> [!IMPORTANT]
+> The code `InvokeAsync(StateHasChanged)` is used to refresh the UI.
+
+   :bulb: [ResponseCallback Documentation](https://learn.microsoft.com/en-us/semantic-kernel/frameworks/agent/agent-orchestration/magentic?pivots=programming-language-csharp#optional-observe-agent-responses)
+
+5. **Implement the SendMessage Method**: In the `SendMessage()` method, you need to:
+
+   - [ ] Create and start the runtime instance.
+   - [ ] Create a comprehensive prompt that includes the user message and orchestration instructions
+   - [ ] Use Invoke the orchestrator
+   - [ ] Use get results from the orchestrator. (Recommended timeout 600 seconds (10 minutes))
+
+   The orchestration prompt should include:
+
+   ```text
+   You are **Orchestrator**, the Magentic manager that supervises three specialist agents:
+
+   • **BusinessAnalyst** – analyses and documents user requirements.  
+   • **SoftwareEngineer** – designs and implements the technical solution.  
+   • **ProductOwner** – validates that the implementation satisfies every documented requirement.  
+
+   ## Workflow (follow strictly)  
+   1. **Route the user request to BusinessAnalyst**. Wait for its structured requirements output.  
+   2. **Pass the BusinessAnalyst output to SoftwareEngineer**. Wait for code and all technical artefacts.  
+   3. **Pass BOTH previous outputs to ProductOwner** for review.  
+   4. If ProductOwner's reply includes **"%APPR%"**, the work is approved – return the full deliverable set to the user and stop.  
+   5. If "%APPR%" is **not** present, forward ProductOwner's feedback to SoftwareEngineer, then repeat steps 2-3.  
+   6. Escalate with an error summary if approval is not achieved after **three** complete review cycles.
+
+   ## Operating rules  
+   - Always select exactly **one** agent for each turn and send only the information that agent needs.  
+   - Preserve all agent outputs verbatim when forwarding to the next agent so that full context is maintained.
+   - Never modify agent instructions; rely on their internal role definitions for behaviour control.
+   - You may add concise routing notes (e.g., "Routing to SoftwareEngineer for implementation").  
+   - Maintain a short memory of the iteration count to enforce the three-cycle limit.
+
+   ## Success criterion  
+   Work is complete only when ProductOwner returns "%APPR%". At that point, compile and deliver:  
+   - The BusinessAnalyst requirement specification.  
+   - The full SoftwareEngineer code/artefacts.  
+   - The ProductOwner approval note.
+
+   ---
+
+   ### USER_REQUEST  
+   {userMessage}
    ```
 
-    This will give you the response back from the chat each time an Agent takes a turn. You can then add this message to the chatHistory directly.
+   :bulb: [Multi-turn Agent Invocation](https://learn.microsoft.com/en-us/semantic-kernel/frameworks/agent/agent-orchestration/magentic?pivots=programming-language-csharp)
 
-    :bulb: You should add a call to `StateHasChanged()` after you add the object to the chat history so that Blazor knows to refresh the UI.
+6. **Stop the runtime in the finally block**
 
-    :bulb: If you do not see your message in the UI then you forgot to add the userMessage to the chatHistory. Make sure you are adding the message to the chatHistory in the correct place.
+   :bulb: [RunUntilIdleAsync](https://learn.microsoft.com/en-us/semantic-kernel/frameworks/agent/agent-orchestration/magentic?pivots=programming-language-csharp#optional-stop-the-runtime)
 
-1. Run your Blazor app, and ask the new group of AI Agents to build a calculator app for you.
+7. **Run your Blazor app** and ask the new Magentic orchestration to build a Blackjack card game for you. Watch as the orchestrator coordinates between the three agents to deliver a complete solution.
 
 ### Success Criteria
 
-- You have implemented the Multi-Agent Chat page that will write out the following from a conversation with 3 AI Agents:
-  - Software Development Plan and Requirements
-  - Source Code in HTML and JavaScript
-  - Code Review and Approval
+- You have implemented the Multi-Agent system using MagenticOrchestration that produces:
+  - Comprehensive business requirements from the Business Analyst
+  - Complete working source code from the Software Engineer  
+  - Thorough code review and approval from the Product Owner
+- The orchestrator successfully manages the workflow between agents
+- The UI updates in real-time showing the conversation between agents
+- The system handles the background processing without blocking the UI
 
 ### Bonus
 
-- Copy the Code from the chat history markdown into matching files on your file system. There should be HTML content specified. Stick that in an index.html, and then launch it with your web browser. Did the app function as the AI said it would?
-  - If so, see if you can enhance the app. Ask the AI to make it responsive. Or maybe ask it to add a feature.
-  - If not, try experimenting with your personas. Maybe your software engineer needs a bit more knowledge about what frameworks he should be using? Or maybe you just need to give better requirements to your group. See if you can get a functional app!
+- **Test the Generated Code**: Copy the HTML/JavaScript code from the chat history into an `index.html` file and test it in your browser. Does it work as specified?
+  - If successful, try asking for enhancements like responsive design or additional features
+  - If not, analyze what went wrong and try refining the agent personas or requirements
+
+- **Experiment with Different Scenarios**: Try different types of applications (todo list, weather app, etc.) and observe how the agents collaborate
+
+- **Monitor the Orchestration**: Pay attention to how the Magentic manager routes requests between agents and manages the workflow
 
 ## Learning Resources
 
-- [Agent Group Chat with Semantic Kernel](https://learn.microsoft.com/en-us/semantic-kernel/frameworks/agent/agent-chat?pivots=programming-language-csharp) - Semantic Kernel docs on Multi-agent Collaboration
-- [MetaGPT](https://github.com/geekan/MetaGPT) - Multi-agent Framework. Great example of what a complex multi-agent system can do.
-- [AutoGen Multi-Agent Conversational Framework](https://microsoft.github.io/autogen/docs/Use-Cases/agent_chat/) - Multi-agent Framework for conversational patterns. Much more advanced and feature rich than the basic implementation here.
-- [AutoGen with Semantic Kernel](https://devblogs.microsoft.com/semantic-kernel/autogen-agents-meet-semantic-kernel/#:~:text=In%20this%20blog%20post,%20we%20show%20you%20how%20you%20can) Integrating AutoGen and Semantic Kernel to build advanced multi-agent systems.
+- [Magentic Orchestration](https://learn.microsoft.com/en-us/semantic-kernel/frameworks/agent/agent-orchestration/magentic?pivots=programming-language-csharp) - Official Semantic Kernel documentation
+- [Agent Orchestration Overview](https://learn.microsoft.com/en-us/semantic-kernel/frameworks/agent/agent-orchestration?pivots=programming-language-csharp) - Understanding different orchestration patterns
+- [Semantic Kernel Agents](https://learn.microsoft.com/en-us/semantic-kernel/frameworks/agent/?pivots=programming-language-csharp) - Complete agent framework documentation
+- [AutoGen Multi-Agent Framework](https://microsoft.github.io/autogen/docs/Use-Cases/agent_chat/) - Advanced multi-agent patterns and research
+- [Magentic-One Research](https://www.microsoft.com/en-us/research/articles/magentic-one-a-generalist-multi-agent-system-for-solving-complex-tasks/) - The research behind Magentic orchestration
 
-### [< Previous Challenge](./Challenge-07.md) - **[Home](../README.md)**
+### [< Previous Challenge](./Challenge-07.md) - **[Home](./README.md)** - [Next Challenge >](./Challenge-09.md)

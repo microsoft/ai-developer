@@ -46,7 +46,6 @@
         {
             <FluentLabel>No messages yet. Start the conversation!</FluentLabel>
         }
-        <FluentProgressRing Visible="@loading" style="width: 42px; height: 82px; position: absolute; bottom: 50%; left: 50%;"></FluentProgressRing>
     </div>
     <div class="chat-input">
         <FluentStack Orientation="Orientation.Horizontal" Width="100%" HorizontalGap="8">
@@ -58,5 +57,6 @@
                           Class="send-button">Send</FluentButton>
         </FluentStack>
     </div>
+    <FluentProgressRing Visible="@loading" style="width: 42px; height: 82px; position: absolute; bottom: 50%; left: 50%;"></FluentProgressRing>
 </FluentCard>
 <FluentKeyCodeProvider />

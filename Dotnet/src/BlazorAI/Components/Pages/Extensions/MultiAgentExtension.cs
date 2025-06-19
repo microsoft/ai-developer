@@ -27,16 +27,17 @@ namespace BlazorAI.Components.Pages
 
         [Inject]
         IDialogService DialogService { get; set; } = null!;
-
         [Inject]
         private IKeyCodeService KeyCodeService { get; set; }
-
         [Inject]
         IJSRuntime JsRuntime { get; set; } = null!;
 
         [Inject]
         public AppState AppState { get; set; } = null!;
 
+        [Inject]
+        public ILoggerFactory LoggerFactory { get; set; } = null!;
+        
         private MarkdownPipeline pipeline = new MarkdownPipelineBuilder()
             .UseAdvancedExtensions()
             .UseBootstrap()
@@ -52,7 +53,7 @@ namespace BlazorAI.Components.Pages
             KeyCodeService.RegisterListener(OnKeyDownAsync);
 
             // Initialize the chat history here
-            await InitializeSemanticKernel();
+            InitializeSemanticKernel();
         }
 
         protected override async Task OnAfterRenderAsync(bool firstRender)

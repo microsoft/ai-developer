@@ -1,9 +1,16 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using BlazorAI.Queue;
+using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Forms;
+using Microsoft.JSInterop;
 using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.Agents;
-using Microsoft.SemanticKernel.Agents.Chat;
+using Microsoft.SemanticKernel.Agents.Magentic;
+using Microsoft.SemanticKernel.Agents.Orchestration;
+using Microsoft.SemanticKernel.Agents.Orchestration.GroupChat;
+using Microsoft.SemanticKernel.Agents.Runtime.InProcess;
 using Microsoft.SemanticKernel.ChatCompletion;
 using Microsoft.SemanticKernel.Connectors.OpenAI;
+using System;
 
 
 #pragma warning disable SKEXP0110 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
@@ -19,15 +26,16 @@ namespace BlazorAI.Components.Pages
 
         [Inject]
         public required IConfiguration Configuration { get; set; }
+
         [Inject]
-        private ILoggerFactory LoggerFactory { get; set; } = null!;
+        private IBackgroundTaskQueue _backgroundTaskQueue { get; set; } = null!;
 
-        private List<ChatCompletionAgent> Agents { get; set; } = [];
+        private List<Agent> Agents { get; set; } = [];
 
-        private AgentGroupChat AgentGroupChat;
+        private MagenticOrchestration? orchestration;
 
 
-        protected async Task InitializeSemanticKernel()
+        protected void InitializeSemanticKernel()
         {
             chatHistory = [];
 
@@ -42,62 +50,107 @@ namespace BlazorAI.Components.Pages
 
             kernel = kernelBuilder.Build();
 
-            await CreateAgents();
+            AddPlugins();
 
-            // create Agent Group Chat [AgentGroupChat]
+            CreateAgents();
 
-        }
+            // Implement the orchestration using Magentic below
 
-        private async Task CreateAgents()
-        {
-            // Create a Business Analyst Agent [ChatCompletionAgent] and add it to the Agents List.
-            // ChatCompletionAgent takes Instructions, a Name (No Spaces allowed), and the Kernel.
-
-            // Create a Software Engineer Agent [ChatCompletionAgent] and add it to the Agents List.
-            // ChatCompletionAgent takes Instructions, a Name (No Spaces allowed), and the Kernel.
-
-            // Create a Product Owner Agent [ChatCompletionAgent] and add it to the Agents List.
-            // ChatCompletionAgent takes Instructions, a Name (No Spaces allowed), and the Kernel.
+            
+            // Verify we have agents before proceeding
+            if (Agents.Count == 0)
+            {
+                throw new InvalidOperationException("No agents were created. Check agent creation logic.");
+            }
 
         }
 
-        private async Task AddPlugins()
+        private void CreateAgents()
         {
+            if (kernel is null)
+            {
+                throw new InvalidOperationException("Kernel must be initialized before creating agents.");
+            }
+            
+            // Clear existing agents
+            Agents.Clear();
+
+            // Append the agents to the Agents list
+            // Create a Business Analyst Agent
+
+
+            // Create a Software Engineer Agent
+
+
+            // Create a Product Owner Agent
+
+        }
+
+        private void AddPlugins()
+        {
+
+        }
+
+        // Implement the callback to handle agent responses
+        private async ValueTask ResponseCallback(ChatMessageContent response)
+        {
+            // Imlement the logic to handle the response from the agents
+
+
+
+
+            // This is used to update the UI with the new message
+            await InvokeAsync(StateHasChanged);
 
         }
 
         private async Task SendMessage()
         {
+            if (orchestration is null)
+            {
+                throw new InvalidOperationException("The 'orchestration' field must be initialized before sending messages.");
+            }
+
             // Copy the message from the user input - just like in Chat.razor.cs
+            // This code grouping is used to handle the user input message and update the UI accordingly
             var userMessage = MessageInput;
             MessageInput = string.Empty;
             loading = true;
-            chatHistory.AddUserMessage(userMessage);
+            // While the agent orchestration has its own chat history, we also maintain a local chat history for UI updates
+            chatHistory!.AddUserMessage(userMessage);
             StateHasChanged();
 
-            // Add a new ChatMessageContent to the AgentGroupChat with the User role, and userMessage contents
-
-            try
+            // Use the injected _backgroundTaskQueue instance to queue the background chat orchestration task
+            // This allows the UI to remain responsive while the orchestration runs in the background
+            await _backgroundTaskQueue.QueueBackgroundWorkItemAsync(async token =>
             {
-                // Use async foreach to iterate over the messages from the AgentGroupChat
+                // Implement the runtime
 
-                // Add each message to the chatHistory
+                try
+                {
+                    // Create a prompt for the orchestration, including the user message
 
-            }
-            catch (Exception e)
-            {
-                logger.LogError(e, "Error while trying to send message to agents.");
-            }
-            loading = false;
+
+                    // Invoke the orchestration with the prompt and runtime.
+                    // Note the timeout is set to 600 seconds (10 minutes) to allow for longer processing times
+                    
+                }
+                catch (Exception ex)
+                {
+                    chatHistory.AddAssistantMessage($"Error: {ex.Message}");
+                }
+                finally
+                {
+                    // Ensure the runtime is disposed of properly
+
+
+                    // Ensure the UI is updated after the orchestration completes
+                    loading = false;
+                    await InvokeAsync(StateHasChanged);
+
+                }
+            });
         }
-    }
 
-    sealed class ApprovalTerminationStrategy : TerminationStrategy
-    {
-        // Setup your ApprovalTerminationStrategy here
-        // Use the history[^1].Content property to check if the message contains the token
-        // you are looking for. Return true if the token is found, false otherwise.
-        protected override Task<bool> ShouldAgentTerminateAsync(Agent agent, IReadOnlyList<ChatMessageContent> history, CancellationToken cancellationToken = default)
-            => throw new NotImplementedException();
     }
 }

@@ -1,5 +1,6 @@
 using BlazorAI.Components;
 using BlazorAI.Components.Models;
+using BlazorAI.Queue;
 using Microsoft.FluentUI.AspNetCore.Components;
 using LogLevel = Microsoft.Extensions.Logging.LogLevel;
 
@@ -34,6 +35,9 @@ builder.Services.AddFluentUIComponents();
 
 builder.Services.AddScoped<AppState>();
 builder.Services.AddHttpClient();
+
+builder.Services.AddSingleton<IBackgroundTaskQueue, BackgroundTaskQueue>(sp => new BackgroundTaskQueue(100));
+builder.Services.AddHostedService<CoordinatorQueueService>();
 
 var app = builder.Build();
 
