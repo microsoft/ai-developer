@@ -23,11 +23,11 @@ In this challenge, you will be working with a starter application that requires 
 > 
 > Before you can run the application, you **must** install the required Python packages. The application will not work without these dependencies.
 >
-> It is **highly recommended** that you create a Python virtual environment for your packages.
+> It is **highly recommended** that you create a Python virtual environment for your packages. If you do not do this you will need to update the launch.json file in the .vscode folder to point to your python installation.
 >
 > **Creating your Python virtual environment**
 > 1. Open your terminal or command prompt
-> 2. Navigate to the `src` directory in your terminal/command prompt
+> 2. Navigate to the `Python` directory in your terminal/command prompt
 > 3. Run the following command to create the virtual environment: `python -m venv <virtual environment name>`
 > 4. Then activate the virtual environment: `.\<name of your virtual environment>\Scripts\activate`
 > 5. Proceed with installing your requirements

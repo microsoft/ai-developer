@@ -34,6 +34,16 @@ Before diving into debugging and running the application, let's understand what 
 
 VS Code has been pre-configured with multiple launch profiles to make development easier. The profiles you'll use depend on which challenge you're working on:
 
+> It is **highly recommended** that you create a Python virtual environment for your packages. If you do not do this you will need to update the launch.json file in the .vscode folder to point to your python installation.
+>
+> **Creating your Python virtual environment**
+> 1. Open your terminal or command prompt
+> 2. Navigate to the `Python` directory in your terminal/command prompt
+> 3. Run the following command to create the virtual environment: `python -m venv <virtual environment name>`
+> 4. Then activate the virtual environment: `.\<name of your virtual environment>\Scripts\activate`
+> 5. Proceed with installing your requirements
+> 6. To deactivate your virtual environment: `.\<name of your virtual environment>\Scripts\deactivate`
+
 ### For Challenges 2-3: Basic Chat Application
 
 **Recommended Launch Profile: "Python: Streamlit App"**
