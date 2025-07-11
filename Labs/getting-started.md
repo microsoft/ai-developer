@@ -144,8 +144,6 @@ For convenience, you can open the lab guide in a separate window by selecting th
 
    ![](./media/lc-image(3).png)
 
-This hands-on lab will help you explore how Microsoft Copilot for Infrastructure Management enhances responsible resource management. You'll gain insights into leveraging Copilot’s features to optimize your infrastructure while adhering to best practices and compliance standards.
-
 ## Support Contact
 
 The CloudLabs support team is available 24/7, 365 days a year, via email and live chat to ensure seamless assistance anytime. We offer dedicated support channels tailored specifically for learners and instructors, ensuring that all your needs are promptly and efficiently addressed.
