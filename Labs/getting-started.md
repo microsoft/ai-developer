@@ -38,7 +38,7 @@ The lab also covers **plugins**, such as **Time & Weather utilities** for real-t
 
 ![](./media/arch_diag.png)
 
-## Explanation of Components
+
 
 ## **Explanation of Components**  
 
