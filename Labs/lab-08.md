@@ -91,4 +91,4 @@ In this exercise, we integrated a **multi-agent system** into an AI application 
 - Integrated **agent's responses** into a unified, context-aware output.  
 - Explored **AI-driven decision-making** by coordinating multiple agents efficiently.
 
-## Happy Learning!!
+## Congratulations, you have successfully finished the lab!
