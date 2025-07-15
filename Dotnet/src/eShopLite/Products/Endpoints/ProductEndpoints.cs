@@ -30,7 +30,7 @@ public static class ProductEndpoints
         /// Retrieves all products from the database.
         /// </summary>
         group.MapGet("/", async (Context db) => {
-            return db.GetAll();
+            return await db.GetAllAsync();
         })
         .WithName("GetAllProducts")
         .Produces<List<Product>>(StatusCodes.Status200OK);
@@ -41,7 +41,7 @@ public static class ProductEndpoints
         /// <param name="id">The ID of the product to retrieve.</param>
         /// <param name="db">The database context.</param>
         group.MapGet("/{id}", async (int id, Context db) => {
-            return db.Get(id)
+            return await db.GetAsync(id)
                 is Product model
                     ? Results.Ok(model)
                     : Results.NotFound();
@@ -56,8 +56,8 @@ public static class ProductEndpoints
         /// <param name="id">The ID of the product to update.</param>
         /// <param name="product">The updated product data.</param>
         /// <param name="db">The database context.</param>
-        group.MapPut("/{id}", (int id, Product product, Context db) => {
-            var item = db.Get(id);
+        group.MapPut("/{id}", async (int id, Product product, Context db) => {
+            var item = await db.GetAsync(id);
             if (item == null) {
                 return Results.NotFound();
             }
@@ -77,7 +77,7 @@ public static class ProductEndpoints
         /// <param name="product">The product to create.</param>
         /// <param name="db">The database context.</param>
         group.MapPost("/", async (Product product, Context db) => {
-            db.Create(product);
+            await db.CreateAsync(product);
             return Results.Created($"/api/Product/{product.Id}", product);
         })
         .WithName("CreateProduct")
@@ -89,14 +89,12 @@ public static class ProductEndpoints
         /// <param name="id">The ID of the product to delete.</param>
         /// <param name="db">The database context.</param>
         group.MapDelete("/{id}", async (int id, Context db) => {
-            var affected = db.GetAll()
-                .Where(model => model.Id == id)
-                .Count();
+            var affected = await db.DeleteAsync(id);
 
-            return affected == 1 ? Results.Ok() : Results.NotFound();
+            return affected ? Results.Ok() : Results.NotFound();
         })
         .WithName("DeleteProduct")
-        .Produces<Product>(StatusCodes.Status200OK)
+        .Produces(StatusCodes.Status200OK)
         .Produces(StatusCodes.Status404NotFound);
 
         /// <summary>

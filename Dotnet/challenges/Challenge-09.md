@@ -34,22 +34,9 @@ You will need to update the **Products** project to replace the existing keyword
     "AI_SEARCH_KEY": "Replace with your AI Search API Key",
     "AOI_DEPLOYMODEL": "Replace with your Azure Open AI Deployment model",
     "AOI_ENDPOINT": "Replace with your Azure Open AI Endpoint",
-    "AOI_API_KEY": "Replace with your Azure OpenAI API Key"
+    "AOI_API_KEY": "Replace with your Azure OpenAI API Key",
+    "EMBEDDINGS_DEPLOYMODEL": "Replace with your Azure Open AI Embeddings Deployment model name"
     ```
-
-1. Create AI Search index from the database
-
-    1. Once the **AI_SEARCH_URL** and **AI_SEARCH_KEY** configurations are set, run the application and navigate to [https://localhost:7130/api/Product/initaisearch](https://localhost:7130/api/Product/initaisearch) to populate the AI Search index and embeddings from the database.
-
-        ![AI Search index](./Resources/images/ch09i08.png)
-
-    1. Verify that the AI Search index was created successfully by navigating to the [Azure Portal](https://portal.azure.com) and locating the AI Search resource. Click on Index and verify that the **products** index was created.
-
-        ![AI Search index in Azure Portal](./Resources/images/ch09i09.png)
-
-    1. Next, click on the **products** index then **Fields** and verify that the  Id, Name, Description, Price, ImageURL and Vector fields were created.
-
-        ![AI Search index fields in Azure Portal](./Resources/images/ch09i10.png)
 
 1. Add the NuGet packages `Microsoft.SemanticKernel`, `Microsoft.SemanticKernel.Connectors.AzureOpenAI`, and `Microsoft.SemanticKernel.Connectors.AzureAISearch` to the **Products** project.
 
@@ -64,6 +51,20 @@ You will need to update the **Products** project to replace the existing keyword
 1. Register the Azure AI Search vector database with Semantic Kernel by updating the **Program.cs** file. The code will be very similar to Challenge 05.
 
     :pushpin: **Note:** Add the code after the comment `//Challenge 9 - Register the Azure AI Search Resource` in the **program.cs** file.
+
+1. Create AI Search index from the database
+
+    1. Once the **AI_SEARCH_URL** and **AI_SEARCH_KEY** configurations are set, run the application and navigate to [https://localhost:7130/api/Product/initaisearch](https://localhost:7130/api/Product/initaisearch) to populate the AI Search index and embeddings from the database.
+
+        ![AI Search index](./Resources/images/ch09i08.png)
+
+    1. Verify that the AI Search index was created successfully by navigating to the [Azure Portal](https://portal.azure.com) and locating the AI Search resource. Click on Index and verify that the **products** index was created.
+
+        ![AI Search index in Azure Portal](./Resources/images/ch09i09.png)
+
+    1. Next, click on the **products** index then **Fields** and verify that the  Id, Name, Description, Price, ImageUrl and Vector fields were created.
+
+        ![AI Search index fields in Azure Portal](./Resources/images/ch09i10.png)
 
 1. Update the **"/search/{search}"** endpoint in the **ProductEndpoints** class to use Semantic Kernel to search for products.
 

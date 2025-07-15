@@ -1,25 +1,26 @@
 ﻿using Microsoft.Extensions.VectorData;
 
+
 namespace VectorEntities
 {
-    public class ProductVectorAzureAISearch 
+    public class ProductVectorAzureAISearch
     {
-        [VectorStoreRecordKey]
-        public string Id { get; set; }
+        [VectorStoreKey]
+        public string Id { get; set; } = string.Empty;
 
-        [VectorStoreRecordData]
+        [VectorStoreData]
         public string? Name { get; set; }
 
-        [VectorStoreRecordData]
+        [VectorStoreData]
         public string? Description { get; set; }
 
-        [VectorStoreRecordData]
-        public string Price { get; set; }
+        [VectorStoreData]
+        public string Price { get; set; } = string.Empty;
 
-        [VectorStoreRecordData]
-        public string ImageUrl { get; set; }
+        [VectorStoreData]
+        public string ImageUrl { get; set; } = string.Empty;
 
-        [VectorStoreRecordVector(1536, DistanceFunction.CosineSimilarity)]
+        [VectorStoreVector(1536, DistanceFunction = DistanceFunction.CosineSimilarity)]
         public ReadOnlyMemory<float> Vector { get; set; }
     }
 }

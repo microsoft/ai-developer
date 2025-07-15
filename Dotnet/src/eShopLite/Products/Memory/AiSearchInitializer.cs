@@ -1,5 +1,4 @@
 ﻿using Azure.Search.Documents.Indexes;
-using Microsoft.Extensions.VectorData;
 using Microsoft.SemanticKernel.Connectors.AzureAISearch;
 using Microsoft.SemanticKernel.Embeddings;
 using Products.Models;
@@ -15,7 +14,7 @@ public class AiSearchInitializer
     private ILogger _logger;
     public ITextEmbeddingGenerationService? _embeddingClient;
     public SearchIndexClient? _azureSearchIndexClient;
-    public IVectorStoreRecordCollection<string, ProductVectorAzureAISearch> _productsCollection;
+    public AzureAISearchCollection<string, ProductVectorAzureAISearch> _productsCollection;
 
     public AiSearchInitializer(ILogger logger, ITextEmbeddingGenerationService? textEmbeddingGenerationService, SearchIndexClient? azureSearchIndexClient)
     {
@@ -41,11 +40,11 @@ public class AiSearchInitializer
         }
         var vectorProductStore = new AzureAISearchVectorStore(_azureSearchIndexClient);
         _productsCollection = vectorProductStore.GetCollection<string, ProductVectorAzureAISearch>("products");
-        await _productsCollection.CreateCollectionIfNotExistsAsync();
+        await _productsCollection.EnsureCollectionExistsAsync();
 
         _logger.LogInformation("Get a copy of the list of products");
         // iterate over the products and add them to the memory
-        foreach (var product in db.GetAll()) {
+        foreach (var product in await db.GetAllAsync()) {
             try {
                 _logger.LogInformation("Adding product to AI Search: {Product}", product.Name);
                 var productInfo = $"[{product.Name}] is a product that costs [{product.Price}] and is described as [{product.Description}]";
@@ -59,8 +58,8 @@ public class AiSearchInitializer
                     ImageUrl = product.ImageUrl,
                     Vector = await _embeddingClient.GenerateEmbeddingAsync(productInfo)
                 };
-                var recordId = await _productsCollection.UpsertAsync(productVector);
-                _logger.LogInformation("Product added to memory: {Product} with recordId: {RecordId}", product.Name, recordId);
+                await _productsCollection.UpsertAsync(productVector);
+                _logger.LogInformation("Product added to memory: {Product} with recordId: {RecordId}", product.Name, product.Id);
             } catch (Exception exc) {
                 _logger.LogError(exc, "Error adding product to memory");
             }

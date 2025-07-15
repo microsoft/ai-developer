@@ -17,109 +17,35 @@ namespace Products.Migrations
             modelBuilder.HasAnnotation("ProductVersion", "9.0.2");
 
             modelBuilder.Entity("DataEntities.Product", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER")
-                        .HasAnnotation("Relational:JsonPropertyName", "id");
+            {
+                b.Property<int>("Id")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("INTEGER")
+                    .HasAnnotation("Relational:JsonPropertyName", "id");
 
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasAnnotation("Relational:JsonPropertyName", "description");
+                b.Property<string>("Description")
+                    .IsRequired()
+                    .HasColumnType("TEXT")
+                    .HasAnnotation("Relational:JsonPropertyName", "description");
 
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasAnnotation("Relational:JsonPropertyName", "imageUrl");
+                b.Property<string>("ImageUrl")
+                    .IsRequired()
+                    .HasColumnType("TEXT")
+                    .HasAnnotation("Relational:JsonPropertyName", "imageUrl");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasAnnotation("Relational:JsonPropertyName", "name");
+                b.Property<string>("Name")
+                    .IsRequired()
+                    .HasColumnType("TEXT")
+                    .HasAnnotation("Relational:JsonPropertyName", "name");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("TEXT")
-                        .HasAnnotation("Relational:JsonPropertyName", "price");
+                b.Property<decimal>("Price")
+                    .HasColumnType("TEXT")
+                    .HasAnnotation("Relational:JsonPropertyName", "price");
 
-                    b.HasKey("Id");
+                b.HasKey("Id");
 
-                    b.ToTable("Products");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "An innovative flashlight that harnesses solar energy, providing reliable illumination for outdoor enthusiasts in any environment.",
-                            ImageUrl = "product1.png",
-                            Name = "Solar Powered Flashlight",
-                            Price = 19.99m
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Description = "High-quality hiking poles designed to offer stability and support on challenging terrains, making them ideal for camping and hiking trips.",
-                            ImageUrl = "product2.png",
-                            Name = "Hiking Poles",
-                            Price = 24.99m
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Description = "A premium rain jacket engineered to keep you warm and dry in all weather conditions, ensuring maximum comfort during outdoor activities.",
-                            ImageUrl = "product3.png",
-                            Name = "Outdoor Rain Jacket",
-                            Price = 49.99m
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Description = "A comprehensive survival kit equipped with essential tools and supplies, making it a must-have for any outdoor adventurer.",
-                            ImageUrl = "product4.png",
-                            Name = "Survival Kit",
-                            Price = 99.99m
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Description = "A durable and spacious backpack designed to carry all your outdoor essentials, perfect for hiking, camping, and other adventures.",
-                            ImageUrl = "product5.png",
-                            Name = "Outdoor Backpack",
-                            Price = 39.99m
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Description = "A versatile cookware set specifically designed for outdoor cooking, providing convenience and efficiency for campers.",
-                            ImageUrl = "product6.png",
-                            Name = "Camping Cookware",
-                            Price = 29.99m
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Description = "A portable camping stove that offers reliable performance, making it an essential item for cooking outdoors.",
-                            ImageUrl = "product7.png",
-                            Name = "Camping Stove",
-                            Price = 49.99m
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Description = "A high-performance lantern that provides bright and consistent lighting, perfect for illuminating your campsite.",
-                            ImageUrl = "product8.png",
-                            Name = "Camping Lantern",
-                            Price = 19.99m
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Description = "A robust and spacious tent designed to provide comfort and protection during camping trips, ensuring a pleasant outdoor experience.",
-                            ImageUrl = "product9.png",
-                            Name = "Camping Tent",
-                            Price = 99.99m
-                        });
-                });
+                b.ToTable("Products");
+            });
 #pragma warning restore 612, 618
         }
     }

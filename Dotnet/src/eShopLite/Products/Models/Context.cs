@@ -1,84 +1,72 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using DataEntities;
 using System.Collections.Generic;
-using System.Reflection.Emit;
 
 namespace Products.Models
 {
     public class Context : DbContext
     {
         // DbSet representing the Products table in the database
-        public DbSet<Product> Products { get; set; }
+        public DbSet<Product> Products { get; set; } = null!;
 
         // Constructor accepting DbContextOptions to configure the context
         public Context(DbContextOptions<Context> options) : base(options)
         {
+            // Constructor intentionally empty
         }
 
-        // Configuring the DbContext to use SQLite database
+
+        // This prevents potential configuration conflicts
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=products.db");
+            // Only use this configuration if no options have been configured yet
+            if (!optionsBuilder.IsConfigured) {
+                optionsBuilder.UseSqlite("Data Source=products.db");
+            }
         }
 
-        // Seeding the database with initial data
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        // Retrieve a product by its ID asynchronously
+        public async Task<Product?> GetAsync(int id)
         {
-            modelBuilder.Entity<Product>().HasData(
-                new Product { Id = 1, Name = "Solar Powered Flashlight", Description = "An innovative flashlight that harnesses solar energy, providing reliable illumination for outdoor enthusiasts in any environment.", Price = 19.99m, ImageUrl = "product1.png" },
-                new Product { Id = 2, Name = "Hiking Poles", Description = "High-quality hiking poles designed to offer stability and support on challenging terrains, making them ideal for camping and hiking trips.", Price = 24.99m, ImageUrl = "product2.png" },
-                new Product { Id = 3, Name = "Outdoor Rain Jacket", Description = "A premium rain jacket engineered to keep you warm and dry in all weather conditions, ensuring maximum comfort during outdoor activities.", Price = 49.99m, ImageUrl = "product3.png" },
-                new Product { Id = 4, Name = "Survival Kit", Description = "A comprehensive survival kit equipped with essential tools and supplies, making it a must-have for any outdoor adventurer.", Price = 99.99m, ImageUrl = "product4.png" },
-                new Product { Id = 5, Name = "Outdoor Backpack", Description = "A durable and spacious backpack designed to carry all your outdoor essentials, perfect for hiking, camping, and other adventures.", Price = 39.99m, ImageUrl = "product5.png" },
-                new Product { Id = 6, Name = "Camping Cookware", Description = "A versatile cookware set specifically designed for outdoor cooking, providing convenience and efficiency for campers.", Price = 29.99m, ImageUrl = "product6.png" },
-                new Product { Id = 7, Name = "Camping Stove", Description = "A portable camping stove that offers reliable performance, making it an essential item for cooking outdoors.", Price = 49.99m, ImageUrl = "product7.png" },
-                new Product { Id = 8, Name = "Camping Lantern", Description = "A high-performance lantern that provides bright and consistent lighting, perfect for illuminating your campsite.", Price = 19.99m, ImageUrl = "product8.png" },
-                new Product { Id = 9, Name = "Camping Tent", Description = "A robust and spacious tent designed to provide comfort and protection during camping trips, ensuring a pleasant outdoor experience.", Price = 99.99m, ImageUrl = "product9.png" }
-            );
+            return await Products.FindAsync(id);
         }
 
-        // Retrieve a product by its ID
-        public Product? Get(int id)
+        // Retrieve all products asynchronously
+        public async Task<List<Product>> GetAllAsync()
         {
-            return Products.Find(id);
+            return await Products.ToListAsync();
         }
 
-        // Retrieve all products
-        public List<Product> GetAll()
+        // Create a new product asynchronously
+        public async Task CreateAsync(Product product)
         {
-            return Products.ToList();
+            await Products.AddAsync(product);
+            await SaveChangesAsync();
         }
 
-        // Create a new product
-        public void Create(Product product)
+        // Update an existing product asynchronously
+        public async Task<bool> UpdateAsync(Product product)
         {
-            Products.Add(product);
-            SaveChanges();
-        }
-
-        // Update an existing product
-        public bool Update(Product product)
-        {
-            var existingProduct = Products.Find(product.Id);
+            var existingProduct = await Products.FindAsync(product.Id);
             if (existingProduct != null) {
                 Entry(existingProduct).CurrentValues.SetValues(product);
-                SaveChanges();
+                await SaveChangesAsync();
                 return true;
             }
             return false;
         }
 
-        // Delete a product by its ID
-        public bool Delete(int id)
+        // Delete a product by its ID asynchronously
+        public async Task<bool> DeleteAsync(int id)
         {
-            var product = Products.Find(id);
+            var product = await Products.FindAsync(id);
             if (product != null) {
                 Products.Remove(product);
-                SaveChanges();
+                await SaveChangesAsync();
                 return true;
             }
             return false;
         }
+
     }
 }
-
