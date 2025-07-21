@@ -25,8 +25,8 @@ This challenge will introduce you to how to import OpenAPI API as Semantic Kerne
     - Option 2: Start the uvicorn app manually
       - Go to `src/workitems` folder
       - Run `python api.py` on command prompt
-      - Find the OpenAPI spec in following path `http://127.0.0.1:8000/openapi.json`
-      - Swagger page can be found in `http://127.0.0.1:8000/docs`
+      - Find the OpenAPI spec in following path `http://127.0.0.1:8001/openapi.json`
+      - Swagger page can be found in `http://127.0.0.1:8001/docs`
     - Import the API into Semantic Kernel.
 
         :bulb: [Adding the OpenAPI plugin](https://learn.microsoft.com/en-us/semantic-kernel/concepts/plugins/adding-openapi-plugins?pivots=programming-language-python#adding-the-openapi-plugin)

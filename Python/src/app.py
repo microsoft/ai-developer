@@ -5,11 +5,36 @@
 import streamlit as st
 import asyncio
 import logging
-from chat import process_message, reset_chat_history
-from multi_agent import run_multi_agent
+# Challenge 02 - Import the chat service
+# TODO: Import get_chat_service from chat module
+# from chat import get_chat_service
+# Challenge 8 - Import the multi-agent service
+from multi_agent import get_multi_agent_service
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
+
+# Challenge 02 - Initialize chat service once when the app starts
+# TODO: Create a cached function to initialize the chat service
+# Use @st.cache_resource decorator to ensure it's only created once
+# The function should return get_chat_service()
+# @st.cache_resource
+# def initialize_chat_service():
+#     """Initialize chat service once and cache it"""
+#     return get_chat_service()
+
+# Challenge 8 - Initialize multi-agent service once when the app starts
+@st.cache_resource
+def initialize_multi_agent_service():
+    """Initialize multi-agent service once and cache it"""
+    return get_multi_agent_service()
+
+# Challenge 02 - Get the chat service instance once at module level
+# TODO: Get the chat service instance once to avoid reinitializing on every message
+# chat_service = initialize_chat_service()
+
+# Challenge 8 - Get the multi-agent service instance once at module level
+multi_agent_service = initialize_multi_agent_service()
 
 def configure_sidebar():
     """Configure a clean, modern sidebar"""
@@ -275,7 +300,8 @@ def render_chat_ui(title, on_submit):
         if st.button("🔄 Reset", key=f"new_chat_{title}", use_container_width=True, type="secondary"):
             if title == "Chat":
                 st.session_state.chat_history = []
-                reset_chat_history()
+                # Challenge 02 - TODO: Reset the chat service history
+                # chat_service.reset_chat_history()
                 st.success("Chat reset!")
             elif title == "Multi-Agent":
                 st.session_state.multi_agent_history = []
@@ -299,15 +325,37 @@ def chat():
     def on_chat_submit(user_input):
         if user_input:
             try:
+                # Challenge 02 - TODO: Use the module-level chat service instance
+                # (No need to initialize on every message - use the cached instance)
+                
                 # Add user message
                 st.session_state.chat_history.append({"role": "user", "message": user_input})
                 
                 # Show processing indicator
                 with st.spinner("Processing..."):
-                    assistant_response = asyncio.run(process_message(user_input))
+                    # Challenge 02 - TODO: Process the user message with the chat service
+                    # assistant_response = asyncio.run(chat_service.process_message(user_input))
+                    assistant_response = "Please complete Challenge 02 to enable chat functionality."
                 
                 # Add assistant response
                 st.session_state.chat_history.append({"role": "assistant", "message": str(assistant_response)})
+                
+                st.rerun()
+                
+            except Exception as e:
+                import traceback
+                error_msg = f"Error: {str(e)}"
+                logging.error(error_msg)
+                tb = traceback.format_exc()
+                logging.error(f"Traceback: {tb}")
+                
+                st.session_state.chat_history.append({
+                    "role": "assistant", 
+                    "message": f"**Error**: {error_msg}\n\nPlease try again."
+                })
+                
+                st.session_state.show_error_details = True
+                st.session_state.error_traceback = tb
                 
                 st.rerun()
                 
@@ -346,7 +394,9 @@ def multi_agent():
                 st.session_state.multi_agent_history.append({"role": "user", "message": user_input})
                 
                 with st.spinner("Team collaborating..."):
-                    result = asyncio.run(run_multi_agent(user_input))
+                    # Challenge 8 - TODO: Process the user message with the multi-agent service
+                    # result = asyncio.run(multi_agent_service.process_request(user_input))
+                    result = asyncio.run(multi_agent_service.process_request(user_input))
                 
                 for response in result:
                     st.session_state.multi_agent_history.append({

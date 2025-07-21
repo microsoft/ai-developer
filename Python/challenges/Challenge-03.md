@@ -38,11 +38,11 @@ This challenge will introduce you to building Semantic Kernel Plugins in python,
     1. Return the Day of Week for a date passed in as a parameter
   * Update the application to add your new Plugin to Semantic Kernel
 
-    :bulb: Use the provided sections in the **chat.py** file to add your new Plugin to Semantic Kernel. Review the documentation [Adding native plugins](https://learn.microsoft.com/en-us/semantic-kernel/concepts/plugins/adding-native-plugins?pivots=programming-language-python) for examples on how to do this.
+    :bulb: Use the provided `load_plugins()` helper method in the **chat.py** file to add your new Plugin to Semantic Kernel. This helper method is called during kernel initialization to ensure plugins are loaded once rather than on every message. Review the documentation [Adding native plugins](https://learn.microsoft.com/en-us/semantic-kernel/concepts/plugins/adding-native-plugins?pivots=programming-language-python) for examples on how to do this.
 
   * Enable Automatic Function Calling
 
-      In ```chat.py``` below the comment ```// Challenge 03 - Create Prompt Execution Settings``` Configure Semantic Kernel to automatically call the functions in your plugin when the AI recognizes the intent. See [Using Automatic Function Calling](https://learn.microsoft.com/en-us/semantic-kernel/concepts/planning?pivots=programming-language-python#using-automatic-function-calling).
+      In `chat.py` within the `process_message()` function, configure Semantic Kernel to automatically call the functions in your plugin when the AI recognizes the intent. See [Using Automatic Function Calling](https://learn.microsoft.com/en-us/semantic-kernel/concepts/planning?pivots=programming-language-python#using-automatic-function-calling).
 
   * Test the AI by launching the application and asking the bot
   

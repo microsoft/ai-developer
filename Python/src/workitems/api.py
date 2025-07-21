@@ -12,7 +12,7 @@ app = FastAPI(
     description="API with CRUD operations for workitems data",
     version="1.0.0",
     servers=[
-        {"url": "http://localhost:8000", "description": "Local development server"},
+        {"url": "http://localhost:8001", "description": "Local development server"},
     ],
 )
 class WorkItemsDTO(BaseModel):

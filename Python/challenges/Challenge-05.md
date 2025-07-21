@@ -117,7 +117,7 @@ In this challenge, you will create a Semantic Search Plugin that utilizes an Azu
 
 Now that you have deployed all the necessary resources, you'll need to update your `.env` file with the appropriate configuration settings.
 
-1. Review the list of required environment variables for Azure AI Search and Text Embeddings by checking the [Semantic Kernel Environment Settings documentation](https://github.com/microsoft/semantic-kernel/blob/main/python/samples/concepts/setup/ALL_SETTINGS.md).
+1. Review the `.env_template` file in your `src` directory to identify the required environment variables for Azure AI Search and Text Embeddings.
 
 2. Add the necessary environment variables to your existing `.env` file. The variables should include settings for:
    - Azure AI Search configuration
@@ -125,7 +125,7 @@ Now that you have deployed all the necessary resources, you'll need to update yo
 
 Ensure all required settings are properly configured before proceeding to the next step.
 
-> **Hint:** Look for settings related to Azure AI Search and Text Embeddings in the documentation. You'll need to add settings for the endpoint, API key, index name, and embedding model deployment.
+> **Hint:** The Semantic Kernel will automatically detect environment variables with the correct naming conventions. Check the template file for the exact variable names needed.
 
 ### Import documents
 
@@ -190,6 +190,8 @@ Ensure all required settings are properly configured before proceeding to the ne
     ![AI Search](./Resources/image/ch05img8.png)
 
 1. Add the plugin to Semantic Kernel in chat.py
+
+    :bulb: Add the AI Search plugin to the `load_plugins()` helper method. The plugin requires the kernel instance to access the embedding service, so ensure the Text Embedding service is registered in `initialize_kernel()` before `load_plugins()` is called.
 
     Below is the workflow handled by Semantic Kernel and your plugin:
 

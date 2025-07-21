@@ -23,7 +23,7 @@
     <None Remove="Services\**" />
   </ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Markdig" Version="0.41.2" />
+		<PackageReference Include="Markdig" Version="0.41.3" />
 		<PackageReference Include="Markdown.ColorCode" Version="3.0.0" />
 		<PackageReference Include="Microsoft.FeatureManagement.AspNetCore" Version="4.1.0" />
 		<PackageReference Include="Microsoft.FluentUI.AspNetCore.Components" Version="4.12.0" />

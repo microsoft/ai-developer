@@ -2,10 +2,8 @@ import os
 import sys
 from typing import TypedDict, Annotated
 from semantic_kernel.functions import kernel_function
-from semantic_kernel.connectors.memory.azure_ai_search import AzureAISearchCollection, AzureAISearchStore
-from semantic_kernel.connectors.memory.azure_ai_search.azure_ai_search_settings import AzureAISearchSettings
+from semantic_kernel.connectors.azure_ai_search import AzureAISearchCollection
 from semantic_kernel.connectors.ai.open_ai import AzureTextEmbedding
-from semantic_kernel.data.vector_search import VectorSearchOptions
 from semantic_kernel import Kernel
 
 from models.employee_handbook_model import EmployeeHandbookModel
@@ -25,18 +23,13 @@ class AiSearchPlugin:
             raise Exception("Missing AI Foundry embedding service")
         self.client = kernel.get_service(type=AzureTextEmbedding)
         
-        # Initialize the AI Search store
-        print("Initializing AzureAISearchStore...")
+        # Initialize the AI Search collection using the new API
+        print("Initializing AzureAISearchCollection...")
         try:
-            self.settings = AzureAISearchSettings()
-            print(f"✅ AI Search settings loaded. Endpoint: {self.settings.endpoint}")
-            self.store = AzureAISearchStore(
-                api_key=os.environ.get('AZURE_AI_SEARCH_API_KEY'),
-                search_endpoint=os.environ.get('AZURE_AI_SEARCH_ENDPOINT')
-            )
-            print("✅ AzureAISearchStore initialized successfully")
+            self.collection = AzureAISearchCollection(record_type=EmployeeHandbookModel)
+            print("✅ AzureAISearchCollection initialized successfully")
         except Exception as e:
-            print(f"❌ Failed to initialize AzureAISearchStore: {str(e)}")
+            print(f"❌ Failed to initialize AzureAISearchCollection: {str(e)}")
             raise
         
     """A search plugin that takes the input of a search query, generates the embedding and do the semantic search agains the Azure AI Search vector store."""
@@ -65,28 +58,29 @@ class AiSearchPlugin:
                     print(f"{k}: {v}")
             print("=================================================\n")
             
-            # Collection name we're targeting
+            # Check if collection exists
             collection_name = os.environ.get('AZURE_AI_SEARCH_INDEX_NAME', 'employeehandbook')
             print(f"Target collection/index name: {collection_name}")
             
-            # Try to access the collection directly
+            # Try to verify the collection exists
             try:
-                # Try to access the collection directly
-                print(f"Attempting to access collection: {collection_name}")
-                collection = self.store.get_collection(
-                    collection_name=collection_name,
-                    data_model_type=EmployeeHandbookModel
-                )
-                print(f"✅ Successfully accessed collection '{collection_name}'")
+                collection_exists = await self.collection.collection_exists()
+                print(f"✅ Collection exists: {collection_exists}")
                 
-                # Try a simple operation with a small limit to test access
-                search_options = VectorSearchOptions(
-                    vector_field_name="contentVector",  # Specify which vector field to use
-                    top=1,  # Just get one result to verify access
-                    include_vectors=False  # Don't need the vectors
-                )
+                if not collection_exists:
+                    return f"""
+                    ❌ Collection '{collection_name}' does not exist
+                    
+                    Check that:
+                    1. Your Azure AI Search service is running
+                    2. The index named '{collection_name}' exists
+                    3. Your environment variables are set correctly:
+                       - AZURE_AI_SEARCH_ENDPOINT
+                       - AZURE_AI_SEARCH_API_KEY
+                       - AZURE_AI_SEARCH_INDEX_NAME
+                    """
                 
-                # Generate a simple test embedding
+                # Try a simple search operation
                 print("Generating test embedding...")
                 test_query = "test query about employee handbook"
                 test_vector = await self.generate_vector(test_query)
@@ -94,9 +88,10 @@ class AiSearchPlugin:
                 
                 # Check for results
                 print("Executing vector search with test query...")
-                search_results = await collection.vectorized_search(
+                search_results = await self.collection.search(
                     vector=test_vector,
-                    options=search_options
+                    top=1,
+                    include_vectors=False
                 )
                 
                 result_count = 0
@@ -147,23 +142,11 @@ class AiSearchPlugin:
         collection_name = os.environ.get('AZURE_AI_SEARCH_INDEX_NAME', 'employeehandbook')
         print(f"Using collection name: {collection_name}")
         
-        # Get the collection
-        collection: AzureAISearchCollection = self.store.get_collection(
-            collection_name=collection_name,
-            data_model_type=EmployeeHandbookModel
-        )
-        
-        # Create improved search options
-        search_options = VectorSearchOptions(
-            vector_field_name="contentVector",  # Make sure this matches your index field name
-            top=3,  # Retrieve top 3 results
-            include_vectors=False  # We don't need the vectors in the results
-        )
-        
         print(f"Executing vector search with query: '{query_str}'")
-        search_results = await collection.vectorized_search(
-            vector=query_vector, 
-            options=search_options
+        search_results = await self.collection.search(
+            vector=query_vector,
+            top=3,
+            include_vectors=False
         )
 
         result_list = []

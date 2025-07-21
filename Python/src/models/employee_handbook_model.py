@@ -6,11 +6,8 @@ from typing import Annotated, Any
 
 from pydantic import BaseModel
 
-from semantic_kernel.connectors.ai.open_ai import OpenAIEmbeddingPromptExecutionSettings
-from semantic_kernel.data import (
-    VectorStoreRecordDataField,
-    VectorStoreRecordKeyField,
-    VectorStoreRecordVectorField,
+from semantic_kernel.data.vector import (
+    VectorStoreField,
     vectorstoremodel,
 )
 
@@ -28,18 +25,17 @@ from semantic_kernel.data import (
 @vectorstoremodel
 @dataclass
 class EmployeeHandbookModel(BaseModel):
-    chunk_id: Annotated[str, VectorStoreRecordKeyField]
-    content: Annotated[str, VectorStoreRecordDataField()]
-    title: Annotated[str, VectorStoreRecordDataField()]
-    url: Annotated[str, VectorStoreRecordDataField()]
-    filepath: Annotated[str, VectorStoreRecordDataField()]
-    parent_id: Annotated[str, VectorStoreRecordDataField()]
+    chunk_id: Annotated[str, VectorStoreField("key")]
+    parent_id: Annotated[str | None, VectorStoreField("data")] = None
+    content: Annotated[str, VectorStoreField("data")]
+    title: Annotated[str, VectorStoreField("data")]
+    url: Annotated[str, VectorStoreField("data")]
+    filepath: Annotated[str, VectorStoreField("data")]
     contentVector: Annotated[
         list[float] | None,
-        VectorStoreRecordVectorField(
+        VectorStoreField(
+            "vector",
             dimensions=1536,
-            local_embedding=True,
-            embedding_settings={"embedding": OpenAIEmbeddingPromptExecutionSettings(dimensions=1536)},
         ),
     ] = None
 

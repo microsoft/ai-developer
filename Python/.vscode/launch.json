@@ -3,7 +3,7 @@
     "configurations": [
         {
             "name": "Python: Streamlit App",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "module": "streamlit",
             "args": [
@@ -19,7 +19,7 @@
         },
         {
             "name": "Python: WorkItems API",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/src/workitems/api.py",
             "console": "integratedTerminal",
@@ -32,6 +32,31 @@
                 "hidden": false,
                 "group": "Semantic Kernel",
                 "order": 2
+            }
+        },
+        {
+            "name": "Python: WorkItems API (Port 8001)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": [
+                "src.workitems.api:app",
+                "--host",
+                "127.0.0.1",
+                "--port",
+                "8001",
+                "--reload"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "presentation": {
+                "hidden": false,
+                "group": "Semantic Kernel",
+                "order": 3
             }
         }
     ],
