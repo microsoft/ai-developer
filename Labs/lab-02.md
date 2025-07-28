@@ -130,7 +130,7 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 
     ![](./media/image_034.png)
 
-1. In case you encounter any indentation error, use the code from the following URL:
+1. Refer to the code provided at the following URL. Please verify that your code matches the one below and correct any indentation errors if present:
 
    - Open the provided link in your browser, press Ctrl + A to select whole code, then copy and paste it into Visual Studio Code.
 
@@ -197,7 +197,7 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 
     ![](./media/image_039.png)
 
-1. In case you encounter any indentation error, use the code from the following URL: 
+1. Refer to the code provided at the following URL. Please verify that your code matches the one below and correct any indentation errors if present 
 
    - Open the provided link in your browser, press Ctrl + A to select whole code, then copy and paste it into Visual Studio Code.
 
