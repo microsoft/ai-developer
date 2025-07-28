@@ -125,7 +125,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Paste the **Embed Endpoint** you copied earlier into the .env file, next to the `AZURE_OPENAI_EMBED_ENDPOINT` entry.
 
-    ![](./media/embed-key.png)
+   ![](./media/embed-key.png)
 
 1. Save the file.
 
@@ -135,7 +135,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Add the following code to the file:
 
-     ```
+    ```
      import json
      import os
      from typing import Dict, List, Any, Optional
@@ -312,13 +312,13 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Add the following code in the `# Challenge 05 - Add Search Plugin` section of the file.
 
-      ```
-      kernel.add_plugin(
-        ContosoSearchPlugin(),
-        plugin_name="ContosoSearch",
+    ```
+    kernel.add_plugin(
+    ContosoSearchPlugin(),
+    plugin_name="ContosoSearch",
     )
     logger.info("Contoso Handbook Search plugin loaded")
-      ```
+    ```
 
       ![](./media/image_097.png)
 
