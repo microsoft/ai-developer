@@ -33,13 +33,16 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 
 1. On the **Select or add data source**blade, provide the following details and then click on **Next (6)**:
 
-    - Select **Upload files (1)** for `Data source`
-    - Subscription: Leave the default one **(2)**
-    - Select Azure blob Azure Storage blob resouce: Select the storage account that starts with **aifoundryhubxxxxxx (3)**
-    - Select Azure AI Search resource: Select **ai-search-<inject key="Deployment ID" enableCopy="false"></inject> (4)** 
-    - Enter the index name: Enter **employeehandbook (5)** 
+    - Select **Upload files (Preview)** for `Data source`
+    - Subscription: Leave the default one
+    - Select Azure blob Azure Storage blob resouce: Select the storage account that starts with **aifoundryhubxxxxxx (1)**
+    - Select Azure AI Search resource: Select **ai-search-<inject key="Deployment ID" enableCopy="false"></inject> (2)** 
+    - Enter the index name: Enter **employeehandbook (3)** 
+    - **Check the box** labeled Add vector search to enable this feature for the search resource **(4)**
+    - Under Select an embedding model: choose **text-embedding-ada-002** **(5)** from the dropdown menu.
+    - Click on **Next** **(6)**
  
-      ![](./media/sk35.png)
+      ![](./media/add-data-source.png)
 
       >**Note:** If you receive a message prompting you to **Turn on CORS**, go ahead and click on it.
 
@@ -121,6 +124,8 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. Paste the **Embed API key** you copied earlier into the .env file, next to the `AZURE_OPENAI_EMBED_API_KEY` entry.
 
 1. Paste the **Embed Endpoint** you copied earlier into the .env file, next to the `AZURE_OPENAI_EMBED_ENDPOINT` entry.
+
+    ![](./media/embed-key.png)
 
 1. Save the file.
 
