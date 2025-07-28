@@ -27,13 +27,10 @@ In this task, you will explore different flow types in Azure AI Foundry by setti
 
     ![](./media/image_025.png)
 
-1. Navigate to the **AI Foundry** Portal, go to the **Home (1)** page, select **Azure OpenAI (2)**. Then **Copy (3)** the endpoint and paste it into **Notepad** to be used in the upcoming exercises.
+1. Navigate to the **AI Foundry** Portal, go to the **Overview (1)** page, select **Azure OpenAI (2)**. Copy the **API key (3)** the **API endpoint(4)** and paste it into **Notepad** to be used in the upcoming exercises.
 
-    ![](./media/sk21.png)
+    ![](./media/aifoundry.png)
 
-1. Copy the **API key** from the AI Foundry Portal and paste it into **Notepad** for use in the upcoming exercises.
-
-    ![](./media/sk22.png)
 
 <details>
 <summary><strong>Python</strong></summary>
@@ -133,11 +130,13 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 
     ![](./media/image_034.png)
 
-1. In case you encounter any indentation error, use the code from the following URL:
+1. Refer to the code provided at the following URL. Please verify that your code matches the one below and correct any indentation errors if present:
 
-    ```
-    https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-02.py
-    ```
+   - Open the provided link in your browser, press Ctrl + A to select whole code, then copy and paste it into Visual Studio Code.
+
+        ```
+        https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-02.py
+        ```
 
 1. Save the file.
 
@@ -197,11 +196,14 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
     ```
 
     ![](./media/image_039.png)
-1. In case you encounter any indentation error, use the code from the following URL: 
 
-    ```
-    https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-02.cs
-    ```
+1. Refer to the code provided at the following URL. Please verify that your code matches the one below and correct any indentation errors if present 
+
+   - Open the provided link in your browser, press Ctrl + A to select whole code, then copy and paste it into Visual Studio Code.
+
+        ```
+        https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-02.cs
+        ```
 
 1. Use **Ctrl+S** to save the file.
 
@@ -252,4 +254,4 @@ You have successfully completed the below tasks for AI-driven chat implementatio
 - Configured a **chat API** to process user prompts and generate AI-driven responses.     
 - Extended chatbot functionality by integrating **Azure AI Search** for contextual data retrieval.  
 
-## Go to the next lab by clicking on the navigation.
+### Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.

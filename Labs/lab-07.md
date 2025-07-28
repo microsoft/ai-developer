@@ -200,10 +200,13 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
      >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
-1. In case you encounter any indentation error, use the code from the following URL:
-    ```
-    https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-07.py
-    ```
+1. Refer to the code provided at the following URL. Please verify that your code matches the one below and correct any indentation errors if present
+
+    - Open the provided link in your browser, press Ctrl + A to select all the content, then copy and paste it into Visual Studio Code
+
+        ```
+        https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-07.py
+        ```
 1. Save the file.
 1. Right click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
@@ -357,10 +360,14 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
 
     ![](./media/image_120.png)
-1. In case you encounter any indentation error, use the code from the following URL:
-    ```
-    https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-07.cs
-    ```
+
+1. Refer to the code provided at the following URL. Please verify that your code matches the one below and correct any indentation errors if present
+
+    - Open the provided link in your browser, press Ctrl + A to select all the content, then copy and paste it into Visual Studio Code
+
+        ```
+        https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-07.cs
+        ```
 1. Save the file.
 1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` in the left pane and select **Open in Integrated Terminal**.
 1. Use the following command to run the app:
@@ -392,4 +399,4 @@ You have successfully completed the below tasks for **DALL·E integration in AI-
 - Explored **AI-powered visual content creation**, transforming descriptive text into images.  
 - Configured **Azure AI Foundry** to support **DALL·E-based generative AI workflows**.  
 
-## Go to the next lab by clicking on the navigation.
+### Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.

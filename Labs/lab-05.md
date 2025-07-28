@@ -33,13 +33,16 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 
 1. On the **Select or add data source**blade, provide the following details and then click on **Next (6)**:
 
-    - Select **Upload files (1)** for `Data source`
-    - Subscription: Leave the default one **(2)**
-    - Select Azure blob Azure Storage blob resouce: Select the storage account that starts with **aifoundryhubxxxxxx (3)**
-    - Select Azure AI Search resource: Select **ai-search-<inject key="Deployment ID" enableCopy="false"></inject> (4)** 
-    - Enter the index name: Enter **employeehandbook (5)** 
+    - Select **Upload files (Preview)** for `Data source`
+    - Subscription: Leave the default one
+    - Select Azure blob Azure Storage blob resouce: Select the storage account that starts with **aifoundryhubxxxxxx (1)**
+    - Select Azure AI Search resource: Select **ai-search-<inject key="Deployment ID" enableCopy="false"></inject> (2)** 
+    - Enter the index name: Enter **employeehandbook (3)** 
+    - **Check the box** labeled Add vector search to enable this feature for the search resource **(4)**
+    - Under Select an embedding model: choose **text-embedding-ada-002** **(5)** from the dropdown menu.
+    - Click on **Next** **(6)**
  
-      ![](./media/sk35.png)
+      ![](./media/add-data-source.png)
 
       >**Note:** If you receive a message prompting you to **Turn on CORS**, go ahead and click on it.
 
@@ -117,6 +120,12 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. Paste the **Primary admin key** that you copied earlier in the exercise besides `AI_SEARCH_KEY`.
 
      ![](./media/sk42.png)
+
+1. Paste the **Embed API key** you copied earlier into the .env file, next to the `AZURE_OPENAI_EMBED_API_KEY` entry.
+
+1. Paste the **Embed Endpoint** you copied earlier into the .env file, next to the `AZURE_OPENAI_EMBED_ENDPOINT` entry.
+
+    ![](./media/embed-key.png)
 
 1. Save the file.
 
@@ -409,23 +418,55 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. Add the following code in the `#Import Modules` section of the file.
 
       ```
-      from semantic_kernel.connectors.ai.open_ai import AzureTextEmbedding
-      from plugins.ContosoSearchPlugin import ContosoSearchPlugin
+      from semantic_kernel.connectors.ai.chat_completion_client_base import ChatCompletionClientBase
+    from semantic_kernel.connectors.ai.open_ai import OpenAIChatPromptExecutionSettings
+    import os
+    from semantic_kernel.connectors.ai.open_ai.prompt_execution_settings.azure_chat_prompt_execution_settings import (
+    AzureChatPromptExecutionSettings,
+    )
+    from plugins.time_plugin import TimePlugin
+    from plugins.geo_coding_plugin import GeoPlugin
+    from plugins.weather_plugin import WeatherPlugin
+    from semantic_kernel.connectors.ai.open_ai import AzureTextEmbedding
+    from plugins.ContosoSearchPlugin import ContosoSearchPlugin
       ```
 
-      ![](./media/image_095.png)
+      ![](./media/import-modules-01.png)
 
 1. Add the following code in the `#Challenge 05 - Add Text Embedding service for semantic search` section of the file.
 
       ```
       text_embedding_service = AzureTextEmbedding(
-          deployment_name=os.getenv("AZURE_OPENAI_EMBED_DEPLOYMENT_NAME"),
-          api_key=os.getenv("AZURE_OPENAI_API_KEY"),
-          endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
-          service_id="embedding-service"
-      )
-      kernel.add_service(text_embedding_service)
-      logger.info("Text Embedding service added")
+        deployment_name=os.getenv("AZURE_OPENAI_EMBED_DEPLOYMENT_NAME"),
+        api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+        endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
+        service_id="embedding-service"
+    )
+    kernel.add_service(text_embedding_service)
+    logger.info("Text Embedding service added")
+    #Challenge 07 - Add DALL-E image generation service
+    chat_completion_service = kernel.get_service(type=ChatCompletionClientBase)
+    return kernel
+    async def process_message(user_input):
+    global chat_history
+    
+    # Check if the query is related to Contoso to route to the handbook search
+    if is_contoso_related(user_input):
+        logger.info(f"Contoso-related query detected: {user_input}")
+        
+        # For Contoso queries, we want fresh responses without previous context
+        # So we don't add to existing chat history, just get the fresh response
+        result = await search_employee_handbook(user_input)
+        
+        # Clear existing chat history for Contoso queries to avoid context contamination
+        chat_history = ChatHistory()
+        
+        # Add only the current interaction
+        chat_history.add_user_message(user_input)
+        chat_history.add_assistant_message(result)
+        return result
+        
+        kernel = initialize_kernel()
       ```
 
       ![](./media/image_096.png)
@@ -436,17 +477,19 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
       ```
       kernel.add_plugin(
-          ContosoSearchPlugin(),
-          plugin_name="ContosoSearch",
-      )
-      logger.info("Contoso Handbook Search plugin loaded")
+        ContosoSearchPlugin(),
+        plugin_name="ContosoSearch",
+    )
+    logger.info("Contoso Handbook Search plugin loaded")
       ```
 
       ![](./media/image_097.png)
 
       > **Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.    
 
-1. In case you encounter any indentation error, use the code from the following URL:
+1. Refer to the code provided at the following URL. Please verify that your code matches the one below and correct any indentation errors if present
+
+    - Open the provided link in your browser, press Ctrl + A to select all the content, then copy and paste it into Visual Studio Code
 
       ```
       https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-05.py
@@ -681,11 +724,13 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
       ![](./media/image_106.png)
 
-1. In case you encounter any indentation error, use the code from the following URL:
+1. Refer to the code provided at the following URL. Please verify that your code matches the one below and correct any indentation errors if present
 
-     ```
-     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-05.cs
-     ```
+    - Open the provided link in your browser, press Ctrl + A to select all the content, then copy and paste it into Visual Studio Code
+
+        ```
+        https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-05.cs
+        ```
 1. Save the file.
 
 1. Right-click on `Dotnet>src>Aspire>Aspire.AppHost` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
@@ -734,4 +779,4 @@ You have successfully completed the below tasks for **Retrieval-Augmented Genera
 - Utilized **Azure AI Search** to fetch relevant contextual data for more accurate outputs.  
 - Configured **Semantic Kernel** to orchestrate retrieval and generative workflows seamlessly.  
 
-## Go to the next lab by clicking on the navigation.
+### Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.

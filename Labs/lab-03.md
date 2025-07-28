@@ -121,10 +121,14 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     execution_settings = kernel.get_prompt_execution_settings_from_service_id("chat-service")
     ```
     >**Note**: You need to remove it from two code blocks; one will be inside the **def initialize_kernel():** function, and another will be in the **global chat_history** code block.
-1. In case you encounter any indentation error, use the code from the following URL:
-    ```
-    https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-03_time_plugin.py
-    ```
+
+1. Refer to the code provided at the following URL. Please verify that your code matches the one below and correct any indentation errors if present
+
+    - Open the provided link in your browser, press Ctrl + A to select all the content, then copy and paste it into Visual Studio Code
+
+        ```
+        https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-03_time_plugin.py
+        ```
 1. Save the file.
 1. Right-click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
@@ -317,10 +321,13 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
     
     ![](./media/image_055.png)
-1. In case you encounter any indentation error, use the code from the following URL:
-    ```
-    https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-03_time_plugin.cs
-    ```
+1. Refer to the code provided at the following URL. Please verify that your code matches the one below and correct any indentation errors if present
+
+    - Open the provided link in your browser, press Ctrl + A to select all the content, then copy and paste it into Visual Studio Code
+
+        ```
+        https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-03_time_plugin.cs
+        ```
 1. Save the file.
 
 1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
@@ -409,11 +416,13 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
      >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
-1. In case you encounter any indentation error, use the code from the following URL:
-    ```
+1. Refer to the code provided at the following URL. Please verify that your code matches the one below and correct any indentation errors if present
 
-    https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-03_geo_coding.py
-    ```
+    - Open the provided link in your browser, press Ctrl + A to select all the content, then copy and paste it into Visual Studio Code
+
+        ```
+        https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-03_geo_coding.py
+        ```
 
 1. Save the file.
 
@@ -484,11 +493,13 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
      >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
-1. In case you encounter any indentation error, use the code from the following URL:
+1. Refer to the code provided at the following URL. Please verify that your code matches the one below and correct any indentation errors if present
 
-    ```
-    https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-03_geo_coding.cs
-    ```
+    - Open the provided link in your browser, press Ctrl + A to select all the content, then copy and paste it into Visual Studio Code
+
+        ```
+        https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-03_geo_coding.cs
+        ```
 
 1. Save the file.
 
@@ -650,11 +661,13 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
      >**Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.  
 
-1. In case you encounter any indentation error, use the code from the following URL:
+1. Refer to the code provided at the following URL. Please verify that your code matches the one below and correct any indentation errors if present
 
-    ```
-    https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-03_weather.py
-    ```
+    - Open the provided link in your browser, press Ctrl + A to select all the content, then copy and paste it into Visual Studio Code
+
+        ```
+        https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-03_weather.py
+        ```
 
 1. Save the file.
 
@@ -891,11 +904,13 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     ![](./media/image_071.png)
 
-1. In case you encounter any indentation error, use the code from the following URL:
+1. Refer to the code provided at the following URL. Please verify that your code matches the one below and correct any indentation errors if present
 
-    ```
-    https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-03_weather.cs
-    ```
+    - Open the provided link in your browser, press Ctrl + A to select all the content, then copy and paste it into Visual Studio Code
+
+        ```
+        https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-03_weather.cs
+        ```
 1. Save the file.
 
 1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` in the left pane and select **Open in Integrated Terminal**.
@@ -945,4 +960,4 @@ You have successfully completed the below tasks for extending **LLM capabilities
 - Implemented **Auto Function Calling** to chain multiple plugins together seamlessly.  
 - Built and deployed **Python-based plugins** to extend AI capabilities.  
 
-## Go to the next lab by clicking on the navigation.
+### Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.
