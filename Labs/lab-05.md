@@ -121,6 +121,10 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
      ![](./media/sk42.png)
 
+1. On the **Overview (1)** page, Go to **Azure AI services (2)** and Copy the **Azure AI services Endpoint (3)** and Copy the Key as well.
+
+    ![](./media/overview-01.png)
+
 1. Paste the **Embed API key** you copied earlier into the .env file, next to the `AZURE_OPENAI_EMBED_API_KEY` entry.
 
 1. Paste the **Embed Endpoint** you copied earlier into the .env file, next to the `AZURE_OPENAI_EMBED_ENDPOINT` entry.
