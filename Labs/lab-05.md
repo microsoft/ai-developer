@@ -118,6 +118,10 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
      ![](./media/sk42.png)
 
+1. Paste the **Embed API key** you copied earlier into the .env file, next to the `AZURE_OPENAI_EMBED_API_KEY` entry.
+
+1. Paste the **Embed Endpoint** you copied earlier into the .env file, next to the `AZURE_OPENAI_EMBED_ENDPOINT` entry.
+
 1. Save the file.
 
 1. Navigate to `Python>src>plugins` directory and create a new file named **ContosoSearchPlugin.py (1)**.
@@ -246,23 +250,55 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. Add the following code in the `#Import Modules` section of the file.
 
       ```
-      from semantic_kernel.connectors.ai.open_ai import AzureTextEmbedding
-      from plugins.ContosoSearchPlugin import ContosoSearchPlugin
+      from semantic_kernel.connectors.ai.chat_completion_client_base import ChatCompletionClientBase
+    from semantic_kernel.connectors.ai.open_ai import OpenAIChatPromptExecutionSettings
+    import os
+    from semantic_kernel.connectors.ai.open_ai.prompt_execution_settings.azure_chat_prompt_execution_settings import (
+    AzureChatPromptExecutionSettings,
+    )
+    from plugins.time_plugin import TimePlugin
+    from plugins.geo_coding_plugin import GeoPlugin
+    from plugins.weather_plugin import WeatherPlugin
+    from semantic_kernel.connectors.ai.open_ai import AzureTextEmbedding
+    from plugins.ContosoSearchPlugin import ContosoSearchPlugin
       ```
 
-      ![](./media/image_095.png)
+      ![](./media/import-modules-01.png)
 
 1. Add the following code in the `#Challenge 05 - Add Text Embedding service for semantic search` section of the file.
 
       ```
       text_embedding_service = AzureTextEmbedding(
-          deployment_name=os.getenv("AZURE_OPENAI_EMBED_DEPLOYMENT_NAME"),
-          api_key=os.getenv("AZURE_OPENAI_API_KEY"),
-          endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
-          service_id="embedding-service"
-      )
-      kernel.add_service(text_embedding_service)
-      logger.info("Text Embedding service added")
+        deployment_name=os.getenv("AZURE_OPENAI_EMBED_DEPLOYMENT_NAME"),
+        api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+        endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
+        service_id="embedding-service"
+    )
+    kernel.add_service(text_embedding_service)
+    logger.info("Text Embedding service added")
+    #Challenge 07 - Add DALL-E image generation service
+    chat_completion_service = kernel.get_service(type=ChatCompletionClientBase)
+    return kernel
+    async def process_message(user_input):
+    global chat_history
+    
+    # Check if the query is related to Contoso to route to the handbook search
+    if is_contoso_related(user_input):
+        logger.info(f"Contoso-related query detected: {user_input}")
+        
+        # For Contoso queries, we want fresh responses without previous context
+        # So we don't add to existing chat history, just get the fresh response
+        result = await search_employee_handbook(user_input)
+        
+        # Clear existing chat history for Contoso queries to avoid context contamination
+        chat_history = ChatHistory()
+        
+        # Add only the current interaction
+        chat_history.add_user_message(user_input)
+        chat_history.add_assistant_message(result)
+        return result
+        
+        kernel = initialize_kernel()
       ```
 
       ![](./media/image_096.png)
@@ -273,10 +309,10 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
       ```
       kernel.add_plugin(
-          ContosoSearchPlugin(),
-          plugin_name="ContosoSearch",
-      )
-      logger.info("Contoso Handbook Search plugin loaded")
+        ContosoSearchPlugin(),
+        plugin_name="ContosoSearch",
+    )
+    logger.info("Contoso Handbook Search plugin loaded")
       ```
 
       ![](./media/image_097.png)
