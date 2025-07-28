@@ -254,8 +254,8 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Add the following code in the `#Import Modules` section of the file.
 
-      ```
-      from semantic_kernel.connectors.ai.chat_completion_client_base import ChatCompletionClientBase
+   ```
+    from semantic_kernel.connectors.ai.chat_completion_client_base import ChatCompletionClientBase
     from semantic_kernel.connectors.ai.open_ai import OpenAIChatPromptExecutionSettings
     import os
     from semantic_kernel.connectors.ai.open_ai.prompt_execution_settings.azure_chat_prompt_execution_settings import (
@@ -494,7 +494,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
              }
          }
      }
-     ```
+    ```
 
 1. Save the file.
 
