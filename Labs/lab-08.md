@@ -20,9 +20,12 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ![](./media/sk59.png)
 
 1. Remove the existing code and add the code from the following URL in the file.
-    ```
-    https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-08.py
-    ```
+
+    - Open the provided link in your browser, press Ctrl + A to select all the content, then copy and paste it into Visual Studio Code
+
+        ```
+        https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-08.py
+        ```
 1. Save the file.
 1. Right click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
@@ -53,10 +56,14 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **MultiAgent.razor.cs (1)** file.
 
     ![](./media/image_125.png)
+
 1. Remove the existing code and add the code from the following URL in the file.
-    ```
-    https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-08.cs
-    ```
+
+    - Open the provided link in your browser, press Ctrl + A to select all the content, then copy and paste it into Visual Studio Code
+
+        ```
+        https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-08.cs
+        ```
 1. Save the file.
 1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 

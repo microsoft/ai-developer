@@ -55,21 +55,20 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. On the **Deploy model gpt-4o** blade, specify the following configuration options and click on **Deploy (4)**:
 
-    - **Deployment type**: **Standard** (1)
-    - **Model version**: 2024-05-13 (Default) (2)
-    - **Tokens per Minute Rate Limit**: **50K** (3)
+    - **Deployment type**: **Standard** **(1)**
+    - **Model version**: 2024-05-13 (Default) **(2)**
+    - **Tokens per Minute Rate Limit**: **50K** **(3)**
+    - Click on **Connect and deploy (4)**:
 
-      ![](./media/image_009a.png) 
+      ![](./media/gpt-4o-1.png) 
 
-1. Click on **Azure AI Foundry**.
+1. In the upper-right corner of the screen, click on the Hub icon located next to your profile.
+ 
+      ![](./media/ai-foundry.png)
 
-    ![](./media/sk10.png)
+1. Select the '**Working in AIFoundry**' **Option (1)**, then click on **Switch (2)**.
 
-1. Select the **aifoundryhubxxxxxx** resource.
-
-    ![](./media/sk11.png)
-
-     >**Note**: **xxxxx** refers to randomly generated suffix.
+      ![](./media/switch.png)
 
 1. Navigate to **Model + endpoints (1)**, then select **gpt-4o (2)** model and the click on **Open in Playground (3)**.
 
@@ -152,4 +151,4 @@ You have successfully completed the below tasks for AI development using **Azure
    
 - Utilized **Semantic Kernel** to connect AI models with external APIs and plugins.
 
-## Go to the next lab by clicking on the navigation.
+### Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.

@@ -285,6 +285,8 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. In case you encounter any indentation error, use the code from the following URL:
 
+    - Open the provided link in your browser, press Ctrl + A to select all the content, then copy and paste it into Visual Studio Code
+
       ```
       https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-05.py
       ```
@@ -520,9 +522,11 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. In case you encounter any indentation error, use the code from the following URL:
 
-     ```
-     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-05.cs
-     ```
+    - Open the provided link in your browser, press Ctrl + A to select all the content, then copy and paste it into Visual Studio Code
+
+        ```
+        https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/c%23/lab-05.cs
+        ```
 1. Save the file.
 
 1. Right-click on `Dotnet>src>Aspire>Aspire.AppHost` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
@@ -571,4 +575,4 @@ You have successfully completed the below tasks for **Retrieval-Augmented Genera
 - Utilized **Azure AI Search** to fetch relevant contextual data for more accurate outputs.  
 - Configured **Semantic Kernel** to orchestrate retrieval and generative workflows seamlessly.  
 
-## Go to the next lab by clicking on the navigation.
+### Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.

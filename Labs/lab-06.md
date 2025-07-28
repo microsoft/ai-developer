@@ -95,4 +95,4 @@ You have successfully completed the below tasks for **content filtering in Azure
 - Configured **custom content moderation rules** within **Azure AI Foundry Studio**.  
 - Adjusted **content filtering settings** to align with ethical AI guidelines.  
 
-## Go to the next lab by clicking on the navigation.
+### Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.
