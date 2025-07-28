@@ -27,6 +27,22 @@ load_dotenv(override=True)
 
 chat_history = ChatHistory()
 
+def is_contoso_related(text):
+    """
+    Determines if the given text is related to Contoso or employee handbook.
+    """
+    text = text.lower()
+    contoso_keywords = [
+        'contoso', 'handbook', 'employee handbook', 'company policy', 'policy',
+        'data security', 'security policy', 'privacy policy', 'guidelines',
+        'corporate', 'hr policy', 'vacation', 'pto', 'time off', 'benefits',
+        'code of conduct', 'work hours', 'remote work', 'sick leave',
+        'confidential', 'confidentiality', 'information security'
+    ]
+    
+    # Check if any of the keywords are in the text
+    return any(keyword in text for keyword in contoso_keywords)
+
 def initialize_kernel():
     #Challene 02 - Add Kernel
     kernel = Kernel()
@@ -53,6 +69,24 @@ def initialize_kernel():
 
 
 async def process_message(user_input):
+    global chat_history
+    
+    # Check if the query is related to Contoso to route to the handbook search
+    if is_contoso_related(user_input):
+        logger.info(f"Contoso-related query detected: {user_input}")
+        
+        # For Contoso queries, we want fresh responses without previous context
+        # So we don't add to existing chat history, just get the fresh response
+        result = await search_employee_handbook(user_input)
+        
+        # Clear existing chat history for Contoso queries to avoid context contamination
+        chat_history = ChatHistory()
+        
+        # Add only the current interaction
+        chat_history.add_user_message(user_input)
+        chat_history.add_assistant_message(result)
+        return result
+        
     kernel = initialize_kernel()
 
     #Challenge 03 and 04 - Services Required
@@ -105,7 +139,6 @@ async def process_message(user_input):
     # Placeholder for Text To Image plugin
 
     # Start Challenge 02 - Sending a message to the chat completion service by invoking kernel
-    global chat_history
     chat_history.add_user_message(user_input)
     chat_completion = kernel.get_service(type=ChatCompletionClientBase)
     response = await chat_completion.get_chat_message_content(
@@ -121,3 +154,81 @@ async def process_message(user_input):
 def reset_chat_history():
     global chat_history
     chat_history = ChatHistory()
+
+async def search_employee_handbook(query):
+    """
+    Search the Contoso employee handbook for specific information.
+    Each query is processed independently without previous context.
+    """
+    try:
+        # Extract the key topic from the query to improve search
+        search_topic = extract_search_topic(query)
+        
+        logger.info(f"=== Processing Fresh Contoso Query ===")
+        logger.info(f"Original query: {query}")
+        logger.info(f"Searching handbook for: {search_topic}")
+        
+        # Create a fresh instance of the search plugin for each query
+        search_plugin = ContosoSearchPlugin()
+        
+        # First try with the extracted topic
+        result = search_plugin.query_handbook(search_topic, top=3)
+        
+        # If no results were found, try with the original query
+        if "No relevant information found" in result and search_topic != query:
+            logger.info(f"No results found with topic, trying with original query: {query}")
+            result = search_plugin.query_handbook(query, top=3)
+        
+        logger.info(f"Final result length: {len(result)}")
+        logger.info(f"=== Completed Fresh Contoso Query ===")
+        return result
+    except Exception as e:
+        logger.error(f"Error searching employee handbook: {str(e)}")
+        return f"Error accessing the employee handbook: {str(e)}"
+        
+def extract_search_topic(query):
+    """
+    Extract the main topic from a query to improve search relevance.
+    """
+    # List of prefixes to remove for cleaner searches
+    prefixes = [
+        "what is", "tell me about", "can you explain", "i'd like to know about",
+        "information on", "details about", "help me understand", "show me",
+        "where can i find", "how does contoso handle", "what does contoso say about",
+        "what are the rules for", "how do i", "what should i do about",
+        "contoso's", "contoso", "the company's", "company", "please tell me about",
+        "i need to know about", "can you find", "search for"
+    ]
+    
+    # Convert to lowercase for easier matching
+    clean_query = query.lower().strip()
+    
+    # Remove common prefixes
+    for prefix in prefixes:
+        if clean_query.startswith(prefix):
+            clean_query = clean_query[len(prefix):].strip()
+            break
+    
+    # If the query has a question mark, remove it and everything after
+    if "?" in clean_query:
+        clean_query = clean_query.split("?")[0].strip()
+    
+    # Enhance specific topic extraction
+    topic_mappings = {
+        "data security": ["data security", "security policy", "information security", "data protection"],
+        "vacation policy": ["vacation", "pto", "time off", "leave policy", "holiday"],
+        "confidentiality": ["confidential", "confidentiality", "non-disclosure", "sensitive information"],
+        "remote work": ["remote work", "work from home", "telework", "flexible work"],
+        "benefits": ["benefits", "health insurance", "retirement", "401k", "medical"]
+    }
+    
+    # Check if the query matches any specific topic
+    for topic, keywords in topic_mappings.items():
+        if any(keyword in clean_query for keyword in keywords):
+            return topic
+    
+    # If after cleaning we have a very short query, use the original
+    if len(clean_query) < 5:
+        return query
+        
+    return clean_query
