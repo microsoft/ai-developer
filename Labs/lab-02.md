@@ -27,13 +27,10 @@ In this task, you will explore different flow types in Azure AI Foundry by setti
 
     ![](./media/image_025.png)
 
-1. Navigate to the **AI Foundry** Portal, go to the **Home (1)** page, select **Azure OpenAI (2)**. Then **Copy (3)** the endpoint and paste it into **Notepad** to be used in the upcoming exercises.
+1. Navigate to the **AI Foundry** Portal, go to the **Overview (1)** page, select **Azure OpenAI (2)**. Copy the **API key (3)** the **API endpoint(4)** and paste it into **Notepad** to be used in the upcoming exercises.
 
-    ![](./media/sk21.png)
+    ![](./media/aifoundry.png)
 
-1. Copy the **API key** from the AI Foundry Portal and paste it into **Notepad** for use in the upcoming exercises.
-
-    ![](./media/sk22.png)
 
 <details>
 <summary><strong>Python</strong></summary>
