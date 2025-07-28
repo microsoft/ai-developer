@@ -56,7 +56,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. On the **Deploy model gpt-4o** blade, specify the following configuration options and click on **Deploy (4)**:
 
     - **Deployment type**: **Standard** **(1)**
-    - **Model version**: 2024-05-13 (Default) **(2)**
+    - **Model version**: 2024-05-13 **(2)**
     - **Tokens per Minute Rate Limit**: **50K** **(3)**
     - Click on **Connect and deploy (4)**:
 
