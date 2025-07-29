@@ -111,7 +111,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Navigate to `Python>src` directory and open **.env (1)** file.
 
-   ![](./media/image_026.png)
+    ![](./media/image_026.png)
 
 1. Paste the **AI search URL** that you copied earlier in the exercise besides `AI_SEARCH_URL` in **.env** file.
 
@@ -119,23 +119,23 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Paste the **Primary admin key** that you copied earlier in the exercise besides `AI_SEARCH_KEY`.
 
-   ![](./media/sk42.png)
+    ![](./media/sk42.png)
 
 1. On the **Overview (1)** page, Go to **Azure AI services (2)** and Copy the **Azure AI services Endpoint (3)** and Copy the Key as well.
 
-   ![](./media/overview-01.png)
+    ![](./media/overview-01.png)
 
 1. Paste the **Embed API key** you copied earlier into the .env file, next to the `AZURE_OPENAI_EMBED_API_KEY` entry.
 
 1. Paste the **Embed Endpoint** you copied earlier into the .env file, next to the `AZURE_OPENAI_EMBED_ENDPOINT` entry.
 
-   ![](./media/embed-key.png)
+    ![](./media/embed-key.png)
 
 1. Save the file.
 
 1. Navigate to `Python>src>plugins` directory and create a new file named **ContosoSearchPlugin.py (1)**.
 
-   ![](./media/image_094.png)
+    ![](./media/image_094.png)
 
 1. Add the following code to the file:
 
@@ -418,7 +418,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Navigate to `Python>src` directory and open **chat.py (1)** file.
 
-   ![](./media/image_030.png)
+    ![](./media/image_030.png)
 
 1. Add the following code in the `#Import Modules` section of the file.
 
@@ -436,7 +436,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     from plugins.ContosoSearchPlugin import ContosoSearchPlugin
    ```
 
-   ![](./media/import-modules-01.png)
+    ![](./media/import-modules-01.png)
 
 1. Add the following code in the `#Challenge 05 - Add Text Embedding service for semantic search` section of the file.
 
@@ -474,7 +474,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
         kernel = initialize_kernel()
     ```
 
-   ![](./media/image_096.png)
+    ![](./media/image_096.png)
 
     > **Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
@@ -488,7 +488,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     logger.info("Contoso Handbook Search plugin loaded")
    ```
 
-   ![](./media/image_097.png)
+    ![](./media/image_097.png)
 
     > **Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.    
 
@@ -504,7 +504,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Right click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
-   ![](./media/image_035.png)
+    ![](./media/image_035.png)
 
 1. Use the following command to run the app:
 
@@ -534,11 +534,11 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. You will receive a response similar to the one shown below:
 
-   ![](./media/image_098.png)
+    ![](./media/image_098.png)
 
-   ![](./media/image_099.png)
+    ![](./media/image_099.png)
 
-   ![](./media/image_100.png)
+    ![](./media/image_100.png)
 
 </details>
 
@@ -547,7 +547,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Navigate to `Dotnet>src>BlazorAI` directory and open **appsettings.json (1)** file.
 
-   ![](./media/image_028.png)
+    ![](./media/image_028.png)
 
 1. Paste the **AI search URL** that you copied earlier in the exercise besides `AI_SEARCH_URL` in **appsettings.json** file.
 
@@ -555,13 +555,13 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Paste the **Primary admin key (1)** that you copied earlier in the exercise besides `AI_SEARCH_KEY` **(2)**.
 
-   ![](./media/image_101.png)
+    ![](./media/image_101.png)
 
 1. Save the file.
 
 1. Navigate to `Dotnet>src>BlazorAI>Plugins` directory and create a new file named **ContosoSearchPlugin.cs (1)**.
 
-   ![](./media/image_102.png)
+    ![](./media/image_102.png)
 
 1. Add the following code to the file:
 
@@ -668,7 +668,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
 
-   ![](./media/image_038.png)
+    ![](./media/image_038.png)
 
 1. Add the following code in the `// Import Models` section of the file.
 
@@ -679,7 +679,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     using Microsoft.Extensions.DependencyInjection;
     ```
 
-   ![](./media/image_103.png)
+    ![](./media/image_103.png)
 
 1. Add the following code in the `// Challenge 05 - Register Azure AI Foundry Text Embeddings Generation` section of the file.
 
@@ -690,33 +690,33 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
         Configuration["AOI_API_KEY"]!);
     ```
 
-   ![](./media/image_104.png)
+    ![](./media/image_104.png)
 
     > **Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
 1. Add the following code in the `// Challenge 05 - Register Search Index` section of the file.
 
-   ```
-        kernelBuilder.Services.AddSingleton<SearchIndexClient>(sp => 
-            new SearchIndexClient(
-                new Uri(Configuration["AI_SEARCH_URL"]!), 
-                new AzureKeyCredential(Configuration["AI_SEARCH_KEY"]!)
-            )
+    ```
+    kernelBuilder.Services.AddSingleton<SearchIndexClient>(sp => 
+        new SearchIndexClient(
+            new Uri(Configuration["AI_SEARCH_URL"]!), 
+            new AzureKeyCredential(Configuration["AI_SEARCH_KEY"]!)
+        )
+    );
+    
+    kernelBuilder.Services.AddSingleton<AzureAISearchVectorStoreRecordCollection<Dictionary<string, object>>>(sp =>
+    {
+        var searchIndexClient = sp.GetRequiredService<SearchIndexClient>();
+        return new AzureAISearchVectorStoreRecordCollection<Dictionary<string, object>>(
+            searchIndexClient,
+            "employeehandbook"
         );
-
-        kernelBuilder.Services.AddSingleton<AzureAISearchVectorStoreRecordCollection<Dictionary<string, object>>>(sp =>
-        {
-            var searchIndexClient = sp.GetRequiredService<SearchIndexClient>();
-            return new AzureAISearchVectorStoreRecordCollection<Dictionary<string, object>>(
-                searchIndexClient,
-                "employeehandbook"
-            );
-        });
-
-        kernelBuilder.AddAzureAISearchVectorStore();
+    });
+    
+    kernelBuilder.AddAzureAISearchVectorStore();
     ```
 
-   ![](./media/image_105.png)
+    ![](./media/image_105.png)
 
     > **Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
@@ -727,7 +727,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     kernel.ImportPluginFromObject(searchPlugin, "HandbookPlugin");
     ```
 
-    ![](./media/image_106.png)
+     ![](./media/image_106.png)
 
 1. Refer to the code provided at the following URL. Please verify that your code matches the one below and correct any indentation errors if present
 
@@ -740,7 +740,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Right-click on `Dotnet>src>Aspire>Aspire.AppHost` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
-   ![](./media/image_040.png)
+    ![](./media/image_040.png)
 
 1. Use the following command to run the app:
 
@@ -764,11 +764,11 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. You will receive a response similar to the one shown below:
 
-   ![](./media/image_107.png)
+    ![](./media/image_107.png)
 
-   ![](./media/image_108.png)
+    ![](./media/image_108.png)
 
-   ![](./media/image_109.png)
+    ![](./media/image_109.png)
 
 1. Once you receive the response, navigate back to the Visual studio code terminal and then press **Ctrl+C** to stop the build process.
 
