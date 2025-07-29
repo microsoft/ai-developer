@@ -115,7 +115,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 2. Paste the **AI search URL** that you copied earlier in the exercise beside `AI_SEARCH_URL` in the **.env** file.
 
-   > **Note:** Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
+    > **Note:** Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
 
 3. Paste the **Primary admin key** that you copied earlier in the exercise beside `AI_SEARCH_KEY`.
 
