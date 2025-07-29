@@ -94,13 +94,6 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 
     ![](./media/image_092.png)
 
-> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-> - Hit the Validate button for the corresponding task.
-> - If you receive a success message, you can proceed to the next task.
-> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
-> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
-
-<validation step="aba3f1c2-bf55-4ca3-baf6-fcaa280552fa" />  
 
 ## Task 2: Create a Semantic Search Plugin to query the AI Search Index
 
@@ -446,7 +439,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
       ![](./media/image_105.png)
 
-      > **Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
+> **Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
 1. Add the following code in the `// Challenge 05 - Add Search Plugin` section of the file.
 
@@ -501,6 +494,15 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. Once you receive the response, navigate back to the Visual Studio Code terminal and then press **Ctrl+C** to stop the build process.
 
 </details>
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task.
+> - If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+<validation step="aba3f1c2-bf55-4ca3-baf6-fcaa280552fa" />  
+
 
 ## Review
 
