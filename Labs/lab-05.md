@@ -268,6 +268,8 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
      ![](./media/image_099.png)  
      ![](./media/image_100.png)
 
+</details>
+
 <details>
 <summary><strong>C Sharp(C#)</strong></summary>
 
