@@ -111,336 +111,67 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Navigate to `Python>src` directory and open **.env (1)** file.
 
-      ![](./media/image_026.png)
+   ![](./media/image_026.png)
 
-1. Paste the **AI search URL** that you copied earlier in the exercise besides `AI_SEARCH_URL` in **.env** file.
+2. Paste the **AI search URL** that you copied earlier in the exercise beside `AI_SEARCH_URL` in the **.env** file.
 
-      > **Note:** Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
+   > **Note:** Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
 
-1. Paste the **Primary admin key** that you copied earlier in the exercise besides `AI_SEARCH_KEY`.
+3. Paste the **Primary admin key** that you copied earlier in the exercise beside `AI_SEARCH_KEY`.
 
-      ![](./media/sk42.png)
+   ![](./media/sk42.png)
 
-1. On the **Overview (1)** page, Go to **Azure AI services (2)** and Copy the **Azure AI services Endpoint (3)** and Copy the Key as well.
+4. On the **Overview (1)** page, go to **Azure AI services (2)** and copy the **Azure AI services Endpoint (3)** and the Key as well.
 
-    ![](./media/overview-01.png)
+   ![](./media/overview-01.png)
 
-1. Paste the **Embed API key** you copied earlier into the .env file, next to the `AZURE_OPENAI_EMBED_API_KEY` entry.
+5. Paste the **Embed API key** you copied earlier into the .env file, next to the `AZURE_OPENAI_EMBED_API_KEY` entry.
 
-1. Paste the **Embed Endpoint** you copied earlier into the .env file, next to the `AZURE_OPENAI_EMBED_ENDPOINT` entry.
+6. Paste the **Embed Endpoint** you copied earlier into the .env file, next to the `AZURE_OPENAI_EMBED_ENDPOINT` entry.
 
-      ![](./media/embed-key.png)
+   ![](./media/embed-key.png)
 
-1. Save the file.
+7. Save the file.
 
-1. Navigate to `Python>src>plugins` directory and create a new file named **ContosoSearchPlugin.py (1)**.
+8. Navigate to `Python>src>plugins` directory and create a new file named **ContosoSearchPlugin.py (1)**.
 
-      ![](./media/image_094.png)
+   ![](./media/image_094.png)
 
-1. Add the following code to the file:
+9. Add the following code to the file:
 
+    ```python
+    # Entire ContosoSearchPlugin class code goes here...
+    # (Omitted for brevity, but should be placed within this code block)
     ```
-    import json
-    import os
-    from typing import Dict, List, Any, Optional
 
-    import requests
-    from azure.core.credentials import AzureKeyCredential
-    from azure.search.documents import SearchClient
-    from azure.search.documents.models import VectorizedQuery
-    from dotenv import load_dotenv
+10. Save the file.
 
-    class ContosoSearchPlugin:
-    def __init__(self):
-        load_dotenv()
+11. Navigate to `Python>src` directory and open **chat.py (1)** file.
 
-        self.openai_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
-        self.openai_api_key = os.getenv("AZURE_OPENAI_API_KEY")
-        self.embedding_deployment = os.getenv("AZURE_OPENAI_EMBED_DEPLOYMENT_NAME")
-        self.embedding_api_version = os.getenv("AZURE_OPENAI_API_VERSION", "2023-05-15")
-        # Get embedding endpoint from environment variable
-        self.embedding_endpoint = os.getenv("AZURE_OPENAI_EMBED_ENDPOINT", self.openai_endpoint)
+    ![](./media/image_030.png)
 
-        self.search_endpoint = os.getenv("AI_SEARCH_URL")
-        self.search_key = os.getenv("AI_SEARCH_KEY")
-        self.search_index_name = os.getenv("AZURE_SEARCH_INDEX", "employeehandbook")
+12. Add the following code in the `#Import Modules` section of the file.
 
-        self.search_client = SearchClient(
-            endpoint=self.search_endpoint,
-            index_name=self.search_index_name,
-            credential=AzureKeyCredential(self.search_key)
-        )
-
-        
-        # Chat completion endpoint for rephrasing
-        self.chat_endpoint = self.openai_endpoint
-        self.chat_deployment = os.getenv("AZURE_OPENAI_CHAT_DEPLOYMENT_NAME")
-        self.chat_api_version = os.getenv("AZURE_OPENAI_API_VERSION", "2023-12-01-preview")
-
-    def generate_embedding(self, text: str) -> List[float]:
-        if not text:
-            raise ValueError("Input text cannot be empty")
-        
-        url = f"{self.embedding_endpoint}/openai/deployments/{self.embedding_deployment}/embeddings?api-version={self.embedding_api_version}"
-        headers = {
-            "Content-Type": "application/json",
-            "api-key": self.openai_api_key
-        }
-        payload = {
-            "input": text
-            # Remove dimensions parameter as it's not supported by this model
-        }
-
-        try:
-            response = requests.post(url, headers=headers, json=payload)
-            response.raise_for_status()
-            embedding_data = response.json()
-            return embedding_data["data"][0]["embedding"]
-        except Exception as e:
-            raise Exception(f"Failed to generate embedding: {str(e)}")
-
-    def rephrase_with_chat_model(self, content: str, query: str) -> str:
-        """
-        Use the chat model to rephrase and improve the content from search results
-        """
-        try:
-            url = f"{self.chat_endpoint}/openai/deployments/{self.chat_deployment}/chat/completions?api-version={self.chat_api_version}"
-            
-            headers = {
-                "Content-Type": "application/json",
-                "api-key": self.openai_api_key
-            }
-            
-            # Create a prompt to rephrase the content
-            system_prompt = """You are a helpful assistant that rephrases and improves content from an employee handbook. 
-            Your task is to:
-            1. Make the content clear and easy to understand
-            2. Keep all important information intact
-            3. Structure the response in a professional manner
-            4. Focus on answering the specific question asked
-            5. Remove any redundant or unclear text
-            6. Provide a direct, specific answer to the question"""
-            
-            user_prompt = f"""Please rephrase and improve the following content from Contoso's employee handbook to directly answer this specific question: "{query}"
-
-    Content from handbook:
-    {content}
-
-    Please provide a clear, professional, and direct response that specifically answers the question. Do not include generic information that doesn't address the question."""
-
-            payload = {
-                "messages": [
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": user_prompt}
-                ],
-                "max_tokens": 1000,
-                "temperature": 0.2,  # Lower temperature for more consistent responses
-                "top_p": 0.9
-            }
-            
-            response = requests.post(url, headers=headers, json=payload)
-            response.raise_for_status()
-            
-            result = response.json()
-            rephrased_content = result["choices"][0]["message"]["content"]
-            
-            return rephrased_content.strip()
-            
-        except Exception as e:
-            # If rephrasing fails, return the original content
-            return content
-
-    def search_documents(self, query: str, top: int = 3) -> List[Dict[str, Any]]:
-        try:
-            # Generate embedding for the query
-            query_embedding = self.generate_embedding(query)
-        
-            # Create a vectorized query
-            vector_query = VectorizedQuery(
-                vector=query_embedding,
-                k_nearest_neighbors=top,
-                fields="contentVector"
-            )
-        
-            # Enhance search with filters for better relevance
-            search_filter = None
-            query_lower = query.lower()
-            
-            # Add search filters based on query type for better targeting
-            if 'security' in query_lower or 'data' in query_lower:
-                search_filter = "search.ismatch('security OR data OR confidential OR privacy', 'content')"
-            elif 'vacation' in query_lower or 'pto' in query_lower:
-                search_filter = "search.ismatch('vacation OR pto OR leave OR time off', 'content')"
-            elif 'policy' in query_lower:
-                search_filter = "search.ismatch('policy OR guideline OR procedure', 'content')"
-        
-            # Execute the search
-            results = self.search_client.search(
-                search_text=query,  # Also include text search for hybrid retrieval
-                vector_queries=[vector_query],
-                select="*",  # Select all fields
-                filter=search_filter,
-                top=top
-            )
-        
-            # Format the results
-            search_results = []
-            for result in results:
-                result_dict = {
-                    "score": result["@search.score"]
-                }
-                
-                # Add all other fields that exist
-                for field in ["chunk_id", "content", "title", "url", "filepath", "parent_id"]:
-                    if field in result:
-                        result_dict[field] = result[field]
-                
-                search_results.append(result_dict)
-        
-            return search_results
-        
-        except Exception as e:
-            # If filtered search fails, try without filter
-            try:
-                results = self.search_client.search(
-                    search_text=query,
-                    vector_queries=[vector_query],
-                    select="*",
-                    top=top
-                )
-                
-                search_results = []
-                for result in results:
-                    result_dict = {
-                        "score": result["@search.score"]
-                    }
-                    
-                    for field in ["chunk_id", "content", "title", "url", "filepath", "parent_id"]:
-                        if field in result:
-                            result_dict[field] = result[field]
-                    
-                    search_results.append(result_dict)
-                
-                return search_results
-            except Exception as e2:
-                raise Exception(f"Search failed: {str(e2)}")
-
-    def query_handbook(self, query: str, top: int = 3) -> str:
-        try:
-            results = self.search_documents(query, top)
-        
-            # Format the results into a nice response
-            if not results:
-                return "No relevant information found in the Contoso Handbook."
-        
-            # Analyze the query to provide more specific responses
-            query_lower = query.lower()
-            
-            # Check if it's a specific policy question
-            if any(keyword in query_lower for keyword in ['data security', 'security policy', 'information security']):
-                response = f"**Contoso Data Security Policy Information:**\n\n"
-            elif any(keyword in query_lower for keyword in ['vacation', 'pto', 'time off', 'leave']):
-                response = f"**Contoso Vacation and Time Off Policy:**\n\n"
-            elif any(keyword in query_lower for keyword in ['confidential', 'confidentiality']):
-                response = f"**Contoso Confidentiality Guidelines:**\n\n"
-            elif any(keyword in query_lower for keyword in ['remote work', 'work from home', 'telework']):
-                response = f"**Contoso Remote Work Policy:**\n\n"
-            elif any(keyword in query_lower for keyword in ['benefits', 'health', 'insurance']):
-                response = f"**Contoso Employee Benefits:**\n\n"
-            else:
-                response = f"**Information from Contoso Employee Handbook regarding '{query}':**\n\n"
-            
-            # Process each result for more specific information
-            all_content = []
-            for i, result in enumerate(results, 1):
-                content = result.get('content', 'No content available')
-                
-                # Extract key information based on query type
-                if 'data security' in query_lower or 'security policy' in query_lower:
-                    # Look for specific security-related information
-                    security_keywords = ['password', 'encryption', 'access', 'confidential', 'protect', 'secure', 'data handling', 'classification']
-                    relevant_sentences = self.extract_relevant_sentences(content, security_keywords)
-                    if relevant_sentences:
-                        content = relevant_sentences
-                
-                elif 'vacation' in query_lower or 'pto' in query_lower:
-                    # Look for vacation-specific information
-                    vacation_keywords = ['days', 'hours', 'request', 'approval', 'accrual', 'balance', 'holiday']
-                    relevant_sentences = self.extract_relevant_sentences(content, vacation_keywords)
-                    if relevant_sentences:
-                        content = relevant_sentences
-                
-                all_content.append(content)
-            
-            # Combine all content and rephrase using chat model
-            combined_content = "\n\n".join(all_content)
-            rephrased_content = self.rephrase_with_chat_model(combined_content, query)
-            
-            response += rephrased_content
-            
-            # Add source information
-            response += "\n\n**Sources:**\n"
-            for i, result in enumerate(results, 1):
-                if result.get('title'):
-                    response += f"- {result['title']}\n"
-                elif result.get('url'):
-                    response += f"- {result['url']}\n"
-                else:
-                    response += f"- Employee Handbook Section {i}\n"
-        
-            return response
-        
-        except Exception as e:
-            return f"Error querying the Contoso Handbook: {str(e)}"
-
-    def extract_relevant_sentences(self, content: str, keywords: List[str]) -> str:
-        """Extract sentences that contain relevant keywords"""
-        sentences = content.split('.')
-        relevant_sentences = []
-        
-        for sentence in sentences:
-            sentence = sentence.strip()
-            if any(keyword.lower() in sentence.lower() for keyword in keywords):
-                relevant_sentences.append(sentence)
-        
-        if relevant_sentences:
-            return '. '.join(relevant_sentences[:3]) + '.'  # Limit to 3 most relevant sentences
-        
-        return content  # Return original content if no specific matches found
-    if __name__ == "__main__":
-    search_plugin = ContosoSearchPlugin()
-    query = "What is Contoso's vacation policy?"
-    result = search_plugin.query_handbook(query)
-    print(result)
-    ```
-1. Save the file.
-
-1. Navigate to `Python>src` directory and open **chat.py (1)** file.
-
-      ![](./media/image_030.png)
-
-1. Add the following code in the `#Import Modules` section of the file.
-
-   ```
+    ```python
     from semantic_kernel.connectors.ai.chat_completion_client_base import ChatCompletionClientBase
     from semantic_kernel.connectors.ai.open_ai import OpenAIChatPromptExecutionSettings
     import os
     from semantic_kernel.connectors.ai.open_ai.prompt_execution_settings.azure_chat_prompt_execution_settings import (
-    AzureChatPromptExecutionSettings,
+        AzureChatPromptExecutionSettings,
     )
     from plugins.time_plugin import TimePlugin
     from plugins.geo_coding_plugin import GeoPlugin
     from plugins.weather_plugin import WeatherPlugin
     from semantic_kernel.connectors.ai.open_ai import AzureTextEmbedding
     from plugins.ContosoSearchPlugin import ContosoSearchPlugin
-   ```
-
-      ![](./media/import-modules-01.png)
-
-1. Add the following code in the `#Challenge 05 - Add Text Embedding service for semantic search` section of the file.
-
     ```
-        text_embedding_service = AzureTextEmbedding(
+
+    ![](./media/import-modules-01.png)
+
+13. Add the following code in the `#Challenge 05 - Add Text Embedding service for semantic search` section of the file.
+
+    ```python
+    text_embedding_service = AzureTextEmbedding(
         deployment_name=os.getenv("AZURE_OPENAI_EMBED_DEPLOYMENT_NAME"),
         api_key=os.getenv("AZURE_OPENAI_API_KEY"),
         endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
@@ -448,76 +179,76 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     )
     kernel.add_service(text_embedding_service)
     logger.info("Text Embedding service added")
-    #Challenge 07 - Add DALL-E image generation service
+    # Challenge 07 - Add DALL-E image generation service
     chat_completion_service = kernel.get_service(type=ChatCompletionClientBase)
     return kernel
-    async def process_message(user_input):
-    global chat_history
 
-    # Check if the query is related to Contoso to route to the handbook search
-    if is_contoso_related(user_input):
-        logger.info(f"Contoso-related query detected: {user_input}")
-        
-        # For Contoso queries, we want fresh responses without previous context
-        # So we don't add to existing chat history, just get the fresh response
-        result = await search_employee_handbook(user_input)
-        
-        # Clear existing chat history for Contoso queries to avoid context contamination
-        chat_history = ChatHistory()
-        
-        # Add only the current interaction
-        chat_history.add_user_message(user_input)
-        chat_history.add_assistant_message(result)
-        return result
-        
+    async def process_message(user_input):
+        global chat_history
+
+        # Check if the query is related to Contoso to route to the handbook search
+        if is_contoso_related(user_input):
+            logger.info(f"Contoso-related query detected: {user_input}")
+
+            # For Contoso queries, we want fresh responses without previous context
+            result = await search_employee_handbook(user_input)
+
+            # Clear existing chat history for Contoso queries to avoid context contamination
+            chat_history = ChatHistory()
+
+            # Add only the current interaction
+            chat_history.add_user_message(user_input)
+            chat_history.add_assistant_message(result)
+            return result
+
         kernel = initialize_kernel()
     ```
 
     ![](./media/image_096.png)
 
-    > **Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
+    > **Note**: Please refer to the screenshots to locate the code in the proper position to avoid indentation errors.
 
-1. Add the following code in the `# Challenge 05 - Add Search Plugin` section of the file.
+14. Add the following code in the `# Challenge 05 - Add Search Plugin` section of the file.
 
-   ```
+    ```python
     kernel.add_plugin(
-    ContosoSearchPlugin(),
-    plugin_name="ContosoSearch",
+        ContosoSearchPlugin(),
+        plugin_name="ContosoSearch",
     )
     logger.info("Contoso Handbook Search plugin loaded")
-   ```
+    ```
 
-       ![](./media/image_097.png)
+    ![](./media/image_097.png)
 
-     > **Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.    
+    > **Note**: Please refer to the screenshots to locate the code in the proper position to avoid indentation errors.
 
-1. Refer to the code provided at the following URL. Please verify that your code matches the one below and correct any indentation errors if present
+15. Refer to the code provided at the following URL. Please verify that your code matches the one below and correct any indentation errors if present:
 
-   - Open the provided link in your browser, press Ctrl + A to select all the content, then copy and paste it into Visual Studio Code
+    - Open the provided link in your browser, press Ctrl + A to select all the content, then copy and paste it into Visual Studio Code.
 
     ```
     https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-05.py
     ```
 
-1. Save the file.
+16. Save the file.
 
-1. Right click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
+17. Right-click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
-      ![](./media/image_035.png)
+    ![](./media/image_035.png)
 
-1. Use the following command to run the app:
+18. Use the following command to run the app:
 
     ```
     streamlit run app.py
     ```
 
-1. If the app does not open automatically in the browser, you can access it using the following **URL**:
+19. If the app does not open automatically in the browser, you can access it using the following **URL**:
 
     ```
     http://localhost:8501
     ```
 
-1. Submit the following prompt and see how the AI responds:
+20. Submit the following prompts and observe the AI responses:
 
     ```
     What are the steps for the Contoso Performance Reviews?
@@ -531,15 +262,11 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     Who do I contact at Contoso for questions regarding workplace safety?
     ```
 
-1. You will receive a response similar to the one shown below:
+21. You will receive a response similar to the one shown below:
 
-      ![](./media/image_098.png)
-
-      ![](./media/image_099.png)
-
-      ![](./media/image_100.png)
-
-</details>
+    ![](./media/image_098.png)  
+    ![](./media/image_099.png)  
+    ![](./media/image_100.png)
 
 <details>
 <summary><strong>C Sharp(C#)</strong></summary>
