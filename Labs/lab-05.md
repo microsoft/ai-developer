@@ -95,10 +95,10 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
     ![](./media/image_092.png)
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-
-- Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
-- If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-- If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+> - Hit the Validate button for the corresponding task.
+> - If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
 <validation step="aba3f1c2-bf55-4ca3-baf6-fcaa280552fa" />  
 
@@ -148,7 +148,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 11. Navigate to `Python>src` directory and open **chat.py (1)** file.
 
-     ![](./media/image_030.png)
+    ![](./media/image_030.png)
 
 12. Add the following code in the `#Import Modules` section of the file.
 
@@ -165,8 +165,8 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     from semantic_kernel.connectors.ai.open_ai import AzureTextEmbedding
     from plugins.ContosoSearchPlugin import ContosoSearchPlugin
     ```
-
-     ![](./media/import-modules-01.png)
+    
+    ![](./media/import-modules-01.png)
 
 13. Add the following code in the `#Challenge 05 - Add Text Embedding service for semantic search` section of the file.
 
@@ -203,8 +203,8 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
         kernel = initialize_kernel()
     ```
-
-     ![](./media/image_096.png)
+    
+    ![](./media/image_096.png)
 
     > **Note**: Please refer to the screenshots to locate the code in the proper position to avoid indentation errors.
 
@@ -217,8 +217,8 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     )
     logger.info("Contoso Handbook Search plugin loaded")
     ```
-
-     ![](./media/image_097.png)
+    
+    ![](./media/image_097.png)
 
     > **Note**: Please refer to the screenshots to locate the code in the proper position to avoid indentation errors.
 
@@ -234,7 +234,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 17. Right-click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
-     ![](./media/image_035.png)
+    ![](./media/image_035.png)
 
 18. Use the following command to run the app:
 
@@ -264,9 +264,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 21. You will receive a response similar to the one shown below:
 
-     ![](./media/image_098.png)  
-     ![](./media/image_099.png)  
-     ![](./media/image_100.png)
+    ![](./media/image_098.png)  
+    ![](./media/image_099.png)  
+    ![](./media/image_100.png)
 
 </details>
 
