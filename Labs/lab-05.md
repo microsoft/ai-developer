@@ -111,7 +111,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Navigate to `Python>src` directory and open **.env (1)** file.
 
-   ![](./media/image_026.png)
+    ![](./media/image_026.png)
 
 2. Paste the **AI search URL** that you copied earlier in the exercise beside `AI_SEARCH_URL` in the **.env** file.
 
@@ -119,23 +119,23 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 3. Paste the **Primary admin key** that you copied earlier in the exercise beside `AI_SEARCH_KEY`.
 
-   ![](./media/sk42.png)
+    ![](./media/sk42.png)
 
 4. On the **Overview (1)** page, go to **Azure AI services (2)** and copy the **Azure AI services Endpoint (3)** and the Key as well.
 
-   ![](./media/overview-01.png)
+    ![](./media/overview-01.png)
 
 5. Paste the **Embed API key** you copied earlier into the .env file, next to the `AZURE_OPENAI_EMBED_API_KEY` entry.
 
 6. Paste the **Embed Endpoint** you copied earlier into the .env file, next to the `AZURE_OPENAI_EMBED_ENDPOINT` entry.
 
-   ![](./media/embed-key.png)
+    ![](./media/embed-key.png)
 
 7. Save the file.
 
 8. Navigate to `Python>src>plugins` directory and create a new file named **ContosoSearchPlugin.py (1)**.
 
-   ![](./media/image_094.png)
+    ![](./media/image_094.png)
 
 9. Add the following code to the file:
 
@@ -148,7 +148,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 11. Navigate to `Python>src` directory and open **chat.py (1)** file.
 
-    ![](./media/image_030.png)
+     ![](./media/image_030.png)
 
 12. Add the following code in the `#Import Modules` section of the file.
 
@@ -166,7 +166,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     from plugins.ContosoSearchPlugin import ContosoSearchPlugin
     ```
 
-    ![](./media/import-modules-01.png)
+     ![](./media/import-modules-01.png)
 
 13. Add the following code in the `#Challenge 05 - Add Text Embedding service for semantic search` section of the file.
 
@@ -204,7 +204,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
         kernel = initialize_kernel()
     ```
 
-    ![](./media/image_096.png)
+     ![](./media/image_096.png)
 
     > **Note**: Please refer to the screenshots to locate the code in the proper position to avoid indentation errors.
 
@@ -218,7 +218,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     logger.info("Contoso Handbook Search plugin loaded")
     ```
 
-    ![](./media/image_097.png)
+     ![](./media/image_097.png)
 
     > **Note**: Please refer to the screenshots to locate the code in the proper position to avoid indentation errors.
 
@@ -234,7 +234,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 17. Right-click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
-    ![](./media/image_035.png)
+     ![](./media/image_035.png)
 
 18. Use the following command to run the app:
 
@@ -264,9 +264,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 21. You will receive a response similar to the one shown below:
 
-    ![](./media/image_098.png)  
-    ![](./media/image_099.png)  
-    ![](./media/image_100.png)
+     ![](./media/image_098.png)  
+     ![](./media/image_099.png)  
+     ![](./media/image_100.png)
 
 <details>
 <summary><strong>C Sharp(C#)</strong></summary>
@@ -416,7 +416,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
         Configuration["AOI_API_KEY"]!);
     ```
 
-      ![](./media/image_104.png)
+    ![](./media/image_104.png)
 
       > **Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
