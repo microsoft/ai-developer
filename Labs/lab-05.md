@@ -401,13 +401,13 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. Add the following code in the `// Import Models` section of the file.
 
     ```
-        using Microsoft.SemanticKernel.Connectors.AzureAISearch;
-        using Azure;
-        using Azure.Search.Documents.Indexes;
-        using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.SemanticKernel.Connectors.AzureAISearch;
+    using Azure;
+    using Azure.Search.Documents.Indexes;
+    using Microsoft.Extensions.DependencyInjection;
     ```
 
-      ![](./media/image_103.png)
+    ![](./media/image_103.png)
 
 1. Add the following code in the `// Challenge 05 - Register Azure AI Foundry Text Embeddings Generation` section of the file.
 
@@ -425,23 +425,23 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. Add the following code in the `// Challenge 05 - Register Search Index` section of the file.
 
     ```
-        kernelBuilder.Services.AddSingleton<SearchIndexClient>(sp => 
-            new SearchIndexClient(
-                new Uri(Configuration["AI_SEARCH_URL"]!), 
-                new AzureKeyCredential(Configuration["AI_SEARCH_KEY"]!)
-            )
+    kernelBuilder.Services.AddSingleton<SearchIndexClient>(sp => 
+        new SearchIndexClient(
+            new Uri(Configuration["AI_SEARCH_URL"]!), 
+            new AzureKeyCredential(Configuration["AI_SEARCH_KEY"]!)
+        )
+    );
+    
+    kernelBuilder.Services.AddSingleton<AzureAISearchVectorStoreRecordCollection<Dictionary<string, object>>>(sp =>
+    {
+        var searchIndexClient = sp.GetRequiredService<SearchIndexClient>();
+        return new AzureAISearchVectorStoreRecordCollection<Dictionary<string, object>>(
+            searchIndexClient,
+            "employeehandbook"
         );
-        
-        kernelBuilder.Services.AddSingleton<AzureAISearchVectorStoreRecordCollection<Dictionary<string, object>>>(sp =>
-        {
-            var searchIndexClient = sp.GetRequiredService<SearchIndexClient>();
-            return new AzureAISearchVectorStoreRecordCollection<Dictionary<string, object>>(
-                searchIndexClient,
-                "employeehandbook"
-            );
-        });
-        
-        kernelBuilder.AddAzureAISearchVectorStore();
+    });
+    
+    kernelBuilder.AddAzureAISearchVectorStore();
     ```
 
       ![](./media/image_105.png)
@@ -451,8 +451,8 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. Add the following code in the `// Challenge 05 - Add Search Plugin` section of the file.
 
     ```
-        var searchPlugin = new ContosoSearchPlugin(Configuration);
-        kernel.ImportPluginFromObject(searchPlugin, "HandbookPlugin");
+    var searchPlugin = new ContosoSearchPlugin(Configuration);
+    kernel.ImportPluginFromObject(searchPlugin, "HandbookPlugin");
     ```
 
       ![](./media/image_106.png)
