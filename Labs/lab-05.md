@@ -121,11 +121,15 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
      ![](./media/sk42.png)
 
+1. On the **Overview (1)** page, Go to **Azure AI services (2)** and Copy the **Azure AI services Endpoint (3)** and Copy the Key as well.
+
+    ![](./media/overview-01.png)
+
 1. Paste the **Embed API key** you copied earlier into the .env file, next to the `AZURE_OPENAI_EMBED_API_KEY` entry.
 
 1. Paste the **Embed Endpoint** you copied earlier into the .env file, next to the `AZURE_OPENAI_EMBED_ENDPOINT` entry.
 
-    ![](./media/embed-key.png)
+   ![](./media/embed-key.png)
 
 1. Save the file.
 
@@ -136,6 +140,34 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. Add the following code to the file:
 
     ```
+     import json
+     import os
+     from typing import Dict, List, Any, Optional
+
+     import requests
+     from azure.core.credentials import AzureKeyCredential
+     from azure.search.documents import SearchClient
+     from azure.search.documents.models import VectorizedQuery
+     from dotenv import load_dotenv
+
+     class ContosoSearchPlugin:
+         def __init__(self):
+             load_dotenv()
+            
+             self.openai_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
+             self.openai_api_key = os.getenv("AZURE_OPENAI_API_KEY")
+             self.embedding_deployment = os.getenv("AZURE_OPENAI_EMBED_DEPLOYMENT_NAME")
+             self.embedding_api_version = os.getenv("AZURE_OPENAI_API_VERSION", "2023-05-15")
+            
+             self.search_endpoint = os.getenv("AI_SEARCH_URL")
+             self.search_key = os.getenv("AI_SEARCH_KEY")
+             self.search_index_name = os.getenv("AZURE_SEARCH_INDEX", "employeehandbook")
+            
+             self.search_client = SearchClient(
+                 endpoint=self.search_endpoint,
+                 index_name=self.search_index_name,
+                 credential=AzureKeyCredential(self.search_key)
+             )
     import json
     import os
     from typing import Dict, List, Any, Optional
@@ -166,6 +198,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
                 index_name=self.search_index_name,
                 credential=AzureKeyCredential(self.search_key)
             )
+
             
             # Chat completion endpoint for rephrasing
             self.chat_endpoint = self.openai_endpoint
@@ -417,8 +450,8 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Add the following code in the `#Import Modules` section of the file.
 
-      ```
-      from semantic_kernel.connectors.ai.chat_completion_client_base import ChatCompletionClientBase
+   ```
+    from semantic_kernel.connectors.ai.chat_completion_client_base import ChatCompletionClientBase
     from semantic_kernel.connectors.ai.open_ai import OpenAIChatPromptExecutionSettings
     import os
     from semantic_kernel.connectors.ai.open_ai.prompt_execution_settings.azure_chat_prompt_execution_settings import (
@@ -475,13 +508,13 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Add the following code in the `# Challenge 05 - Add Search Plugin` section of the file.
 
-      ```
-      kernel.add_plugin(
-        ContosoSearchPlugin(),
-        plugin_name="ContosoSearch",
+    ```
+    kernel.add_plugin(
+    ContosoSearchPlugin(),
+    plugin_name="ContosoSearch",
     )
     logger.info("Contoso Handbook Search plugin loaded")
-      ```
+    ```
 
       ![](./media/image_097.png)
 
@@ -657,7 +690,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
              }
          }
      }
-     ```
+    ```
 
 1. Save the file.
 
