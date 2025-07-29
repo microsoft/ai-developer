@@ -111,19 +111,19 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Navigate to `Python>src` directory and open **.env (1)** file.
 
-     ![](./media/image_026.png)
+   ![](./media/image_026.png)
 
 1. Paste the **AI search URL** that you copied earlier in the exercise besides `AI_SEARCH_URL` in **.env** file.
 
-     > **Note:** Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
+   > **Note:** Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
 
 1. Paste the **Primary admin key** that you copied earlier in the exercise besides `AI_SEARCH_KEY`.
 
-     ![](./media/sk42.png)
+   ![](./media/sk42.png)
 
 1. On the **Overview (1)** page, Go to **Azure AI services (2)** and Copy the **Azure AI services Endpoint (3)** and Copy the Key as well.
 
-    ![](./media/overview-01.png)
+   ![](./media/overview-01.png)
 
 1. Paste the **Embed API key** you copied earlier into the .env file, next to the `AZURE_OPENAI_EMBED_API_KEY` entry.
 
@@ -135,39 +135,11 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Navigate to `Python>src>plugins` directory and create a new file named **ContosoSearchPlugin.py (1)**.
 
-     ![](./media/image_094.png)
+   ![](./media/image_094.png)
 
 1. Add the following code to the file:
 
     ```
-     import json
-     import os
-     from typing import Dict, List, Any, Optional
-
-     import requests
-     from azure.core.credentials import AzureKeyCredential
-     from azure.search.documents import SearchClient
-     from azure.search.documents.models import VectorizedQuery
-     from dotenv import load_dotenv
-
-     class ContosoSearchPlugin:
-         def __init__(self):
-             load_dotenv()
-            
-             self.openai_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
-             self.openai_api_key = os.getenv("AZURE_OPENAI_API_KEY")
-             self.embedding_deployment = os.getenv("AZURE_OPENAI_EMBED_DEPLOYMENT_NAME")
-             self.embedding_api_version = os.getenv("AZURE_OPENAI_API_VERSION", "2023-05-15")
-            
-             self.search_endpoint = os.getenv("AI_SEARCH_URL")
-             self.search_key = os.getenv("AI_SEARCH_KEY")
-             self.search_index_name = os.getenv("AZURE_SEARCH_INDEX", "employeehandbook")
-            
-             self.search_client = SearchClient(
-                 endpoint=self.search_endpoint,
-                 index_name=self.search_index_name,
-                 credential=AzureKeyCredential(self.search_key)
-             )
     import json
     import os
     from typing import Dict, List, Any, Optional
@@ -179,274 +151,274 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     from dotenv import load_dotenv
 
     class ContosoSearchPlugin:
-        def __init__(self):
-            load_dotenv()
-        
-            self.openai_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
-            self.openai_api_key = os.getenv("AZURE_OPENAI_API_KEY")
-            self.embedding_deployment = os.getenv("AZURE_OPENAI_EMBED_DEPLOYMENT_NAME")
-            self.embedding_api_version = os.getenv("AZURE_OPENAI_API_VERSION", "2023-05-15")
-            # Get embedding endpoint from environment variable
-            self.embedding_endpoint = os.getenv("AZURE_OPENAI_EMBED_ENDPOINT", self.openai_endpoint)
-        
-            self.search_endpoint = os.getenv("AI_SEARCH_URL")
-            self.search_key = os.getenv("AI_SEARCH_KEY")
-            self.search_index_name = os.getenv("AZURE_SEARCH_INDEX", "employeehandbook")
-        
-            self.search_client = SearchClient(
-                endpoint=self.search_endpoint,
-                index_name=self.search_index_name,
-                credential=AzureKeyCredential(self.search_key)
-            )
+    def __init__(self):
+        load_dotenv()
 
-            
-            # Chat completion endpoint for rephrasing
-            self.chat_endpoint = self.openai_endpoint
-            self.chat_deployment = os.getenv("AZURE_OPENAI_CHAT_DEPLOYMENT_NAME")
-            self.chat_api_version = os.getenv("AZURE_OPENAI_API_VERSION", "2023-12-01-preview")
+        self.openai_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
+        self.openai_api_key = os.getenv("AZURE_OPENAI_API_KEY")
+        self.embedding_deployment = os.getenv("AZURE_OPENAI_EMBED_DEPLOYMENT_NAME")
+        self.embedding_api_version = os.getenv("AZURE_OPENAI_API_VERSION", "2023-05-15")
+        # Get embedding endpoint from environment variable
+        self.embedding_endpoint = os.getenv("AZURE_OPENAI_EMBED_ENDPOINT", self.openai_endpoint)
+
+        self.search_endpoint = os.getenv("AI_SEARCH_URL")
+        self.search_key = os.getenv("AI_SEARCH_KEY")
+        self.search_index_name = os.getenv("AZURE_SEARCH_INDEX", "employeehandbook")
+
+        self.search_client = SearchClient(
+            endpoint=self.search_endpoint,
+            index_name=self.search_index_name,
+            credential=AzureKeyCredential(self.search_key)
+        )
+
         
-        def generate_embedding(self, text: str) -> List[float]:
-            if not text:
-                raise ValueError("Input text cannot be empty")
+        # Chat completion endpoint for rephrasing
+        self.chat_endpoint = self.openai_endpoint
+        self.chat_deployment = os.getenv("AZURE_OPENAI_CHAT_DEPLOYMENT_NAME")
+        self.chat_api_version = os.getenv("AZURE_OPENAI_API_VERSION", "2023-12-01-preview")
+
+    def generate_embedding(self, text: str) -> List[float]:
+        if not text:
+            raise ValueError("Input text cannot be empty")
+        
+        url = f"{self.embedding_endpoint}/openai/deployments/{self.embedding_deployment}/embeddings?api-version={self.embedding_api_version}"
+        headers = {
+            "Content-Type": "application/json",
+            "api-key": self.openai_api_key
+        }
+        payload = {
+            "input": text
+            # Remove dimensions parameter as it's not supported by this model
+        }
+
+        try:
+            response = requests.post(url, headers=headers, json=payload)
+            response.raise_for_status()
+            embedding_data = response.json()
+            return embedding_data["data"][0]["embedding"]
+        except Exception as e:
+            raise Exception(f"Failed to generate embedding: {str(e)}")
+
+    def rephrase_with_chat_model(self, content: str, query: str) -> str:
+        """
+        Use the chat model to rephrase and improve the content from search results
+        """
+        try:
+            url = f"{self.chat_endpoint}/openai/deployments/{self.chat_deployment}/chat/completions?api-version={self.chat_api_version}"
             
-            url = f"{self.embedding_endpoint}/openai/deployments/{self.embedding_deployment}/embeddings?api-version={self.embedding_api_version}"
             headers = {
                 "Content-Type": "application/json",
                 "api-key": self.openai_api_key
             }
-            payload = {
-                "input": text
-                # Remove dimensions parameter as it's not supported by this model
-            }
-        
-            try:
-                response = requests.post(url, headers=headers, json=payload)
-                response.raise_for_status()
-                embedding_data = response.json()
-                return embedding_data["data"][0]["embedding"]
-            except Exception as e:
-                raise Exception(f"Failed to generate embedding: {str(e)}")
-        
-        def rephrase_with_chat_model(self, content: str, query: str) -> str:
-            """
-            Use the chat model to rephrase and improve the content from search results
-            """
-            try:
-                url = f"{self.chat_endpoint}/openai/deployments/{self.chat_deployment}/chat/completions?api-version={self.chat_api_version}"
-                
-                headers = {
-                    "Content-Type": "application/json",
-                    "api-key": self.openai_api_key
-                }
-                
-                # Create a prompt to rephrase the content
-                system_prompt = """You are a helpful assistant that rephrases and improves content from an employee handbook. 
-                Your task is to:
-                1. Make the content clear and easy to understand
-                2. Keep all important information intact
-                3. Structure the response in a professional manner
-                4. Focus on answering the specific question asked
-                5. Remove any redundant or unclear text
-                6. Provide a direct, specific answer to the question"""
-                
-                user_prompt = f"""Please rephrase and improve the following content from Contoso's employee handbook to directly answer this specific question: "{query}"
+            
+            # Create a prompt to rephrase the content
+            system_prompt = """You are a helpful assistant that rephrases and improves content from an employee handbook. 
+            Your task is to:
+            1. Make the content clear and easy to understand
+            2. Keep all important information intact
+            3. Structure the response in a professional manner
+            4. Focus on answering the specific question asked
+            5. Remove any redundant or unclear text
+            6. Provide a direct, specific answer to the question"""
+            
+            user_prompt = f"""Please rephrase and improve the following content from Contoso's employee handbook to directly answer this specific question: "{query}"
 
     Content from handbook:
     {content}
 
     Please provide a clear, professional, and direct response that specifically answers the question. Do not include generic information that doesn't address the question."""
 
-                payload = {
-                    "messages": [
-                        {"role": "system", "content": system_prompt},
-                        {"role": "user", "content": user_prompt}
-                    ],
-                    "max_tokens": 1000,
-                    "temperature": 0.2,  # Lower temperature for more consistent responses
-                    "top_p": 0.9
+            payload = {
+                "messages": [
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_prompt}
+                ],
+                "max_tokens": 1000,
+                "temperature": 0.2,  # Lower temperature for more consistent responses
+                "top_p": 0.9
+            }
+            
+            response = requests.post(url, headers=headers, json=payload)
+            response.raise_for_status()
+            
+            result = response.json()
+            rephrased_content = result["choices"][0]["message"]["content"]
+            
+            return rephrased_content.strip()
+            
+        except Exception as e:
+            # If rephrasing fails, return the original content
+            return content
+
+    def search_documents(self, query: str, top: int = 3) -> List[Dict[str, Any]]:
+        try:
+            # Generate embedding for the query
+            query_embedding = self.generate_embedding(query)
+        
+            # Create a vectorized query
+            vector_query = VectorizedQuery(
+                vector=query_embedding,
+                k_nearest_neighbors=top,
+                fields="contentVector"
+            )
+        
+            # Enhance search with filters for better relevance
+            search_filter = None
+            query_lower = query.lower()
+            
+            # Add search filters based on query type for better targeting
+            if 'security' in query_lower or 'data' in query_lower:
+                search_filter = "search.ismatch('security OR data OR confidential OR privacy', 'content')"
+            elif 'vacation' in query_lower or 'pto' in query_lower:
+                search_filter = "search.ismatch('vacation OR pto OR leave OR time off', 'content')"
+            elif 'policy' in query_lower:
+                search_filter = "search.ismatch('policy OR guideline OR procedure', 'content')"
+        
+            # Execute the search
+            results = self.search_client.search(
+                search_text=query,  # Also include text search for hybrid retrieval
+                vector_queries=[vector_query],
+                select="*",  # Select all fields
+                filter=search_filter,
+                top=top
+            )
+        
+            # Format the results
+            search_results = []
+            for result in results:
+                result_dict = {
+                    "score": result["@search.score"]
                 }
                 
-                response = requests.post(url, headers=headers, json=payload)
-                response.raise_for_status()
+                # Add all other fields that exist
+                for field in ["chunk_id", "content", "title", "url", "filepath", "parent_id"]:
+                    if field in result:
+                        result_dict[field] = result[field]
                 
-                result = response.json()
-                rephrased_content = result["choices"][0]["message"]["content"]
-                
-                return rephrased_content.strip()
-                
-            except Exception as e:
-                # If rephrasing fails, return the original content
-                return content
-    
-        def search_documents(self, query: str, top: int = 3) -> List[Dict[str, Any]]:
+                search_results.append(result_dict)
+        
+            return search_results
+        
+        except Exception as e:
+            # If filtered search fails, try without filter
             try:
-                # Generate embedding for the query
-                query_embedding = self.generate_embedding(query)
-            
-                # Create a vectorized query
-                vector_query = VectorizedQuery(
-                    vector=query_embedding,
-                    k_nearest_neighbors=top,
-                    fields="contentVector"
-                )
-            
-                # Enhance search with filters for better relevance
-                search_filter = None
-                query_lower = query.lower()
-                
-                # Add search filters based on query type for better targeting
-                if 'security' in query_lower or 'data' in query_lower:
-                    search_filter = "search.ismatch('security OR data OR confidential OR privacy', 'content')"
-                elif 'vacation' in query_lower or 'pto' in query_lower:
-                    search_filter = "search.ismatch('vacation OR pto OR leave OR time off', 'content')"
-                elif 'policy' in query_lower:
-                    search_filter = "search.ismatch('policy OR guideline OR procedure', 'content')"
-            
-                # Execute the search
                 results = self.search_client.search(
-                    search_text=query,  # Also include text search for hybrid retrieval
+                    search_text=query,
                     vector_queries=[vector_query],
-                    select="*",  # Select all fields
-                    filter=search_filter,
+                    select="*",
                     top=top
                 )
-            
-                # Format the results
+                
                 search_results = []
                 for result in results:
                     result_dict = {
                         "score": result["@search.score"]
                     }
                     
-                    # Add all other fields that exist
                     for field in ["chunk_id", "content", "title", "url", "filepath", "parent_id"]:
                         if field in result:
                             result_dict[field] = result[field]
                     
                     search_results.append(result_dict)
-            
+                
                 return search_results
-            
-            except Exception as e:
-                # If filtered search fails, try without filter
-                try:
-                    results = self.search_client.search(
-                        search_text=query,
-                        vector_queries=[vector_query],
-                        select="*",
-                        top=top
-                    )
-                    
-                    search_results = []
-                    for result in results:
-                        result_dict = {
-                            "score": result["@search.score"]
-                        }
-                        
-                        for field in ["chunk_id", "content", "title", "url", "filepath", "parent_id"]:
-                            if field in result:
-                                result_dict[field] = result[field]
-                        
-                        search_results.append(result_dict)
-                    
-                    return search_results
-                except Exception as e2:
-                    raise Exception(f"Search failed: {str(e2)}")
-    
-        def query_handbook(self, query: str, top: int = 3) -> str:
-            try:
-                results = self.search_documents(query, top)
-            
-                # Format the results into a nice response
-                if not results:
-                    return "No relevant information found in the Contoso Handbook."
-            
-                # Analyze the query to provide more specific responses
-                query_lower = query.lower()
-                
-                # Check if it's a specific policy question
-                if any(keyword in query_lower for keyword in ['data security', 'security policy', 'information security']):
-                    response = f"**Contoso Data Security Policy Information:**\n\n"
-                elif any(keyword in query_lower for keyword in ['vacation', 'pto', 'time off', 'leave']):
-                    response = f"**Contoso Vacation and Time Off Policy:**\n\n"
-                elif any(keyword in query_lower for keyword in ['confidential', 'confidentiality']):
-                    response = f"**Contoso Confidentiality Guidelines:**\n\n"
-                elif any(keyword in query_lower for keyword in ['remote work', 'work from home', 'telework']):
-                    response = f"**Contoso Remote Work Policy:**\n\n"
-                elif any(keyword in query_lower for keyword in ['benefits', 'health', 'insurance']):
-                    response = f"**Contoso Employee Benefits:**\n\n"
-                else:
-                    response = f"**Information from Contoso Employee Handbook regarding '{query}':**\n\n"
-                
-                # Process each result for more specific information
-                all_content = []
-                for i, result in enumerate(results, 1):
-                    content = result.get('content', 'No content available')
-                    
-                    # Extract key information based on query type
-                    if 'data security' in query_lower or 'security policy' in query_lower:
-                        # Look for specific security-related information
-                        security_keywords = ['password', 'encryption', 'access', 'confidential', 'protect', 'secure', 'data handling', 'classification']
-                        relevant_sentences = self.extract_relevant_sentences(content, security_keywords)
-                        if relevant_sentences:
-                            content = relevant_sentences
-                    
-                    elif 'vacation' in query_lower or 'pto' in query_lower:
-                        # Look for vacation-specific information
-                        vacation_keywords = ['days', 'hours', 'request', 'approval', 'accrual', 'balance', 'holiday']
-                        relevant_sentences = self.extract_relevant_sentences(content, vacation_keywords)
-                        if relevant_sentences:
-                            content = relevant_sentences
-                    
-                    all_content.append(content)
-                
-                # Combine all content and rephrase using chat model
-                combined_content = "\n\n".join(all_content)
-                rephrased_content = self.rephrase_with_chat_model(combined_content, query)
-                
-                response += rephrased_content
-                
-                # Add source information
-                response += "\n\n**Sources:**\n"
-                for i, result in enumerate(results, 1):
-                    if result.get('title'):
-                        response += f"- {result['title']}\n"
-                    elif result.get('url'):
-                        response += f"- {result['url']}\n"
-                    else:
-                        response += f"- Employee Handbook Section {i}\n"
-            
-                return response
-            
-            except Exception as e:
-                return f"Error querying the Contoso Handbook: {str(e)}"
+            except Exception as e2:
+                raise Exception(f"Search failed: {str(e2)}")
+
+    def query_handbook(self, query: str, top: int = 3) -> str:
+        try:
+            results = self.search_documents(query, top)
         
-        def extract_relevant_sentences(self, content: str, keywords: List[str]) -> str:
-            """Extract sentences that contain relevant keywords"""
-            sentences = content.split('.')
-            relevant_sentences = []
+            # Format the results into a nice response
+            if not results:
+                return "No relevant information found in the Contoso Handbook."
+        
+            # Analyze the query to provide more specific responses
+            query_lower = query.lower()
             
-            for sentence in sentences:
-                sentence = sentence.strip()
-                if any(keyword.lower() in sentence.lower() for keyword in keywords):
-                    relevant_sentences.append(sentence)
+            # Check if it's a specific policy question
+            if any(keyword in query_lower for keyword in ['data security', 'security policy', 'information security']):
+                response = f"**Contoso Data Security Policy Information:**\n\n"
+            elif any(keyword in query_lower for keyword in ['vacation', 'pto', 'time off', 'leave']):
+                response = f"**Contoso Vacation and Time Off Policy:**\n\n"
+            elif any(keyword in query_lower for keyword in ['confidential', 'confidentiality']):
+                response = f"**Contoso Confidentiality Guidelines:**\n\n"
+            elif any(keyword in query_lower for keyword in ['remote work', 'work from home', 'telework']):
+                response = f"**Contoso Remote Work Policy:**\n\n"
+            elif any(keyword in query_lower for keyword in ['benefits', 'health', 'insurance']):
+                response = f"**Contoso Employee Benefits:**\n\n"
+            else:
+                response = f"**Information from Contoso Employee Handbook regarding '{query}':**\n\n"
             
-            if relevant_sentences:
-                return '. '.join(relevant_sentences[:3]) + '.'  # Limit to 3 most relevant sentences
+            # Process each result for more specific information
+            all_content = []
+            for i, result in enumerate(results, 1):
+                content = result.get('content', 'No content available')
+                
+                # Extract key information based on query type
+                if 'data security' in query_lower or 'security policy' in query_lower:
+                    # Look for specific security-related information
+                    security_keywords = ['password', 'encryption', 'access', 'confidential', 'protect', 'secure', 'data handling', 'classification']
+                    relevant_sentences = self.extract_relevant_sentences(content, security_keywords)
+                    if relevant_sentences:
+                        content = relevant_sentences
+                
+                elif 'vacation' in query_lower or 'pto' in query_lower:
+                    # Look for vacation-specific information
+                    vacation_keywords = ['days', 'hours', 'request', 'approval', 'accrual', 'balance', 'holiday']
+                    relevant_sentences = self.extract_relevant_sentences(content, vacation_keywords)
+                    if relevant_sentences:
+                        content = relevant_sentences
+                
+                all_content.append(content)
             
-            return content  # Return original content if no specific matches found
+            # Combine all content and rephrase using chat model
+            combined_content = "\n\n".join(all_content)
+            rephrased_content = self.rephrase_with_chat_model(combined_content, query)
+            
+            response += rephrased_content
+            
+            # Add source information
+            response += "\n\n**Sources:**\n"
+            for i, result in enumerate(results, 1):
+                if result.get('title'):
+                    response += f"- {result['title']}\n"
+                elif result.get('url'):
+                    response += f"- {result['url']}\n"
+                else:
+                    response += f"- Employee Handbook Section {i}\n"
+        
+            return response
+        
+        except Exception as e:
+            return f"Error querying the Contoso Handbook: {str(e)}"
+
+    def extract_relevant_sentences(self, content: str, keywords: List[str]) -> str:
+        """Extract sentences that contain relevant keywords"""
+        sentences = content.split('.')
+        relevant_sentences = []
+        
+        for sentence in sentences:
+            sentence = sentence.strip()
+            if any(keyword.lower() in sentence.lower() for keyword in keywords):
+                relevant_sentences.append(sentence)
+        
+        if relevant_sentences:
+            return '. '.join(relevant_sentences[:3]) + '.'  # Limit to 3 most relevant sentences
+        
+        return content  # Return original content if no specific matches found
     if __name__ == "__main__":
-        search_plugin = ContosoSearchPlugin()
-        query = "What is Contoso's vacation policy?"
-        result = search_plugin.query_handbook(query)
-        print(result)
+    search_plugin = ContosoSearchPlugin()
+    query = "What is Contoso's vacation policy?"
+    result = search_plugin.query_handbook(query)
+    print(result)
     ```
 
 1. Save the file.
 
 1. Navigate to `Python>src` directory and open **chat.py (1)** file.
 
-      ![](./media/image_030.png)
+   ![](./media/image_030.png)
 
 1. Add the following code in the `#Import Modules` section of the file.
 
@@ -462,14 +434,14 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     from plugins.weather_plugin import WeatherPlugin
     from semantic_kernel.connectors.ai.open_ai import AzureTextEmbedding
     from plugins.ContosoSearchPlugin import ContosoSearchPlugin
-      ```
+   ```
 
-      ![](./media/import-modules-01.png)
+   ![](./media/import-modules-01.png)
 
 1. Add the following code in the `#Challenge 05 - Add Text Embedding service for semantic search` section of the file.
 
-      ```
-      text_embedding_service = AzureTextEmbedding(
+    ```
+        text_embedding_service = AzureTextEmbedding(
         deployment_name=os.getenv("AZURE_OPENAI_EMBED_DEPLOYMENT_NAME"),
         api_key=os.getenv("AZURE_OPENAI_API_KEY"),
         endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
@@ -482,7 +454,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     return kernel
     async def process_message(user_input):
     global chat_history
-    
+
     # Check if the query is related to Contoso to route to the handbook search
     if is_contoso_related(user_input):
         logger.info(f"Contoso-related query detected: {user_input}")
@@ -500,73 +472,73 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
         return result
         
         kernel = initialize_kernel()
-      ```
+    ```
 
-      ![](./media/image_096.png)
+   ![](./media/image_096.png)
 
-      > **Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
+    > **Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
 1. Add the following code in the `# Challenge 05 - Add Search Plugin` section of the file.
 
-    ```
+   ```
     kernel.add_plugin(
     ContosoSearchPlugin(),
     plugin_name="ContosoSearch",
     )
     logger.info("Contoso Handbook Search plugin loaded")
-    ```
+   ```
 
-      ![](./media/image_097.png)
+   ![](./media/image_097.png)
 
-      > **Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.    
+    > **Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.    
 
 1. Refer to the code provided at the following URL. Please verify that your code matches the one below and correct any indentation errors if present
 
-    - Open the provided link in your browser, press Ctrl + A to select all the content, then copy and paste it into Visual Studio Code
+   - Open the provided link in your browser, press Ctrl + A to select all the content, then copy and paste it into Visual Studio Code
 
-      ```
-      https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-05.py
-      ```
+    ```
+    https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/lab-05.py
+    ```
 
 1. Save the file.
 
 1. Right click on `Python>src` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
-     ![](./media/image_035.png)
+   ![](./media/image_035.png)
 
 1. Use the following command to run the app:
 
-      ```
-      streamlit run app.py
-      ```
+    ```
+    streamlit run app.py
+    ```
 
 1. If the app does not open automatically in the browser, you can access it using the following **URL**:
 
-      ```
-      http://localhost:8501
-      ```
+    ```
+    http://localhost:8501
+    ```
 
 1. Submit the following prompt and see how the AI responds:
 
-      ```
-      What are the steps for the Contoso Performance Reviews?
-      ```
+    ```
+    What are the steps for the Contoso Performance Reviews?
+    ```
 
-      ```
-      What is Contoso's policy on Data Security?
-      ```
+    ```
+    What is Contoso's policy on Data Security?
+    ```
 
-      ```
-      Who do I contact at Contoso for questions regarding workplace safety?
-      ```
+    ```
+    Who do I contact at Contoso for questions regarding workplace safety?
+    ```
 
 1. You will receive a response similar to the one shown below:
 
-      ![](./media/image_098.png)
+   ![](./media/image_098.png)
 
-      ![](./media/image_099.png)
+   ![](./media/image_099.png)
 
-      ![](./media/image_100.png)
+   ![](./media/image_100.png)
 
 </details>
 
@@ -575,187 +547,187 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Navigate to `Dotnet>src>BlazorAI` directory and open **appsettings.json (1)** file.
 
-      ![](./media/image_028.png)
+   ![](./media/image_028.png)
 
 1. Paste the **AI search URL** that you copied earlier in the exercise besides `AI_SEARCH_URL` in **appsettings.json** file.
 
-      > **Note:** Ensure that every value in the **appsettings.json** file is enclosed in **double quotes (")**.
+   > **Note:** Ensure that every value in the **appsettings.json** file is enclosed in **double quotes (")**.
 
 1. Paste the **Primary admin key (1)** that you copied earlier in the exercise besides `AI_SEARCH_KEY` **(2)**.
 
-      ![](./media/image_101.png)
+   ![](./media/image_101.png)
 
 1. Save the file.
 
 1. Navigate to `Dotnet>src>BlazorAI>Plugins` directory and create a new file named **ContosoSearchPlugin.cs (1)**.
 
-      ![](./media/image_102.png)
+   ![](./media/image_102.png)
 
 1. Add the following code to the file:
 
-     ```
-     using System.ComponentModel;
-     using System.Text.Json.Serialization;
-     using Azure;
-     using Azure.Search.Documents;
-     using Azure.Search.Documents.Indexes;
-     using Azure.Search.Documents.Models;
-     using Microsoft.SemanticKernel;
-     using Microsoft.SemanticKernel.Embeddings;
-     using System.Text;
+   ```
+    using System.ComponentModel;
+    using System.Text.Json.Serialization;
+    using Azure;
+    using Azure.Search.Documents;
+    using Azure.Search.Documents.Indexes;
+    using Azure.Search.Documents.Models;
+    using Microsoft.SemanticKernel;
+    using Microsoft.SemanticKernel.Embeddings;
+    using System.Text;
 
-     namespace BlazorAI.Plugins
-     {
-         public class ContosoSearchPlugin
-         {
-             private readonly ITextEmbeddingGenerationService _textEmbeddingGenerationService;
-             private readonly SearchIndexClient _indexClient;
+    namespace BlazorAI.Plugins
+    {
+        public class ContosoSearchPlugin
+        {
+            private readonly ITextEmbeddingGenerationService _textEmbeddingGenerationService;
+            private readonly SearchIndexClient _indexClient;
 
-             public ContosoSearchPlugin(IConfiguration configuration)
-             {
-                 // Create the search index client
-                 _indexClient = new SearchIndexClient(
-                     new Uri(configuration["AI_SEARCH_URL"]),
-                     new AzureKeyCredential(configuration["AI_SEARCH_KEY"]));
+            public ContosoSearchPlugin(IConfiguration configuration)
+            {
+                // Create the search index client
+                _indexClient = new SearchIndexClient(
+                    new Uri(configuration["AI_SEARCH_URL"]),
+                    new AzureKeyCredential(configuration["AI_SEARCH_KEY"]));
 
-                 // Get the embedding service from the kernel
-                 var kernelBuilder = Kernel.CreateBuilder();
-                 kernelBuilder.AddAzureOpenAITextEmbeddingGeneration(
-                     configuration["EMBEDDINGS_DEPLOYMODEL"],
-                     configuration["AOI_ENDPOINT"],
-                     configuration["AOI_API_KEY"]);
-                 var kernel = kernelBuilder.Build();
-                 _textEmbeddingGenerationService = kernel.GetRequiredService<ITextEmbeddingGenerationService>();
-             }
+                // Get the embedding service from the kernel
+                var kernelBuilder = Kernel.CreateBuilder();
+                kernelBuilder.AddAzureOpenAITextEmbeddingGeneration(
+                    configuration["EMBEDDINGS_DEPLOYMODEL"],
+                    configuration["AOI_ENDPOINT"],
+                    configuration["AOI_API_KEY"]);
+                var kernel = kernelBuilder.Build();
+                _textEmbeddingGenerationService = kernel.GetRequiredService<ITextEmbeddingGenerationService>();
+            }
 
-             [KernelFunction("SearchHandbook")]
-             [Description("Searches the Contoso employee handbook for information about company policies, benefits, procedures, or other employee-related questions. Use this when the user asks about company policies, employee benefits, work procedures, or any information that might be in an employee handbook.")]
-             public async Task<string> Search(
-                 [Description("The user's question about company policies, benefits, procedures or other handbook-related information")] string query)
-             {
-                 try
-                 {
-                     // Convert string query to vector embedding
-                     ReadOnlyMemory<float> embedding = await _textEmbeddingGenerationService.GenerateEmbeddingAsync(query);
+            [KernelFunction("SearchHandbook")]
+            [Description("Searches the Contoso employee handbook for information about company policies, benefits, procedures, or other employee-related questions. Use this when the user asks about company policies, employee benefits, work procedures, or any information that might be in an employee handbook.")]
+            public async Task<string> Search(
+                [Description("The user's question about company policies, benefits, procedures or other handbook-related information")] string query)
+            {
+                try
+                {
+                    // Convert string query to vector embedding
+                    ReadOnlyMemory<float> embedding = await _textEmbeddingGenerationService.GenerateEmbeddingAsync(query);
 
-                     // Get client for search operations
-                     SearchClient searchClient = _indexClient.GetSearchClient("employeehandbook");
+                    // Get client for search operations
+                    SearchClient searchClient = _indexClient.GetSearchClient("employeehandbook");
 
-                     // Configure request parameters
-                     VectorizedQuery vectorQuery = new(embedding);
-                     vectorQuery.Fields.Add("contentVector");  // The vector field in your index
-                     vectorQuery.KNearestNeighborsCount = 3;   // Get top 3 matches
+                    // Configure request parameters
+                    VectorizedQuery vectorQuery = new(embedding);
+                    vectorQuery.Fields.Add("contentVector");  // The vector field in your index
+                    vectorQuery.KNearestNeighborsCount = 3;   // Get top 3 matches
 
-                     SearchOptions searchOptions = new()
-                     {
-                         VectorSearch = new() { Queries = { vectorQuery } },
-                         Size = 3  // Return top 3 results
-                     };
+                    SearchOptions searchOptions = new()
+                    {
+                        VectorSearch = new() { Queries = { vectorQuery } },
+                        Size = 3  // Return top 3 results
+                    };
 
-                     // Perform search request
-                     Response<SearchResults<IndexSchema>> response = await searchClient.SearchAsync<IndexSchema>(searchOptions);
+                    // Perform search request
+                    Response<SearchResults<IndexSchema>> response = await searchClient.SearchAsync<IndexSchema>(searchOptions);
 
-                     // Collect search results
-                     StringBuilder results = new StringBuilder();
-                     await foreach (SearchResult<IndexSchema> result in response.Value.GetResultsAsync())
-                     {
-                         if (!string.IsNullOrEmpty(result.Document.Content))
-                         {
-                             results.AppendLine($"Title: {result.Document.Title}");
-                             results.AppendLine($"Content: {result.Document.Content}");
-                             results.AppendLine();
-                         }
-                     }
+                    // Collect search results
+                    StringBuilder results = new StringBuilder();
+                    await foreach (SearchResult<IndexSchema> result in response.Value.GetResultsAsync())
+                    {
+                        if (!string.IsNullOrEmpty(result.Document.Content))
+                        {
+                            results.AppendLine($"Title: {result.Document.Title}");
+                            results.AppendLine($"Content: {result.Document.Content}");
+                            results.AppendLine();
+                        }
+                    }
 
-                     return results.Length > 0 
-                         ? results.ToString()
-                         : "No relevant information found in the employee handbook.";
-                 }
-                 catch (Exception ex)
-                 {
-                     return $"Search error: {ex.Message}";
-                 }
-             }
+                    return results.Length > 0 
+                        ? results.ToString()
+                        : "No relevant information found in the employee handbook.";
+                }
+                catch (Exception ex)
+                {
+                    return $"Search error: {ex.Message}";
+                }
+            }
 
-             private sealed class IndexSchema
-             {
-                 [JsonPropertyName("content")]
-                 public string Content { get; set; }
+            private sealed class IndexSchema
+            {
+                [JsonPropertyName("content")]
+                public string Content { get; set; }
 
-                 [JsonPropertyName("title")]
-                 public string Title { get; set; }
+                [JsonPropertyName("title")]
+                public string Title { get; set; }
 
-                 [JsonPropertyName("url")]
-                 public string Url { get; set; }
-             }
-         }
-     }
-    ```
+                [JsonPropertyName("url")]
+                public string Url { get; set; }
+            }
+        }
+    }
+   ```
 
 1. Save the file.
 
 1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
 
-      ![](./media/image_038.png)
+   ![](./media/image_038.png)
 
 1. Add the following code in the `// Import Models` section of the file.
 
-     ```
-     using Microsoft.SemanticKernel.Connectors.AzureAISearch;
-     using Azure;
-     using Azure.Search.Documents.Indexes;
-     using Microsoft.Extensions.DependencyInjection;
-     ```
+    ```
+    using Microsoft.SemanticKernel.Connectors.AzureAISearch;
+    using Azure;
+    using Azure.Search.Documents.Indexes;
+    using Microsoft.Extensions.DependencyInjection;
+    ```
 
-      ![](./media/image_103.png)
+   ![](./media/image_103.png)
 
 1. Add the following code in the `// Challenge 05 - Register Azure AI Foundry Text Embeddings Generation` section of the file.
 
-     ```
-     kernelBuilder.AddAzureOpenAITextEmbeddingGeneration(
-         Configuration["EMBEDDINGS_DEPLOYMODEL"]!,
-         Configuration["AOI_ENDPOINT"]!,
-         Configuration["AOI_API_KEY"]!);
-     ```
+    ```
+    kernelBuilder.AddAzureOpenAITextEmbeddingGeneration(
+        Configuration["EMBEDDINGS_DEPLOYMODEL"]!,
+        Configuration["AOI_ENDPOINT"]!,
+        Configuration["AOI_API_KEY"]!);
+    ```
 
-      ![](./media/image_104.png)
+   ![](./media/image_104.png)
 
-      > **Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
+    > **Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
 1. Add the following code in the `// Challenge 05 - Register Search Index` section of the file.
 
-     ```
-     kernelBuilder.Services.AddSingleton<SearchIndexClient>(sp => 
-         new SearchIndexClient(
-             new Uri(Configuration["AI_SEARCH_URL"]!), 
-             new AzureKeyCredential(Configuration["AI_SEARCH_KEY"]!)
-         )
-     );
+   ```
+        kernelBuilder.Services.AddSingleton<SearchIndexClient>(sp => 
+            new SearchIndexClient(
+                new Uri(Configuration["AI_SEARCH_URL"]!), 
+                new AzureKeyCredential(Configuration["AI_SEARCH_KEY"]!)
+            )
+        );
 
-     kernelBuilder.Services.AddSingleton<AzureAISearchVectorStoreRecordCollection<Dictionary<string, object>>>(sp =>
-     {
-         var searchIndexClient = sp.GetRequiredService<SearchIndexClient>();
-         return new AzureAISearchVectorStoreRecordCollection<Dictionary<string, object>>(
-             searchIndexClient,
-             "employeehandbook"
-         );
-     });
+        kernelBuilder.Services.AddSingleton<AzureAISearchVectorStoreRecordCollection<Dictionary<string, object>>>(sp =>
+        {
+            var searchIndexClient = sp.GetRequiredService<SearchIndexClient>();
+            return new AzureAISearchVectorStoreRecordCollection<Dictionary<string, object>>(
+                searchIndexClient,
+                "employeehandbook"
+            );
+        });
 
-     kernelBuilder.AddAzureAISearchVectorStore();
-     ```
+        kernelBuilder.AddAzureAISearchVectorStore();
+    ```
 
-      ![](./media/image_105.png)
+   ![](./media/image_105.png)
 
-      > **Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
+    > **Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
 1. Add the following code in the `// Challenge 05 - Add Search Plugin` section of the file.
 
-     ```
-     var searchPlugin = new ContosoSearchPlugin(Configuration);
-     kernel.ImportPluginFromObject(searchPlugin, "HandbookPlugin");
-     ```
+    ```
+    var searchPlugin = new ContosoSearchPlugin(Configuration);
+    kernel.ImportPluginFromObject(searchPlugin, "HandbookPlugin");
+    ```
 
-      ![](./media/image_106.png)
+    ![](./media/image_106.png)
 
 1. Refer to the code provided at the following URL. Please verify that your code matches the one below and correct any indentation errors if present
 
@@ -768,35 +740,35 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Right-click on `Dotnet>src>Aspire>Aspire.AppHost` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
-      ![](./media/image_040.png)
+   ![](./media/image_040.png)
 
 1. Use the following command to run the app:
 
-     ```
-     dotnet run
-     ```
+    ```
+    dotnet run
+    ```
 
 1. Open a new tab in the browser and navigate to the link for **blazor-aichat**, i.e. **https://localhost:7118/**.
 
 1. Submit the following prompt and see how the AI responds:
 
-     ```
-     What are the steps for the Contoso Performance Reviews?
-     ```
-     ```
-     What is Contoso's policy on Data Security?
-     ```
-     ```
-     Who do I contact at Contoso for questions regarding workplace safety?
-     ```
+    ```
+    What are the steps for the Contoso Performance Reviews?
+    ```
+    ```
+    What is Contoso's policy on Data Security?
+    ```
+    ```
+    Who do I contact at Contoso for questions regarding workplace safety?
+    ```
 
 1. You will receive a response similar to the one shown below:
 
-      ![](./media/image_107.png)
+   ![](./media/image_107.png)
 
-      ![](./media/image_108.png)
+   ![](./media/image_108.png)
 
-      ![](./media/image_109.png)
+   ![](./media/image_109.png)
 
 1. Once you receive the response, navigate back to the Visual studio code terminal and then press **Ctrl+C** to stop the build process.
 
