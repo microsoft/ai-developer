@@ -4,14 +4,11 @@ import logging
 from pathlib import Path
 from dotenv import load_dotenv
 from semantic_kernel import Kernel
-from semantic_kernel.agents import AgentGroupChat, ChatCompletionAgent
-from semantic_kernel.agents.strategies import (
-    KernelFunctionSelectionStrategy,
-    KernelFunctionTerminationStrategy,
-)
+from semantic_kernel.agents import ChatCompletionAgent, MagenticOrchestration, StandardMagenticManager
+from semantic_kernel.agents.runtime import InProcessRuntime
 from semantic_kernel.connectors.ai.open_ai import AzureChatCompletion
-from semantic_kernel.contents import ChatHistoryTruncationReducer
-from semantic_kernel.functions import KernelFunctionFromPrompt
+from semantic_kernel.contents import ChatMessageContent
+from semantic_kernel.contents.chat_history import ChatHistory
 
 # Add Logger
 logger = logging.getLogger(__name__)
@@ -26,142 +23,73 @@ class MultiAgentService:
     def __init__(self):
         self.kernel = None
         self.agents = {}
-        self.group_chat = None
+        self.orchestration = None
+        self.chat_history = ChatHistory()
         self.initialize_system()
     
     def initialize_system(self):
         """Initialize kernel and agents once during construction"""
         print("Initializing multi-agent system...")
         
-        # Challenge 8 - Create kernel with chat completion service
-        # TODO: Create a Kernel instance and add an AzureChatCompletion service
-        # self.kernel = Kernel()
-        # self.kernel.add_service(service=AzureChatCompletion())
+        # Challenge 8 - Set up the kernel and AI service
+        # TODO: Initialize kernel and add chat completion service
         
-        # Challenge 8 - Create agents
-        # TODO: Implement the create_agents method
-        # self.create_agents()
+        # Challenge 8 - Create the specialist agents
+        # TODO: Implement agent creation
         
-        # Challenge 8 - Create the group chat orchestration
-        # TODO: Implement the create_group_chat method
-        # self.create_group_chat()
+        # Challenge 8 - Set up the orchestration system
+        # TODO: Configure the multi-agent orchestration
         
         print("Multi-agent system initialization complete.")
     
     def create_agents(self):
         """Create the three specialized agents with their personas"""
-        # Challenge 8 - Define agent names as constants
-        # TODO: Define the three agent names that match the UI display
-        # BUSINESS_ANALYST_NAME = "BusinessAnalyst"
-        # SOFTWARE_ENGINEER_NAME = "SoftwareEngineer" 
-        # PRODUCT_OWNER_NAME = "ProductOwner"
+        # Challenge 8 - Define agent identities
+        # TODO: Create constants for agent names
         
-        # Challenge 8 - Create ChatCompletionAgents
-        # TODO: Create three ChatCompletionAgent instances with their personas
-        # Each agent needs: kernel, name, and instructions
-        # Use the personas from Challenge-08.md
-        
-        # Business Analyst Agent
-        # TODO: Create business_analyst_agent with BusinessAnalyst persona
-        # self.agents[BUSINESS_ANALYST_NAME] = ChatCompletionAgent(
-        #     kernel=self.kernel,
-        #     name=BUSINESS_ANALYST_NAME,
-        #     instructions="""[BusinessAnalyst persona from Challenge-08.md]"""
-        # )
-        
-        # Software Engineer Agent
-        # TODO: Create software_engineer_agent with SoftwareEngineer persona
-        # self.agents[SOFTWARE_ENGINEER_NAME] = ChatCompletionAgent(
-        #     kernel=self.kernel,
-        #     name=SOFTWARE_ENGINEER_NAME,
-        #     instructions="""[SoftwareEngineer persona from Challenge-08.md]"""
-        # )
-        
-        # Product Owner Agent
-        # TODO: Create product_owner_agent with ProductOwner persona
-        # self.agents[PRODUCT_OWNER_NAME] = ChatCompletionAgent(
-        #     kernel=self.kernel,
-        #     name=PRODUCT_OWNER_NAME,
-        #     instructions="""[ProductOwner persona from Challenge-08.md]"""
-        # )
+        # Challenge 8 - Build the specialist agents
+        # TODO: Create agents with appropriate personas and instructions
+        # Refer to Challenge-08.md for the specific agent roles and capabilities
         
         pass
         
-    def create_group_chat(self):
-        """Create the orchestrated group chat with selection and termination strategies"""
-        # Challenge 8 - Agent name constants (must match create_agents)
-        # TODO: Define the same agent names here
-        # BUSINESS_ANALYST_NAME = "BusinessAnalyst"
-        # SOFTWARE_ENGINEER_NAME = "SoftwareEngineer" 
-        # PRODUCT_OWNER_NAME = "ProductOwner"
-        
-        # Challenge 8 - Define a selection function
-        # TODO: Create a KernelFunctionFromPrompt for agent selection
-        # The function should determine which agent goes next based on conversation flow
-        # Rules:
-        # - User input -> BusinessAnalyst
-        # - BusinessAnalyst -> SoftwareEngineer
-        # - SoftwareEngineer -> ProductOwner
-        # - ProductOwner (with criticism) -> SoftwareEngineer
-        
-        # selection_function = KernelFunctionFromPrompt(
-        #     function_name="agent_selection",
-        #     prompt=f"""[Selection logic from Challenge-08.md]""",
-        # )
-
-        # Challenge 8 - Define a termination function
-        # TODO: Create a KernelFunctionFromPrompt for termination detection
-        # The function should detect when ProductOwner approves with "%APPR%"
-        # termination_keyword = "%APPR%"
-        # termination_function = KernelFunctionFromPrompt(
-        #     function_name="termination_check",
-        #     prompt=f"""[Termination logic from Challenge-08.md]""",
-        # )
-
-        # Challenge 8 - Create history reducer
-        # TODO: Create a ChatHistoryTruncationReducer to save tokens
-        # history_reducer = ChatHistoryTruncationReducer(target_count=3)
-        
-        # Challenge 8 - Create the AgentGroupChat
-        # TODO: Create AgentGroupChat with selection and termination strategies
-        # self.group_chat = AgentGroupChat(
-        #     agents=list(self.agents.values()),
-        #     selection_strategy=KernelFunctionSelectionStrategy(...),
-        #     termination_strategy=KernelFunctionTerminationStrategy(...),
-        # )
+    def create_orchestration(self):
+        """Create the Magentic orchestration with StandardMagenticManager"""
+        # Challenge 8 - Set up agent coordination
+        # TODO: Configure the orchestration system to manage agent interactions
+        # TODO: Define agent_response_callback to handle agent messages and add them to chat history
+        # TODO: Create the MagenticOrchestration with StandardMagenticManager
         
         pass
     
     async def process_request(self, user_input: str):
-        """Process a multi-agent collaboration request using the pre-initialized system"""
-        # Challenge 8 - Add user's initial request to the chat
-        # TODO: Add the user input to the group chat
-        # await self.group_chat.add_chat_message(message=user_input)
+        """Process a multi-agent collaboration request using the Magentic orchestration"""
+        # Add the user's message to chat history (like in chat.py)
+        self.chat_history.add_user_message(user_input)
         
-        # Collect responses for Streamlit
-        responses = []
+        # Challenge 8 - Design the orchestration strategy
+        # TODO: Create a comprehensive prompt that guides the agent collaboration
+        # TODO: Set up the runtime environment for agent execution
+        # TODO: Execute the orchestration and collect results
         
         try:
-            # Challenge 8 - Invoke the group chat and collect agent responses
-            # TODO: Iterate through the group chat responses
-            # async for response in self.group_chat.invoke():
-            #     if response is None or not response.name:
-            #         continue
-            #     responses.append({"role": response.name, "message": response.content})
+            # Challenge 8 - Execute the multi-agent workflow
+            # TODO: Implement the orchestration execution logic
             
             # Placeholder response for incomplete implementation
-            responses.append({
-                "role": "System", 
-                "message": "Please complete Challenge 8 to enable multi-agent collaboration."
-            })
+            error_message = "Please complete Challenge 8 to enable multi-agent orchestration."
+            self.chat_history.add_assistant_message(error_message)
         except Exception as e:
-            responses.append({
-                "role": "System", 
-                "message": f"❌ Error during multi-agent collaboration: {e}"
-            })
+            # Add error message to chat history
+            error_message = f"❌ Error during multi-agent collaboration: {e}"
+            self.chat_history.add_assistant_message(error_message)
+            logger.error(error_message)
         
         logger.info("Multi-agent conversation complete.")
-        return responses
+
+    def reset_chat_history(self):
+        """Reset the chat history (like in chat.py)"""
+        self.chat_history = ChatHistory()
 
 # Global instance - initialized once when module is imported
 _multi_agent_service = None
@@ -177,4 +105,4 @@ def get_multi_agent_service():
 async def run_multi_agent(user_input: str):
     """Legacy function - delegates to MultiAgentService"""
     service = get_multi_agent_service()
-    return await service.process_request(user_input)
+    await service.process_request(user_input)
