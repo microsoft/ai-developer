@@ -33,7 +33,7 @@ For detailed setup instructions, see the [Development Setup](./docs/setup/develo
 1. Clone the repository
 ```bash
 git clone <repository-url>
-cd chat-ui
+cd ChatUI
 ```
 
 2. Install dependencies

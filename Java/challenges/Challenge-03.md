@@ -22,7 +22,7 @@ Challenges:
 * Use the previous URL (http://localhost:3000) and submit the prompt 
 
   ```txt
- 	Why is current time in Austin
+ 	What is current time in Austin
   ```
   
   Since the AI does not have the capability to provide real-time information, you will get a response similar to the following:
@@ -39,11 +39,30 @@ Challenges:
     1. Return the current Time
     1. Make sure you 
     
-  * Update the application to add your new Plugin to Semantic Kernel
+       * Update the application to add your new Plugin to Semantic Kernel
+         1. Search for ```Adding method for Plugin | Challenge 3``` and uncomment next line. 
+         2. Go to ```AddPlugins``` method in **AIService.java** file and search ```Enable Plugin for Date and Time | Challenge 3```and add the following code to register your plugin:
 
-    :bulb: Search the "Challenge 3" keyword and uncomment the ```AddPlugins(kernel)``` call,  **AIService.java** file to add your new Plugin to Semantic Kernel. Review the documentation [Adding native plugins](https://learn.microsoft.com/en-us/semantic-kernel/concepts/plugins/adding-native-plugins?pivots=programming-language-java) for examples on how to do this
-  * Search for ```Challenge 03 START for Create the DateTimePlugin``` and add you plugin 
+           ```Java
+           KernelPlugin timePlugin = KernelPluginFactory
+                     .createFromObject(new DateTimePlugin(azureAIConfig), "DateTimePlugin");
+           ```
+         3. Add the plugin to kernel by adding the following code to the ```AddPlugins(...)``` method in **chapter3.java** file:
 
+           ```Java
+             KernelPlugin timePlugin = KernelPluginFactory
+                     .createFromObject(new DateTimePlugin(azureAIConfig), "DateTimePlugin");
+           ```
+         4. Search the ```Adding invocationContext | Challenge 03``` and add the following code to the ```AddPlugins(...)``` method in **chapter3.java** file:
+
+           ```Java
+           invocationContext = InvocationContext.builder()
+           .withToolCallBehavior(ToolCallBehavior.allowAllKernelFunctions(true)) // Allow unrestricted kernel function calls
+           .withReturnMode(InvocationReturnMode.NEW_MESSAGES_ONLY) // Return the full conversation history
+           .build();
+         ```
+
+           
   * This will enable automatic function calling.
 
       
@@ -51,7 +70,7 @@ Challenges:
   * Test the AI by http://localhost:3000 launching the application and asking the bot
 
     ```text
-    Why is current Date and time in Austin"
+    What is current Date and time in Austin"
     ```
 
     Now, the AI should be able to provide the current time by having Semantic Kernel call the ***GetTime*** function in your plugin. The response should be similar to the following:

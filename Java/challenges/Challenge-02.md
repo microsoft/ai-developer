@@ -12,7 +12,7 @@ In this challenge, you will be provided with a starter application that will req
 
 ## Prerequisites
 
-1. Complete the [Getting Familiar With the Reference Application](./Resources/Supporting%20Challenges/Challenge-02-Reference-App.md) beginner guide.
+1. Complete the previous challanges.
 
 ## Challenges
 
@@ -22,6 +22,8 @@ In this challenge, you will be provided with a starter application that will req
 2. Open the terminal or powershell. Navigate to code checkout directory and open the project in your favorite IDE. For example, if you are using Visual Studio Code, run the following commands:  
     ```bash
         code .
+        # Navigate to the Java project directory
+        cd Java 
     ```
 4. If you are using Visual Studio code or IntelliJ, open terminal Copy the TEMP file as PROPERTIES file
     ```bash
@@ -53,11 +55,11 @@ In this challenge, you will be provided with a starter application that will req
     ```bash
         server.port=8081
     ```
-6. For starting the FrontEnd, open a new terminal and go on GIT root repo. 
+6. For starting the FrontEnd, **_open a new terminal_** and go on GIT root repo. 
     ```bash
         cd ChatUI
    ```
-7. Update the .env.local file with the API URL. The API URL should be in the format ```http://localhost:8080/api/skChat```. 
+7. Open .env.local file and update "NEXT_PUBLIC_STANDARD_CHAT_API_URL" with the API URL. The API URL should be in the format ```http://localhost:8080/api/skChat```. 
    ```bash
         npm install
         npm run dev
@@ -67,6 +69,15 @@ In this challenge, you will be provided with a starter application that will req
 7. Search code comment `//  Challenge 2` in the `AIService.java` file. 
 
     :bulb: [Retrieving chat completion services](https://learn.microsoft.com/en-us/semantic-kernel/concepts/ai-services/chat-completion/?tabs=csharp-AzureOpenAI%2Cpython-AzureOpenAI%2Cjava-AzureOpenAI&pivots=programming-language-java#retrieving-chat-completion-services)
+    
+    - Search for `OpenAIAsyncClient client | Challenge 2`,  and add `OpenAIAsyncClient client` object after the comment line. Make sure you add APIKEY and ENDPOINT in the method.
+    - Search for `ChatCompletionService  | Challenge 2`,  and add `ChatCompletionService` object after the comment line. Make sure you add MODELNAME in the method.
+    - Search for `Kernel kernel | Challenge 2`,  and Initialize the kernel `ChatCompletionService` object after the comment line.
+    - **_Note:_** Update the return statement and return kernel object.
+    - Search for `ChatCompletionService chatCompletionService | Challenge 2`,  and Initialize the kernel `Kernel` object after the comment line.
+    - Search for `List<ChatMessageContent<?>> response || Challenge 2`,  and Retrieve the list of chat message contents asynchronously from the ChatCompletionService.
+    - add the `.block();` at the end of statement.
+    - return the response object. `return responses`
 
     :pushpin:  The kernel itself doesn't expose AI functionality directly - instead, it manages services that do. When we want to send messages to the AI, we need to obtain a reference to the chat service specifically from the kernel's dependency injection container (kernel.Services). That's why we use GetRequiredService to get an IChatCompletionService from the kernel, which we'll use to handle our actual AI conversations.
 

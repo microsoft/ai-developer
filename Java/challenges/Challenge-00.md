@@ -35,7 +35,11 @@ Using your local workstation is another option to complete the challenges. You w
     - [Java Extension](https://marketplace.visualstudio.com/items?itemName=Oracle.oracle-java)
     - Recommended: [GitHub Copilot Extension](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot)
 - [JDK 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) (test using `java -version`)
-- Install Maven for Java (test using `mvn -v`)
+- Install Maven for Java [Download](https://archive.apache.org/dist/maven/maven-3/3.9.1/binaries/apache-maven-3.9.1-bin.zip) 
+  - Set JAVA_HOME in system environment variable. Make sure you use JAVA installation path
+  - Set MAVEN_HOME in system environment variable. Make sure you use Maven download folder path
+  - Set java and maven bin path into System Path
+  - test using `mvn -v`
 - [Git CLI](https://git-scm.com/downloads) or [GitHub Desktop](https://github.com/apps/desktop)
 
 **Note:** GitHub Copilot is a great tool to help you write code faster. You can install the [GitHub Copilot Extension](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) in Visual Studio Code. We highly recommend you install this extension to help you complete the challenges.
