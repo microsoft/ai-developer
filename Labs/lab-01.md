@@ -139,7 +139,7 @@ In this task you will create a Azure AI Search resource.
    - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
    - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
-<validation step="a3e77878-3ce2-4d69-b4e6-c88d4a0f45ec" />
+<validation step ="ceb8c2ae-28bf-492f-98f5-dcf416c1fc3c" />
 
 ## Review
 
