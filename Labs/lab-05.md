@@ -501,7 +501,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
 > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
-<validation step="aba3f1c2-bf55-4ca3-baf6-fcaa280552fa" />  
+<validation step="3497b745-b26b-47e6-bfbf-fdb7f238faa4" />  
 
 
 ## Review
