@@ -21,7 +21,7 @@ In this task, you will explore different flow types in Azure AI Foundry by setti
     
 1. Navigate to `C:\LabFiles` (1), select the **ai-developer (2)** folder, and click **Select Folder (3)**.
 
-    ![](./media/sk20.png)
+    ![](./media/28.png)
 
 1. If you receive a `Do you trust the authors of the files in folder` warning, select the **checkbox (1)** and click **Yes, I trust the authors (2)**.
 
@@ -29,7 +29,7 @@ In this task, you will explore different flow types in Azure AI Foundry by setti
 
 1. Navigate to the **AI Foundry** Portal, go to the **Overview (1)** page, select **Azure OpenAI (2)**. Copy the **API key (3)** the **API endpoint(4)** and paste it into **Notepad** to be used in the upcoming exercises.
 
-    ![](./media/aifoundry.png)
+    ![](./media/75.png)
 
 
 <details>
@@ -75,9 +75,9 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 <details>
 <summary><strong>Python</strong></summary>
 
-1. Navigate to `Python>src` directory and open **chat.py (1)** file.
+1. Navigate to `Python>src` **(1) (2)** directory and open **chat.py (3)** file.
 
-    ![](./media/image_030.png)
+    ![](./media/30.png)
 
 1. Add the following code in the `#Import Modules` (1) section of the file.
 
@@ -163,7 +163,7 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
     http://localhost:8501
     ```
 
-1. Submit the following prompt and see how the AI responds:
+1. Submit the following prompt **(1)** and click on **Send (2)** see how the AI responds:
 
     ```
     Why is the sky blue?
@@ -172,6 +172,8 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
     ```
     Why is it red?
     ```
+
+    ![](./media/31.png)
 
 1. You will receive a response similar to the one shown below:
 
@@ -216,7 +218,7 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
     dotnet dev-certs https --trust
     ```
 
-    ![](./media/image_041.png)
+    ![](./media/32.png)
 
 1. Use the following command to run the app:
 
@@ -255,3 +257,6 @@ You have successfully completed the below tasks for AI-driven chat implementatio
 - Extended chatbot functionality by integrating **Azure AI Search** for contextual data retrieval.  
 
 ### Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.
+
+![Launch Azure Portal](./media/gsk5.png)
+

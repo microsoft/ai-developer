@@ -18,40 +18,43 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. On the **Azure portal** search bar, search for **AI Foundry (1)** and then select **Azure AI Foundry (2)** from the services.
 
-    ![](./media/sk2.png)
+    ![](./media/05.png)
 
 1. Expnad **Use with AI Foundry (1)**, select **AI Hubs (2)**, click on the **Create (3)** drop down and then select **Hub (4)**.
 
-    ![](./media/sk6.png)
+    ![](./media/06.png)
 
 1. On the **Azure AI hub** page, provide the following details and then click on **Review+create (5)**:
 
     - **Subscription**: Leave the default one **(1)**
+
     - Resource group: Select **ai-foundry-<inject key="Deployment ID" enableCopy="false"></inject> (2)**
+
     - Region: **<inject key="Region" enableCopy="false"></inject> (3)**
+
     - Name: Enter **ai-foundry-hub-<inject key="Deployment ID" enableCopy="false"></inject> (4)**
 
-      ![](./media/sk4.png)
+      ![](./media/07.png)
 
 1. Once the Validation passed, click on **Create**.
 
-    ![](./media/sk5.png)
+    ![](./media/08.png)
 
 1. Once the deployment is completed, click on **Go to resource**.
 
-    ![](./media/sk7.png)
+    ![](./media/09.png)
 
 1. Click on **Launch Azure AI Foundry**.
 
-    ![](./media/sk8.png)
+    ![](./media/10.png)
 
 1. Select **Model + endpoints (1)**, then then click on **+ Deploy model (2)**, followed by **Deploy Base model (3)**.  
 
-    ![](./media/sk9.png)
+    ![](./media/11.png)
 
 1. Search for **gpt-4o (1)**, select the **gpt-4o** model **(2)**, and click on **Confirm (3)**.
 
-    ![](./media/image_008.png)
+    ![](./media/12.png)
 
 1. On the **Deploy model gpt-4o** blade, specify the following configuration options and click on **Deploy (4)**:
 
@@ -60,27 +63,27 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     - **Tokens per Minute Rate Limit**: **50K** **(3)**
     - Click on **Connect and deploy (4)**:
 
-      ![](./media/gpt-4o-1.png) 
+      ![](./media/13.png) 
 
-1. In the upper-right corner of the screen, click on the Hub icon located next to your profile.
+1. In the upper-right corner of the screen, click on the **Hub** icon located next to your profile.
  
-      ![](./media/ai-foundry.png)
+      ![](./media/14.png)
 
 1. Select the '**Working in AIFoundry**' **Option (1)**, then click on **Switch (2)**.
 
-      ![](./media/switch.png)
+      ![](./media/17.png)
 
 1. Navigate to **Model + endpoints (1)**, then select **gpt-4o (2)** model and the click on **Open in Playground (3)**.
 
-    ![](./media/sk12.png)
+    ![](./media/18.png)
 
 1. Replace the existing text with `Extract the United States Postal Service (USPS) formatted address from the following email` **(1)** then click on **Apply changes (2)**. Using this you can explore the capabilities of Azure OpenAI.
 
-    ![](./media/sk13.png)
+    ![](./media/19.png)
 
 1. Click on **Continue**.
 
-    ![](./media/sk14.png)
+    ![](./media/20.png)
 
 1. Provide the below mail in the chat **(1)** then click on **Send (2)** to identify and extract the postal address from the following email:
 
@@ -100,11 +103,11 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     Marketing Director BrightEdge Marketing
     ```
 
-    ![](./media/image_018.png)
+    ![](./media/22.png)
     
 1. You will receive a response similar to the one shown below:
 
-    ![](./media/sk15.png)
+    ![](./media/23.png)
 
 ## Task 2: Create Azure AI Search
 
@@ -114,11 +117,11 @@ In this task you will create a Azure AI Search resource.
 
 1. On the search bar, search for **AI Search (1)** then select **AI Search (2)** from the services.
 
-    ![](./media/sk16.png)
+    ![](./media/24.png)
 
 1. Select **AI Search (1)** then click on **+ Create (2)**.
 
-    ![](./media/sk17.png)
+    ![](./media/25.png)
 
 1. On the **Create a search service** page, provide the following details and then click on **Review+create (5)**:
 
@@ -127,19 +130,18 @@ In this task you will create a Azure AI Search resource.
     - Service name: Enter **ai-search-<inject key="Deployment ID" enableCopy="false"></inject> (3)**
     - Region: **<inject key="Region" enableCopy="false"></inject> (4)** 
 
-      ![](./media/sk18.png)
+      ![](./media/26.png)
 
 1. Click on **Create**.
 
-    ![](./media/sk19.png)
+    ![](./media/27.png)
 
-> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-      
-   - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
-   - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-   - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+>**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com.
 
-<validation step="ceb8c2ae-28bf-492f-98f5-dcf416c1fc3c" />
+<validation step="a3e77878-3ce2-4d69-b4e6-c88d4a0f45ec" />
 
 ## Review
 
@@ -152,3 +154,5 @@ You have successfully completed the below tasks for AI development using **Azure
 - Utilized **Semantic Kernel** to connect AI models with external APIs and plugins.
 
 ### Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.
+
+![Launch Azure Portal](./media/gsk5.png)

@@ -18,26 +18,26 @@ In this task, you will explore different flow types in Azure AI Foundry by adjus
 
 1. Click on **Guardrails + Controls (1)** under **Protect and govern** in the left pane. Navigate to **Content filters (2)** tab and then **+ Create content filter (3)**.
 
-    ![](./media/sk43.png)
+    ![](./media/56.png)
 
 1. On the **Create filters to allow or block specific types of content** blade, specify the following configuration options and click on **Next (2)**:
    - **Name**:  **AggressiveContentFilter (1)**
 
-     ![](./media/sk44.png)
+     ![](./media/57.png)
 
 1. Leave the visible options to default and click on **Next** twice.
 
 1. On the **Create filters to allow or block specific types of content**, **Deployment (Optional)** blade, select **all 2** of the deployments, and click **Next (2)**.
 
-    ![](./media/sk45.png)
+    ![](./media/58.png)
 
 1. If you get a **Replacing existing content filter** warning, click on **Replace (1)**.
 
-    ![](./media/image_014.png)
+    ![](./media/59.png)
 
 1. Create one **Create filter**.
 
-    ![](./media/sk46.png)
+    ![](./media/60.png)
 
 
 ## Task 2: Filter specific words or patterns
@@ -46,24 +46,26 @@ In this task, you will explore different flow types in Azure AI Foundry by filte
 
 1. Navigate to **Blocklists (Preview) (1)** tab and then **+ Create blocklist (2)**.
 
-    ![](./media/sk47.png)
+    ![](./media/61.png)
     
 1. On the **Create a blocklist** blade, specify the following configuration options and click on **Create blocklist (3)**:
 
     - **Name**:  **CustomBlocklist<inject key="Deployment ID" enableCopy="false"></inject> (1)**
     - **Description**: This is a custom blocklist. **(2)**
 
-      ![](./media/sk48.png)
+      ![](./media/62.png)
 
 1. Click on **CustomBlocklist<inject key="Deployment ID" enableCopy="false"></inject>** created earlier.
 
+    ![](./media/63.png)
+
 1. Click on **+ Add new term**.
 
-    ![](./media/sk49.png)
+    ![](./media/64.png)
 
 1. Enter words **password (1)** and select the type as required (**Exact Match** or **Regex**) then click on **Add term**.
 
-    ![](./media/sk50.png)
+    ![](./media/65.png)
 
 1. Click on **+ Add new term** again.   
 
@@ -82,7 +84,7 @@ In this task, you will explore different flow types in Azure AI Foundry by filte
     - poker
     - betting
 
-      ![](./media/sk51.png)
+      ![](./media/66.png)
 
 ## Review
 
@@ -96,3 +98,6 @@ You have successfully completed the below tasks for **content filtering in Azure
 - Adjusted **content filtering settings** to align with ethical AI guidelines.  
 
 ### Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.
+
+![Launch Azure Portal](./media/gsk5.png)
+

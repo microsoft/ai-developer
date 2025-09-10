@@ -1,4 +1,4 @@
-# **Exercise 7**: Image Generation using DALL-E
+# Exercise 7: Image Generation using DALL-E
 
 ### Estimated Duration: 25 Minutes
 
@@ -14,21 +14,21 @@ In this exercise, you will be performing the following tasks:
 In this task, you will explore different flow types in Azure AI Foundry by deploying a DALL-E model to generate images from text prompts.
 
 1. Navigate to the [Azure AI Foundry](https://ai.azure.com/) portal.
-1. Click on **Models + endpoints (1)** under **My assets** in the left pane, then click on **+ Deploy model**, followed by **Deploy base model (2)**.
+1. Click on **Models + endpoints (1)** under **My assets** in the left pane, then click on **+ Deploy model (2)**, followed by **Deploy base model (3)**.
 
-    ![](./media/image_007-1.png)
+    ![](./media/67.png)
 
 1. Search for **dall-e-3 (1)**, select the model **(2)**, and click on **Confirm (3)**.
 
-    ![](./media/image_110.png)
+    ![](./media/68.png)
 
 1. Click on **Deploy**.
 
-    ![](./media/sk52.png)
+    ![](./media/69.png)
 
 1. On the **dall-e-3** page, copy the **Target URI (1)** and **Key (2)** and paste them into Notepad.
 
-    ![](./media/sk54.png)
+    ![](./media/70.png)
 
 <details>
 <summary><strong>Python</strong></summary>
@@ -400,3 +400,6 @@ You have successfully completed the below tasks for **DALL·E integration in AI-
 - Configured **Azure AI Foundry** to support **DALL·E-based generative AI workflows**.  
 
 ### Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.
+
+![Launch Azure Portal](./media/gsk5.png)
+
