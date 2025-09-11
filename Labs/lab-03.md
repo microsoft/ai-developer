@@ -24,7 +24,7 @@ In this task, you will explore different flow types in Azure AI Foundry by runni
     I can't provide real-time information, including the current time. You can check the time on your device or through various online sources.
     ```
 
-    ![](./media/sk26.png)
+    ![](./media/33.png)
 
 3. Once you receive the response, navigate back to the Visual studio code terminal and then press **Ctrl+C** to stop the build process.   
 
@@ -359,11 +359,11 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Open a new tab in the browser, navigate to the [Geocoding API](https://geocode.maps.co/) portal, and click on the **Free API Key** button on the top.
 
-    ![](./media/image_057.png)
+    ![](./media/34.png)
 
-1. Enter your details and click on **Create Account (1)**.
+1. Enter your details **Name (1)**, **Email (2)**, **Password (3)**, **Confirm Password (3)** and click on **Create Account (5)**.
 
-    ![](./media/image_058.png)
+    ![](./media/35.png)
 
     >**Note**: Use your personal or work e-mail ID to register.
 
@@ -961,3 +961,6 @@ You have successfully completed the below tasks for extending **LLM capabilities
 - Built and deployed **Python-based plugins** to extend AI capabilities.  
 
 ### Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.
+
+![Launch Azure Portal](./media/gsk5.png)
+

@@ -40,7 +40,7 @@ The lab also covers **plugins**, such as **Time & Weather utilities** for real-t
 
 
 
-## **Explanation of Components**  
+## Explanation of Components 
 
 - **Azure AI Foundry**: Provides an integrated environment for AI model development, deployment, and management.  
 - **Azure AI Studio**: A web-based interface for managing AI models, endpoints, and inference capabilities.  
@@ -90,7 +90,11 @@ For convenience, you can open the lab guide in a separate window by selecting th
 
    ![Inline Validation](./media/gdev5.png)
 
-1. If you need any assistance, please contact us at **cloudlabs-support@spektrasystems.com**.
+## Lab Guide Zoom In/Zoom Out
+ 
+To adjust the zoom level for the environment page, click the **A↕: 100%** icon located next to the timer in the lab environment.
+
+   ![OpenAI](./media/76.png)
 
 ## Let's Get Started with Azure Portal
 
@@ -102,19 +106,26 @@ For convenience, you can open the lab guide in a separate window by selecting th
  
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
  
-       ![Enter Your Username](./media/lc-image-1.png)
+       ![Enter Your Username](./media/01.png)
  
 1. Next, provide your password:
  
    - **Password:** <inject key="AzureAdUserPassword"></inject>
  
-       ![Enter Your Password](./media/lc-image-2.png)
+       ![Enter Your Password](./media/02.png)
 
 1. If an **Action required** pop-up window appears, click on **Next**.
 
    ![Ask Later](./media/ask-later.png)
+
 1. On **Start by getting the app** page, click on **Next**.
-1. Click on **Next** twice.
+
+   ![Ask Later](./media/72.png)
+
+1. On the Set up your account page, select  **Next**.
+
+   ![Ask Later](./media/73.png)
+
 1. In **Android**, go to the Play Store, search for **Microsoft Authenticator,** and tap on **Install**.
 
    ![Install](./media/mobile.jpg)
@@ -127,18 +138,30 @@ For convenience, you can open the lab guide in a separate window by selecting th
 1. Scan the **QR code (1)** visible on the screen and click on **Next (2)**.
 
    ![QR code](./media/demo001.png)
-1. Enter the digit displayed on the screen in the Authenticator app on mobile and tap on **Yes**.
+
+1. On the Keep your account secure page. Enter the code, which is shown on the Authenticator app.
+
+   ![QR code](./media/74.png)
+
 1. Once the notification is approved, click on **Next (1)**.
 
    ![Approved](./media/demo002.png)
-1. Click on **Done**.
-1. If prompted to stay signed in, you can click **"Yes."**
+
+1. Select **Done** on the success page.
+
+   ![](./media/71.png)
+
+1. If prompted to stay signed in, you can click **No.**
+
+   ![](./media/03.png)
 
 1. Tap on **Finish** in the mobile device.
 
    >NOTE: While logging in again, enter the digits displayed on the screen in the **Authenticator app** and click on Yes.
 
 1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **"Cancel"** to skip the tour.
+
+   ![](./media/04.png)
 
 1. You can use the **Previous (1)** and **Next (2)** buttons to navigate through the lab guide.
 

@@ -19,7 +19,7 @@ In this task, you will explore different flow types in Azure AI Foundry by runni
     ```
 1. You will receive a response similar to the one shown below:
 
-    ![](./media/image_073.png)
+    ![](./media/36.png)
 
 ## Task 2: Create and import the OpenAPI Plugin
 
@@ -28,9 +28,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 <details>
 <summary><strong>Python</strong></summary>
 
-1. Right click on `Python>src>workitems` in the left pane and select **Open in Integrated Terminal (1)**.
+1. Right click on `Python>src>workitems` **(1) (2) (3)** in the left pane and select **Open in Integrated Terminal (4)**.
 
-    ![](./media/image_074.png)
+    ![](./media/37.png)
 1. Use the following command to run the app:
     ```
     python api.py
@@ -85,7 +85,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
 1. You will receive a response similar to the one shown below:
 
-    ![](./media/sk33.png)
+    ![](./media/38.png)
 </details>
 
 <details>
@@ -169,3 +169,6 @@ We have successfully completed the below tasks for **OpenAPI integration with Se
 - Imported and configured the **WorkItems API** as an **OpenAPI plugin** for seamless external service interaction.  
 
 ### Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.
+
+![Launch Azure Portal](./media/gsk5.png)
+
