@@ -18,11 +18,11 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. On the **Azure portal** search bar, search for **AI Foundry (1)** and then select **Azure AI Foundry (2)** from the services.
 
-    ![](./media/05.png)
+    ![](./media/kernel-image5.png)
 
-1. Expnad **Use with AI Foundry (1)**, select **AI Hubs (2)**, click on the **Create (3)** drop down and then select **Hub (4)**.
+1. Expnad **Use with AI Foundry (1)**, select **AI Hubs (2)**, click on the **+ Create (3)** drop down and then select **Hub (4)**.
 
-    ![](./media/06.png)
+    ![](./media/kernel-image6.png)
 
 1. On the **Azure AI hub** page, provide the following details and then click on **Review+create (5)**:
 
@@ -34,56 +34,53 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     - Name: Enter **ai-foundry-hub-<inject key="Deployment ID" enableCopy="false"></inject> (4)**
 
-      ![](./media/07.png)
+      ![](./media/kernel-image7.png)
 
 1. Once the Validation passed, click on **Create**.
 
-    ![](./media/08.png)
+    ![](./media/kernel-image8.png)
 
 1. Once the deployment is completed, click on **Go to resource**.
 
-    ![](./media/09.png)
+    ![](./media/kernel-image9.png)
 
-1. Click on **Launch Azure AI Foundry**.
+1. On **ai-foundry-hub-<inject key="Deployment ID" enableCopy="false"></inject>**, click on **Launch Azure AI Foundry**.
 
-    ![](./media/10.png)
+    ![](./media/kernel-image10.png)
 
-1. Select **Model + endpoints (1)**, then then click on **+ Deploy model (2)**, followed by **Deploy Base model (3)**.  
+1. After clicking, you will be navigated **Azure AI Foundry | Management center**, select **Model + endpoints (1)**, then then click on **+ Deploy model (2)**, followed by **Deploy Base model (3)**.  
 
-    ![](./media/11.png)
+    ![](./media/kernel-image11.png)
 
 1. Search for **gpt-4o (1)**, select the **gpt-4o** model **(2)**, and click on **Confirm (3)**.
 
-    ![](./media/12.png)
+    ![](./media/kernel-image12.png)
 
-1. On the **Deploy model gpt-4o** blade, specify the following configuration options and click on **Deploy (4)**:
+1. On the **Deploy model gpt-4o** blade, specify the following configuration options and click on **Connect and Deploy (6)**:
 
     - **Deployment type**: **Standard** **(1)**
     - **Model version**: 2024-05-13 **(2)**
-    - **Tokens per Minute Rate Limit**: **50K** **(3)**
-    - Click on **Connect and deploy (4)**:
+    - Expand **Deployment details (3)**
+    - **Tokens per Minute Rate Limit**: **50K** **(4)**
+    - Click on **Connect and deploy (5)**:
 
-      ![](./media/13.png) 
+     ![](./media/kernel-image13.png)
 
-1. In the upper-right corner of the screen, click on the **Hub** icon located next to your profile.
- 
-      ![](./media/14.png)
+1. In the upper-right corner of the screen, click on the **Hub (1)** icon located next to your profile. Select the '**Working in AIFoundry**' **Option (2)**, then click on **Switch (3)**.
 
-1. Select the '**Working in AIFoundry**' **Option (1)**, then click on **Switch (2)**.
-
-      ![](./media/17.png)
+    ![](./media/kernel-image14.png)
 
 1. Navigate to **Model + endpoints (1)**, then select **gpt-4o (2)** model and the click on **Open in Playground (3)**.
 
-    ![](./media/18.png)
+    ![](./media/kernel-image15.png)
 
 1. Replace the existing text with `Extract the United States Postal Service (USPS) formatted address from the following email` **(1)** then click on **Apply changes (2)**. Using this you can explore the capabilities of Azure OpenAI.
 
-    ![](./media/19.png)
+    ![](./media/kernel-image16.png)
 
 1. Click on **Continue**.
 
-    ![](./media/20.png)
+    ![](./media/kernel-image17.png)
 
 1. Provide the below mail in the chat **(1)** then click on **Send (2)** to identify and extract the postal address from the following email:
 
@@ -103,11 +100,11 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     Marketing Director BrightEdge Marketing
     ```
 
-    ![](./media/22.png)
+    ![](./media/kernel-image18.png)
     
 1. You will receive a response similar to the one shown below:
 
-    ![](./media/23.png)
+    ![](./media/kernel-image19.png)
 
 ## Task 2: Create Azure AI Search
 
