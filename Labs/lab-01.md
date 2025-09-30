@@ -114,11 +114,11 @@ In this task you will create a Azure AI Search resource.
 
 1. On the search bar, search for **AI Search (1)** then select **AI Search (2)** from the services.
 
-    ![](./media/24.png)
+    ![](./media/kernel-image20.png)
 
-1. Select **AI Search (1)** then click on **+ Create (2)**.
+1. On **AI Foundry | AI Search** page, click on **+ Create (2)**.
 
-    ![](./media/25.png)
+    ![](./media/kernel-image21.png)
 
 1. On the **Create a search service** page, provide the following details and then click on **Review+create (5)**:
 
@@ -127,11 +127,13 @@ In this task you will create a Azure AI Search resource.
     - Service name: Enter **ai-search-<inject key="Deployment ID" enableCopy="false"></inject> (3)**
     - Region: **<inject key="Region" enableCopy="false"></inject> (4)** 
 
-      ![](./media/26.png)
+      ![](./media/kernel-image22.png)
 
 1. Click on **Create**.
 
-    ![](./media/27.png)
+    ![](./media/kernel-image23.png)
+
+1. Wait for the deployment to complete.  
 
 >**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
 > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
