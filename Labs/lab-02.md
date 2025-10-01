@@ -35,7 +35,7 @@ In this task, you will explore different flow types in Azure AI Foundry by setti
 <details>
 <summary><strong>Python</strong></summary>
 
-1. Navigate to **`Python>src` (1) (2)** directory and open **.env** (3) file.
+1. Navigate to **`Python (1) > src (2)`** directory and open **.env** (3) file.
 
     ![](./media/kernel-image(29).png)
 
@@ -52,7 +52,7 @@ In this task, you will explore different flow types in Azure AI Foundry by setti
 <details>
 <summary><strong>C Sharp(C#)</strong></summary>
 
-1. Navigate to `Dotnet>src>BlazorAI` directory and open **appsettings.json** file.
+1. Navigate to **`Dotnet (1) > src (2) > BlazorAI (3)`** directory and open **appsettings.json (4)** file.
 
     ![](./media/kernel-image31.png)
 
@@ -75,7 +75,7 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 <details>
 <summary><strong>Python</strong></summary>
 
-1. Navigate to `Python>src` **(1) (2)** directory and open **chat.py (3)** file.
+1. Navigate to **`Python (1) > src (2)`** directory and open **chat.py (3)** file.
 
     ![](./media/kernel-image33.png)
 
@@ -140,7 +140,7 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 
 1. Save the file.
 
-1. Right click on `Python>src` in the left pane and select **Open in Integrated Terminal**.
+1. Right click on **`Python>src (1)`** in the left pane and select **Open in Integrated Terminal (2)**.
 
     ![](./media/kernel-image34.png)
 
@@ -184,9 +184,9 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 <details>
 <summary><strong>C Sharp(C#)</strong></summary>
 
-1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
+1. Navigate to **`Dotnet (1) > src (2) > BlazorAI (3) > Components (4) >Pages (5)`** directory and open **Chat.razor.cs (6)** file.
 
-    ![](./media/image_038.png)
+    ![](./media/kernel-image55.png)
 1. Add the following code in the `// Your code goes here(Line no. 92)` (1) section of the file.
 
     ```
@@ -210,9 +210,9 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 
 1. Use **Ctrl+S** to save the file.
 
-1. Right click on `Dotnet>src>Aspire>Aspire.AppHost` **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
+1. Expand **`Dotnet>src>Aspire`** right click on **`Aspire.AppHost`** **(1)** in the left pane and select **Open in Integrated Terminal (2)**.
 
-    ![](./media/image_040.png)
+    ![](./media/kernel-image56.png)
 1. Run the following line of code to trust the dev certificates necessary to run the app locally, and then select **Yes**:
 
     ```
