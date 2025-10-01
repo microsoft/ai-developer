@@ -16,14 +16,14 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 1. Navigate to the [Azure AI Foundry](https://ai.azure.com/) portal.
 1. Click on **Models + endpoints (1)** under **My assets** in the left pane, then click on **+ Deploy model (2)**, followed by **Deploy Base model (3)**.
 
-    ![](./media/39.png)
-1. Search for **text-embedding-ada-002**, select the model **(1)**, and click on **Confirm (2)**.
+    ![](./media/kernel-image11.png)
+1. Search for **text-embedding-ada-002 (1)**, select the model **(2)**, and click on **Confirm (3)**.
 
-    ![](./media/40.png)
+    ![](./media/kernel-image46.png)
 
 1. Click on **Deploy**.
 
-    ![](./media/41.png)
+    ![](./media/kernel-image47.png)
 
 1. Navigate back to **Models+endpoints (1)**, select **GPT-4o (2)**, and click on **Open in playground (3)**.
 
@@ -52,7 +52,7 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 
 1. Click on **Browse for files**.
 
-    ![](./media/44.png)
+    ![](./media/kernel-image50.png)
   
 1. Navigate to `C:\LabFiles\ai-developer\Dotnet\src\BlazorAI\data\` and select **employee_handbook.pdf (1).** Click on **Open (2)**.
 
@@ -82,19 +82,19 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 
 1. Navigate to the **Azure Portal** and search **AI Search (1).** Click on it and open the **AI Search (2)** resource located there.
 
-    ![](./media/51.png)
+    ![](./media/kernel-image20.png)
 
 1. Select **ai-search-<inject key="Deployment ID" enableCopy="false"></inject>**.    
     
-    ![](./media/52.png)
+    ![](./media/kernel-image51.png)
 
-1. On the **Overview (1)** page, copy the **URL (2)** and paste it into Notepad.
+1. On the **Overview (1)** page, copy the **URL (2)** and paste it into **Notepad**.
 
-    ![](./media/53.png)
+    ![](./media/kernel-image52.png)
 
-1. Navigate to **Keys (1)** under **Settings** in the left pane, copy the **Primary admin key (2)** from Azure Portal, and paste it into Notepad.
+1. Navigate to **Keys (1)** under **Settings** in the left pane, copy the **Primary admin key (2)** from Azure Portal, and paste it into **Notepad**.
 
-    ![](./media/54.png)
+    ![](./media/kernel-image53.png)
 
 
 ## Task 2: Create a Semantic Search Plugin to query the AI Search Index
@@ -104,9 +104,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 <details>
 <summary><strong>Python</strong></summary>
 
-1. Navigate to `Python>src` directory and open **.env (1)** file.
+1. Navigate to **`Python (1) > src (2)`** directory and open **.env (3)** file.
 
-    ![](./media/image_026.png)
+    ![](./media/kernel-image(29).png)
 
 2. Paste the **AI search URL** that you copied earlier in the exercise beside `AI_SEARCH_URL` in the **.env** file.
 
@@ -116,9 +116,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     ![](./media/sk42.png)
 
-4. On the **Overview (1)** page, go to **Azure AI services (2)** and copy the **Azure AI services Endpoint (3)** and the Key as well.
+4. Navigate back **Azure AI Foundry** portal and on the **Overview (1)** page, go to **Azure AI services (2)** and copy the **API Key (3)** and **Azure AI services Endpoint (4)**.
 
-    ![](./media/55.png)
+    ![](./media/kernel-image(54).png)
 
 5. Paste the **Embed API key** you copied earlier into the .env file, next to the `AZURE_OPENAI_EMBED_API_KEY` entry.
 
@@ -411,9 +411,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 10. Save the file.
 
-11. Navigate to `Python>src` directory and open **chat.py (1)** file.
+11. Navigate to **`Python (1) > src (2)`** directory and open **chat.py (3)** file.
 
-    ![](./media/image_030.png)
+    ![](./media/kernel-image57.png)
 
 12. Add the following code in the `#Import Modules` section of the file.
 
@@ -538,9 +538,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 <details>
 <summary><strong>C Sharp(C#)</strong></summary>
 
-1. Navigate to `Dotnet>src>BlazorAI` directory and open **appsettings.json (1)** file.
+1. Navigate to **`Dotnet (1) > src (2) > BlazorAI (3)`** directory and open **appsettings.json (4)** file.
 
-      ![](./media/image_028.png)
+      ![](./media/kernel-image58.png)
 
 1. Paste the **AI search URL** that you copied earlier in the exercise besides `AI_SEARCH_URL` in **appsettings.json** file.
 
@@ -659,9 +659,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Save the file.
 
-1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
+1. Navigate to **`Dotnet (1) > src (2) > BlazorAI (3) > Components (4) > Pages (5)`** directory and open **Chat.razor.cs (6)** file.
 
-    ![](./media/image_038.png)
+    ![](./media/kernel-image55.png)
 
 1. Add the following code in the `// Import Models` section of the file.
 
