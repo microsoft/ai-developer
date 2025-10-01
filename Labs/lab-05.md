@@ -92,10 +92,9 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 
     ![](./media/kernel-image52.png)
 
-1. Navigate to **Keys (1)** under **Settings** in the left pane, copy the **Primary admin key (2)** from Azure Portal, and paste it into **Notepad**.
+1. From the left navigation pane expand **Settings** then select **Keys (1)**, copy the **Primary admin key (2)** from Azure Portal, and paste it into **Notepad**.
 
     ![](./media/kernel-image53.png)
-
 
 ## Task 2: Create a Semantic Search Plugin to query the AI Search Index
 
