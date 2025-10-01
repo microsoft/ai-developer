@@ -66,7 +66,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
      ![](./media/kernel-image13.png)
 
-1. In the upper-right corner of the screen, click on the **Hub (1)** icon located next to your profile. Select the '**Working in AIFoundry**' **Option (2)**, then click on **Switch (3)**.
+1. In the upper-right corner of the screen, click on the **Hub (1)** icon located next to your profile. From '**Working in** drop down select **aifoundryhubxxxxxxx (2)**, then click on **Switch (3)**.
 
     ![](./media/kernel-image14.png)
 

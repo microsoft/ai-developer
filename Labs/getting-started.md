@@ -106,13 +106,13 @@ To adjust the zoom level for the environment page, click the **A↕: 100%** icon
  
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
  
-       ![Enter Your Username](./media/01.png)
+       ![](./media/kernel-image1.png)
  
 1. Next, provide your password:
  
    - **Password:** <inject key="AzureAdUserPassword"></inject>
  
-       ![Enter Your Password](./media/02.png)
+       ![](./media/kernel-image2.png)
 
 1. If an **Action required** pop-up window appears, click on **Next**.
 
@@ -161,7 +161,7 @@ To adjust the zoom level for the environment page, click the **A↕: 100%** icon
 
 1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **"Cancel"** to skip the tour.
 
-   ![](./media/04.png)
+   ![](./media/kernel-image4.png)
 
 1. You can use the **Previous (1)** and **Next (2)** buttons to navigate through the lab guide.
 
