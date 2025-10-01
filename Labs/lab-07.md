@@ -35,7 +35,8 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 
 1. Navigate to **`Python (1) > src (2)`** directory and open **.env (3)** file.
 
-    ![](./media/image(29).png)
+    ![](./media/kernel-image(29).png)
+   
 1. Paste the **Target URI** that you copied in the previous step besides `AZURE_TEXT_TO_IMAGE_ENDPOINT` (1).
     >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
 1. Paste the **API key (1)** that you copied earlier in the exercise besides `AZURE_TEXT_TO_IMAGE_API_KEY` (2).
