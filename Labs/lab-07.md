@@ -16,19 +16,19 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 1. Navigate to the [Azure AI Foundry](https://ai.azure.com/) portal.
 1. Click on **Models + endpoints (1)** under **My assets** in the left pane, then click on **+ Deploy model (2)**, followed by **Deploy base model (3)**.
 
-    ![](./media/67.png)
+    ![](./media/kernel-image70.png)
 
 1. Search for **dall-e-3 (1)**, select the model **(2)**, and click on **Confirm (3)**.
 
-    ![](./media/68.png)
+    ![](./media/kernel-image71.png)
 
-1. Click on **Deploy**.
+1. Click on **Create resource and deploy**.
 
-    ![](./media/69.png)
+    ![](./media/kernel-image72.png)
 
 1. On the **dall-e-3** page, copy the **Target URI (1)** and **Key (2)** and paste them into Notepad.
 
-    ![](./media/70.png)
+    ![](./media/kernel-image73.png)
 
 <details>
 <summary><strong>Python</strong></summary>
