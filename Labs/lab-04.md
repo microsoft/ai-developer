@@ -42,9 +42,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. The Swagger page can be found at `http://127.0.0.1:8000/docs`.
 
     ![](./media/image_076.png)
-1. Navigate to `Python>src` directory and open **chat.py (1)** file.
+1. Navigate to **`Python (1) >src (2)`** directory and open **chat.py (3)** file.
 
-    ![](./media/image_030.png)
+    ![](./media/kernel-image57.png)
 1. Add the following code in the `# Placeholder for OpenAPI plugin` section of the file.
     ```
     kernel.add_plugin_from_openapi(
@@ -105,9 +105,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. The swagger page can be found at `http://localhost:5115/swagger/index.html`.
 
     ![](./media/image_080.png)
-1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
+1. Navigate to **`Dotnet (1) >src (2) > BlazorAI (3) > Components (4) > Pages (5)`** directory and open **Chat.razor.cs (6)** file.
 
-    ![](./media/image_038.png)
+    ![](./media/kernel-image55.png)
 1. Add the following code in the `// Import Models` section of the file.
     ```
     using Microsoft.SemanticKernel.Plugins.OpenApi;
