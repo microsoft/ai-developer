@@ -16,27 +16,28 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 1. Navigate to the [Azure AI Foundry](https://ai.azure.com/) portal.
 1. Click on **Models + endpoints (1)** under **My assets** in the left pane, then click on **+ Deploy model (2)**, followed by **Deploy base model (3)**.
 
-    ![](./media/67.png)
+    ![](./media/kernel-image70.png)
 
 1. Search for **dall-e-3 (1)**, select the model **(2)**, and click on **Confirm (3)**.
 
-    ![](./media/68.png)
+    ![](./media/kernel-image71.png)
 
-1. Click on **Deploy**.
+1. Click on **Create resource and deploy**.
 
-    ![](./media/69.png)
+    ![](./media/kernel-image72.png)
 
 1. On the **dall-e-3** page, copy the **Target URI (1)** and **Key (2)** and paste them into Notepad.
 
-    ![](./media/70.png)
+    ![](./media/kernel-image73.png)
 
 <details>
 <summary><strong>Python</strong></summary>
 
-1. Navigate to `Python>src` directory and open **.env (1)** file.
+1. Navigate to **`Python (1) > src (2)`** directory and open **.env (3)** file.
 
-    ![](./media/image_026.png)
-1. Paste the **Target URI** that you copied earlier in the exercise besides `AZURE_TEXT_TO_IMAGE_ENDPOINT` (1).
+    ![](./media/kernel-image(29).png)
+   
+1. Paste the **Target URI** that you copied in the previous step besides `AZURE_TEXT_TO_IMAGE_ENDPOINT` (1).
     >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
 1. Paste the **API key (1)** that you copied earlier in the exercise besides `AZURE_TEXT_TO_IMAGE_API_KEY` (2).
 
@@ -160,9 +161,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
                 return f"Error generating image: {str(e)}"
     ```
 1. Save the file.
-1. Navigate to `Python>src` directory and open **chat.py (1)** file.
+1. Navigate to **`Python (1) > src (2)`** directory and open **chat.py (3)** file.
 
-    ![](./media/image_030.png)
+    ![](./media/kernel-image57.png)
 1. Add the following code in the `#Import Modules` section of the file.
     ```
     from plugins.ImageGenerationPlugin import ImageGenerationPlugin
@@ -341,9 +342,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     }
     ```
 1. Save the file.
-1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
+1. Navigate to **`Dotnet (1) > src (2) > BlazorAI (3) > Components (4) > Pages (5)`** directory and open **Chat.razor.cs (6)** file.
 
-    ![](./media/image_038.png)
+    ![](./media/kernel-image55.png)
 1. Add the following code in the `// Challenge 07 - Add Azure AI Foundry Text To Image` section of the file.
     ```
     kernelBuilder.AddAzureOpenAITextToImage(

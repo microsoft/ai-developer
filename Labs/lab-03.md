@@ -35,7 +35,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 <details>
 <summary><strong>Python</strong></summary>
 
-1. Navigate to `Python>src>plugins` directory, right click on **Plugins** then click on **New file** and then create a new file named **time_plugin.py (1)**.
+1. Navigate to `Python>src>plugins` directory, right click on **Plugins** then click on **New File** and then create a new file named **time_plugin.py (1)**.
 
     ![](./media/image_044.png)
 
@@ -87,9 +87,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Save the file.
 
-1. Navigate to `Python>src` directory and open **chat.py (1)** file.
+1. Navigate to **`Python (1) > src (2)`** directory and open **chat.py (3)** file.
 
-    ![](./media/image_030.png)
+    ![](./media/kernel-image57.png)
 1. Add the following code in the `#Import Modules` section of the file.
     ```
     from semantic_kernel.connectors.ai.open_ai.prompt_execution_settings.azure_chat_prompt_execution_settings import (
@@ -156,7 +156,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 <details>
 <summary><strong>C Sharp(C#)</strong></summary>
 
-1. Navigate to `Dotnet>src>BlazorAI>Plugins` directory, right click on **Plugins** then click on **New file** and then  and create a new file named **TimePlugin.cs (1)**.
+1. Navigate to `Dotnet>src>BlazorAI>Plugins` directory, right click on **Plugins** then click on **New File** and then  and create a new file named **TimePlugin.cs (1)**.
 
     ![](./media/image_049.png)
 1. Add the following code to the file:
@@ -263,9 +263,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     }
     ```
 1. Save the file.
-1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
+1. Navigate to **`Dotnet (1) > src (2) > BlazorAI (3) > Components (4) > Pages (5)`** directory and open **Chat.razor.cs (6)** file.
 
-    ![](./media/image_038.png)
+    ![](./media/kernel-image55.png)
 1. Add the following code in the `// Import Models` **(1)** section of the file.
     ```
     using Microsoft.SemanticKernel.Connectors.OpenAI;
@@ -363,7 +363,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Enter your details **Name (1)**, **Email (2)**, **Password (3)**, **Confirm Password (3)** and click on **Create Account (5)**.
 
-    ![](./media/35.png)
+    ![](./media/kernel-image45.png)
 
     >**Note**: Use your personal or work e-mail ID to register.
 
@@ -371,16 +371,16 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     ![](./media/sk29.png)
 
-1. You will receive your free **geocoding API key,** save it in Notepad for further use.
+1. You will receive your free **geocoding API key,** save it in **Notepad** for further use.
 
     ![](./media/sk30.png)
 
 <details>
 <summary><strong>Python</strong></summary>
 
-1. Navigate to `Python>src` directory and open **.env (1)** file.
+1. Navigate to **`Python (1) > src (2)`** directory and open **.env (3)** file.
 
-    ![](./media/image_026.png)
+    ![](./media/kernel-image(29).png)
 
 1. Paste the geocoding API key you received just now via e-mail besides `GEOCODING_API_KEY`.
 
@@ -390,9 +390,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Save the file.
 
-1. Navigate to `Python>src` directory and open **chat.py** file.
+1. Navigate to **`Python (1) > src (2)`** directory and open **chat.py (3)** file.
 
-    ![](./media/image_030.png)
+    ![](./media/kernel-image57.png)
 
 1. Add the following code in the `#Import Modules` section of the file.
 
@@ -464,9 +464,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 <details>
 <summary><strong>C Sharp(C#)</strong></summary>
 
-1. Navigate to `Dotnet>src>BlazorAI` directory and open **appsettings.json** file.
+1. Navigate to **`Dotnet (1) > src (2) > BlazorAI (3)`** directory and open **appsettings.json (4)** file.
 
-    ![](./media/image_028.png)
+    ![](./media/kernel-image58.png)
 
 1. Paste the geocoding API key you received just now via e-mail besides `GEOCODING_API_KEY`.
 
@@ -476,9 +476,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Save the file.
 
-1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs** file.
+1. Navigate to **`Dotnet (1) > src (2) > BlazorAI (3) > Components (4) > Pages (5)`** directory and open **Chat.razor.cs (6)** file.
 
-    ![](./media/image_038.png)
+    ![](./media/kernel-image55.png)
 
 1. Add the following code in the `// Challenge 03 - Add Time Plugin` section, after the **time plugin** in the file.
 
@@ -635,9 +635,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Save the file.
 
-1. Navigate to `Python>src` directory and open **chat.py (1)** file.
+1. Navigate to **`Python (1) > src (2)`** directory and open **chat.py (3)** file.
 
-    ![](./media/image_030.png)
+    ![](./media/kernel-image57.png)
 
 1. Add the following code in the `#Import Modules` section of the file.
 
@@ -890,9 +890,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Save the file.
 
-1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
+1. Navigate to **`Dotnet (1) > src (2) > BlazorAI (3) > Components (4) > Pages (5)`** directory and open **Chat.razor.cs (6)** file.
 
-    ![](./media/image_038.png)
+    ![](./media/kernel-image55.png)
 
 1. Add the following code in the `// Challenge 03 - Add Time Plugin` section, after the **geocoding plugin** in the file.yeah
 
