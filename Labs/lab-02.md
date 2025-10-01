@@ -17,33 +17,33 @@ In this task, you will explore different flow types in Azure AI Foundry by setti
 
 1. Click on **File (1)** and select **Open Folder (2)**.
 
-    ![](./media/image_023.png)
+    ![](./media/kernel-image26.png)
     
 1. Navigate to `C:\LabFiles` (1), select the **ai-developer (2)** folder, and click **Select Folder (3)**.
 
-    ![](./media/28.png)
+    ![](./media/kernel-image27.png)
 
 1. If you receive a `Do you trust the authors of the files in folder` warning, select the **checkbox (1)** and click **Yes, I trust the authors (2)**.
 
-    ![](./media/image_025.png)
+    ![](./media/kernel-image28.png)
 
 1. Navigate to the **AI Foundry** Portal, go to the **Overview (1)** page, select **Azure OpenAI (2)**. Copy the **API key (3)** the **API endpoint(4)** and paste it into **Notepad** to be used in the upcoming exercises.
 
-    ![](./media/75.png)
+    ![](./media/kernel-image25.png)
 
 
 <details>
 <summary><strong>Python</strong></summary>
 
-1. Navigate to `Python>src` directory and open **.env** (1) file.
+1. Navigate to **`Python>src` (1) (2)** directory and open **.env** (3) file.
 
-    ![](./media/image_026.png)
+    ![](./media/kernel-image29.png)
 
 1. Paste **Azure OpenAI Service endpoint** copied earlier in the exercise besides `AZURE_OPENAI_ENDPOINT`.
     >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
 1. Paste **API key** copied earlier in the exercise besides `AZURE_OPENAI_API_KEY`.
 
-    ![](./media/image_027.png)
+    ![](./media/kernel-image(30).png)
 
 1. Use **Ctrl+S** to save the file.
 
@@ -54,7 +54,7 @@ In this task, you will explore different flow types in Azure AI Foundry by setti
 
 1. Navigate to `Dotnet>src>BlazorAI` directory and open **appsettings.json** file.
 
-    ![](./media/sk23.png)
+    ![](./media/kernel-image31.png)
 
 1. Paste **Azure OpenAI Service endpoint** copied earlier in the exercise besides `AOI_ENDPOINT`.
     >**Note**:- Ensure that every value in the **appsettings.json** file is enclosed in **double quotes (")**.
@@ -62,7 +62,7 @@ In this task, you will explore different flow types in Azure AI Foundry by setti
     >**Note**:- Make sure to remove the "/" from the endpoint.
 1. Paste **API key** copied earlier in the exercise besides `AOI_API_KEY`.
 
-    ![](./media/sk25.png)
+    ![](./media/kernel-image(32).png)
 
 1. Use **Ctrl+S** to save the file.
 
@@ -77,7 +77,7 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 
 1. Navigate to `Python>src` **(1) (2)** directory and open **chat.py (3)** file.
 
-    ![](./media/30.png)
+    ![](./media/kernel-image33.png)
 
 1. Add the following code in the `#Import Modules` (1) section of the file.
 
@@ -142,7 +142,7 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
 
 1. Right click on `Python>src` in the left pane and select **Open in Integrated Terminal**.
 
-    ![](./media/image_035.png)
+    ![](./media/kernel-image34.png)
 
 1. Use the following command to run the app:
 
@@ -156,7 +156,8 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
     test@gmail.com
     ```
 
-    ![](./media/image_036.png)
+    ![](./media/kernel-image35.png)
+
 1. If the app does not open automatically in the browser, you can access it using the following **URL**:
 
     ```
@@ -173,11 +174,11 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
     Why is it red?
     ```
 
-    ![](./media/31.png)
+    ![](./media/kernel-image36.png)
 
 1. You will receive a response similar to the one shown below:
 
-    ![](./media/image_037.png)
+    ![](./media/kernel-image39.png)
 </details>
 
 <details>
@@ -239,10 +240,11 @@ In this task, you will explore different flow types in Azure AI Foundry by updat
     ```
     Why is it red?
     ```
-    
+    ![](./media/kernel-image42.png)
+   
 1. You will receive a response similar to the one shown below:
 
-    ![](./media/image_042.png)
+    ![](./media/kernel-image43.png)
 
 </details>
 
