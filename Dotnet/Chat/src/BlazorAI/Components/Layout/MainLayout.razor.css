@@ -1,0 +1,99 @@
+﻿/*!* General styles *!*/
+/*html, body {*/
+/*    height: 100%;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
+
+/*.main-layout {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    padding: 5px;*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+/*.header {*/
+/*    width: 100%;*/
+/*    padding: 5px;*/
+/*    box-sizing: border-box;*/
+/*    flex-shrink: 0;*/
+/*}*/
+
+/*.main-body {*/
+/*    width: 100%;*/
+/*    padding: 5px;*/
+/*    box-sizing: border-box;*/
+/*    flex: 1;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*}*/
+
+/*.content-wrapper {*/
+/*    width: 100%;*/
+/*    flex: 1;*/
+/*    box-sizing: border-box;*/
+/*    overflow-y: auto;*/
+/*}*/
+
+/*.footer {*/
+/*    width: 100%;*/
+/*    box-sizing: border-box;*/
+/*    flex-shrink: 0;*/
+/*    position: sticky;*/
+/*    bottom: 0;*/
+/*}*/
+
+/*!* Styles for the lists *!*/
+/*ul {*/
+/*    list-style-type: disc;*/
+/*    margin-left: 15px;*/
+/*    padding: 0;*/
+/*}*/
+
+/*ol {*/
+/*    list-style-type: decimal;*/
+/*    margin-left: 15px;*/
+/*    padding: 0;*/
+/*}*/
+
+/*!* Styles for Fluent components *!*/
+/*.FluentHeader, .FluentBodyContent, .FluentNavLink {*/
+/*    margin: 5px 0;*/
+/*    padding: 0;*/
+/*}*/
+
+/*!* Responsive styles *!*/
+/*@media (max-width: 768px) {*/
+/*    .main-layout {*/
+/*        padding: 3px;*/
+/*    }*/
+
+/*    .header {*/
+/*        padding: 3px;*/
+/*    }*/
+
+/*    .main-body {*/
+/*        padding: 3px;*/
+/*    }*/
+
+/*    .footer {*/
+/*        padding: 3px;*/
+/*    }*/
+
+/*    .content-wrapper {*/
+/*        height: auto;*/
+/*    }*/
+
+/*    .fluent-main-layout {*/
+/*        flex-direction: column;*/
+/*    }*/
+
+/*        .fluent-main-layout header,*/
+/*        .fluent-main-layout subheader,*/
+/*        .fluent-main-layout body,*/
+/*        .fluent-main-layout navmenucontent {*/
+/*            width: 100%;*/
+/*        }*/
+/*}*/

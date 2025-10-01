@@ -1,0 +1,105 @@
+{
+    "name": ".NET Challenges - eShop - Codespace",
+    "image": "mcr.microsoft.com/devcontainers/dotnet:dev-9.0-noble",
+    "features": {
+        "ghcr.io/devcontainers/features/dotnet:2.3.0": {},
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+		"ghcr.io/devcontainers/features/powershell:1": {},
+        "ghcr.io/devcontainers/features/node:1": {},
+		"ghcr.io/devcontainers/features/azure-cli:1": {},
+        "ghcr.io/azure/azure-dev/azd:0": {},
+        "ghcr.io/rchaganti/vsc-devcontainer-features/azurebicep:1": {}
+    },
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}/Dotnet/Part2",
+    "onCreateCommand": "bash /workspaces/${localWorkspaceFolderBasename}/.devcontainer/scripts/setup-codespaces.sh",
+    "postStartCommand": "bash /workspaces/${localWorkspaceFolderBasename}/.devcontainer/scripts/post-start-dotnet.sh",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-azuretools.vscode-docker",
+                "EditorConfig.EditorConfig",
+                "ms-azuretools.azure-dev",
+                "ms-dotnettools.csharp",
+                "ms-dotnettools.csdevkit",
+                "github.copilot",
+                "bierner.github-markdown-preview",
+                "bierner.markdown-preview-github-styles",
+                "bierner.markdown-mermaid",
+                "github.copilot-chat",
+                "mermaidchart.vscode-mermaid-chart",
+                "ms-vscode.copilot-mermaid-diagram",
+                "ms-vscode.vscode-websearchforcopilot",
+                "bedirt.gpt-token-counter-live"
+            ]
+        },
+        "codespaces": {
+            "openFiles": [
+                "README.md"
+            ]
+        }
+    },
+    "secrets": {
+        "AOI_DEPLOYMODEL": {
+            "description": "Azure OpenAI Deployment Model"
+        },
+        "AOI_ENDPOINT": {
+            "description": "Azure OpenAI Endpoint"
+        },
+        "AOI_API_KEY": {
+            "description": "Azure OpenAI API Key"
+        },
+        "DALLE_DEPLOYMODEL": {
+            "description": "Azure DALL·E Deployment Model"
+        },
+        "EMBEDDINGS_DEPLOYMODEL": {
+            "description": "Azure Embeddings Deployment Model"
+        },
+        "AI_SEARCH_URL": {
+            "description": "Azure AI Search URL"
+        },
+        "AI_SEARCH_KEY": {
+            "description": "Azure AI Search Key"
+        }
+    },
+    "containerEnv": {
+        "AOI_DEPLOYMODEL": "${localEnv:AOI_DEPLOYMODEL}",
+        "AOI_ENDPOINT": "${localEnv:AOI_ENDPOINT}",
+        "AOI_API_KEY": "${localEnv:AOI_API_KEY}",
+        "DALLE_DEPLOYMODEL": "${localEnv:DALLE_DEPLOYMODEL}",
+        "EMBEDDINGS_DEPLOYMODEL": "${localEnv:EMBEDDINGS_DEPLOYMODEL}",
+        "AI_SEARCH_URL": "${localEnv:AI_SEARCH_URL}",
+        "AI_SEARCH_KEY": "${localEnv:AI_SEARCH_KEY}"
+    },
+    "forwardPorts": [
+        17104,
+        7130,
+        7085,
+        58621
+    ],
+    "portsAttributes": {
+        "17104": {
+            "protocol": "https",
+            "label": "Aspire Dashboard",
+            "onAutoForward": "silent",
+            "elevateIfNeeded": true
+        },
+        "7130": {
+            "protocol": "https",
+            "label": "Products API",
+            "onAutoForward": "silent",
+            "elevateIfNeeded": true
+        },
+        "7085": {
+            "protocol": "https",
+            "label": "Store App",
+            "onAutoForward": "silent",
+            "elevateIfNeeded": true
+        },
+        "58621": {
+            "protocol": "http",
+            "label": "MCP Server",
+            "onAutoForward": "silent",
+            "elevateIfNeeded": true
+        }
+    }
+}

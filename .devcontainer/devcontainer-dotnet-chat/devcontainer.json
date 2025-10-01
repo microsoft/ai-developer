@@ -1,0 +1,118 @@
+{
+    "name": ".NET Challenges - Chat - Student DevContainer",
+    "image": "ghcr.io/seiggy/ai-developer-dotnet:latest",
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": "true",
+            "username": "vscode",
+            "upgradePackages": "true",
+			"userUid": "1000",
+			"userGid": "1000"
+        },
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "none"
+        },
+		"ghcr.io/devcontainers/features/azure-cli:1": {},
+        "ghcr.io/azure/azure-dev/azd:0": {},
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+        "ghcr.io/devcontainers/features/powershell:1": {},
+        "ghcr.io/rchaganti/vsc-devcontainer-features/azurebicep:1": {}
+    },
+    "privileged": true,
+    "workspaceFolder": "/workspace",
+    "workspaceMount": "source=${localWorkspaceFolder}/Dotnet/Part1,target=/workspace,type=bind,consistency=cached",
+    "onCreateCommand": "bash ~/scripts/setup-dotnet-dev-cert.sh",
+    "postStartCommand": "bash ~/scripts/post-start-dotnet.sh",
+    "postAttachCommand": "sudo chown -R vscode /workspace",
+    "shutdownAction": "stopContainer",
+    "mounts": [
+        {
+            "type": "volume",
+            "source": "x509stores",
+            "target": "/home/vscode/.dotnet/corefx/cryptography/x509stores"
+        },
+        {
+            "source": "${localWorkspaceFolder}/.devcontainer/scripts",
+            "target": "/home/vscode/scripts",
+            "type": "bind"
+        }
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-azuretools.vscode-docker",
+                "EditorConfig.EditorConfig",
+                "ms-azuretools.azure-dev",
+                "ms-dotnettools.csdevkit",
+                "GitHub.copilot",
+                "GitHub.copilot-chat",
+                "bierner.github-markdown-preview",
+                "bierner.markdown-preview-github-styles",
+                "bierner.markdown-mermaid",
+                "mermaidchart.vscode-mermaid-chart",
+                "ms-vscode.copilot-mermaid-diagram",
+                "ms-vscode.vscode-websearchforcopilot",
+                "bedirt.gpt-token-counter-live"
+            ]
+        },
+        "codespaces": {
+            "openFiles": [
+                "README.md"
+            ]
+        }
+    },
+    "secrets": {
+        "AOI_DEPLOYMODEL": {
+            "description": "Azure OpenAI Deployment Model"
+        },
+        "AOI_ENDPOINT": {
+            "description": "Azure OpenAI Endpoint"
+        },
+        "AOI_API_KEY": {
+            "description": "Azure OpenAI API Key"
+        },
+        "DALLE_DEPLOYMODEL": {
+            "description": "Azure DALL·E Deployment Model"
+        },
+        "EMBEDDINGS_DEPLOYMODEL": {
+            "description": "Azure Embeddings Deployment Model"
+        },
+        "GEOCODING_API_KEY": {
+            "description": "Geocoding API Key for https://geocode.maps.co/"
+        },
+        "AI_SEARCH_URL": {
+            "description": "Azure AI Search URL"
+        },
+        "AI_SEARCH_KEY": {
+            "description": "Azure AI Search Key"
+        }
+    },
+    "containerEnv": {
+        "AOI_DEPLOYMODEL": "${localEnv:AOI_DEPLOYMODEL}",
+        "AOI_ENDPOINT": "${localEnv:AOI_ENDPOINT}",
+        "AOI_API_KEY": "${localEnv:AOI_API_KEY}",
+        "DALLE_DEPLOYMODEL": "${localEnv:DALLE_DEPLOYMODEL}",
+        "EMBEDDINGS_DEPLOYMODEL": "${localEnv:EMBEDDINGS_DEPLOYMODEL}",
+        "GEOCODING_API_KEY": "${localEnv:GEOCODING_API_KEY}",
+        "AI_SEARCH_URL": "${localEnv:AI_SEARCH_URL}",
+        "AI_SEARCH_KEY": "${localEnv:AI_SEARCH_KEY}"
+    },
+    "forwardPorts": [
+        17188,
+        7118
+    ],
+    "portsAttributes": {
+        "17188": {
+            "protocol": "https",
+            "label": "Aspire Dashboard - AI Chat",
+            "requireLocalPort": true
+        },
+        "7118": {
+            "protocol": "https",
+            "label": "Blazor AI Chat",
+            "requireLocalPort": true
+        }
+    },
+    "remoteUser": "vscode",
+    "containerUser": "vscode"
+}

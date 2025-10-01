@@ -1,8 +1,0 @@
-@WorkItems_HostAddress = http://localhost:5115
-
-GET {{WorkItems_HostAddress}}/workitems/
-Accept: application/json
-
-###
-GET {{WorkItems_HostAddress}}/myworkitems/
-Accept: application/json

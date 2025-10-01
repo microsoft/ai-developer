@@ -1,0 +1,99 @@
+@page "/multiagent-import"
+
+@rendermode InteractiveServer
+
+<PageTitle>Product Import - eShopLite</PageTitle>
+
+<div class="container my-4">
+    <h1>Product Import</h1>
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Upload Supplier Files</h5>
+        </div>
+        <div class="card-body">
+            <p>Upload an email (.eml) file and product spreadsheet (.xlsx) from your supplier to begin the product addition process.</p>
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="emailFile" class="form-label">Supplier Email (.eml)</label>
+                        <InputFile id="emailFile" OnChange="OnEmailFileSelected" class="form-control" accept=".eml" disabled="@_isProcessing" />
+                        @if (!string.IsNullOrEmpty(_emailFileName))
+                        {
+                            <div class="form-text text-success">Selected: @_emailFileName</div>
+                        }
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="spreadsheetFile" class="form-label">Product Spreadsheet (.xlsx)</label>
+                        <InputFile id="spreadsheetFile" OnChange="OnSpreadsheetFileSelected" class="form-control" accept=".xlsx" disabled="@_isProcessing" />
+                        @if (!string.IsNullOrEmpty(_spreadsheetFileName))
+                        {
+                            <div class="form-text text-success">Selected: @_spreadsheetFileName</div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-grid gap-2 col-md-4 mx-auto mt-3">
+                <button @onclick="StartWorkflowAsync" class="btn btn-primary" disabled="@ShouldBlockWorkflowStart">
+                    @if (_isProcessing)
+                    {
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        <span> Processing...</span>
+                    }
+                    else
+                    {
+                        <span>Start Product Import</span>
+                    }
+                </button>
+            </div>
+        </div>
+    </div>
+
+    @if (_isProcessing)
+    {
+        <div class="card mb-4">
+            <div class="card-header bg-info text-white">
+                <h5 class="mb-0">Workflow Status</h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <strong>Started:</strong> @(_currentWorkflowStarted?.ToString("g") ?? "-")
+                </div>
+                <div class="mb-3">
+                    <strong>Last Updated:</strong> @(_currentWorkflowUpdated?.ToString("g") ?? "-")
+                </div>
+
+                @if (!string.IsNullOrEmpty(_resultSummary))
+                {
+                    <div class="alert alert-info">
+                        <strong>Current Process:</strong> 
+                        @((MarkupString)_resultSummary)
+                    </div>
+                }
+
+                <div class="d-grid gap-2 col-md-4 mx-auto mt-3">
+                    <button @onclick="RefreshWorkflowStatusAsync" class="btn btn-outline-primary">
+                        <i class="bi bi-arrow-clockwise"></i> Refresh Status
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        
+    }
+    
+    @if (!string.IsNullOrEmpty(_workflowResults))
+    {
+        <div class="card mb-4">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0">Workflow Results</h5>
+            </div>
+            <div class="card-body">
+                @((MarkupString)_workflowResults)
+            </div>
+        </div>
+    }
+</div>

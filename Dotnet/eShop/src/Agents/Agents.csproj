@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <NoWarn>SKEXP0001,SKEXP0080,SKEXP0110</NoWarn>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Remove="ProcessFramework\**" />
+      <EmbeddedResource Remove="ProcessFramework\**" />
+      <None Remove="ProcessFramework\**" />
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="Aspire.Azure.Storage.Blobs" Version="9.4.2" />
+      <PackageReference Include="DocumentFormat.OpenXml" Version="3.3.0" />
+      <PackageReference Include="JsonSchema.Net" Version="7.4.0" />
+      <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.9" />
+      <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.9" />
+      <PackageReference Include="Microsoft.SemanticKernel" Version="1.64.0" />
+      <PackageReference Include="Microsoft.SemanticKernel.Agents.AzureAI" Version="1.64.0-preview" />
+      <PackageReference Include="Microsoft.SemanticKernel.Agents.Core" Version="1.64.0" />
+      <PackageReference Include="Microsoft.SemanticKernel.Agents.OpenAI" Version="1.64.0-preview" />
+      <PackageReference Include="Microsoft.SemanticKernel.Agents.Orchestration" Version="1.64.0-preview" />
+      <PackageReference Include="Microsoft.SemanticKernel.Agents.Runtime.InProcess" Version="1.64.0-preview" />
+      <PackageReference Include="Microsoft.SemanticKernel.Agents.Yaml" Version="1.64.0-beta" />
+      <PackageReference Include="Microsoft.SemanticKernel.Connectors.AzureOpenAI" Version="1.64.0" />
+      <PackageReference Include="Microsoft.SemanticKernel.Process.LocalRuntime" Version="1.64.0-alpha" />
+      <PackageReference Include="Microsoft.SemanticKernel.PromptTemplates.Handlebars" Version="1.64.0" />
+      <PackageReference Include="ModelContextProtocol" Version="0.3.0-preview.4" />
+      <PackageReference Include="System.Text.Json" Version="9.0.9" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\AiEntities\AiEntities.csproj" />
+      <ProjectReference Include="..\DataEntities\DataEntities.csproj" />
+    </ItemGroup>
+
+</Project>

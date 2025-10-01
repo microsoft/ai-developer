@@ -1,0 +1,13 @@
+{
+    "recommendations": [
+        "ms-dotnettools.csdevkit",
+        "github.copilot",
+        "bierner.github-markdown-preview",
+        "bierner.markdown-preview-github-styles",
+        "bierner.markdown-mermaid",
+        "github.copilot-chat",
+        "mermaidchart.vscode-mermaid-chart",
+        "ms-vscode.copilot-mermaid-diagram",
+        "ms-vscode.vscode-websearchforcopilot"
+    ]
+}

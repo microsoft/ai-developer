@@ -1,0 +1,15 @@
+{
+    "recommendations": [
+        "GitHub.copilot",
+        "bierner.github-markdown-preview",
+        "bierner.markdown-preview-github-styles",
+        "bierner.markdown-mermaid",
+        "GitHub.copilot-chat",
+        "mermaidchart.vscode-mermaid-chart",
+        "ms-vscode.copilot-mermaid-diagram",
+        "ms-vscode.vscode-websearchforcopilot",
+        "ms-vscode-remote.remote-containers",
+        "yahyabatulu.vscode-markdown-alert",
+        "bedirt.gpt-token-counter-live"
+    ]
+}

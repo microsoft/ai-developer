@@ -1,0 +1,16 @@
+@implements IDialogContentComponent
+<h3>ApproveRequest</h3>
+
+<div>
+    <p>
+        @((MarkupString)Content)
+    </p>
+</div>
+
+@code {
+    [Parameter] 
+    public string Content { get; set; } = null!;
+    
+    [CascadingParameter]
+    public FluentDialog? Dialog { get; set; }
+}
