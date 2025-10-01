@@ -35,7 +35,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 <details>
 <summary><strong>Python</strong></summary>
 
-1. Navigate to `Python>src>plugins` directory, right click on **Plugins** then click on **New file** and then create a new file named **time_plugin.py (1)**.
+1. Navigate to `Python>src>plugins` directory, right click on **Plugins** then click on **New File** and then create a new file named **time_plugin.py (1)**.
 
     ![](./media/image_044.png)
 
@@ -156,7 +156,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 <details>
 <summary><strong>C Sharp(C#)</strong></summary>
 
-1. Navigate to `Dotnet>src>BlazorAI>Plugins` directory, right click on **Plugins** then click on **New file** and then  and create a new file named **TimePlugin.cs (1)**.
+1. Navigate to `Dotnet>src>BlazorAI>Plugins` directory, right click on **Plugins** then click on **New File** and then  and create a new file named **TimePlugin.cs (1)**.
 
     ![](./media/image_049.png)
 1. Add the following code to the file:
