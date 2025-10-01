@@ -87,7 +87,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Save the file.
 
-1. Navigate to `Python>src` directory and open **chat.py (1)** file.
+1. Navigate to **`Python (1) > src (2)`** directory and open **chat.py (3)** file.
 
     ![](./media/kernel-image57.png)
 1. Add the following code in the `#Import Modules` section of the file.
@@ -380,7 +380,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Navigate to **`Python (1) > src (2)`** directory and open **.env (3)** file.
 
-    ![](./media/kernel-image29.png)
+    ![](./media/kernel-image(29).png)
 
 1. Paste the geocoding API key you received just now via e-mail besides `GEOCODING_API_KEY`.
 
