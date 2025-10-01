@@ -37,13 +37,13 @@ In this task, you will explore different flow types in Azure AI Foundry by setti
 
 1. Navigate to **`Python>src` (1) (2)** directory and open **.env** (3) file.
 
-    ![](./media/kernel-image29.png)
+    ![](./media/kernel-image(29).png)
 
 1. Paste **Azure OpenAI Service endpoint** copied earlier in the exercise besides `AZURE_OPENAI_ENDPOINT`.
     >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
 1. Paste **API key** copied earlier in the exercise besides `AZURE_OPENAI_API_KEY`.
 
-    ![](./media/kernel-image(30).png)
+    ![](./media/image_027.png)
 
 1. Use **Ctrl+S** to save the file.
 
