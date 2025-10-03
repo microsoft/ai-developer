@@ -33,7 +33,7 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 
     ![](./media/image_085a.png)
 
-1. On the **Select or add data source**blade, provide the following details and then click on **Next (6)**:
+1. On the **Select or add data source** blade, provide the following details and then click on **Next (6)**:
 
     - Select **Upload files (Preview) (1)** for `Data source`
     - Subscription: Leave the default one **(2)**
