@@ -1,6 +1,6 @@
 # Exercise 3: Semantic Kernel Plugins
 
-### Estimated Duration: 50 Minutes
+## Estimated Duration: 50 Minutes
 
 This hands-on lab explores the power of plugins in enhancing LLM development with Semantic Kernel. Designed for those new to AI extensibility, the lab guides you through building and integrating plugins to expand the capabilities of your chatbot. You will implement a time and weather retrieval plugin, enabling your AI to access real-time and contextual data beyond its training scope. Additionally, you will learn to develop Semantic Kernel plugins in Python and leverage Auto Function Calling to chain them together seamlessly.
 
@@ -960,7 +960,6 @@ You have successfully completed the below tasks for extending **LLM capabilities
 - Implemented **Auto Function Calling** to chain multiple plugins together seamlessly.  
 - Built and deployed **Python-based plugins** to extend AI capabilities.  
 
-### Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.
+## Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.
 
 ![Launch Azure Portal](./media/gsk5.png)
-

@@ -1,6 +1,6 @@
 # Exercise 2: Semantic Kernel Fundamentals
 
-### Estimated Duration: 25 Minutes
+## Estimated Duration: 25 Minutes
 
 This hands-on lab provides practical experience with Semantic Kernel and the Azure AI Foundry GPT-4o model. Designed for those new to AI development, the lab guides you step-by-step on how to build an intelligent chat feature within a starter application. You will use the Semantic Kernel framework to connect with the GPT-4o model, implement a chat API that sends user prompts, and return dynamic AI-generated responses.
 
@@ -258,7 +258,6 @@ You have successfully completed the below tasks for AI-driven chat implementatio
 - Configured a **chat API** to process user prompts and generate AI-driven responses.     
 - Extended chatbot functionality by integrating **Azure AI Search** for contextual data retrieval.  
 
-### Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.
+## Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.
 
 ![Launch Azure Portal](./media/gsk5.png)
-

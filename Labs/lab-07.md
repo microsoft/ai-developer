@@ -1,8 +1,8 @@
 # Exercise 7: Image Generation using DALL-E
 
-### Estimated Duration: 25 Minutes
+## Estimated Duration: 25 Minutes
 
-This hands-on lab introduces image generation capabilities to your reference application using DALL·E, an advanced AI model that transforms text into visuals. Designed for those new to AI-powered creativity, the lab guides you step-by-step in integrating DALL·E to generate images from descriptive text prompts. You will explore how DALL·E can create visuals ranging from realistic objects and scenes to imaginative, abstract concepts—unlocking new possibilities for creative expression and user interaction.
+This hands-on lab introduces image generation capabilities to your reference application using DALL·E, an advanced AI model that transforms text into visuals. Designed for those new to AI-powered creativity, the lab guides you step-by-step in integrating DALL·E to generate images from descriptive text prompts. You will explore how DALL·E can create visuals ranging from realistic objects and scenes to imaginative, abstract concepts unlocking new possibilities for creative expression and user interaction.
 
 ## Objectives
 In this exercise, you will be performing the following tasks:
@@ -22,9 +22,9 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 
     ![](./media/kernel-image71.png)
 
-1. Click on **Create resource and deploy**.
+1. Click on **Deploy**.
 
-    ![](./media/kernel-image72.png)
+    ![](./media/oct-ai-dev-lab7-1.png)
 
 1. On the **dall-e-3** page, copy the **Target URI (1)** and **Key (2)** and paste them into Notepad.
 
@@ -392,7 +392,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 ## Review
 
-In this exercise, we integrated **DALL·E** into a reference application to enable **AI-powered image generation** from text prompts. We explored how DALL·E transforms descriptive inputs into visuals—ranging from realistic scenes to abstract concepts—unlocking new creative possibilities. This enhanced our proficiency in applying generative AI for visual content creation and user interaction.
+In this exercise, we integrated **DALL·E** into a reference application to enable **AI-powered image generation** from text prompts. We explored how DALL·E transforms descriptive inputs into visuals ranging from realistic scenes to abstract concepts unlocking new creative possibilities. This enhanced our proficiency in applying generative AI for visual content creation and user interaction.
 
 You have successfully completed the below tasks for **DALL·E integration in AI-powered image generation**:  
 
@@ -400,7 +400,6 @@ You have successfully completed the below tasks for **DALL·E integration in AI-
 - Explored **AI-powered visual content creation**, transforming descriptive text into images.  
 - Configured **Azure AI Foundry** to support **DALL·E-based generative AI workflows**.  
 
-### Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.
+## Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.
 
 ![Launch Azure Portal](./media/gsk5.png)
-

@@ -1,6 +1,6 @@
 # Azure AI Foundry and Semantic Kernel Fundamentals
 
-### Overall Estimated Duration: 4 Hours
+## Overall Estimated Duration: 4 Hours
 
 ## Overview
 
@@ -114,52 +114,11 @@ To adjust the zoom level for the environment page, click the **A↕: 100%** icon
  
        ![](./media/kernel-image2.png)
 
-1. If an **Action required** pop-up window appears, click on **Next**.
-
-   ![Ask Later](./media/ask-later.png)
-
-1. On **Start by getting the app** page, click on **Next**.
-
-   ![Ask Later](./media/72.png)
-
-1. On the Set up your account page, select  **Next**.
-
-   ![Ask Later](./media/73.png)
-
-1. In **Android**, go to the Play Store, search for **Microsoft Authenticator,** and tap on **Install**.
-
-   ![Install](./media/mobile.jpg)
-
-   >Note: For **iOS**, open the App Store and repeat the steps.
-
-   >Note: Skip If already installed.
-   
-1. Open the app and click on **Scan a QR code**.
-1. Scan the **QR code (1)** visible on the screen and click on **Next (2)**.
-
-   ![QR code](./media/demo001.png)
-
-1. On the Keep your account secure page. Enter the code, which is shown on the Authenticator app.
-
-   ![QR code](./media/74.png)
-
-1. Once the notification is approved, click on **Next (1)**.
-
-   ![Approved](./media/demo002.png)
-
-1. Select **Done** on the success page.
-
-   ![](./media/71.png)
-
 1. If prompted to stay signed in, you can click **No.**
 
    ![](./media/03.png)
 
-1. Tap on **Finish** in the mobile device.
-
-   >NOTE: While logging in again, enter the digits displayed on the screen in the **Authenticator app** and click on Yes.
-
-1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **"Cancel"** to skip the tour.
+1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Cancel** to skip the tour.
 
    ![](./media/kernel-image4.png)
 
