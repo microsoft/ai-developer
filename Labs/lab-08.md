@@ -1,6 +1,6 @@
 # Exercise 8: Multi-Agent Systems
 
-### Estimated Duration: 30 Minutes
+## Estimated Duration: 30 Minutes
 
 This hands-on lab introduces **multi-agent system development**, where a user request is processed by multiple agents, each with a distinct **persona and responsibility**. Designed for those new to **AI-driven automation**, the lab guides you through integrating agents that collaborate to generate a well-rounded response. Whether handling specialized tasks or combining expertise, this system ensures comprehensive context-aware outputs. By the end of this lab, you will understand how to **orchestrate multi-agent interactions** to enhance AI-driven decision-making and user experiences.
 

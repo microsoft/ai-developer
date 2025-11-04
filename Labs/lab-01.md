@@ -1,6 +1,6 @@
 # Exercise 1: Azure AI Foundry Fundamentals
 
-### Estimated Duration: 20 minutes
+## Estimated Duration: 20 minutes
 
 This hands-on lab provides experience with Azure AI Foundry and its core capabilities, including AI model deployment and integration with Azure AI Search. Designed for those new to the platform, the lab guides you step-by-step to set up an AI project, deploy a GPT-4o model, and configure essential AI services.
 
@@ -20,11 +20,11 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     ![](./media/kernel-image5.png)
 
-1. Expnad **Use with AI Foundry (1)**, select **AI Hubs (2)**, click on the **+ Create (3)** drop down and then select **Hub (4)**.
+1. Expand **Use with AI Foundry (1)**, select **AI Hubs (2)**, click on the **+ Create (3)** drop down and then select **Hub (4)**.
 
     ![](./media/kernel-image6.png)
 
-1. On the **Azure AI hub** page, provide the following details and then click on **Review+create (5)**:
+1. On the **Azure AI hub** page, provide the following details and then click on **Review + create (5)**:
 
     - **Subscription**: Leave the default one **(1)**
 
@@ -120,7 +120,7 @@ In this task you will create a Azure AI Search resource.
 
     ![](./media/kernel-image21.png)
 
-1. On the **Create a search service** page, provide the following details and then click on **Review+create (5)**:
+1. On the **Create a search service** page, provide the following details and then click on **Review + create (5)**:
 
     - Subscription: Leave the default one **(1)**
     - Resource group: Select **ai-foundry-<inject key="Deployment ID" enableCopy="false"></inject> (2)**
@@ -152,6 +152,6 @@ You have successfully completed the below tasks for AI development using **Azure
    
 - Utilized **Semantic Kernel** to connect AI models with external APIs and plugins.
 
-### Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.
+## Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.
 
 ![Launch Azure Portal](./media/gsk5.png)

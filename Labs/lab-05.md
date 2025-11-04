@@ -1,6 +1,6 @@
 # Exercise 5: Retrieval-Augmented Generation (RAG)
 
-### Estimated Duration: 40 Minutes
+## Estimated Duration: 40 Minutes
 
 This hands-on lab introduces you to the Retrieval-Augmented Generation (RAG) pattern—an AI architecture that enhances response quality by integrating relevant external knowledge into the generative process. Designed for those new to RAG, the lab guides you through how retrieval mechanisms work alongside generative models to deliver more accurate, informed, and context-aware outputs. You will also gain a clear understanding of data privacy and security prompts, completions, embeddings, and training data remaining fully isolated—they are not shared with other customers, OpenAI, Microsoft, or third parties, nor are they used to improve models automatically.
 
@@ -68,7 +68,7 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 
     ![](./media/48.png)
 
-1. On the **Data Connection** blade, select **API Key (1)** for authenticatio and then click on **Next (2)**.    
+1. On the **Data Connection** blade, select **API Key (1)** for authentication and then click on **Next (2)**.    
 
     ![](./media/47.png)
 
@@ -76,7 +76,7 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 
     ![](./media/49.png)
 
-1. The data injection might take around 5 minutes, Late you will observe as shown in below.
+1. The data injection might take around 5 minutes, later you will observe as shown in below.
 
     ![](./media/50.png)
 
@@ -449,7 +449,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
       ![](./media/image_106.png)
 
-1. Refer to the code provided at the following URL. Please verify that your code matches the one below and correct any indentation errors if present
+1. Refer to the code provided at the following URL. Please verify that your code matches the one below and correct any indentation errors if present:
 
     - Open the provided link in your browser, press Ctrl + A to select all the content, then copy and paste it into Visual Studio Code
 
@@ -513,7 +513,6 @@ You have successfully completed the below tasks for **Retrieval-Augmented Genera
 - Utilized **Azure AI Search** to fetch relevant contextual data for more accurate outputs.  
 - Configured **Semantic Kernel** to orchestrate retrieval and generative workflows seamlessly.  
 
-### Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.
+## Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.
 
 ![Launch Azure Portal](./media/gsk5.png)
-

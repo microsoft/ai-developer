@@ -1,5 +1,6 @@
 # Exercise 6: Responsible AI: Exploring Content Filters in Azure AI Foundry
-### Estimated Duration: 25 Minutes
+
+## Estimated Duration: 25 Minutes
 
 This hands-on lab introduces content filtering in Azure AI Foundry to help you build safer, more responsible AI applications.
 You will learn to apply built-in filters, adjust settings, and create custom rules to block unwanted content—all within Azure AI Foundry Studio.
@@ -97,7 +98,6 @@ You have successfully completed the below tasks for **content filtering in Azure
 - Configured **custom content moderation rules** within **Azure AI Foundry Studio**.  
 - Adjusted **content filtering settings** to align with ethical AI guidelines.  
 
-### Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.
+## Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.
 
 ![Launch Azure Portal](./media/gsk5.png)
-

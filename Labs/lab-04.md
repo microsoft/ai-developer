@@ -1,6 +1,6 @@
 # Exercise 4: Import Plugin using OpenAPI
 
-### Estimated Duration: 25 Minutes
+## Estimated Duration: 25 Minutes
 
 This hands-on lab explores the integration of OpenAPI with Semantic Kernel to enhance AI-driven applications. Designed for developers new to API orchestration, the lab guides you through leveraging OpenAPI specifications to load external services as plugins dynamically. You will learn to import the provided WorkItems API as an OpenAPI plugin, enabling seamless interaction through AI-driven prompts. By the end of this lab, you will understand how OpenAPI simplifies API integration, reduces manual coding, and enhances the automation of external service calls.
 
@@ -168,7 +168,6 @@ We have successfully completed the below tasks for **OpenAPI integration with Se
 - Integrated **OpenAPI with Semantic Kernel** to enable dynamic API orchestration.  
 - Imported and configured the **WorkItems API** as an **OpenAPI plugin** for seamless external service interaction.  
 
-### Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.
+## Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.
 
 ![Launch Azure Portal](./media/gsk5.png)
-
