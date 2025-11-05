@@ -436,9 +436,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     kernelBuilder.AddAzureAISearchVectorStore();
     ```
 
-      ![](./media/image_105.png)
+    ![](./media/image_105.png)
 
-> **Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
+      > **Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
 1. Add the following code in the `// Challenge 05 - Add Search Plugin` section of the file.
 
