@@ -64,7 +64,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     - **Tokens per Minute Rate Limit**: **50K** **(4)**
     - Click on **Connect and deploy (5)**:
 
-     ![](./media/kernel-image13.png)
+      ![](./media/kernel-image13.png)
 
 1. In the upper-right corner of the screen, click on the **Hub (1)** icon located next to your profile. From '**Working in** drop down select **aifoundryhubxxxxxxx (2)**, then click on **Switch (3)**.
 
