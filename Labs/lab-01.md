@@ -46,7 +46,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Expand **Use with Foundry (1)**, select **AI Hubs (2)**, click on the **+ Create (3)** drop down and then select **Project (4)**.
 
-    ![](./media/kernel-image6-1-1.png)
+    ![](./media/image6-2.png)
 
 1. Once the deployment is completed, click on **Go to resource**.
 
