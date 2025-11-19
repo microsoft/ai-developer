@@ -20,7 +20,7 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 
 1. Search for **dall-e-3 (1)**, select the model **(2)**, and click on **Confirm (3)**.
 
-    ![](./media/kernel-image71.png)
+    ![](./media/kernel-image71-1.png)
 
 1. Click on **Deploy**.
 

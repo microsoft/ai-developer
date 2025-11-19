@@ -19,7 +19,7 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
     ![](./media/kernel-image11.png)
 1. Search for **text-embedding-ada-002 (1)**, select the model **(2)**, and click on **Confirm (3)**.
 
-    ![](./media/kernel-image46.png)
+    ![](./media/kernel-image46-1.png)
 
 1. Click on **Deploy**.
 
