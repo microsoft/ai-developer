@@ -70,7 +70,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Once the deployment is completed, click on **Go to resource**.
 
-    ![](./media/image-7-1-1.png)
+    ![](./media/image-12.png)
 
 1. On **ai-foundry-project-<inject key="Deployment ID" enableCopy="false"></inject>**, click on **Launch Studio**.
 
