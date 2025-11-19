@@ -80,6 +80,13 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     ![](./media/image-14.png)
 
+1. Now you will be redirected to the new **Microsoft Foundry** Portal.
+
+    ![](./media/image-15.png)
+
+1. Click on **Start Building** (1) and select **Browse Models** (2).
+
+    ![](./media/image-16.png)
 1. Search for **gpt-4o (1)**, select the **gpt-4o** model **(2)**, and click on **Confirm (3)**.
 
     ![](./media/kernel-image12.png)
