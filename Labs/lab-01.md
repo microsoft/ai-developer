@@ -54,7 +54,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Search for **gpt-4o (1)**, select the **gpt-4o** model **(2)**, and click on **Confirm (3)**.
 
-    ![](./media/kernel-image12.png)
+    ![](./media/kernel-image13-1.png)
 
 1. On the **Deploy model gpt-4o** blade, specify the following configuration options and click on **Connect and Deploy (6)**:
 
