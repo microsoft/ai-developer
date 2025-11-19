@@ -72,13 +72,13 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     ![](./media/image-12.png)
 
-1. On **ai-foundry-project-<inject key="Deployment ID" enableCopy="false"></inject>**, click on **Launch Studio**.
+1. On **ai-foundry-project-<inject key="Deployment ID" enableCopy="false"></inject>**, click on **Go to Foundry portal**.
 
-    ![](./media/image-8.png)
+    ![](./media/image-13.png)
 
-1. After clicking, you will be navigated **Azure AI Foundry | Management center**, select **Model + endpoints (1)**, then then click on **+ Deploy model (2)**, followed by **Deploy Base model (3)**.  
+1. After clicking, you will be navigated **Microsoft Foundry**. On the top bar, enable the slider for **New Foundry**.  
 
-    ![](./media/kernel-image11.png)
+    ![](./media/image-14.png)
 
 1. Search for **gpt-4o (1)**, select the **gpt-4o** model **(2)**, and click on **Confirm (3)**.
 
