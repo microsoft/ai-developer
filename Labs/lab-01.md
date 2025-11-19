@@ -44,17 +44,37 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     ![](./media/kernel-image5-1.png)
 
-1. Expand **Use with Foundry (1)**, select **AI Hubs (2)**, click on the **+ Create (3)** drop down and then select **Project (4)**.
+1. Click on **Foundry (1)**, select **+ Create (2)**.
 
-    ![](./media/image6-2.png)
+    ![](./media/image-9.png)
+
+1. On the **Azure AI project** page, provide the following details and then click on **Review + Next (5)**:
+
+    - **Subscription**: Leave the default one **(1)**
+
+    - Resource group: Select **ai-foundry-<inject key="Deployment ID" enableCopy="false"></inject> (2)**
+
+    - Name: Enter **ai-foundry-project-<inject key="Deployment ID" enableCopy="false"></inject> (3)**
+
+    - Region: **<inject key="Region" enableCopy="false"></inject> (3)**
+
+    - Default project name: Enter **ai-foundry-project-<inject key="Deployment ID" enableCopy="false"></inject> (4)**
+
+      ![](./media/image-10.png)
+
+1. Keep all the setting default and click on **Next** four times.
+
+1. Once you are on the **Review + Create** page and the Validation passed, click on **Create**.
+
+    ![](./media/image-7-1.png)
 
 1. Once the deployment is completed, click on **Go to resource**.
 
-    ![](./media/kernel-image9.png)
+    ![](./media/image-7-1-1.png)
 
-1. On **ai-foundry-hub-<inject key="Deployment ID" enableCopy="false"></inject>**, click on **Launch Azure AI Foundry**.
+1. On **ai-foundry-project-<inject key="Deployment ID" enableCopy="false"></inject>**, click on **Launch Studio**.
 
-    ![](./media/kernel-image10.png)
+    ![](./media/image-8.png)
 
 1. After clicking, you will be navigated **Azure AI Foundry | Management center**, select **Model + endpoints (1)**, then then click on **+ Deploy model (2)**, followed by **Deploy Base model (3)**.  
 
