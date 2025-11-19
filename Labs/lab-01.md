@@ -40,53 +40,18 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     ![](./media/kernel-image8.png)
 
-1. On the **Azure portal** search bar, search for **Microsoft Foundry (1)** and then select **Microsoft Foundry (2)** from the services.
-
-    ![](./media/kernel-image5-1.png)
-
-1. Click on **Foundry (1)**, select **+ Create (2)**.
-
-    ![](./media/image-9.png)
-
-1. On the **Azure AI project** page, provide the following details and then click on **Review + Next (5)**:
-
-    - **Subscription**: Leave the default one **(1)**
-
-    - Resource group: Select **ai-foundry-<inject key="Deployment ID" enableCopy="false"></inject> (2)**
-
-    - Name: Enter **ai-foundry-project-<inject key="Deployment ID" enableCopy="false"></inject> (3)**
-
-    - Region: **<inject key="Region" enableCopy="false"></inject> (3)**
-
-    - Default project name: Enter **ai-foundry-project-<inject key="Deployment ID" enableCopy="false"></inject> (4)**
-
-      ![](./media/image-10.png)
-
-1. Keep all the setting default and click on **Next** four times.
-
-1. Once you are on the **Review + Create** page and the Validation passed, click on **Create**.
-
-    ![](./media/image-11.png)
-
 1. Once the deployment is completed, click on **Go to resource**.
 
-    ![](./media/image-12.png)
+    ![](./media/kernel-image9.png)
 
-1. On **ai-foundry-project-<inject key="Deployment ID" enableCopy="false"></inject>**, click on **Go to Foundry portal**.
+1. On **ai-foundry-hub-<inject key="Deployment ID" enableCopy="false"></inject>**, click on **Launch Azure AI Foundry**.
 
-    ![](./media/image-13.png)
+    ![](./media/kernel-image10.png)
 
-1. After clicking, you will be navigated **Microsoft Foundry**. On the top bar, enable the slider for **New Foundry**.  
+1. After clicking, you will be navigated **Azure AI Foundry | Management center**, select **Model + endpoints (1)**, then then click on **+ Deploy model (2)**, followed by **Deploy Base model (3)**.  
 
-    ![](./media/image-14.png)
+    ![](./media/kernel-image11.png)
 
-1. Now you will be redirected to the new **Microsoft Foundry** Portal.
-
-    ![](./media/image-15.png)
-
-1. Click on **Start Building** (1) and select **Browse Models** (2).
-
-    ![](./media/image-16.png)
 1. Search for **gpt-4o (1)**, select the **gpt-4o** model **(2)**, and click on **Confirm (3)**.
 
     ![](./media/kernel-image12.png)
