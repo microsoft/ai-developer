@@ -66,7 +66,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 1. Once you are on the **Review + Create** page and the Validation passed, click on **Create**.
 
-    ![](./media/image-7-1.png)
+    ![](./media/image-11.png)
 
 1. Once the deployment is completed, click on **Go to resource**.
 
