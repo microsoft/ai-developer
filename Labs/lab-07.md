@@ -13,10 +13,10 @@ In this exercise, you will be performing the following tasks:
 
 In this task, you will explore different flow types in Azure AI Foundry by deploying a DALL-E model to generate images from text prompts.
 
-1. Navigate to the [Azure AI Foundry](https://ai.azure.com/) portal.
+1. Navigate to the [Microsoft Foundry](https://ai.azure.com/) portal.
 1. Click on **Models + endpoints (1)** under **My assets** in the left pane, then click on **+ Deploy model**, followed by **Deploy base model (2)**.
 
-    ![](./media/image_007-1.png)
+    ![](./media/image_007-100.png)
 
 1. Search for **dall-e-3 (1)**, select the model **(2)**, and click on **Confirm (3)**.
 

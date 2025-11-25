@@ -16,7 +16,7 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 1. Navigate to the [Azure AI Foundry](https://ai.azure.com/) portal.
 1. Click on **Models + endpoints (1)** under **My assets** in the left pane, then click on **+ Deploy model**, followed by **Deploy Base model (2)**.
 
-    ![](./media/image_007-1.png)
+    ![](./media/image_007-100.png)
 1. Search for **text-embedding-ada-002**, select the model **(1)**, and click on **Confirm (2)**.
 
     ![](./media/image_084.png)
@@ -25,7 +25,7 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 
 1. Navigate back to **Models+endpoints (1)**, select **GPT-4o (2)**, and click on **Open in playground (3)**.
 
-    ![](./media/sk34.png)
+    ![](./media/sk034.png)
 
 1. Click on **Add your data (1)** and select **+ Add a data source (2)**.
 

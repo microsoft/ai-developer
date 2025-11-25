@@ -18,7 +18,7 @@ In this task, you will explore different flow types in Azure AI Foundry by adjus
 
 1. Click on **Guardrails + Controls (1)** under **Protect and govern** in the left pane. Navigate to **Content filters (2)** tab and then **+ Create content filter (3)**.
 
-    ![](./media/sk43.png)
+    ![](./media/sk043.png)
 
 1. On the **Create filters to allow or block specific types of content** blade, specify the following configuration options and click on **Next (2)**:
    - **Name**:  **AggressiveContentFilter (1)**
@@ -46,7 +46,7 @@ In this task, you will explore different flow types in Azure AI Foundry by filte
 
 1. Navigate to **Blocklists (Preview) (1)** tab and then **+ Create blocklist (2)**.
 
-    ![](./media/sk47.png)
+    ![](./media/sk047.png)
     
 1. On the **Create a blocklist** blade, specify the following configuration options and click on **Create blocklist (3)**:
 
