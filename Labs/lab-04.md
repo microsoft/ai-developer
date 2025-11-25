@@ -1,6 +1,6 @@
 # Exercise 4: Import Plugin using OpenAPI
 
-### Estimated Duration: 25 Minutes
+## Estimated Duration: 25 Minutes
 
 This hands-on lab explores the integration of OpenAPI with Semantic Kernel to enhance AI-driven applications. Designed for developers new to API orchestration, the lab guides you through leveraging OpenAPI specifications to load external services as plugins dynamically. You will learn to import the provided WorkItems API as an OpenAPI plugin, enabling seamless interaction through AI-driven prompts. By the end of this lab, you will understand how OpenAPI simplifies API integration, reduces manual coding, and enhances the automation of external service calls.
 
@@ -19,7 +19,7 @@ In this task, you will explore different flow types in Azure AI Foundry by runni
     ```
 1. You will receive a response similar to the one shown below:
 
-    ![](./media/image_073.png)
+    ![](./media/36.png)
 
 ## Task 2: Create and import the OpenAPI Plugin
 
@@ -28,9 +28,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 <details>
 <summary><strong>Python</strong></summary>
 
-1. Right click on `Python>src>workitems` in the left pane and select **Open in Integrated Terminal (1)**.
+1. Right click on `Python>src>workitems` **(1) (2) (3)** in the left pane and select **Open in Integrated Terminal (4)**.
 
-    ![](./media/image_074.png)
+    ![](./media/37.png)
 1. Use the following command to run the app:
     ```
     python api.py
@@ -42,9 +42,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. The Swagger page can be found at `http://127.0.0.1:8000/docs`.
 
     ![](./media/image_076.png)
-1. Navigate to `Python>src` directory and open **chat.py (1)** file.
+1. Navigate to **`Python (1) >src (2)`** directory and open **chat.py (3)** file.
 
-    ![](./media/image_030.png)
+    ![](./media/kernel-image57.png)
 1. Add the following code in the `# Placeholder for OpenAPI plugin` section of the file.
     ```
     kernel.add_plugin_from_openapi(
@@ -85,7 +85,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     ```
 1. You will receive a response similar to the one shown below:
 
-    ![](./media/sk33.png)
+    ![](./media/38.png)
 </details>
 
 <details>
@@ -105,9 +105,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 1. The swagger page can be found at `http://localhost:5115/swagger/index.html`.
 
     ![](./media/image_080.png)
-1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
+1. Navigate to **`Dotnet (1) >src (2) > BlazorAI (3) > Components (4) > Pages (5)`** directory and open **Chat.razor.cs (6)** file.
 
-    ![](./media/image_038.png)
+    ![](./media/kernel-image55.png)
 1. Add the following code in the `// Import Models` section of the file.
     ```
     using Microsoft.SemanticKernel.Plugins.OpenApi;
@@ -168,4 +168,6 @@ We have successfully completed the below tasks for **OpenAPI integration with Se
 - Integrated **OpenAPI with Semantic Kernel** to enable dynamic API orchestration.  
 - Imported and configured the **WorkItems API** as an **OpenAPI plugin** for seamless external service interaction.  
 
-### Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.
+## Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.
+
+![Launch Azure Portal](./media/gsk5.png)

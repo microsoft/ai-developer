@@ -1,6 +1,6 @@
 # Exercise 5: Retrieval-Augmented Generation (RAG)
 
-### Estimated Duration: 40 Minutes
+## Estimated Duration: 40 Minutes
 
 This hands-on lab introduces you to the Retrieval-Augmented Generation (RAG) pattern—an AI architecture that enhances response quality by integrating relevant external knowledge into the generative process. Designed for those new to RAG, the lab guides you through how retrieval mechanisms work alongside generative models to deliver more accurate, informed, and context-aware outputs. You will also gain a clear understanding of data privacy and security prompts, completions, embeddings, and training data remaining fully isolated—they are not shared with other customers, OpenAI, Microsoft, or third parties, nor are they used to improve models automatically.
 
@@ -19,9 +19,11 @@ In this task, you will explore different flow types in Microsoft Foundry by depl
     ![](./media/image_007-100.png)
 1. Search for **text-embedding-ada-002**, select the model **(1)**, and click on **Confirm (2)**.
 
-    ![](./media/image_084.png)
+    ![](./media/kernel-image46-1.png)
 
 1. Click on **Deploy**.
+
+    ![](./media/kernel-image47.png)
 
 1. Navigate back to **Models+endpoints (1)**, select **GPT-4o (2)**, and click on **Open in playground (3)**.
 
@@ -31,18 +33,18 @@ In this task, you will explore different flow types in Microsoft Foundry by depl
 
     ![](./media/image_085a.png)
 
-1. On the **Select or add data source**blade, provide the following details and then click on **Next (6)**:
+1. On the **Select or add data source** blade, provide the following details and then click on **Next (6)**:
 
-    - Select **Upload files (Preview)** for `Data source`
-    - Subscription: Leave the default one
-    - Select Azure blob Azure Storage blob resouce: Select the storage account that starts with **aifoundryhubxxxxxx (1)**
-    - Select Azure AI Search resource: Select **ai-search-<inject key="Deployment ID" enableCopy="false"></inject> (2)** 
-    - Enter the index name: Enter **employeehandbook (3)** 
-    - **Check the box** labeled Add vector search to enable this feature for the search resource **(4)**
-    - Under Select an embedding model: choose **text-embedding-ada-002** **(5)** from the dropdown menu.
-    - Click on **Next** **(6)**
+    - Select **Upload files (Preview) (1)** for `Data source`
+    - Subscription: Leave the default one **(2)**
+    - Select Azure blob Azure Storage blob resouce: Select the storage account that starts with **aifoundryhubxxxxxx (3)**
+    - Select Azure AI Search resource: Select **ai-search-<inject key="Deployment ID" enableCopy="false"></inject> (4)** 
+    - Enter the index name: Enter **employeehandbook (5)** 
+    - **Check the box (6)** labeled Add vector search to enable this feature for the search resource 
+    - Under Select an embedding model: choose **text-embedding-ada-002** **(7)** from the dropdown menu.
+    - Click on **Next** **(8)**
  
-      ![](./media/add-data-source.png)
+      ![](./media/43.png)
 
       >**Note:** If you receive a message prompting you to **Turn on CORS**, go ahead and click on it.
 
@@ -50,7 +52,7 @@ In this task, you will explore different flow types in Microsoft Foundry by depl
 
 1. Click on **Browse for files**.
 
-    ![](./media/sk36.png)
+    ![](./media/kernel-image50.png)
   
 1. Navigate to `C:\LabFiles\ai-developer\Dotnet\src\BlazorAI\data\` and select **employee_handbook.pdf (1).** Click on **Open (2)**.
 
@@ -58,42 +60,41 @@ In this task, you will explore different flow types in Microsoft Foundry by depl
 
 1. Click on **Upload files**.
 
-    ![](./media/sk37.png)
+    ![](./media/45.png)
 
 1. Click on **Next**.
 
-1. On the **Data Management** page, click on **Next**.
+1. On the **Data Management** page, under Search type select **Hybrid + sementic (1)** and select a size **1024(default) (2)** click on **Next (3)**.
 
-    ![](./media/sk38.png)
+    ![](./media/48.png)
 
-1. On the **Data Connection** blade, select **API Key (1)** for authenticatio and then click on **Next (2)**.    
+1. On the **Data Connection** blade, select **API Key (1)** for authentication and then click on **Next (2)**.    
 
-    ![](./media/sk39.png)
+    ![](./media/47.png)
 
 1. Review the configuration and then click on **Save and close**.
 
-    ![](./media/sk40.png)
+    ![](./media/49.png)
 
-1. The data injection might take around 5 minutes.
+1. The data injection might take around 5 minutes, later you will observe as shown in below.
 
-    ![](./media/sk41.png)
+    ![](./media/50.png)
 
 1. Navigate to the **Azure Portal** and search **AI Search (1).** Click on it and open the **AI Search (2)** resource located there.
 
-    ![](./media/image_089.png)
+    ![](./media/kernel-image20.png)
 
 1. Select **ai-search-<inject key="Deployment ID" enableCopy="false"></inject>**.    
     
-    ![](./media/image_090.png)
+    ![](./media/kernel-image51.png)
 
-1. On the **Overview (1)** page, copy the **URL (2)** and paste it into Notepad.
+1. On the **Overview (1)** page, copy the **URL (2)** and paste it into **Notepad**.
 
-    ![](./media/image_091.png)
+    ![](./media/kernel-image52.png)
 
-1. Navigate to **Keys (1)** under **Settings** in the left pane, copy the **Primary admin key (2)** from Azure Portal, and paste it into Notepad.
+1. From the left navigation pane expand **Settings** then select **Keys (1)**, copy the **Primary admin key (2)** from Azure Portal, and paste it into **Notepad**.
 
-    ![](./media/image_092.png)
-
+    ![](./media/kernel-image53.png)
 
 ## Task 2: Create a Semantic Search Plugin to query the AI Search Index
 
@@ -102,9 +103,9 @@ In this task, you will explore different flow types in Microsoft Foundry by crea
 <details>
 <summary><strong>Python</strong></summary>
 
-1. Navigate to `Python>src` directory and open **.env (1)** file.
+1. Navigate to **`Python (1) > src (2)`** directory and open **.env (3)** file.
 
-    ![](./media/image_026.png)
+    ![](./media/kernel-image(29).png)
 
 2. Paste the **AI search URL** that you copied earlier in the exercise beside `AI_SEARCH_URL` in the **.env** file.
 
@@ -114,9 +115,9 @@ In this task, you will explore different flow types in Microsoft Foundry by crea
 
     ![](./media/sk42.png)
 
-4. On the **Overview (1)** page, go to **Azure AI services (2)** and copy the **Azure AI services Endpoint (3)** and the Key as well.
+4. Navigate back **Azure AI Foundry** portal and on the **Overview (1)** page, go to **Azure AI services (2)** and copy the **API Key (3)** and **Azure AI services Endpoint (4)**.
 
-    ![](./media/overview-01.png)
+    ![](./media/kernel-image(54).png)
 
 5. Paste the **Embed API key** you copied earlier into the .env file, next to the `AZURE_OPENAI_EMBED_API_KEY` entry.
 
@@ -130,18 +131,16 @@ In this task, you will explore different flow types in Microsoft Foundry by crea
 
     ![](./media/image_094.png)
 
-9. Add the following code to the file:
+9. Open the provided link in your browser, press Ctrl + A to select all the content, then copy and paste it into Visual Studio Code
 
-    ```python
-    # Entire ContosoSearchPlugin class code goes here...
-    # (Omitted for brevity, but should be placed within this code block)
     ```
-
+    https://raw.githubusercontent.com/CloudLabsAI-Azure/ai-developer/refs/heads/prod/CodeBase/python/ContosoSearchPlugin.py
+    ```
 10. Save the file.
 
-11. Navigate to `Python>src` directory and open **chat.py (1)** file.
+11. Navigate to **`Python (1) > src (2)`** directory and open **chat.py (3)** file.
 
-    ![](./media/image_030.png)
+    ![](./media/kernel-image57.png)
 
 12. Add the following code in the `#Import Modules` section of the file.
 
@@ -266,9 +265,9 @@ In this task, you will explore different flow types in Microsoft Foundry by crea
 <details>
 <summary><strong>C Sharp(C#)</strong></summary>
 
-1. Navigate to `Dotnet>src>BlazorAI` directory and open **appsettings.json (1)** file.
+1. Navigate to **`Dotnet (1) > src (2) > BlazorAI (3)`** directory and open **appsettings.json (4)** file.
 
-      ![](./media/image_028.png)
+      ![](./media/kernel-image58.png)
 
 1. Paste the **AI search URL** that you copied earlier in the exercise besides `AI_SEARCH_URL` in **appsettings.json** file.
 
@@ -387,9 +386,9 @@ In this task, you will explore different flow types in Microsoft Foundry by crea
 
 1. Save the file.
 
-1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
+1. Navigate to **`Dotnet (1) > src (2) > BlazorAI (3) > Components (4) > Pages (5)`** directory and open **Chat.razor.cs (6)** file.
 
-    ![](./media/image_038.png)
+    ![](./media/kernel-image55.png)
 
 1. Add the following code in the `// Import Models` section of the file.
 
@@ -437,9 +436,9 @@ In this task, you will explore different flow types in Microsoft Foundry by crea
     kernelBuilder.AddAzureAISearchVectorStore();
     ```
 
-      ![](./media/image_105.png)
+    ![](./media/image_105.png)
 
-> **Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
+      > **Note**: Please refer the screenshots to locate the code in proper position that helps you to avoid indentation error.
 
 1. Add the following code in the `// Challenge 05 - Add Search Plugin` section of the file.
 
@@ -450,7 +449,7 @@ In this task, you will explore different flow types in Microsoft Foundry by crea
 
       ![](./media/image_106.png)
 
-1. Refer to the code provided at the following URL. Please verify that your code matches the one below and correct any indentation errors if present
+1. Refer to the code provided at the following URL. Please verify that your code matches the one below and correct any indentation errors if present:
 
     - Open the provided link in your browser, press Ctrl + A to select all the content, then copy and paste it into Visual Studio Code
 
@@ -501,7 +500,7 @@ In this task, you will explore different flow types in Microsoft Foundry by crea
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
 > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
-<validation step="3497b745-b26b-47e6-bfbf-fdb7f238faa4" />  
+<validation step="aba3f1c2-bf55-4ca3-baf6-fcaa280552fa" />  
 
 
 ## Review
@@ -514,4 +513,6 @@ You have successfully completed the below tasks for **Retrieval-Augmented Genera
 - Utilized **Azure AI Search** to fetch relevant contextual data for more accurate outputs.  
 - Configured **Semantic Kernel** to orchestrate retrieval and generative workflows seamlessly.  
 
-### Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.
+## Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.
+
+![Launch Azure Portal](./media/gsk5.png)

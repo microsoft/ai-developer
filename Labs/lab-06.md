@@ -23,21 +23,21 @@ In this task, you will explore different flow types in Microsoft Foundry by adju
 1. On the **Create filters to allow or block specific types of content** blade, specify the following configuration options and click on **Next (2)**:
    - **Name**:  **AggressiveContentFilter (1)**
 
-     ![](./media/sk44.png)
+     ![](./media/kernel-image(60).png)
 
 1. Leave the visible options to default and click on **Next** twice.
 
 1. On the **Create filters to allow or block specific types of content**, **Deployment (Optional)** blade, select **all 2** of the deployments, and click **Next (2)**.
 
-    ![](./media/sk45.png)
+    ![](./media/kernel-image61.png)
 
-1. If you get a **Replacing existing content filter** warning, click on **Replace (1)**.
+1. When **Replacing existing content filter** prompted, click on **Replace (1)**.
 
-    ![](./media/image_014.png)
+    ![](./media/kernel-image62.png)
 
 1. Create one **Create filter**.
 
-    ![](./media/sk46.png)
+    ![](./media/kernel-image63.png)
 
 
 ## Task 2: Filter specific words or patterns
@@ -53,17 +53,19 @@ In this task, you will explore different flow types in Microsoft Foundry by filt
     - **Name**:  **CustomBlocklist<inject key="Deployment ID" enableCopy="false"></inject> (1)**
     - **Description**: This is a custom blocklist. **(2)**
 
-      ![](./media/sk48.png)
+      ![](./media/kernel-image(65).png)
 
 1. Click on **CustomBlocklist<inject key="Deployment ID" enableCopy="false"></inject>** created earlier.
 
+    ![](./media/kernel-image66.png)
+
 1. Click on **+ Add new term**.
 
-    ![](./media/sk49.png)
+    ![](./media/kernel-image67.png)
 
 1. Enter words **password (1)** and select the type as required (**Exact Match** or **Regex**) then click on **Add term**.
 
-    ![](./media/sk50.png)
+    ![](./media/kernel-image68.png)
 
 1. Click on **+ Add new term** again.   
 
@@ -82,7 +84,7 @@ In this task, you will explore different flow types in Microsoft Foundry by filt
     - poker
     - betting
 
-      ![](./media/sk51.png)
+      ![](./media/kernel-image69.png)
 
 ## Review
 
@@ -95,4 +97,6 @@ You have successfully completed the below tasks for **content filtering in Micro
 - Configured **custom content moderation rules** within **Microsoft Foundry Studio**.  
 - Adjusted **content filtering settings** to align with ethical AI guidelines.  
 
-### Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.
+## Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.
+
+![Launch Azure Portal](./media/gsk5.png)

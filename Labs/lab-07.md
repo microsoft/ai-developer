@@ -1,8 +1,8 @@
-# **Exercise 7**: Image Generation using DALL-E
+# Exercise 7: Image Generation using DALL-E
 
-### Estimated Duration: 25 Minutes
+## Estimated Duration: 25 Minutes
 
-This hands-on lab introduces image generation capabilities to your reference application using DALL·E, an advanced AI model that transforms text into visuals. Designed for those new to AI-powered creativity, the lab guides you step-by-step in integrating DALL·E to generate images from descriptive text prompts. You will explore how DALL·E can create visuals ranging from realistic objects and scenes to imaginative, abstract concepts—unlocking new possibilities for creative expression and user interaction.
+This hands-on lab introduces image generation capabilities to your reference application using DALL·E, an advanced AI model that transforms text into visuals. Designed for those new to AI-powered creativity, the lab guides you step-by-step in integrating DALL·E to generate images from descriptive text prompts. You will explore how DALL·E can create visuals ranging from realistic objects and scenes to imaginative, abstract concepts unlocking new possibilities for creative expression and user interaction.
 
 ## Objectives
 In this exercise, you will be performing the following tasks:
@@ -20,23 +20,24 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 
 1. Search for **dall-e-3 (1)**, select the model **(2)**, and click on **Confirm (3)**.
 
-    ![](./media/image_110.png)
+    ![](./media/kernel-image71-1.png)
 
 1. Click on **Deploy**.
 
-    ![](./media/sk52.png)
+    ![](./media/oct-ai-dev-lab7-1.png)
 
 1. On the **dall-e-3** page, copy the **Target URI (1)** and **Key (2)** and paste them into Notepad.
 
-    ![](./media/sk54.png)
+    ![](./media/kernel-image73.png)
 
 <details>
 <summary><strong>Python</strong></summary>
 
-1. Navigate to `Python>src` directory and open **.env (1)** file.
+1. Navigate to **`Python (1) > src (2)`** directory and open **.env (3)** file.
 
-    ![](./media/image_026.png)
-1. Paste the **Target URI** that you copied earlier in the exercise besides `AZURE_TEXT_TO_IMAGE_ENDPOINT` (1).
+    ![](./media/kernel-image(29).png)
+   
+1. Paste the **Target URI** that you copied in the previous step besides `AZURE_TEXT_TO_IMAGE_ENDPOINT` (1).
     >Note:- Ensure that every value in the **.env** file is enclosed in **double quotes (")**.
 1. Paste the **API key (1)** that you copied earlier in the exercise besides `AZURE_TEXT_TO_IMAGE_API_KEY` (2).
 
@@ -160,9 +161,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
                 return f"Error generating image: {str(e)}"
     ```
 1. Save the file.
-1. Navigate to `Python>src` directory and open **chat.py (1)** file.
+1. Navigate to **`Python (1) > src (2)`** directory and open **chat.py (3)** file.
 
-    ![](./media/image_030.png)
+    ![](./media/kernel-image57.png)
 1. Add the following code in the `#Import Modules` section of the file.
     ```
     from plugins.ImageGenerationPlugin import ImageGenerationPlugin
@@ -341,9 +342,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
     }
     ```
 1. Save the file.
-1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **Chat.razor.cs (1)** file.
+1. Navigate to **`Dotnet (1) > src (2) > BlazorAI (3) > Components (4) > Pages (5)`** directory and open **Chat.razor.cs (6)** file.
 
-    ![](./media/image_038.png)
+    ![](./media/kernel-image55.png)
 1. Add the following code in the `// Challenge 07 - Add Azure AI Foundry Text To Image` section of the file.
     ```
     kernelBuilder.AddAzureOpenAITextToImage(
@@ -391,7 +392,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
 ## Review
 
-In this exercise, we integrated **DALL·E** into a reference application to enable **AI-powered image generation** from text prompts. We explored how DALL·E transforms descriptive inputs into visuals—ranging from realistic scenes to abstract concepts—unlocking new creative possibilities. This enhanced our proficiency in applying generative AI for visual content creation and user interaction.
+In this exercise, we integrated **DALL·E** into a reference application to enable **AI-powered image generation** from text prompts. We explored how DALL·E transforms descriptive inputs into visuals ranging from realistic scenes to abstract concepts unlocking new creative possibilities. This enhanced our proficiency in applying generative AI for visual content creation and user interaction.
 
 You have successfully completed the below tasks for **DALL·E integration in AI-powered image generation**:  
 
@@ -399,4 +400,6 @@ You have successfully completed the below tasks for **DALL·E integration in AI-
 - Explored **AI-powered visual content creation**, transforming descriptive text into images.  
 - Configured **Azure AI Foundry** to support **DALL·E-based generative AI workflows**.  
 
-### Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.
+## Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.
+
+![Launch Azure Portal](./media/gsk5.png)

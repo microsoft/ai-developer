@@ -1,6 +1,6 @@
 # Azure AI Foundry and Semantic Kernel Fundamentals
 
-### Overall Estimated Duration: 4 Hours
+## Overall Estimated Duration: 4 Hours
 
 ## Overview
 
@@ -40,7 +40,7 @@ The lab also covers **plugins**, such as **Time & Weather utilities** for real-t
 
 
 
-## **Explanation of Components**  
+## Explanation of Components 
 
 - **Microsoft Foundry**: Provides an integrated environment for AI model development, deployment, and management.  
 - **Azure AI Studio**: A web-based interface for managing AI models, endpoints, and inference capabilities.  
@@ -90,7 +90,11 @@ For convenience, you can open the lab guide in a separate window by selecting th
 
    ![Inline Validation](./media/gdev5.png)
 
-1. If you need any assistance, please contact us at **cloudlabs-support@spektrasystems.com**.
+## Lab Guide Zoom In/Zoom Out
+ 
+To adjust the zoom level for the environment page, click the **A↕: 100%** icon located next to the timer in the lab environment.
+
+   ![OpenAI](./media/76.png)
 
 ## Let's Get Started with Azure Portal
 
@@ -102,7 +106,7 @@ For convenience, you can open the lab guide in a separate window by selecting th
  
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
  
-       ![Enter Your Username](./media/lc-image-1.png)
+       ![](./media/kernel-image1.png)
  
 1. Next, provide your password:
  

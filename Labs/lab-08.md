@@ -1,6 +1,6 @@
-# **Exercise 8**: Multi-Agent Systems
+# Exercise 8: Multi-Agent Systems
 
-### Estimated Duration: 30 Minutes
+## Estimated Duration: 30 Minutes
 
 This hands-on lab introduces **multi-agent system development**, where a user request is processed by multiple agents, each with a distinct **persona and responsibility**. Designed for those new to **AI-driven automation**, the lab guides you through integrating agents that collaborate to generate a well-rounded response. Whether handling specialized tasks or combining expertise, this system ensures comprehensive context-aware outputs. By the end of this lab, you will understand how to **orchestrate multi-agent interactions** to enhance AI-driven decision-making and user experiences.
 
@@ -15,9 +15,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 <details>
 <summary><strong>Python</strong></summary>
 
-1. Navigate to `Python>src` directory and open **multi_agent.py** file.
+1. Navigate to **`Python (1) > src (2)`** directory and open **multi_agent.py (3)** file.
 
-    ![](./media/sk59.png)
+    ![](./media/kernel-image74.png)
 
 1. Remove the existing code and add the code from the following URL in the file.
 
@@ -53,9 +53,9 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 <details>
 <summary><strong>C Sharp(C#)</strong></summary>
 
-1. Navigate to `Dotnet>src>BlazorAI>Components>Pages` directory and open **MultiAgent.razor.cs (1)** file.
+1. Navigate to **`Dotnet (1) > src (2) > BlazorAI (3) > Components (4) > Pages (5)`** directory and open **MultiAgent.razor.cs (6)** file.
 
-    ![](./media/image_125.png)
+    ![](./media/kernel-image75.png)
 
 1. Remove the existing code and add the code from the following URL in the file.
 

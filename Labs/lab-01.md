@@ -1,6 +1,6 @@
 # Exercise 1: Microsoft Foundry Fundamentals
 
-### Estimated Duration: 20 minutes
+## Estimated Duration: 20 minutes
 
 This hands-on lab provides experience with Microsoft Foundry and its core capabilities, including AI model deployment and integration with Azure AI Search. Designed for those new to the platform, the lab guides you step-by-step to set up an AI project, deploy a GPT-4o model, and configure essential AI services.
 
@@ -24,51 +24,51 @@ In this task, you will explore different flow types in Microsoft Foundry by crea
 
     ![](./media/A2.png)
 
-1. On the **Azure AI hub** page, provide the following details and then click on **Review+create (5)**:
+1. On the **Azure AI hub** page, provide the following details and then click on **Review + create (5)**:
 
     - **Subscription**: Leave the default one **(1)**
+
     - Resource group: Select **ai-foundry-<inject key="Deployment ID" enableCopy="false"></inject> (2)**
+
     - Region: **<inject key="Region" enableCopy="false"></inject> (3)**
+
     - Name: Enter **ai-foundry-hub-<inject key="Deployment ID" enableCopy="false"></inject> (4)**
 
-      ![](./media/sk4.png)
+      ![](./media/kernel-image7.png)
 
 1. Once the Validation passed, click on **Create**.
 
-    ![](./media/sk5.png)
+    ![](./media/kernel-image8.png)
 
 1. Once the deployment is completed, click on **Go to resource**.
 
-    ![](./media/sk7.png)
+    ![](./media/kernel-image9.png)
 
 1. Click on **Launch Microsoft Foundry**.
 
-    ![](./media/sk8.png)
+    ![](./media/kernel-image10.png)
 
-1. Select **Model + endpoints (1)**, then then click on **+ Deploy model (2)**, followed by **Deploy Base model (3)**.  
+1. After clicking, you will be navigated **Azure AI Foundry | Management center**, select **Model + endpoints (1)**, then then click on **+ Deploy model (2)**, followed by **Deploy Base model (3)**.  
 
     ![](./media/sk090.png)
 
 1. Search for **gpt-4o (1)**, select the **gpt-4o** model **(2)**, and click on **Confirm (3)**.
 
-    ![](./media/image_008.png)
+    ![](./media/kernel-image13-1.png)
 
-1. On the **Deploy model gpt-4o** blade, specify the following configuration options and click on **Deploy (4)**:
+1. On the **Deploy model gpt-4o** blade, specify the following configuration options and click on **Connect and Deploy (6)**:
 
     - **Deployment type**: **Standard** **(1)**
     - **Model version**: 2024-05-13 **(2)**
-    - **Tokens per Minute Rate Limit**: **50K** **(3)**
-    - Click on **Connect and deploy (4)**:
+    - Expand **Deployment details (3)**
+    - **Tokens per Minute Rate Limit**: **50K** **(4)**
+    - Click on **Connect and deploy (5)**:
 
-      ![](./media/gpt-4o-1.png) 
+      ![](./media/kernel-image13.png)
 
-1. In the upper-right corner of the screen, click on the Hub icon located next to your profile.
- 
-      ![](./media/ai-foundry.png)
+1. In the upper-right corner of the screen, click on the **Hub (1)** icon located next to your profile. From '**Working in** drop down select **aifoundryhubxxxxxxx (2)**, then click on **Switch (3)**.
 
-1. Select the '**Working in AIFoundry**' **Option (1)**, then click on **Switch (2)**.
-
-      ![](./media/switch.png)
+    ![](./media/kernel-image14.png)
 
 1. Navigate to **Model + endpoints (1)**, then select **gpt-4o (2)** model and the click on **Open in Playground (3)**.
 
@@ -76,11 +76,11 @@ In this task, you will explore different flow types in Microsoft Foundry by crea
 
 1. Replace the existing text with `Extract the United States Postal Service (USPS) formatted address from the following email` **(1)** then click on **Apply changes (2)**. Using this you can explore the capabilities of Azure OpenAI.
 
-    ![](./media/sk13.png)
+    ![](./media/kernel-image16.png)
 
 1. Click on **Continue**.
 
-    ![](./media/sk14.png)
+    ![](./media/kernel-image17.png)
 
 1. Provide the below mail in the chat **(1)** then click on **Send (2)** to identify and extract the postal address from the following email:
 
@@ -100,11 +100,11 @@ In this task, you will explore different flow types in Microsoft Foundry by crea
     Marketing Director BrightEdge Marketing
     ```
 
-    ![](./media/image_018.png)
+    ![](./media/kernel-image18.png)
     
 1. You will receive a response similar to the one shown below:
 
-    ![](./media/sk15.png)
+    ![](./media/kernel-image19.png)
 
 ## Task 2: Create Azure AI Search
 
@@ -116,30 +116,31 @@ In this task you will create a Azure AI Search resource.
 
     ![](./media/A4.png)
 
-1. Select **AI Search (1)** then click on **+ Create (2)**.
+1. On **AI Foundry | AI Search** page, click on **+ Create (2)**.
 
     ![](./media/A3.png)
 
-1. On the **Create a search service** page, provide the following details and then click on **Review+create (5)**:
+1. On the **Create a search service** page, provide the following details and then click on **Review + create (5)**:
 
     - Subscription: Leave the default one **(1)**
     - Resource group: Select **ai-foundry-<inject key="Deployment ID" enableCopy="false"></inject> (2)**
     - Service name: Enter **ai-search-<inject key="Deployment ID" enableCopy="false"></inject> (3)**
     - Region: **<inject key="Region" enableCopy="false"></inject> (4)** 
 
-      ![](./media/sk18.png)
+      ![](./media/kernel-image22.png)
 
 1. Click on **Create**.
 
-    ![](./media/sk19.png)
+    ![](./media/kernel-image23.png)
 
-> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-      
-   - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
-   - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-   - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+1. Wait for the deployment to complete.  
 
-<validation step="ceb8c2ae-28bf-492f-98f5-dcf416c1fc3c" />
+>**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com.
+
+<validation step="a3e77878-3ce2-4d69-b4e6-c88d4a0f45ec" />
 
 ## Review
 
@@ -151,4 +152,6 @@ You have successfully completed the below tasks for AI development using **Micro
    
 - Utilized **Semantic Kernel** to connect AI models with external APIs and plugins.
 
-### Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.
+## Congratulations on successfully completing the lab! Click Next >> to continue to the next lab.
+
+![Launch Azure Portal](./media/gsk5.png)
