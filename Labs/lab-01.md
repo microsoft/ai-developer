@@ -16,7 +16,7 @@ In this exercise, you will be performing the following tasks:
 
 In this task, you will explore different flow types in Microsoft Foundry by creating a AI hub through Azure portal, then deploying the GPT-4o model, and testing its capabilities in the playground from the Microsoft Foundry.
 
-1. On the **Azure portal** search bar, search for **AI Foundry (1)** and then select **Microsoft Foundry (2)** from the services.
+1. On the **Azure portal** search bar, search for **Microsoft Foundry (1)** and then select **Microsoft Foundry (2)** from the services.
 
     ![](./media/A1.png)
 
@@ -47,7 +47,7 @@ In this task, you will explore different flow types in Microsoft Foundry by crea
 
 1. Select **Model + endpoints (1)**, then then click on **+ Deploy model (2)**, followed by **Deploy Base model (3)**.  
 
-    ![](./media/sk09.png)
+    ![](./media/sk090.png)
 
 1. Search for **gpt-4o (1)**, select the **gpt-4o** model **(2)**, and click on **Confirm (3)**.
 
