@@ -4,18 +4,18 @@
 
 ## Overview
 
-In this hands-on lab series, participants will explore the core capabilities of **Azure AI Foundry** and the **Semantic Kernel** framework to build intelligent, extensible AI applications. Designed for beginners in AI development, the labs guide participants through setting up AI projects in Azure AI Foundry, deploying the **GPT-4o** model, and connecting it seamlessly with Semantic Kernel to enable dynamic, prompt-based interactions. Participants will learn how to integrate **plugins**—such as time and weather utilities—to extend chatbot functionality, implement **Retrieval-Augmented Generation (RAG)** for more informed responses, and leverage **OpenAPI** to connect external services with minimal code. The labs also highlight responsible AI practices with **content filtering tools** in Foundry Studio and creative AI integration through **DALL·E** for image generation, delivered in a secure, cloud-based environment. This series provides foundational, hands-on experience with Semantic Kernel and Azure AI Foundry to help participants build scalable, AI-powered applications.
+In this hands-on lab series, participants will explore the core capabilities of **Microsoft Foundry** and the **Semantic Kernel** framework to build intelligent, extensible AI applications. Designed for beginners in AI development, the labs guide participants through setting up AI projects in Microsoft Foundry, deploying the **GPT-4o** model, and connecting it seamlessly with Semantic Kernel to enable dynamic, prompt-based interactions. Participants will learn how to integrate **plugins**—such as time and weather utilities—to extend chatbot functionality, implement **Retrieval-Augmented Generation (RAG)** for more informed responses, and leverage **OpenAPI** to connect external services with minimal code. The labs also highlight responsible AI practices with **content filtering tools** in Foundry Studio and creative AI integration through **DALL·E** for image generation, delivered in a secure, cloud-based environment. This series provides foundational, hands-on experience with Semantic Kernel and Microsoft Foundry to help participants build scalable, AI-powered applications.
 
 ## Objective
 
-**Explore how Azure AI Foundry and Semantic Kernel empower you to build intelligent, extensible, and responsible AI applications.** Gain hands-on experience deploying GPT-4o models, integrating external services and APIs, developing custom plugins, and implementing advanced AI design patterns such as Retrieval-Augmented Generation (RAG) and multi-agent collaboration. By the end of this lab series, you'll be able to:
+**Explore how Microsoft Foundry and Semantic Kernel empower you to build intelligent, extensible, and responsible AI applications.** Gain hands-on experience deploying GPT-4o models, integrating external services and APIs, developing custom plugins, and implementing advanced AI design patterns such as Retrieval-Augmented Generation (RAG) and multi-agent collaboration. By the end of this lab series, you'll be able to:
 
-- **Azure AI Foundry Fundamentals**: Learn how to create, manage, and deploy AI projects using Azure AI Foundry and GPT-4o.
+- **Microsoft Foundry Fundamentals**: Learn how to create, manage, and deploy AI projects using Microsoft Foundry and GPT-4o.
 - **Semantic Kernel Fundamentals**: Build an intelligent chat experience by connecting Semantic Kernel with GPT-4o through a simple starter app.
 - **Semantic Kernel Plugins**: Extend your chatbot’s capabilities by building and integrating custom Semantic Kernel plugins.
 - **Import Plugin using OpenAPI**: Seamlessly integrate external APIs into Semantic Kernel using OpenAPI specifications.
 - **Retrieval-Augmented Generation (RAG)**: Enhance AI responses by combining external knowledge retrieval with generative models using the RAG pattern.
-- **Responsible AI: Exploring Content Filters in Azure AI Foundry**: Apply content filtering tools to build safer, more accountable AI applications within Azure AI Foundry.
+- **Responsible AI: Exploring Content Filters in Microsoft Foundry**: Apply content filtering tools to build safer, more accountable AI applications within Microsoft Foundry.
 - **Image Generation using DALL·E**: Generate creative visuals from text prompts by integrating DALL·E into your reference application.
 - **Multi-Agent Systems**: Coordinate multiple AI agents within Semantic Kernel to solve complex tasks through collaboration.
 
@@ -30,9 +30,9 @@ In this hands-on lab series, participants will explore the core capabilities of 
 - (Optional) Understanding of Retrieval-Augmented Generation (RAG) patterns for AI applications
 
 ## Architecture
-In this hands-on lab, participants will explore **Azure AI Foundry** and **Semantic Kernel** to build, deploy, and extend AI-powered applications. The journey begins with the **Azure Portal**, where they will access and manage AI services. They will deploy **GPT-4o** models using **Models + Endpoints**, enabling real-time AI interactions. To enhance response accuracy, participants will implement **Retrieval-Augmented Generation (RAG)** using **Azure AI Search**, ensuring contextually informed outputs.  
+In this hands-on lab, participants will explore **Microsoft Foundry** and **Semantic Kernel** to build, deploy, and extend AI-powered applications. The journey begins with the **Azure Portal**, where they will access and manage AI services. They will deploy **GPT-4o** models using **Models + Endpoints**, enabling real-time AI interactions. To enhance response accuracy, participants will implement **Retrieval-Augmented Generation (RAG)** using **Azure AI Search**, ensuring contextually informed outputs.  
 
-The lab also covers **plugins**, such as **Time & Weather utilities** for real-time data retrieval and **OpenAPI integration** to connect external services seamlessly. Participants will explore **content filtering** within Azure AI Foundry, applying built-in safety measures to ensure responsible AI usage. Additionally, they will integrate **DALL·E** for AI-driven image generation, enabling creative AI applications. By the end of the lab, participants will have the foundational skills to develop scalable, secure, and extensible AI solutions using Azure’s powerful AI ecosystem.
+The lab also covers **plugins**, such as **Time & Weather utilities** for real-time data retrieval and **OpenAPI integration** to connect external services seamlessly. Participants will explore **content filtering** within Microsoft Foundry, applying built-in safety measures to ensure responsible AI usage. Additionally, they will integrate **DALL·E** for AI-driven image generation, enabling creative AI applications. By the end of the lab, participants will have the foundational skills to develop scalable, secure, and extensible AI solutions using Azure’s powerful AI ecosystem.
 
 ## Architecture Diagram
 
@@ -42,7 +42,7 @@ The lab also covers **plugins**, such as **Time & Weather utilities** for real-t
 
 ## Explanation of Components 
 
-- **Azure AI Foundry**: Provides an integrated environment for AI model development, deployment, and management.  
+- **Microsoft Foundry**: Provides an integrated environment for AI model development, deployment, and management.  
 - **Azure AI Studio**: A web-based interface for managing AI models, endpoints, and inference capabilities.  
 - **Models + Endpoints**: Used for deploying and managing **GPT-4o** models for real-time AI interactions.  
 - **Semantic Kernel**: An AI orchestration framework that connects **LLMs, plugins, and APIs** for enhanced AI capabilities.
@@ -52,7 +52,7 @@ The lab also covers **plugins**, such as **Time & Weather utilities** for real-t
 - **Azure AI Content Safety**: Provides content filtering and moderation tools to ensure responsible AI usage.   
 - **Azure AI Vision Services**: Supports **DALL·E** integration for AI-powered image generation.  
 - **Visual Studio Code (VS Code)**: Development environment for AI application coding, debugging, and testing.    
-- **Python SDKs & REST APIs**: Used to interact with **Azure AI Foundry, Semantic Kernel, and OpenAI services**.
+- **Python SDKs & REST APIs**: Used to interact with **Microsoft Foundry, Semantic Kernel, and OpenAI services**.
 
 ## Getting Started with the Lab
  
@@ -112,19 +112,11 @@ To adjust the zoom level for the environment page, click the **A↕: 100%** icon
  
    - **Password:** <inject key="AzureAdUserPassword"></inject>
  
-       ![](./media/kernel-image2.png)
+       ![Enter Your Password](./media/pwrd1.png)
 
-1. If prompted to stay signed in, you can click **No.**
+4. If prompted to **Stay signed in**, you can click **No**.
 
-   ![](./media/03.png)
-
-1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Cancel** to skip the tour.
-
-   ![](./media/kernel-image4.png)
-
-1. You can use the **Previous (1)** and **Next (2)** buttons to navigate through the lab guide.
-
-   ![](./media/lc-image(3).png)
+5. If a Welcome to Microsoft Azure pop-up window appears, simply click **Cancel** to skip the tour.
 
 ## Support Contact
 

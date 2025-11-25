@@ -11,13 +11,13 @@ In this exercise, you will be performing the following tasks:
 
 ## Task 1: Deploy a Text Embedding model
 
-In this task, you will explore different flow types in Azure AI Foundry by deploying a Text Embedding model to enable text representation and similarity analysis.
+In this task, you will explore different flow types in Microsoft Foundry by deploying a Text Embedding model to enable text representation and similarity analysis.
 
-1. Navigate to the [Azure AI Foundry](https://ai.azure.com/) portal.
-1. Click on **Models + endpoints (1)** under **My assets** in the left pane, then click on **+ Deploy model (2)**, followed by **Deploy Base model (3)**.
+1. Navigate to the [Microsoft Foundry](https://ai.azure.com/) portal.
+1. Click on **Models + endpoints (1)** under **My assets** in the left pane, then click on **+ Deploy model**, followed by **Deploy Base model (2)**.
 
-    ![](./media/kernel-image11.png)
-1. Search for **text-embedding-ada-002 (1)**, select the model **(2)**, and click on **Confirm (3)**.
+    ![](./media/image_007-100.png)
+1. Search for **text-embedding-ada-002**, select the model **(1)**, and click on **Confirm (2)**.
 
     ![](./media/kernel-image46-1.png)
 
@@ -27,7 +27,7 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 
 1. Navigate back to **Models+endpoints (1)**, select **GPT-4o (2)**, and click on **Open in playground (3)**.
 
-    ![](./media/42.png)
+    ![](./media/sk034.png)
 
 1. Click on **Add your data (1)** and select **+ Add a data source (2)**.
 
@@ -98,7 +98,7 @@ In this task, you will explore different flow types in Azure AI Foundry by deplo
 
 ## Task 2: Create a Semantic Search Plugin to query the AI Search Index
 
-In this task, you will explore different flow types in Azure AI Foundry by creating a Semantic Search Plugin to query the AI Search Index for enhanced retrieval capabilities.
+In this task, you will explore different flow types in Microsoft Foundry by creating a Semantic Search Plugin to query the AI Search Index for enhanced retrieval capabilities.
 
 <details>
 <summary><strong>Python</strong></summary>
@@ -401,7 +401,7 @@ In this task, you will explore different flow types in Azure AI Foundry by creat
 
     ![](./media/image_103.png)
 
-1. Add the following code in the `// Challenge 05 - Register Azure AI Foundry Text Embeddings Generation` section of the file.
+1. Add the following code in the `// Challenge 05 - Register Microsoft Foundry Text Embeddings Generation` section of the file.
 
     ```
     kernelBuilder.AddAzureOpenAITextEmbeddingGeneration(
